@@ -1,0 +1,3 @@
+mutation SyncAccessPoints($accessControllerId: String!){
+  syncAccessPoints(accessControllerId: $accessControllerId)
+}

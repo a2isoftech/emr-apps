@@ -1,0 +1,5 @@
+mutation ModifySpotContract($input: CreateSpotContractInput!) {
+  modifySpotContract(input: $input) {
+    contractRef
+  }
+}

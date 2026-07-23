@@ -1,0 +1,3 @@
+mutation ReopenInspection($quoteId: Int!){
+  reopenInspection(quoteId: $quoteId)
+}

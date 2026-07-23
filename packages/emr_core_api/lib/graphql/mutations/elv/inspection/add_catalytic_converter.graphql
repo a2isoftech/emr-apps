@@ -1,0 +1,32 @@
+mutation AddCat(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $partLocation: PartLocation!
+  $classification: CatalyticConverterClassification!
+  $partPhotos: [String!]!
+  $techemetCatId: String
+) {
+  addCatalyticConverter(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      partLocation: $partLocation
+      classification: $classification
+      photoPaths: $partPhotos
+      techemetCatId: $techemetCatId
+    }
+  ) {
+    __typename
+    ... on CatalyticConverterForInspectionResult {
+      catalyticConverter {
+        ...CatalyticConverterFields
+      }
+      price {
+        price
+      }
+    }
+    ...InspectionErrorFields
+  }
+}

@@ -1,0 +1,38 @@
+query SearchTechematCats(
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+  $input: SearchTechematCatsInput!
+  $order: [ResultSortInput!]
+) {
+  searchTechematCats(
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+    input: $input
+    order: $order
+  ) {
+    nodes {
+      fill
+      active
+      unitCost
+      unitCostPaid
+      make
+      model
+      serial
+      sealNo
+      yardCode
+      id
+      extendedProperties
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

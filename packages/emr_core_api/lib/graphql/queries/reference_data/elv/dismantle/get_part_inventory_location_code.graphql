@@ -1,0 +1,10 @@
+query GetVehiclePartInventoryCodes($territoryCode: String!) {
+  vehiclePartInventoryCodes(territoryCode: $territoryCode) {
+    data {
+      key
+      value {
+        inventoryLocationCode
+      }
+    }
+  }
+}

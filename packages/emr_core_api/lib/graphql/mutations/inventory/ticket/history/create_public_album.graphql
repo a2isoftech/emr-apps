@@ -1,0 +1,3 @@
+mutation CreatePublicAlbum($id: String!) {
+  createPublicAlbum(id: $id)
+}

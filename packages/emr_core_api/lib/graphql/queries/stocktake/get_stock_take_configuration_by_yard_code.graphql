@@ -1,0 +1,7 @@
+query GetStockTakeConfigurationByYardCode(
+  $input: GetStockTakeConfigurationByYardCodeInput!
+) {
+  stockTakeConfigurationByYardCode(input: $input) {
+    isDeltaSnapshotEnabled
+  }
+}

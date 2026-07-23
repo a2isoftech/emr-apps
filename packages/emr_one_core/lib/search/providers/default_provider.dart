@@ -1,0 +1,103 @@
+import 'package:emr_one_core/search/search.dart';
+
+class EmrUtilDefaultSuggestionProvider
+    implements EmrUtilSuggestionProvider<String> {
+  static const kGetSuggestionsDelay = 800;
+
+  static const kOptions = [
+    'LCEL004',
+    'N00833942',
+    'N00833949',
+    'N00833940',
+    'N00874813',
+    'N00874811',
+    'LCEL004',
+    'LPTI002',
+    'N00856433',
+    'N00859438',
+    'N00856455',
+    'N00856441',
+    'LITT601',
+    'LABC603',
+    'N00856438',
+    'N00856438',
+    'N00856439',
+    'N00856440',
+    'N00856442',
+    'N00856443',
+    'N00856444',
+    'N00856445',
+    'N00856446',
+    'N00856447',
+    'N00856448',
+    'N00856450',
+    'N00856451',
+    'N00856452',
+    'N00856453',
+    'LAUG002',
+    'N00856454',
+    'LCRO607',
+    'LCOR030',
+    'LAUG402',
+    'LAUG601',
+    'LAUG605',
+    'LHAY608',
+    'LABC603',
+    'LABL001',
+    'LPTI002',
+    'LABC001',
+    'LAUG003',
+    'LAUG006',
+    'N00856463',
+    'N00856464',
+    'N00874810',
+    'LAUG005',
+    'N00874811',
+    'N00874812',
+    'LAUG402',
+    'LCIT004',
+    'LLIT002',
+    'N00930456',
+    'N00874814',
+    'N00874815',
+    'N00874816',
+    'N00874817',
+    'LCRO067',
+    'LAUG002',
+    'N00874826',
+    'N00874827',
+    'N00874828',
+    'N00874829',
+    'N00874830',
+    'N00874831',
+    'LCOL015',
+    'LAMP003',
+    'N00874832',
+    'N00874833',
+    'N00874834',
+    'N00874835',
+    'N00874836',
+    'N00874837',
+    'LBUR005',
+    'LAUG002',
+    'N00874848',
+    'N00874849',
+    'LCAN619',
+    'LADV622',
+    'N00874861',
+    'BOB001',
+    'BOB002',
+    'BOB003',
+  ];
+
+  @override
+  Future<List<String>> getSuggestions(String query) async {
+    await Future<void>.delayed(
+      const Duration(milliseconds: kGetSuggestionsDelay),
+    );
+
+    return kOptions.where((String option) {
+      return option.startsWith(query.toUpperCase());
+    }).toList();
+  }
+}

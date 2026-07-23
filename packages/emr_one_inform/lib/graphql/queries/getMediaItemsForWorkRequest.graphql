@@ -1,0 +1,5 @@
+query getWorkRequestMedia($cmpCode: String!, $requestId: String!) {
+    mediaItemsForWorkRequest(companyCode: $cmpCode, workRequestId: $requestId) {
+    id mediaType mediaPath thumbnailPath isUploaded createdBy createdDate uploadDate
+    }
+}

@@ -1,0 +1,69 @@
+# From https://github.com/dart-lang/http/blob/master/pkgs/cupertino_http/ffigen.yaml
+# with the addition of NSURLSessionUploadTask
+
+# Run with `dart run ffigen --config native_cupertino_http.yaml`.
+name: NativeCupertinoHttp
+description: |
+  Bindings for the Foundation URL Loading System and supporting libraries.
+
+  Regenerate bindings with `dart run ffigen --config native_cupertino_http.yaml`.
+language: 'objc'
+output:
+  bindings: '../packages/emr_one_core/lib/services/emr_background_service/cupertino_http/native_cupertino_bindings.dart'
+  objc-bindings: '../packages/emr_one_shell_native/ios/Runner/native_cupertino_bindings.m'
+headers:
+  entry-points:
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLCache.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLRequest.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLSession.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURL.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSLock.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSProgress.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLResponse.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSHTTPCookieStorage.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSOperation.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSError.h'
+    - '/System/Volumes/Data/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSDictionary.h'
+preamble: |
+  // ignore_for_file: always_specify_types
+  // ignore_for_file: camel_case_types
+  // ignore_for_file: non_constant_identifier_names
+  // ignore_for_file: unused_element
+  // ignore_for_file: unused_field
+  // ignore_for_file: return_of_invalid_type
+objc-interfaces:
+  include:
+    - 'NSCondition'
+    - 'NSHTTPURLResponse'
+    - 'NSMutableURLRequest'
+    - 'NSOperationQueue'
+    - 'NSURLCache'
+    - 'NSURLRequest'
+    - 'NSURLResponse'
+    - 'NSURLSession'
+    - 'NSURLSessionConfiguration'
+    - 'NSURLSessionDownloadTask'
+    - 'NSURLSessionTask'
+    - 'NSURLSessionWebSocketMessage'
+    - 'NSURLSessionWebSocketTask'
+    - 'NSURLSessionUploadTask'
+objc-protocols:
+  include:
+    - 'NSURLSessionDataDelegate'
+    - 'NSURLSessionDownloadDelegate'
+    - 'NSURLSessionWebSocketDelegate'
+comments:
+  style: any
+  length: full
+enums:
+  include:
+    - 'NSHTTPCookieAcceptPolicy'
+    - 'NSURLRequestCachePolicy'
+    - 'NSURLRequestNetworkServiceType'
+    - 'NSURLSessionMultipathServiceType'
+    - 'NSURLSessionResponseDisposition'
+    - 'NSURLSessionTaskState'
+    - 'NSURLSessionWebSocketMessageType'
+  as-int: 
+    include:
+      - 'NSURLSessionWebSocketCloseCode'

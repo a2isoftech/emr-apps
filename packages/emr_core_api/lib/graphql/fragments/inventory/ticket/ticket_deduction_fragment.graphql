@@ -1,0 +1,29 @@
+fragment DeductionFields on LineDeduction {
+  typeId
+  subType
+  stockRequirement {
+    productId
+    count
+  }
+  weight {
+    ...UomValueFields
+  }
+  value
+  scaleIdentifier
+  weightSerial
+  isTareFromPreviousWeight
+  hasSeenZero
+  mediaAssets {
+    ...MediaAssetFields
+  }
+  created {
+    at
+    userName
+    userInfoId
+  }
+  modified {
+    at
+    userName
+    userInfoId
+  }
+}

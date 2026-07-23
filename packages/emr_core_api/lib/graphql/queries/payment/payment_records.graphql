@@ -1,0 +1,29 @@
+query paymentRecords(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: PaymentRecordSearchInput!
+  $order: [PaymentRecordSortInput!]
+) {
+  paymentRecords(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+    order: $order
+  ) {
+    totalCount
+    nodes {
+      ... PaymentRecordFields
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+  }
+}

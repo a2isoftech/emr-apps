@@ -1,0 +1,15 @@
+    mutation AddChequeBook ($input : AddChequeBookInput! ) {
+    addChequeBook(
+        input: $input
+    ) {
+        id
+        parentId
+        yardId
+        yardCode
+        bankAccountCode
+        startNumber
+        count
+        remaining
+        numberOfDigits
+    }
+}

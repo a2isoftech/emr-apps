@@ -1,0 +1,6 @@
+query execDirectQuery(
+  $queryId: String!
+  $params: [KeyValuePairOfStringAndStringInput!]
+) {
+  directQuery(queryId: $queryId, parameters: $params)
+}

@@ -1,0 +1,5 @@
+query SearchElvBatchQuoteFacets($input: ElvBatchQuotesSearchInput!) {
+  searchElvBatchQuoteFacets(input: $input) {
+    ...FacetResponse
+  }
+}

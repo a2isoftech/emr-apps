@@ -1,0 +1,13 @@
+query getLocationByBarcode($code:String!)
+{
+  locationByBarcode(barcode: $code)
+  {
+      description
+      yardId
+      id
+      code
+      active
+      what3Words
+      parentId
+  }
+}

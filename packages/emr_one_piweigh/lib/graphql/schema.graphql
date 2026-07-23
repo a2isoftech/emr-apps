@@ -1,0 +1,27 @@
+type Query {
+  weight: WeightRecord
+  archivedWeight: WeightRecord
+}
+
+type Subscription {
+  weightTaken(scaleAssetCode: String): WeightRecord
+}
+
+type WeightRecord {
+  scaleIdentifier: String
+  value: Decimal!
+  uomCode: String
+  uomId: Int!
+  errMsg: String
+  isSteady: Boolean!
+  isArchivedWeight: Boolean!
+  serialNo: String
+  isPersistentError: Boolean!
+  hasSeenZero: Boolean!
+  consecutiveWeighingNumber: Int!
+}
+
+"""
+The built-in `Decimal` scalar type.
+"""
+scalar Decimal

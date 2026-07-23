@@ -1,0 +1,23 @@
+query GetSpotWizardDataForOrderBook(
+  $id: Int!
+  $gradeType: String!
+  $territoryCode: String!
+) {
+  contractOrderBookDefaults(orderBookTypeId: $id) {
+    contract {
+      contractTypeID
+      currencyCode
+      priceTypeID
+      targetTonnageUomID
+    }
+  }
+  gradesForUserByGradeType(
+    gradeType: $gradeType
+    territoryCode: $territoryCode
+  ) {
+    gradeGroup
+    gradeType
+    gradeCode
+    comment
+  }
+}

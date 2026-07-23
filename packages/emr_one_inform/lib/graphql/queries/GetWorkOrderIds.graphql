@@ -1,0 +1,3 @@
+query GetWorkOrderIds($searchPattern: String!, $filterForUser:Boolean, $stateIds:[Int!]){
+  workOrderIds(searchPattern:$searchPattern, filterForUser: $filterForUser, stateIds: $stateIds)
+}

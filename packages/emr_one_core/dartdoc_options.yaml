@@ -1,0 +1,30 @@
+dartdoc:
+  categories:
+    "Basics":
+      markdown: doc/basics.md
+      name: Basics
+    "Widgets":
+      markdown: doc/widgets.md
+      name: Widgets
+    "Theming":
+      markdown: doc/theming.md
+      name: Theming
+    "Telemetry":
+      markdown: doc/telemetry.md
+      name: Telemetry
+  categoryOrder:
+    - "Basics"
+    - "Widgets"
+    - "Theming"
+    - "Telemetry"
+  showUndocumentedCategories: true
+  ignore:
+    - broken-link
+    - missing-from-search-index
+  nodoc:
+    [
+      "lib/graphql/*.dart",
+      "lib/graphql/*.g.dart",
+      "lib/graphql/**/*.dart",
+      "lib/graphql/**/*.g.dart",
+    ]

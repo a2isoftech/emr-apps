@@ -1,0 +1,4 @@
+mutation SendMail($input: EmailInput!) {
+  sendEmail(emailInput: $input)
+  __typename
+}

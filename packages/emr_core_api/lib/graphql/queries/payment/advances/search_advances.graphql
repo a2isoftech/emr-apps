@@ -1,0 +1,154 @@
+query SearchAdvances(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $order: [SearchAdvancesSortInput!]
+  $input: AdvancesSearchInput!
+) {
+  searchAdvances(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    order: $order
+    input: $input
+  ) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+      ... AdvanceFields
+      paymentValidationResult{
+        ... PaymentRuleResultFields
+      }
+      account {
+        accountSource
+        accountStatus
+        active
+        allowPayment
+        amiceCompanyNumber
+        code
+        country
+        currencyId
+        customerVatGroupType
+        defaultYardCode
+        extendedProperties
+        financialCustomerGroupId
+        financialSupplierGroupId
+        id
+        industryGroup
+        lastTicketDate
+        name
+        originatingCountry
+        parentAccount
+        portalEnabledContacts
+        preferredPaymentMethod
+        profession
+        prospectId
+        reportingFrequency
+        sicCodeId
+        supplierVatGroupType
+        tags
+        territoryId
+        type
+        validCompanyIds
+        validTerritoryIds
+        vihbNumber
+        visitFrequency
+        
+        accountContacts {
+          key
+          value {
+            addressKey
+            contactTypes
+            dateOfBirth
+            extendedProperties
+            firstName
+            jobTitle
+            lastName
+            middleName
+            title
+            signature {
+              url
+            }
+            proofOfIdentification {
+              media {
+                url
+              }
+              type
+              subType
+              validFrom
+              validTo
+            }
+            proofOfAddress {
+              media {
+                url
+              }
+              type
+              subType
+              validFrom
+              validTo
+            }
+            contactPreferences {
+              mobile {
+                enabled
+                value
+              }
+              email {
+                enabled
+                value
+              }
+            }
+          }
+        }
+
+        celAgreement {
+          agreementDate
+          expiryDate
+        }
+
+        bankAccounts {
+          bankName
+          accountHolderName
+          accountNumber
+          sortCode
+        }
+
+        prepaymentCards {
+          code
+          active
+          panDigits
+          issuerType
+          issueDate
+        }
+      }
+      company {
+        active
+        code
+        fullName
+        id
+        shortName
+        territoryCode
+        territoryId
+      }
+      handlingYard {
+        id
+        name
+        yardCode
+        shortName
+      }
+      payableYard {
+        id
+        name
+        yardCode
+        shortName
+        ...PaymentMethodFields
+      }
+    }
+  }
+}

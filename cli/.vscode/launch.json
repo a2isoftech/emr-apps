@@ -1,0 +1,61 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "../",
+      "program": "cli/bin/emrapps.dart",
+      "args": []
+    },
+    {
+      "name": "--help",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "../",
+      "program": "cli/bin/emrapps.dart",
+      "args": [
+        "--help"
+      ]
+    },
+    {
+      "name": "update-package-versions",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "../",
+      "program": "cli/bin/emrapps.dart",
+      "args": [
+        "upv",
+        "-p",
+        "emr_one_core,emr_one_data_management,emr_sharedtypes",
+        "--increment",
+        "minor",
+        "--comment",
+        "TODO"
+      ]
+    },
+    {
+      "name": "--version",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "../",
+      "program": "cli/bin/emrapps.dart",
+      "args": [
+        "--version"
+      ]
+    },
+    {
+      "name": "doctor",
+      "request": "launch",
+      "type": "dart",
+      "program": "bin/emrapps.dart",
+      "args": [
+        "doctor"
+      ]
+    }
+  ]
+}

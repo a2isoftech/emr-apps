@@ -1,0 +1,5 @@
+query GetStocktakeWorkflowHistory($id: String!) {
+  stocktakeWorkFlowHistory(id: $id) {
+    ...StocktakeApprovalFields
+  }
+}

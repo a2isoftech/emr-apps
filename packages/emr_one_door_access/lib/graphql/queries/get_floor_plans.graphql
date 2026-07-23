@@ -1,0 +1,18 @@
+query GetFloorPlans($siteId : String!){
+  floorPlans(siteId: $siteId){
+    siteId
+    name
+    imageUrl
+    id
+    createdOn
+    hotspots{      
+      id
+      name
+      x
+      y
+      status
+      accessPointId
+      orderIndex
+    }
+  }
+}

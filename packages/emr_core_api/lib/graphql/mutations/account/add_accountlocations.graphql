@@ -1,0 +1,10 @@
+mutation AddAccountLocations($addAccountLocationInput: CreateOrUpdateAccountLocationInput!){
+  addAccountLocations(addAccountLocationInput:  $addAccountLocationInput){
+   ... on AccountLocationError{
+    message
+   }
+   ... on Account{
+    name
+   }
+  }
+}

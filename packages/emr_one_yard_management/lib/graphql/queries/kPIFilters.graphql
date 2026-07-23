@@ -1,0 +1,6 @@
+query kPIFilters(){
+    kPIFilters(){
+        id
+        name
+    }
+}

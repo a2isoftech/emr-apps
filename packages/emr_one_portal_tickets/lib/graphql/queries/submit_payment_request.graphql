@@ -1,0 +1,3 @@
+ mutation SubmitPaymentRequest($paymentRequest : PaymentRequestInput!){
+    result : submitPaymentRequest(requestForPayment: $paymentRequest)
+  }

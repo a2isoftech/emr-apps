@@ -1,0 +1,28 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          scopes:
+            - lib/graphql/**
+          scalars:
+            Decimal:
+              type: double
+            Long:
+              type: int
+            DateTime:
+              type: DateTime
+            Date:
+              type: DateTime
+            Byte:
+              type: int
+            UUID:
+              type: String
+            JSON:
+              type: Map<String, dynamic>
+            # TODO: Convert Upload datatype to Uint8List and vice versa.
+            # Upload:
+            #   type: Uint8List
+            #   fromJsonFunctionName: uploadFromJson
+            #   toJsonFunctionName: uint8ListToJson
+            #   import: package:my_app/scalar.dart

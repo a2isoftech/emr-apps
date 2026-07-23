@@ -1,0 +1,6 @@
+query GetAllYardsInComapny ($companyCode: String!){
+  allYards(companyCode: $companyCode){
+    yardCode
+    name
+  }
+}

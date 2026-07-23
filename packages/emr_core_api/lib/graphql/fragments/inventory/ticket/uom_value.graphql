@@ -1,0 +1,7 @@
+fragment UomValueFields on UomValue {
+  uom
+  value
+  isRate
+  id
+  mtValue
+}

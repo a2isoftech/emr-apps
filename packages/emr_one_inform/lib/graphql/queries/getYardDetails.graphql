@@ -1,0 +1,8 @@
+query GetYardDetails($code:String!) {
+  yardDetails(code: $code) {
+    territory
+    companyCode
+    yardCode
+    yardName
+  }
+}

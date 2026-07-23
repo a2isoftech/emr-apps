@@ -1,0 +1,122 @@
+query AccountPrices(
+  $input: GetPricesFlattenedInput!
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $sorting: [OutputSortInput!]
+  $tagExpiryDate: DateTime
+) {
+  accountPricesFlattened(
+    input: $input
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    order: $sorting
+  ) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+      accountId
+      accountCode
+      accountName
+      primaryAccountManagerName
+      publicationId
+      publicationName
+      yardId
+      yardCode
+      productId
+      productCode
+      productName
+      deliveryMethod
+      effectiveFromEpoch
+      effectiveToEpoch
+      baseRate {
+        uom
+        value
+      }
+      resultantRate {
+        rate {
+          uom
+          value
+        }
+      }
+      previousBaseRate {
+        uom
+        value        
+      }
+      issueDate
+      tags(expiryDate: $tagExpiryDate) {
+        __typename
+        ... on Tag{
+          id
+          functional        
+          rate {
+            uom
+            value
+            isRate          
+          }
+          templateId
+          template {
+            category
+            reason
+          }
+          effectiveFrom
+          effectiveTo
+          created{
+            userName
+            at
+          }
+        }
+        ... on CollectedTag {
+          id
+          functional        
+          rate {
+            uom
+            value
+            isRate          
+          }
+          haulageRate{
+            uom
+            value
+            isRate
+            __typename
+          }
+          templateId
+          template {
+            category
+            reason
+          }
+          effectiveFrom
+          effectiveTo
+          created{
+            userName
+            at
+          }
+          fullyCharged
+          showToCustomer
+          accountLocationKeys
+        }
+      }
+      tagDelta
+      locations{
+        code
+      }
+    }
+  }
+  accountPricesFlattenedFacets(input: $input) {
+    value {
+      name
+      values {
+        count
+        range
+      }      
+    }
+  }
+}

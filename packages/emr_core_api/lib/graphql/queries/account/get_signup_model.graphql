@@ -1,0 +1,77 @@
+query GetSignupModel {
+  account {
+    accountNumber: code
+    name
+    originatingCountry
+    industryGroup
+    celAgreement {
+      agreementDate
+      expiryDate
+    }
+    secoreAgreement{
+      agreementDate
+      expiryDate
+    }
+    accountContacts {
+      value {
+      firstName
+      middleName
+      lastName
+      contactPreferences {
+        mobile {
+          value
+          enabled
+        }
+        email {
+          value
+          enabled
+        }
+        phone {
+          value
+          enabled
+        }
+        post {
+          value
+          enabled
+        }
+        fax {
+          value
+          enabled
+        }
+      }
+        signature {
+          url
+      }
+        proofOfAddress {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        proofOfIdentification {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        dateOfBirth
+        contactTypes
+        addressKey
+      }
+      }
+    
+    bankAccounts {
+      accountHolderName
+      accountNumber
+      sortCode
+      bankName
+    }
+    defaultYardCode
+  }
+}

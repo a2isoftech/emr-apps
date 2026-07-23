@@ -1,0 +1,12 @@
+query GetAllSites {
+  allSites {
+    yardCode
+    name
+    createdOn
+    createdBy
+    modifiedOn
+    modifiedBy
+    id
+    active
+  }
+}

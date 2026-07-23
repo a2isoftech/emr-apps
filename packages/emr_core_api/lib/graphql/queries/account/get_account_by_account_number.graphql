@@ -1,0 +1,8 @@
+query GetAccountByAccountNumber($query: String!) {
+  searchAccounts(input: { query: $query, ignoreDefaultTerritory: true }) {
+    nodes {
+      id
+      code
+    }
+  }
+}

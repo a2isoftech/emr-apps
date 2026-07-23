@@ -1,0 +1,15 @@
+mutation CompleteInspectionMutation(
+  $batchQuoteId: Int!
+  $quoteId: Int!
+  $territory: String!
+  $configuration: VehicleConfigurationModelInput!
+  $quoteChangedValue: Float!
+) {
+  completeInspection(
+    batchQuoteId: $batchQuoteId
+    quoteId: $quoteId
+    configuration: $configuration
+    territory: $territory
+    quoteChangedValue: $quoteChangedValue
+  )
+}

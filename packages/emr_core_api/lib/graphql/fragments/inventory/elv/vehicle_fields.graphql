@@ -1,0 +1,42 @@
+fragment VehicleFields on Vehicle {
+  vin
+  vrn
+  vehicleStatus
+  stockValue
+  year
+  manufacturer
+  model
+  trim
+  fuelType
+  id
+  location{
+    code
+    yardId
+    yard{
+      yardCode
+    }
+  }
+  weight {
+    uom
+    value
+    id
+    mtValue
+  }
+  product{
+    code
+  }
+  active
+  vehicleParts {
+    type
+    description
+    partStatus
+    weight {
+      uom
+      value
+      id
+      mtValue
+    }
+    active
+    # extendedProperties
+  }
+}

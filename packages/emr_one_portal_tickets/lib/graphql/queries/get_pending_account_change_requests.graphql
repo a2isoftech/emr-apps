@@ -1,0 +1,10 @@
+query GetPendingAccountChangeRequests{
+  accountChangeRequests(where: {
+    status: {eq: PENDING}
+  }){
+    createdOn
+    modifiedOn
+    accountName
+    requestedBy    
+  }
+}

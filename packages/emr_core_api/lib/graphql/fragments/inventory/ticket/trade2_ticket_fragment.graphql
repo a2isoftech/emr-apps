@@ -1,0 +1,59 @@
+fragment Trade2TicketFields on Trade2Ticket {
+  id
+  key
+  trade2Key
+  partyAccountNo
+  partyName
+  depotNo
+  yardId
+  yardCode
+  ticketNumber
+  ticketCategory
+  ticketStatus
+  ticketType
+  publishedToTrade
+  createdDate
+  createdDateEpoch
+  createdBy
+  price
+  lines {
+    grossWeight {
+      uom
+      value
+      id
+    }
+    netWeight {
+      uom
+      value
+      id
+    }
+    gradeId
+    gradeCode
+    gradeName
+    lineNumber
+    heapId
+    heapCode
+    rate {
+      uom
+      value
+      id
+    }
+    weightSerial
+    isActive
+    price
+    ewcCode
+    partyContractRef
+    partyContractPart
+    priceOrigin
+    binNo
+    weighedBy
+    sealNo
+    consgnNo
+    comments
+  }
+  currency
+  ticketDate
+  vehicleNo
+  locationCode
+  locationName
+}

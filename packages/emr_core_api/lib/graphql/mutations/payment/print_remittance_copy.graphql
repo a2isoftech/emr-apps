@@ -1,0 +1,34 @@
+mutation PrintRemittanceCopy($paymentRecordId : String!){
+  printRemittanceCopy(paymentRecordId: $paymentRecordId){
+    result{
+      mediaUrl
+      created {
+        at
+        userName
+        userInfoId
+      }
+      modified {
+        at
+        userName
+        userInfoId
+      }
+    }
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

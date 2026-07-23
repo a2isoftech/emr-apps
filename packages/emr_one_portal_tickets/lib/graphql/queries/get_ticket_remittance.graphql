@@ -1,0 +1,3 @@
+query ticketRemittance($ticketNumber: Int!){
+  remittanceForTicket(ticketNumber: $ticketNumber)
+}

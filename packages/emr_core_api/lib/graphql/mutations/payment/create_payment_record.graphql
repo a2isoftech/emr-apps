@@ -1,0 +1,24 @@
+mutation CreatePaymentRecord($input: CreatePaymentRecordInput!) {
+  createPaymentRecord(paymentRecord: $input) {
+    isSuccess
+    result{
+    ...PaymentRecordFields
+    }
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

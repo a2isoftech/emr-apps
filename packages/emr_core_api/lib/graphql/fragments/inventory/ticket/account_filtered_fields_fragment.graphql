@@ -1,0 +1,54 @@
+fragment AccountFilteredFields on Account {
+  id
+  code
+  name
+  sicCodeId
+  accountSubTypes {
+    key
+    value
+  }
+  productEWCCodes {
+    key
+    value
+  }
+  accountAddresses(
+    query: $query
+    includeOnlyMatchedAddresses: $includeOnlyMatchedAddresses
+  ) {
+    address1
+    address2
+    address3
+    address4
+    address5
+    address6
+    postCode
+    countryCode
+  }
+  addresses {
+    key
+    value {
+      address1
+      address2
+      address3
+      address4
+      address5
+      address6
+      postCode
+      countryCode
+      what3Words
+      geoLocation {
+        latitude
+        longitude
+      }
+    }
+  }
+  locations(
+    query: $query
+    includeOnlyMatchedLocations: $includeOnlyMatchedLocations
+  ) {
+    code
+    name
+    addressKey
+  }
+  type
+}

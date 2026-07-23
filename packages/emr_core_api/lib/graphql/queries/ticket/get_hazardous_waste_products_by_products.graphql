@@ -1,0 +1,20 @@
+query GetHazardousWasteProductsByProducts($products: [String!]!) {
+  hazardousWasteProducts(products: $products) {
+    id
+    productCode
+    component
+    europeanWasteCode
+    concentration
+    physicalForm
+    hazardCodes
+    containerType
+    purchasesOrSales
+    description
+    uniDnumber
+    unClass
+    properShippingName
+    packingGroup
+    specialHandlingRequirements
+    wasteManagementOperationRDCode
+  }
+}

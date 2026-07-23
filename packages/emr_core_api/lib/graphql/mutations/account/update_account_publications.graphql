@@ -1,0 +1,15 @@
+mutation UpdateAccountPublications(
+  $input: AccountPriceMappingInput!
+) {
+  linkAccountsToPublications(
+    input: $input
+  ) {
+    changeVector
+    entity {
+      id
+      accountId
+      accountCode      
+      scopes      
+    }
+  }
+}

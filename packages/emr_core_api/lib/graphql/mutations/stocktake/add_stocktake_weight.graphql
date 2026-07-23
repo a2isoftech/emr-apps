@@ -1,0 +1,40 @@
+mutation AddStocktakeWeight($input: AddStocktakeWeightInput!) {
+  addStocktakeWeight(input: $input) {
+    success
+    message
+    errorCode
+    data {
+      locationId
+      productId
+      takenWeights {
+        id
+        title
+        grossWeightSerialNumber
+        tareWeightSerialNumber
+        grossWeightScaleIdentifier
+        tareWeightScaleIdentifier
+        grossWeight {
+          id
+          isRate
+          mtValue
+          uom
+          value
+        }
+        tareWeight {
+          id
+          isRate
+          mtValue
+          uom
+          value
+        }
+        created {
+          at
+          userInfoId
+          userName
+        }
+        isDeleted
+        captureMethod
+      }
+    }
+  }
+}

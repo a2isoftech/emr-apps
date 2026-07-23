@@ -1,0 +1,3 @@
+fragment AccountContactError on AccountContactError {
+  message
+}

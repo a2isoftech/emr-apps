@@ -1,0 +1,39 @@
+query SearchProducts(
+  $query: String
+  $productClasses: [String!]
+  $productFamilies: [String!]
+  $productLines: [String!]
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+) {
+  products(
+    query: $query
+    productClasses: $productClasses
+    productFamilies: $productFamilies
+    productLines: $productLines
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+  ) {
+    totalCount
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+    }
+    nodes {
+      id
+      code
+      description
+      classification {
+        family
+        line
+        class
+      }
+    }
+  }
+}

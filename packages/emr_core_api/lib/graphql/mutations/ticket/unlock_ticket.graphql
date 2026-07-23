@@ -1,0 +1,11 @@
+mutation unlockTicket($ticketIdToUnlock: String) {
+  lockTicket(
+    input: { forceUnlock: true, profileName: "", ticketIdToUnlock: $ticketIdToUnlock }
+  ) {
+    unlockResponse {
+      isSuccess
+      ticketId
+      lockedBy
+    }
+  }
+}

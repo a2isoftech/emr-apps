@@ -1,0 +1,44 @@
+query GetAdminPricingData(
+  $partyAccountNo: String!
+) {
+  adminPricingData(partyAccountNo: $partyAccountNo) {
+      contractLineId
+      contractDepotPremiumId
+      prices {
+        currentPrice {
+          uom
+          value
+          id
+        }
+      }
+     tags{
+      ... on DepotPremiumTag {
+        description
+        rate{
+          uom
+          value
+          id
+        }
+        effectiveFrom
+        effectiveTo
+      }
+      ... on CollectedTag {
+        description
+        locationCode
+        fullyCharged
+        haulageRate{
+          uom
+          value
+          id
+        }
+        showToCustomer
+        description
+        rate{
+          uom
+          value
+          id
+        }
+      }
+     }
+    }
+}

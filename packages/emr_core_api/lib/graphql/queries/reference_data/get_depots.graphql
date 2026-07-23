@@ -1,0 +1,6 @@
+query GetDepots($territoryCodes: [String!]!) {
+  depots(input: { query: "", territoryCodes: $territoryCodes }) {
+    id
+    shortName
+  }
+}

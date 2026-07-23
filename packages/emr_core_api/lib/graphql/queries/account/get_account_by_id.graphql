@@ -1,0 +1,13 @@
+query GetAccountById($accountId: String!) {
+  accountById(accountId: $accountId) {
+    id
+    code
+    name
+    type
+    businessDetail {
+      paymentTerm {
+        financialPaymentMethod
+      }
+    }
+  }
+}

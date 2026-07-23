@@ -1,0 +1,6 @@
+mutation AddWorkflowConfiguration($input: AddWorkflowConfigurationInput!){
+  addWorkflowConfiguration(input: $input) {
+    key
+    value
+  }
+}

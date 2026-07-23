@@ -1,0 +1,10 @@
+mutation UpdateStocktake($input: CreateStocktakeInput!) {
+  updateStockTake(stocktakeInput: $input) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

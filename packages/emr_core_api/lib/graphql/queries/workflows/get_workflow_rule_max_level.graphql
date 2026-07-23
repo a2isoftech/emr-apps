@@ -1,0 +1,6 @@
+query GetWorkflowRulesMaxLevel($workflowType: WorkflowType!) {
+  workflowRulesMaxLevel(workflowType: $workflowType) {
+    workflowType
+    maxLevel
+  }
+}

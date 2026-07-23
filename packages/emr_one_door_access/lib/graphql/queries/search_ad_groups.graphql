@@ -1,0 +1,7 @@
+query SearchAdGroups($searchQuery : String!) {
+  adGroups(searchQuery: $searchQuery){
+    name
+    azureId
+    id
+  }
+}

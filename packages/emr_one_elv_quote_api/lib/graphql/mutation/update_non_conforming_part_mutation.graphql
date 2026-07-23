@@ -1,0 +1,11 @@
+mutation UpdateNonConformingPartMutation(
+  $quoteId: Int!
+  $batchQuoteId: Int!
+  $partName: String!
+) {
+  updateNonConformingPart(
+    quoteId: $quoteId
+    batchQuoteId: $batchQuoteId
+    partName: $partName
+  )
+}

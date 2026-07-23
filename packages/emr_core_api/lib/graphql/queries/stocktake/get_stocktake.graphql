@@ -1,0 +1,83 @@
+query GetStocktake($id: String!) {
+  stocktake(id: $id) {
+    ...StocktakeFields
+    stocktakeLocations {
+      netWeightMt
+      weightVariance {
+        ...UomValueFragment
+      }
+      valueVariance
+      mediaAssets {
+        url
+      }
+      product {
+        code
+        description
+        classification {
+          family
+          line
+          class
+        }
+      }
+      location {
+        active
+        inventoryLocationType
+        code
+        description
+        weight {
+          ...UomValueFragment
+        }
+        rate {
+          ...UomValueFragment
+        }
+        value
+      }
+      comments {
+        content
+        created {
+          at
+          userInfoId
+          userName
+        }
+      }
+      status
+      takenWeights {
+        created {
+          at
+          user {
+            name
+            id
+          }
+        }
+        grossWeight {
+          ...UomValueFragment
+        }
+        tareWeight {
+          ...UomValueFragment
+        }
+        grossWeightSerialNumber
+        tareWeightSerialNumber
+        grossWeightScaleIdentifier
+        tareWeightScaleIdentifier
+        title
+        id
+        isDeleted
+        comments {
+          content
+          created {
+            at
+            userInfoId
+            userName
+          }
+        }
+        captureMethod
+      }
+    }
+    workflow {
+      ...StocktakeApprovalFields
+    }
+    submitted {
+      userName
+    }
+  }
+}

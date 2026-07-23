@@ -1,0 +1,38 @@
+query GetSchedules($filter: ScheduleFilterInput!) {
+  schedules(filter: $filter) {
+    uuid
+    isDigitalSignatureRequired
+    repeatInterval
+    repeatFrequency
+    description
+    isActive
+    nextSchedulerDate
+    createdBy
+    createdDate
+    endDate
+    assignedTo
+    assignedToTeam
+    yardCodes
+    depotNos
+    numberOfTasks
+    workingDays
+    template {
+      document
+      isDigitalSignatureRequired
+      referenceId
+      id
+      templateId
+      version
+      title
+      description
+      validateBySignature
+      validateByWorkOrder
+      validateFrom
+      isEmailNotificationRequired
+      sendEmailOnFailedQuestions
+      emailIds
+      assignFailedQuestionToTeam
+      assignFailedQuestionToTeamId
+    }
+  }
+}

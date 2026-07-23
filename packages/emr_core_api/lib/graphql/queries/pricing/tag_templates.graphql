@@ -1,0 +1,29 @@
+query TagTemplates(
+  $input: GetTagTemplatesInput!
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int,
+  $order: [TagTemplateSortInput!]
+  ) {
+  tagTemplates(
+    input: $input
+    after: $after
+    before: $before
+    first: $first
+    last: $last 
+    order: $order
+  ) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes{
+      id
+      category
+      reason
+    }
+  }
+}

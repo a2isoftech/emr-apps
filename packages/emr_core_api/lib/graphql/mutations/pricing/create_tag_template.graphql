@@ -1,0 +1,6 @@
+mutation CreateTagTemplate($input: CreateTagTemplateInput!) {
+  createTagTemplate(input: $input) {
+    ... CreateTagTemplateError
+    ... TagTemplate
+  }
+}

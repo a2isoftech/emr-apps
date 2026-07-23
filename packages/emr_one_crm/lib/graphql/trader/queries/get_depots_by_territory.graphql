@@ -1,0 +1,9 @@
+query DepotsByTerritory($territoryCode: String!){
+  depotsByTerritoryCode(territoryCode: $territoryCode) {
+    depotNo
+    cmpCode
+    active
+    yardCode
+    name
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "542960845784",
+    "project_id": "emrapps",
+    "storage_bucket": "emrapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542960845784:android:e64ad33f12c51abbf4a8ad",
+        "android_client_info": {
+          "package_name": "com.emrgroup.emrone.nativeshell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542960845784-t5o9klu1c7prvvkp9ghahhsaoh7lpl8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCigp5qSinHECANRP5EwEvN0qvPWSCd1tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542960845784-t5o9klu1c7prvvkp9ghahhsaoh7lpl8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

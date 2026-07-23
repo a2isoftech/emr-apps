@@ -1,0 +1,23 @@
+mutation CreateEdgeTicketGallery($input: CreateEdgeTicketGalleryInput!) {
+  createEdgeTicketGallery(input: $input) {
+    id
+    title
+    excludedImageUrls
+    publicUrl
+    tickets{
+      ...TicketFields
+    }
+    created{
+      at
+      userName
+      userInfoId
+    }
+    modified{
+      at
+      userInfoId
+      userName
+    }
+    tags
+    active
+  }
+}

@@ -1,0 +1,10 @@
+query searchUserInfos($input: SearchUserInfoInput!, $first: Int, $after: String, $last: Int, $before: String, $order: [UserInfoSortInput!]) {
+  searchUserInfos(input: $input, first: $first, after: $after, last: $last, before: $before, order: $order) {
+    nodes {
+      id
+      name
+      username
+      emailAddress
+    }
+  }
+}

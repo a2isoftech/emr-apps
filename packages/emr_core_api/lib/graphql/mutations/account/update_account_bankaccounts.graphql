@@ -1,0 +1,11 @@
+mutation UpdatePartyBankAccount($bankAccountInput: CreateOrUpdatePartyBankAccountInput!) {
+  updatePartyBankAccounts(updateBankAccountInput: $bankAccountInput)
+  {
+    ... on AccountBankAccountError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

@@ -1,0 +1,80 @@
+query GetSignupModelInternal($accountCode : String!) {
+  accountInternal(accountCode: $accountCode) {
+    accountNumber: code
+    name
+    originatingCountry
+    industryGroup
+    visitFrequency
+    profession
+    celAgreement {
+      agreementDate
+      expiryDate
+    }
+    secoreAgreement{
+      agreementDate
+      expiryDate
+    }
+    accountContacts {
+      key
+      value {
+      firstName
+      middleName
+      lastName
+      contactPreferences {
+        mobile {
+          value
+          enabled
+        }
+        email {
+          value
+          enabled
+        }
+        phone {
+          value
+          enabled
+        }
+        post {
+          value
+          enabled
+        }
+        fax {
+          value
+          enabled
+        }
+      }
+        signature {
+          url
+      }
+        proofOfAddress {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        proofOfIdentification {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        dateOfBirth
+        contactTypes
+        addressKey
+      }
+      }
+    
+    bankAccounts {
+      accountHolderName
+      accountNumber
+      sortCode
+      bankName
+    }
+    defaultYardCode
+  }
+}

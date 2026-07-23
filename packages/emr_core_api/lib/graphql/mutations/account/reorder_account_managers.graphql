@@ -1,0 +1,15 @@
+mutation ReorderAccountManagers($input: ReorderAccountManagersInput!) {
+  reorderAccountManagers(reorderAccountManagersInput: $input) {
+    ... on Account {
+      primaryManager {
+        name
+      }
+      accountManagers {
+        name
+      }
+    }
+    ... on AccountManagerError {
+      message
+    }
+  }
+}

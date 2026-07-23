@@ -1,0 +1,23 @@
+query GetTagNames($input: String!, $first: Int, $last: Int, $before: String, $after: String, $query: String!) {
+  tagTemplates(territoryCode: $input, first: $first, last: $last, before: $before, after: $after, searchText: $query) {
+    pageInfo {
+      hasNextPage
+      endCursor
+      hasPreviousPage
+      startCursor
+
+      __typename
+    }
+    totalCount
+    nodes {
+      active
+      id
+      templateId
+      territory
+      category
+      reason
+      __typename
+    }
+    __typename
+  }
+}

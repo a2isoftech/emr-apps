@@ -1,0 +1,19 @@
+query EditTicketAccountSearch(
+  $query: String!
+  $ravenSearchQuery: String!
+  $includeOnlyMatchedAddresses: Boolean
+  $includeOnlyMatchedLocations: Boolean
+  $territoryId : String
+) {
+  searchRetailAccounts(
+    input: {
+      query: $ravenSearchQuery
+      defaultTerritory : $territoryId
+    }
+    first: 500
+  ) {
+    nodes {
+      ...AccountFilteredFields
+    }
+  }
+}

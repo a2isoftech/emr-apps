@@ -1,0 +1,13 @@
+fragment PaymentPostingTaskFields on PaymentPostingTask{
+    isComplete
+    paymentRecordId
+    eventLogs {
+      type
+      dateTime
+      message
+      details
+    }
+    status
+    id
+    completedDate
+}

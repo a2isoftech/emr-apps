@@ -1,0 +1,15 @@
+mutation AddAccountManager($input: CreateAccountManagerInput!) {
+  addAccountManager(createOrUpdateAccountManagerInput: $input) {
+    ... on Account{
+      primaryManager{
+        name
+      }
+      accountManagers{
+        name
+      }
+    }
+    ...on AccountManagerError{
+      message
+    }
+  }
+}

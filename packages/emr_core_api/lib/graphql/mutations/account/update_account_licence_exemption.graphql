@@ -1,0 +1,12 @@
+mutation UpdateAccountLicenseExemption(
+  $input: UpdateAccountLicenseExemptionInput!
+) {
+  updateAccountLicenseExemption(input: $input) {
+    ... on Account {
+      id
+    }
+    ... on AccountLicenseExemptionError {
+      message
+    }
+  }
+}

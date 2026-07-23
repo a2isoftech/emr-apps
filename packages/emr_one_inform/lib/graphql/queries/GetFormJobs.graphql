@@ -1,0 +1,51 @@
+query GetFormJobs($filter: FormJobFilterInput!) {
+  formJobs(filter: $filter) {
+    jobInfo {
+      template{
+        id
+        title
+        referenceId
+        isDigitalSignatureRequired
+        emailIds
+        templateId
+      }
+      createdDate
+      workOrderId
+      asset {
+        assetCode
+        name
+        yardCode
+        depotNo
+      }
+      jobType
+      jobTypeVariant
+      referenceId
+      uuid
+      referenceType
+      workOrderDescription
+      assignedTo
+      jobTrade
+      assignedToTeam
+      assignedToTeamId
+      templateId
+      status
+      expectedStartDate
+      expectedEndDate
+      yardCode
+      depotNo
+      notes
+      jobPriority
+      scheduleItemType
+      isDigitalSignatureRequired
+    }
+    instanceInfo {
+      uuid
+      createdDate
+      statusId
+      startedBy
+      startedDate
+      submittedBy
+      submittedDate
+    }
+  }
+}

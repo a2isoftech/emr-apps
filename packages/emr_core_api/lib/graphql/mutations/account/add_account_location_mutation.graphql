@@ -1,0 +1,7 @@
+mutation AddAccountLocationMutation(
+  $input: CreateOrUpdateAccountLocationInput!
+) {
+  addAccountLocations(addAccountLocationInput: $input) {
+    __typename
+  }
+}

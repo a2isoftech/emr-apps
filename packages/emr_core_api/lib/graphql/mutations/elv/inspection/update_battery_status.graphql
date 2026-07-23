@@ -1,0 +1,19 @@
+mutation UpdateBatteryStatus(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $batteryPhotoPaths: [String!]!
+  $hasBattery: Boolean!
+) {
+  updateBatteryStatus(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      batteryPhotoPaths: $batteryPhotoPaths
+      hasBattery: $hasBattery
+    }
+  ) {
+    ...InspectionErrorFields
+  }
+}

@@ -1,0 +1,35 @@
+fragment DevicesFragment on Devices {
+    id
+    yardCode
+    yardId
+    atmServers {
+      apiKey
+      atmServerDeviceType
+      authorisationAPIEndpoint
+      deviceId
+      encryptionKey
+      ipAddress
+      name
+      paymentAPIEndPoint
+    }
+    cashierCameras {
+      ipAddress
+      name
+    }
+    chequePrinters {
+      name
+      printerName
+    }
+    fingerprintScanners {
+      ipAddress
+      name
+    }
+    idWebcams {
+      ipAddress
+      name
+    }
+    remittancePrinters {
+      name
+      printerName
+    }
+}

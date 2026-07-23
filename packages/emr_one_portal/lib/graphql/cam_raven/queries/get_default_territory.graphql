@@ -1,0 +1,9 @@
+query GetDefaultTerritory{
+  account{
+    primaryManager{
+      userInfo{
+        defaultTerritory
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+enum DocumentTypeEnum {
+  invoice,
+  creditNote
+}

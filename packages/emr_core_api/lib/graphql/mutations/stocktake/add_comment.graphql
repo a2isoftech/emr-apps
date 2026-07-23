@@ -1,0 +1,15 @@
+mutation AddComment($commentInput: AddCommentInput!) {
+  addComment(commentInput: $commentInput) {
+    success
+    message
+    errorCode
+    data {
+      content
+      created {
+        userInfoId
+        userName
+        at
+      }
+    }
+  }
+}

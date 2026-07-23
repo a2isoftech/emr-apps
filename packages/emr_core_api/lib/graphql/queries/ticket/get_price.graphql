@@ -1,0 +1,35 @@
+query GetPrice(
+  $accountIds: [String!]!
+  $productIds: [String!]!
+  $yardIds: [String!]!
+) {
+  pricesForAccounts(
+    accountIds: $accountIds
+    productIds: $productIds
+    yardIds: $yardIds
+  ) {
+    accountId
+    yards {
+      key
+      value {
+        productsByDeliveryMethod {
+          key
+          value {
+            products {
+              key
+              value {
+                rate {
+                  id
+                  isRate
+                  mtValue
+                  uom
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

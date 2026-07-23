@@ -1,0 +1,50 @@
+query GetUserDetails(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int  
+  $userIds: [String!]
+) {
+  users(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    userIds: $userIds
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    } 
+    nodes {      
+      azureId      
+      name
+      userName
+      cardNumber
+      id
+      externalId
+      events {
+        rowId
+        cardNumber
+        accessControllerId
+        utcTime
+        topic0
+        topic1
+        topic2
+        accessPointId
+        accessPointName
+        accessPointRestricted
+        userId
+        email
+      }
+      groups {
+        azureId
+        name
+        id
+      }
+    }
+  }
+}

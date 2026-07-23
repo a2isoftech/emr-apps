@@ -1,0 +1,12 @@
+query GetAssetByCode($assetCode: String!) {
+  assetByCode(assetCode: $assetCode) {
+    yardCode
+    depotNo
+    assetCode
+    name
+    assetType
+    make
+    model
+    serialNumber
+  }
+}

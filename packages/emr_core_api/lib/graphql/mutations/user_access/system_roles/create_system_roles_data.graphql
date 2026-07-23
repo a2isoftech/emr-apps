@@ -1,0 +1,16 @@
+mutation CreateSystemRole($name: String!, $description: String!, $permissionNames: [String!]!, $active: Boolean!) {
+  createSystemRole(
+    input: {
+      name: $name
+      description: $description
+      permissionNames: $permissionNames
+      active: $active
+    }
+  ) {
+    data {
+     ...SystemRoleFragment
+    }
+    hasError
+    message
+  }
+}

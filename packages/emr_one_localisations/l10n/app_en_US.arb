@@ -1,0 +1,16 @@
+{
+  "cannotAddVehicleToPrice": "Cannot Add Vehicle To Price",
+  "clearSignature": "Clear signature",
+  "colour": "Color",
+  "country": "Country",
+  "countryUK": "UK",
+  "countryUS": "US",
+  "faCurrencySymbolName": "dollarSign",
+  "invalidPostcode": "The Postcode entered is invalid.",
+  "kerbWeight": "Curb Weight",
+  "pleaseEnterAPartyNameOrAnAccountNumber": "Please enter a Party Name or an Account Number",
+  "saveSignature": "Save signature",
+  "selectYardOrEnterPostcode": "Please, select a yard or enter a valid postcode before adding a vehicle.",
+  "validateVehicleDetails": "Validate Vehicle Details",
+  "vrnsNotFound": "VINs not found"
+}

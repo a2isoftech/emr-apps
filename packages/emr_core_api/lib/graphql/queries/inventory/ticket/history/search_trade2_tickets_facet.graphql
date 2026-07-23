@@ -1,0 +1,16 @@
+query SearchTrade2TicketsFacet($input: SearchTrade2TicketsInput!) {
+  searchTrade2TicketsFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        name
+        range
+        count
+        min
+        max
+        average
+      }
+    }
+  }
+}

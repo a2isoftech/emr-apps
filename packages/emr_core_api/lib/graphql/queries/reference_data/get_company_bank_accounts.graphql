@@ -1,0 +1,29 @@
+query GetCompanyBankAccounts(
+  $after: String,
+  $before: String,
+  $first: Int,
+  $last: Int,
+  $input: CompanyBankAccountsSearchInput!
+  $order: [CompanyBankAccountSortInput!]) {
+  companyBankAccounts(
+    after: $after
+    before: $before
+    first: $first
+    last: $last,
+    order: $order
+    input: $input){
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+       ...CompanyBankAccountFragment
+      }
+    }
+  }
+}

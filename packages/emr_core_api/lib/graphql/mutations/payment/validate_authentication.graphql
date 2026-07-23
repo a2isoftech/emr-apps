@@ -1,0 +1,6 @@
+mutation ValidateAuthentication($yardCode: String!, $userName: String!, $password: String!) {
+  validateAuthentication(yardCode: $yardCode, userName: $userName, password: $password) {
+    isSuccess
+    errorMessage
+  }
+}

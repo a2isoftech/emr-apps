@@ -1,0 +1,7 @@
+mutation UpdateDevices ($input : UpdateDevicesInput! ) {
+  updateDevices(
+    input: $input
+  ) {   
+    ...DevicesFragment
+  }
+}

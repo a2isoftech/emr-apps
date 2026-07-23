@@ -1,0 +1,152 @@
+fragment WeighbridgeProfileFragment on WeighbridgeProfile {
+  id
+  yardId
+  name
+  yardCode
+  allowedProductIds
+  allowedProducts {
+    ...ProductFragment
+  }
+  scales {
+    name
+    url
+    assetCode
+    scaleNumber
+    cameras {
+      name
+      imageUrl
+      videoUrl
+      overlayUrl
+      userName
+      password
+    }
+  }
+  knownTares {
+    value {
+      uom
+      value
+      isRate
+      id
+      mtValue
+    }
+    serialNo
+    comments
+    expiryDate
+  }
+  knownTareConfigurations {
+    saveKnownTares
+    knownTareExpiryDays
+  }
+  ticketPrints {
+    name
+    headerText
+    numberOfCopies
+    printer {
+      name
+      url
+    }
+    printForTicketDirections
+    ticketPrintType
+    templateName
+    showWeightMode
+  }
+  active
+  yardInformation {
+    wmlExemptionNo
+    wasteCarrierRegNo
+  }
+  currency
+  dirtDeductionUom
+  territoryCode
+  enableManualWeight
+  enableManualTareWeight
+  enableCheckWeight
+  publishTicketToTrade
+  allowRollingWeights
+  enableCreateNewLine
+  enableTransferLine
+  enablePublicWeigh
+  weighbridgeUom
+  rounding
+  pricingServicesConfig {
+    businessAccount
+    interDepot
+    retailAccount
+  }
+  enableContainerTicket
+  allowAccountCreation
+  ticketHeaderSearchScope {
+    accounts
+    tickets
+    transportJobs
+    contracts
+    elvQuotes
+  }
+  techemetCatSettings {
+    enabled
+    defaultWeight
+    defaultWeightUom
+    defaultProductId
+    defaultLocationId
+    defaultProduct {
+      ...ProductFragment
+    }
+    defaultLocation {
+      ...LocationFragment
+    }
+  }
+  elvSettings {
+    productId
+    product {
+      ...ProductFragment
+    }
+    locationId
+    location {
+      ...LocationFragment
+    }
+    enforceELVInspectionForLeadSources
+  }
+  cameraPreviewParameters
+  weighbridgeGroup
+  canMode {
+    enabled
+    productId
+    locationId
+    product {
+      ...ProductFragment
+    }
+    location {
+      ...LocationFragment
+    }
+  }
+  ewcControl {
+    ...EwcControlFragment
+  }
+  weighbridgeId
+  environment
+  instrumentationKey
+  piPrintApiKey
+  enableTicketSplit
+  showStockAsProduct
+  printTicketComments
+  printCheckWeight
+  vehicleDetailsRequired
+  enableWeighbridgePay
+  hwcnLevel
+  autoHulkAffidavit {
+    enabled
+    allowedProductIds
+    allowedProducts {
+      id
+      code
+      description
+      active
+      created {
+        userName
+      }
+      modified {
+        userName
+      }
+    }
+  }
+}

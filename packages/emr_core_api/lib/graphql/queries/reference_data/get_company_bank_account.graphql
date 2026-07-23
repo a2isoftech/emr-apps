@@ -1,0 +1,6 @@
+query GetCompanyBankAccount (  $input: CompanyBankAccountSearchInput!) {
+  companyBankAccount(
+    input:  $input ) {
+   ...CompanyBankAccountFragment
+  }
+}

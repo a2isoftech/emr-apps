@@ -1,0 +1,3 @@
+mutation deleteDirectQuery($id: String!) {
+  deleteDirectQuery(id: $id)
+}

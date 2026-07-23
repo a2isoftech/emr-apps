@@ -1,0 +1,23 @@
+query ValidateAdvanceWithPaymentMethod(
+  $paymentMethod : PaymentMethod!
+  $advanceId : String!
+  $payingYardId: String!
+  $splitPaymentBreakups : [SplitPaymentBreakupInput!])
+{
+  validateAdvanceWithPaymentMethod(
+    paymentMethod:$paymentMethod,
+    advanceId: $advanceId,
+    payingYardId: $payingYardId,
+    splitPaymentBreakups: $splitPaymentBreakups)
+  {
+        ... PaymentRuleResultFields
+  }
+  paymentDeductionsForAdvance(
+    paymentMethod: $paymentMethod,
+    advanceId: $advanceId,
+    payingYardId: $payingYardId,
+    splitPaymentBreakups: $splitPaymentBreakups)
+  {
+    ... PaymentDeductionFields
+  }
+}

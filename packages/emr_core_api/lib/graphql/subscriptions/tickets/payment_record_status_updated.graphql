@@ -1,0 +1,6 @@
+subscription PaymentRecordStatusUpdated {
+    paymentRecordStatusUpdated {
+        id
+        status
+    }
+}

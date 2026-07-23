@@ -1,0 +1,44 @@
+query GetContracts($input: GetContractsFlattenedInput!) {
+  contracts(input: $input) {
+    pageInfo {
+      hasNextPage
+      endCursor
+      hasPreviousPage
+      startCursor
+      __typename
+    }
+    totalCount
+    nodes {
+      accountDetails {
+        id
+        name
+        code
+      }
+      references {
+        internal
+        customer
+      }
+      contractOrderBookTypeName
+      status
+      pricingBasis
+      noOfLines
+      contractType
+      lines {
+        deliveryMethod
+        productDetails {
+          id
+          code
+        }
+      }
+    }
+  }
+  contractsFacets(input: $input) {
+    value {
+      name
+      values {
+        count
+        range
+      }
+    }
+  }
+}

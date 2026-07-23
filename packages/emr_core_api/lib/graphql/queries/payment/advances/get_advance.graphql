@@ -1,0 +1,165 @@
+query GetAdvance($input: GetAdvanceInput!) {
+  advance(input: $input) {
+    id
+    accountId
+    account {
+      id
+      code
+      name
+      type
+      accountContacts {
+        key
+        value {
+          title
+          firstName
+          lastName
+          dateOfBirth
+          contactTypes
+          contactPreferences {
+            mobile {
+              enabled
+              value
+            }
+            email {
+              enabled
+              value
+            }
+          }
+        }
+      }
+    }
+    companyId
+    company {
+      id
+      code
+      shortName
+      fullName
+    }
+    handlingYardId
+    handlingYard {
+      ...YardFragment
+    }
+    payableYardId
+    payableYard {
+      ...YardFragment
+    }
+    paymentAmount {
+      amount
+      currencyCode
+      exchangeRate
+    }
+    reason
+    term {
+      ... on FixedTermDetails {
+        amount
+        termType
+      }
+      ... on PartialPayTermDetails {
+        termType
+        ticketIds
+        tickets {
+          id
+          yardCode
+          ticketNumber
+          ticketCategory
+          ticketStatus
+          ticketType
+          price
+          lines {
+            lineNumber
+            deductions {
+              typeId
+              mediaAssets {
+                url
+                sasUrl
+                sasThumbnailUrl
+              }
+              isTareFromPreviousWeight
+              hasSeenZero
+            }
+            mediaAssets {
+              url
+              sasUrl
+              sasThumbnailUrl
+            }
+            totalCostImpact
+            elvQuoteIds
+            isActive
+            provPrice
+            confPrice
+            price
+            isGrossFromPreviousWeight
+            hasSeenZero
+          }
+          mediaAssets {
+            url
+            sasUrl
+            sasThumbnailUrl
+          }
+          inspectionMedia {
+            url
+            sasUrl
+            sasThumbnailUrl
+          }
+          currency
+          created {
+            at
+            userInfoId
+            userName
+          }
+        }
+      }
+      ... on PercentageTermDetails {
+        amount
+        percentage
+        termType
+      }
+    }
+    allowFlexiblePay
+    paymentMethod
+    paidInFullDueDate
+    arrangedByUserId
+    arrangedByUser {
+      allAccountAccess
+      azureAdGroups
+      azureUserId
+      clientCredentials
+      cmpCode
+      codaUserCode
+      companyAccess
+      defaultDepot
+      defaultOrderBookTypeId
+      defaultTerritory
+      defaultTimeZoneId
+      directReports
+      emailAddress
+      id
+      name
+      partyAccess
+      permissions
+      t2UserId
+      username
+      yardAccess
+    }
+    reference
+    comments {
+      content
+      created {
+        at
+        userInfoId
+        userName
+      }
+    }
+    paymentInfo {
+      outstandingBalance
+      transactionDetails {
+        at
+        amount
+        paymentRecordId
+        transactionType
+      }
+    }
+    status
+    offsetStatus
+  }
+}

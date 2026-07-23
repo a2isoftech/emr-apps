@@ -1,0 +1,85 @@
+query GetSignupModelForProspect{
+  prospect{
+    accountNumber:code
+    name    
+    originatingCountry
+    industryGroups {
+      trader
+      supplier
+    }
+    celAgreement {
+      agreementDate
+      expiryDate
+    }       
+     contacts {
+      key
+      value {
+        firstName
+        middleName
+        lastName
+        contactPreferences {
+          mobile {
+            value
+            enabled
+          }
+          email {
+            value
+            enabled
+          }
+          phone {
+            value
+            enabled
+          }
+          post {
+            value
+            enabled
+          }
+          fax {
+            value
+            enabled
+          }
+        }
+        signature {
+          url
+        }
+        proofOfAddress {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        proofOfIdentification {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        dateOfBirth
+        contactTypes
+        addressKey
+      }
+    }    
+    bankAccounts {
+      accountHolderName
+      accountNumber
+      sortCode
+      bankName      
+    }
+    defaultYardCode
+    addresses{
+      value{
+        address1
+        address2
+        address3
+        postCode
+        countryCode
+      }
+    } 
+  }
+}

@@ -1,0 +1,76 @@
+query GetInProgressJobs(
+  $firstIn: Int
+  $afterIn: String
+  $lastIn: Int
+  $beforeIn: String
+  $yardCode: String!
+  $startDate: DateTime
+  $endDate: DateTime
+  $filterForUser: Boolean
+  $assetCode: String
+  $jobId: String
+) {
+  jobFormsForYard(
+    yardCode: $yardCode
+    startDate: $startDate
+    endDate: $endDate
+    filterForUser: $filterForUser
+    assetCode: $assetCode
+    jobId: $jobId
+  ) {
+    inProgress(
+      first: $firstIn
+      after: $afterIn
+      last: $lastIn
+      before: $beforeIn
+    ) {
+      nodes {
+        assetCode
+        assetName
+        scheduledItemId
+        depotNo
+        id
+        jobType
+        jobTypeVariant
+        startedBy
+        startedDate
+        status
+        submittedBy
+        submittedDate
+        isDigitalSignatureRequired
+        template {
+          description
+          id
+          templateId
+          title
+          version
+          referenceId
+          isDigitalSignatureRequired
+          isEmailNotificationRequired
+          sendEmailOnFailedQuestions
+          emailIds
+          assignFailedQuestionToTeam
+          assignFailedQuestionToTeamId
+        }
+        templateVersionId
+        workOrderId
+        workOrderDescription
+        originalDescription
+        jobTrade
+        assignedTo
+        yardCode
+        scheduleItemType
+        assignedToTeam
+        assignedToTeamId
+        category
+        jobPriority
+        notes
+      }
+      pageInfo {
+        hasNextPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+}

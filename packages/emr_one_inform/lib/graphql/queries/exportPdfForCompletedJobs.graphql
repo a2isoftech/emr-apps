@@ -1,0 +1,5 @@
+query ExportPdfForCompletedJobs($filter: ExportPdfForCompletedJobsFilterInput!){
+    exportPdfForCompletedJobs(filter: $filter){
+        zipFileAsBase64
+    }
+}

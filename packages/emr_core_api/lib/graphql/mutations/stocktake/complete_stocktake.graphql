@@ -1,0 +1,10 @@
+mutation CompleteStocktake($id: String!) {
+  completeStockTake(id: $id) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

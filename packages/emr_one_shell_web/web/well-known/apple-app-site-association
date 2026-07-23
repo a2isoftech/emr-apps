@@ -1,0 +1,25 @@
+{
+    "applinks": {
+        "details": [
+            {
+                "appIDs": [
+                    "3K733FWXE7.com.emrgroup.emrone.nativeshell.dev",
+                    "3K733FWXE7.com.emrgroup.emrone.nativeshell.beta",
+                    "3K733FWXE7.com.emrgroup.emrone.nativeshell"
+                ],
+                "components": [
+                    {
+                        "/": "/*",
+                        "comment": "Matches any URL"
+                    }
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": []
+    },
+    "appclips": {
+        "apps": []
+    }
+}

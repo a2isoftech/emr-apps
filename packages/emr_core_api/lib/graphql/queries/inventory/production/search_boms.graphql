@@ -1,0 +1,34 @@
+query SearchBoms(
+  $inputQuery: SearchBomInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+) {
+  searchBoms(
+    input: $inputQuery
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+  ) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      title
+      inputProducts {
+        productCode
+      }
+      outputProducts {
+        productCode
+      }
+      active
+    }
+  }
+}

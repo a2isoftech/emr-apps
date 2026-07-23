@@ -1,0 +1,11 @@
+mutation AddInspectionComment($input: TicketInspectionInput!) {
+  addInspectionComment(input: $input) {
+    content
+    created {
+      at
+      user {
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+mutation UpdateCat(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $partKey: UUID!
+  $partLocation: PartLocation!
+  $classification: CatalyticConverterClassification!
+) {
+  updateCatalyticConverter(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      partKey: $partKey
+      classification: $classification
+      partLocation: $partLocation
+    }
+  ) {
+    ... on CatalyticConverterForInspectionResult {
+      catalyticConverter {
+        ...CatalyticConverterFields
+      }
+      price {
+        price
+      }
+    }
+    ...InspectionErrorFields
+  }
+}

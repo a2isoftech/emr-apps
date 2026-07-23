@@ -1,0 +1,31 @@
+mutation CreateUser(
+  $id: String!
+  $firstName: String!
+  $lastName: String!
+  $emailAddress: String!
+  $employeeNumber: String!
+  $jobTitle: String!
+  $territoryIds: [String!]!
+  $defaultYardId: String!
+  $jobRoleIds: [String!]!
+) {
+  createUser(
+    input: {
+      id: $id
+      firstName: $firstName
+      lastName: $lastName
+      emailAddress: $emailAddress
+      employeeNumber: $employeeNumber
+      jobTitle: $jobTitle
+      territoryIds: $territoryIds
+      defaultYardId: $defaultYardId
+      jobRoleIds: $jobRoleIds
+      externalIds: []
+    }
+  ) {
+    ... on CreateUserError {
+      message
+    }
+    ...UserFragment
+  }
+}

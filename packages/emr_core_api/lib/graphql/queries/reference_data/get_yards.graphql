@@ -1,0 +1,9 @@
+query GetYards($query: String!, $territoryCodes: [String!]!) {
+  yards(input: { query: $query, territoryCodes: $territoryCodes }) {
+    edges {
+      node {
+       ...YardFragment
+      }
+    }
+  }
+}

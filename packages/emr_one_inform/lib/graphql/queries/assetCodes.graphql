@@ -1,0 +1,14 @@
+query AssetCodes($code: String!) {
+    territory(code: $code) {
+        yards {
+            yardCode
+            name
+            assets {
+                assetCode
+                depotNo
+                name
+                yardCode
+            }
+        }
+    }
+}

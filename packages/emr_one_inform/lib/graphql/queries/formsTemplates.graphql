@@ -1,0 +1,6 @@
+query FormsTemplates {
+    formTemplates {
+        id
+        title
+    }
+}

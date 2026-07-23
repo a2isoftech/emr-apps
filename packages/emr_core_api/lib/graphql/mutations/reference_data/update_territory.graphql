@@ -1,0 +1,26 @@
+mutation UpdateTerritory(
+  $id: String!
+  $name: String!
+  $uomId: Int!
+  $defaultCompanyId: String!
+  $currencyCode: String!
+  $code: String!
+  $active: Boolean!
+) {
+  updateTerritory(
+    input: {
+      id: $id
+      name: $name
+      uomId: $uomId
+      defaultCompanyId: $defaultCompanyId
+      currencyCode: $currencyCode
+      code: $code
+      active: $active    
+    }
+  ) {
+    ...TerritoryFragment
+    defaultCompany {
+      ...CompanyFragment
+    }
+  }
+}

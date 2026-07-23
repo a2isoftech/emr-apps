@@ -1,0 +1,5 @@
+mutation AddPartsToVehicle($input: VehiclePartsActionInput!){
+    addPartsToVehicle(input: $input){
+        ...VehicleFields
+    }
+}

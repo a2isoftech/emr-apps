@@ -1,0 +1,101 @@
+query AccountSearch(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: AccountsSearchInput!
+  $where: AccountFilterInput
+  $order: [AccountSortInput!]
+) {
+  searchAccounts(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+    where: $where
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      name
+      code
+      type
+      accountAddresses {
+        key
+        address1
+        address2
+        address3
+        address4
+        address5
+        address6
+        postCode
+      }
+      accountContacts {
+        key
+        value {
+          title
+          contactTypes
+          firstName
+          lastName
+          proofOfAddress {
+            validTo
+            type
+            subType
+            sasUrl
+          }
+          proofOfIdentification {
+            validTo
+            type
+            subType
+            sasUrl
+          }
+          contactPreferences {
+            email {
+              value
+              enabled
+              __typename
+            }
+            mobile {
+              value
+              enabled
+              __typename
+            }
+            phone {
+              value
+              enabled
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+      }
+      locations {
+        code
+        name
+        addressKey
+      }
+      primaryManager {
+        name
+      }
+      industryGroup
+      accountStatus
+      managers{
+        value{
+          name
+          userInfo{
+            emailAddress
+          }
+        }
+      }
+    }
+  }
+}

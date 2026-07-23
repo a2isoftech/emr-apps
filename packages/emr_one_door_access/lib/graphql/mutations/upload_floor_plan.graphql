@@ -1,0 +1,5 @@
+mutation UploadFloorPlan($file: Upload!) {
+  uploadFloorPlan(file: $file) {
+    url
+  }
+}

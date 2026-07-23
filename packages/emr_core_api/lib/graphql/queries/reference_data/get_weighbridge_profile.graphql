@@ -1,0 +1,8 @@
+query GetWeighbridgeProfile($id: String!) {
+  weighbridgeProfile(input: { id: $id }) {
+    changeVector
+    entity {
+    ...WeighbridgeProfileFragment
+    }
+  }
+}

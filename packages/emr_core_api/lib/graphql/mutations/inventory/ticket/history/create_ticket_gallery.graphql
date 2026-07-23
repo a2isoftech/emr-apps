@@ -1,0 +1,17 @@
+mutation CreateTicketGallery($input: CreateTicketGalleryInput!) {
+  createTicketGallery(input: $input) {
+    createdBy
+    createdDate
+    id
+    title
+    excludedImageUrls
+    publicUrl
+    tickets {
+      ...Trade2TicketFields
+      mediaAssets {
+        url
+        type
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+fragment YardFragment on Yard {
+    active
+    addressLine1
+    addressLine2
+    addressLine3
+    addressLine4
+    addressLine5
+    addressLine6
+    companyCode
+    companyId
+    defaultRetailAccountPool
+    extendedProperties
+    id
+    managerIds
+    name
+    postCode
+    regionId
+    shortName
+    tags
+    telephone
+    territoryCode
+    territoryId
+    timeZoneId
+    wasteCarrierRegNo
+    wmlExemptionNo
+    yardCode    
+    company {
+      ...CompanyFragment
+    }
+    territory {
+      ...TerritoryFragment
+    }
+    created {
+      at
+      userInfoId
+      userName
+    }
+    geoLocation {
+      latitude
+      longitude
+    }
+    managers {
+      allAccountAccess
+      azureAdGroups
+      azureUserId
+      clientCredentials
+      cmpCode
+      codaUserCode
+      companyAccess
+      defaultDepot
+      defaultOrderBookTypeId
+      defaultTerritory
+      defaultTimeZoneId
+      directReports
+      emailAddress
+      id
+      name
+      partyAccess
+      permissions
+      t2UserId
+      username
+      yardAccess
+    }
+    modified {
+      at
+      userInfoId
+      userName
+    }
+    region {
+      id
+      name
+      parentRegionId
+    }
+    timezone {
+      displayName
+      timeZoneId
+    }   
+    promptForPhotoDefault
+    enforceIssueDateForUtilityBill
+    defaultPaymentMethod
+    blockExpiredUtilityBill
+    primaryCashierPaymentSystem
+    paymentMethods {
+          atm {
+            enabled
+            paymentMethod
+            rounding {
+              roundingType
+              value
+            }
+            maxUpperLimit
+          }
+          autoCheque {
+            enabled
+            enforceIdentification
+            logoPath
+            paymentMethod
+            bankCode
+            maxUpperLimit
+          }
+          autoChequeWithEncashmentAtm {
+            agent
+            commissionPercent
+            enabled
+            enforceIdentification
+            flatFeeThreshold
+            flatFeeValue
+            logoPath
+            minCommission
+            minDenomination
+            paymentMethod
+            bankCode
+            maxUpperLimit
+          }
+          autoChequeWithEncashmentCash {
+            agent
+            commissionPercent
+            enabled
+            enforceIdentification
+            flatFeeThreshold
+            flatFeeValue
+            logoPath
+            minCommission
+            minDenomination
+            paymentMethod
+            bankCode
+            maxUpperLimit
+          }
+          cash {
+            enabled
+            numberOfRemittancesToPrint
+            paymentMethod
+            maxUpperLimit
+          }
+          digitalWalletWithAtm {
+            commissionPercent
+            enabled
+            paymentMethod
+            rounding {
+              roundingType
+              value
+            }
+            maxUpperLimit
+          }
+          digitalWalletWithCash {
+            commissionPercent
+            enabled
+            paymentMethod
+            rounding {
+              roundingType
+              value
+            }
+            maxUpperLimit
+          }
+          fasterpay {
+            enabled
+            flatFeeValue
+            paymentMethod
+            bankCode
+            maxUpperLimit
+          }
+          manualCheque {
+            enabled
+            paymentMethod
+            maxUpperLimit
+          }
+          overnightFasterpay {
+            enabled
+            paymentMethod
+            bankCode
+            maxUpperLimit
+          }
+          secorePrepaid {
+            commissionPercent
+            enabled
+            paymentMethod
+            maxUpperLimit
+          }
+          splitPayment {
+            enabled
+            paymentMethod
+            maxUpperLimit
+          }
+        }
+}

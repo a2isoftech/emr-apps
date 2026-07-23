@@ -1,0 +1,13 @@
+query getProperty($territoryCode: String!, $assetCode: String!) {
+    assetProperty(territoryCode: $territoryCode, assetCode: $assetCode) {
+        assetCode
+        propertyValue
+        propertyMinValue
+        propertyMaxValue
+        active
+        checkBothMinMax
+        territoryCode
+        propertyKey
+        propertyKeyWithTerritory
+    }
+}

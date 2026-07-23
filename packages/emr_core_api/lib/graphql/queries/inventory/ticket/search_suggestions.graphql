@@ -1,0 +1,9 @@
+query searchSuggestions(
+  $searchText: String!
+  $searchPropertyType: TicketSearchPropertyType!
+) {
+  searchSuggestions(
+    searchText: $searchText
+    searchPropertyType: $searchPropertyType
+  )
+}

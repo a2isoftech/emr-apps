@@ -1,0 +1,7 @@
+query GetProductLines(
+  $query: String
+) {
+  productLines(
+    query: $query
+  )
+}

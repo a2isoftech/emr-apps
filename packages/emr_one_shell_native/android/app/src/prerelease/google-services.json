@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721173429994",
+    "project_id": "emrapps-prerelease",
+    "storage_bucket": "emrapps-prerelease.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721173429994:android:72c598057815af6a7fa193",
+        "android_client_info": {
+          "package_name": "com.emrgroup.emrone.nativeshell.prerelease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf6G6EQkRh_3QCeGpxV4P6_Dv2rG4hUhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

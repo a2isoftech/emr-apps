@@ -1,0 +1,3 @@
+ mutation SubmitPaymentRequestLegacy($paymentRequests : [TicketPaymentRequestInput!]!){
+    result : submitPaymentRequestLegacy(requests: $paymentRequests)
+  }

@@ -1,0 +1,3 @@
+fragment InspectionErrorFields on ElvInspectionError {
+  message
+}

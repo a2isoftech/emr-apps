@@ -1,0 +1,6 @@
+mutation SaveFavouriteSearchParameters($input: SaveSearchParametersInput!){
+  saveSearchParameters(input: $input) {
+    name
+    parameters
+  }
+}

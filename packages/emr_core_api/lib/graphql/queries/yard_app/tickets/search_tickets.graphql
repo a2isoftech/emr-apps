@@ -1,0 +1,73 @@
+query SearchTickets(
+  $input: SearchTicketsInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+  $order: [SearchTicketsSortInput!]
+) {
+  searchTickets(
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+    input: $input
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      ticketNumber
+      ticketType
+      containerNumber
+      yardCode
+      created {
+        at
+      }
+      account {
+        details {
+          primaryManager {
+            type
+            name
+          }
+        }
+        accountNumber
+        name
+      }
+      comments {
+        content
+      }
+      lines {
+        isActive
+        product {
+          code
+          description
+        }
+        lineNumber
+        grossWeight {
+          value
+          uom
+        }
+        inspectionDetails {
+          inspectionMedia {
+            url
+          }
+        }
+      }
+      transportDetails {
+        vehicleReg
+      }
+      inspectionMedia {
+        url
+      }
+      ticketStatus
+      serviceType
+    }
+  }
+}

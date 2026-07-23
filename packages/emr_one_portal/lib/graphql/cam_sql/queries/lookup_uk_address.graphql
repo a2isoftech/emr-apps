@@ -1,0 +1,10 @@
+query GetUkAddresses($postCode:String!){
+  lookupUKPostcode(location: $postCode) {
+    address1
+    address2
+    address3
+    address4
+    address5
+    address6
+  }
+}

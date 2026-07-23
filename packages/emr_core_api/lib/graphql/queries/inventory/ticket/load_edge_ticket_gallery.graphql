@@ -1,0 +1,26 @@
+query LoadEdgeTicketGallery($id: String!) {
+  loadEdgeTicketGalleryDocument(id: $id) {
+    changeVector
+    gallery:entity {
+      publicUrl
+      id
+      title
+      excludedImageUrls
+      tickets {
+        ...TicketFields
+      }
+      created{
+        at
+        userInfoId
+        userName
+      }
+      modified{
+        at
+        userInfoId
+        userName
+      }
+      tags
+      active
+    }
+  }
+}

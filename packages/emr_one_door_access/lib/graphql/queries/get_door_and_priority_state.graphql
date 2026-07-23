@@ -1,0 +1,11 @@
+query GetDoorAndPriorityState($accessControllerId: String!, $doorExternalId: String!){
+  doorAndPriorityState(accessControllerId: $accessControllerId, doorExternalId: $doorExternalId){
+    doorState{
+      doorMode      
+    }
+    priorityStates{
+      priorityLevel
+      doorAction
+    }
+  }
+}

@@ -1,0 +1,6 @@
+query GetPaymentRuleById(
+    $PaymentRuleId: String!) {
+    paymentRule(input: { id: $PaymentRuleId }) {
+        ...PaymentRuleFragment
+  }
+}

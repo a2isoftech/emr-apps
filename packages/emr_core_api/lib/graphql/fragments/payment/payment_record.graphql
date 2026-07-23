@@ -1,0 +1,43 @@
+fragment PaymentRecordFields on PaymentRecord {
+    paymentMethod
+    needAuthorization
+    authorizationDetails {
+      type
+      referenceId
+    }
+    id
+    tags
+    extendedProperties
+    active
+    created {
+      userInfoId
+      at
+      userName
+    }
+    yardCode
+    modified {
+      userInfoId
+      at
+      userName
+    }
+    ticketIds
+    
+  totalAmount
+  cashDeductions
+  roundingAdjustment
+  haulageCharge
+  advanceOffset
+  totalFee
+  roundingAdjustmentOnFee
+  payableAfterCostAndDeduction
+  payableAmount
+  paymentMethodDetails
+  status
+  paymentType
+  tickets {
+      ... TicketFields
+  }
+  paymentRecordItems{
+    ... PaymentRecordItemFields
+  }
+}

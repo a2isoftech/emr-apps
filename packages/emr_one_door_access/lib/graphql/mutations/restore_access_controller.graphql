@@ -1,0 +1,3 @@
+mutation RestoreAccessController($accessControllerId: String!){
+  restoreAccessController(accessControllerId: $accessControllerId)
+}

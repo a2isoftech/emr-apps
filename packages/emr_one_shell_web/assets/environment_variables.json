@@ -1,0 +1,43 @@
+{
+  "eo_endpoints__emailVerificationCallbackUrl": "https://portal-dev.emrgroup.com/emaillink",
+  "eo_endpoints__afrApiUrl": "https://emr-coreapi-dev.azurewebsites.net",
+  "eo_endpoints__coreApiUrl": "https://emr-coreapi-dev.azurewebsites.net/graphql",  
+  "eo_endpoints__doorAccessUrl": "https://emr-door-access-api-dev.azurewebsites.net/graphql",  
+  "errorCodes": {},
+  "titles": {
+    "Please Select": "",
+    "Mr": "Mr",
+    "Ms": "Ms",
+    "Miss": "Miss",
+    "Mrs": "Mrs"
+  },
+  "imageCompressionSettings": {
+    "minSizeForCompression": 200000,
+    "minWidth": 900,
+    "minHeight": 600,
+    "quality": 70,
+    "rotate": 0
+  },
+  "visitFrequencies": {
+    "How often do you plan to visit us...": "$unknown",
+    "Ad-hoc": "AD_HOC",
+    "Daily": "DAILY",
+    "Weekly": "WEEKLY",
+    "Bi-Weekly": "BI_WEEKLY",
+    "Monthly": "MONTHLY",
+    "Bi-Monthly": "BI_MONTHLY",
+    "Annually": "YEARLY"
+  },
+  "roles": {
+    "Please select your reason for creating an account...": "",
+    "Electrician": "ELECTRICIAN",
+    "General House Clearance": "PROPERTY_CLEARANCE",
+    "General Tradesperson": "TRADES_PERSON",
+    "Plumber": "PLUMBER",
+    "Scrap Collector": "SCRAPCOLLECTORS_DOOR_TRADE_A11",
+    "Vehicle Auctions": "VEHICLE_AUCTION",
+    "Vehicle Breakers": "VEHICLE_BREAKERS",
+    "Vehicle Recovery Operator": "VEHICLE_RECOVERY_OPERATOR",
+    "Vehicle Repair and MOT": "VEHICLE_REPAIR_AND_MOT_TESTING"
+  }
+}

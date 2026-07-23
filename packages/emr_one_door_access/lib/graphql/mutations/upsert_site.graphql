@@ -1,0 +1,10 @@
+mutation UpsertSite($input: UpsertSiteInput!){
+  upsertSite(input: $input){
+    createdOn
+    createdBy
+    modifiedOn
+    id
+    yardCode
+    name
+  }
+}

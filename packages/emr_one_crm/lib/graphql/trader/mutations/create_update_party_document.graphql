@@ -1,0 +1,6 @@
+mutation CreatePartyDocument($input : CreateOrUpdateDocumentsInput!){
+    createOrUpdateDocuments(createDocumentInput: $input){
+          information
+          modifiedEntityIds
+    }
+}

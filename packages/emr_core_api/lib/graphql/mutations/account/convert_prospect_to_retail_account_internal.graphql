@@ -1,0 +1,9 @@
+mutation ConvertProspectToRetailAccountInternal($accountCode: String!, $userId: String!){
+    convertProspectToRetailAccountInternal(accountCode: $accountCode, userId: $userId){
+      accountNumber
+      errors {
+        message
+        code
+      }
+    }
+  }

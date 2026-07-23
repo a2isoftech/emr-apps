@@ -1,0 +1,28 @@
+query SearchStocktakes(
+  $input: StocktakeSearchInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+  $order: [StocktakeSortInput!]
+) {
+  searchStocktakes(
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+    stocktakeSearchInput: $input
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      ...StocktakeSearchFields
+    }
+  }
+}

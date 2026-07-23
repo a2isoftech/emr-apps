@@ -1,0 +1,1513 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AccessController {
+  name: String!
+  site: String!
+  location: LatLong!
+  uri: String!
+  username: String!
+  externalId: String!
+  externalName: String!
+  createdOn: DateTime!
+  createdBy: String!
+  modifiedOn: DateTime
+  modifiedBy: String
+  accessPoints: [AccessPoint!]
+  schedules: [Schedule!]
+  doors: [Door!]!
+  id: String!
+  active: Boolean!
+}
+
+"A connection to a list of items."
+type AccessControllersConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [AccessControllersEdge!]
+  "A flattened list of the nodes."
+  nodes: [AccessController!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type AccessControllersEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: AccessController!
+}
+
+type AccessCredential {
+  accessControllerId: String!
+  accessPointId: String!
+  active: Boolean!
+  createdBy: String!
+  createdInDoorControllerOn: DateTime
+  createdOn: DateTime!
+  deletedInDoorControllerOn: DateTime
+  deletedOn: DateTime
+  externalId: String
+  groupId: String!
+  id: String!
+  modifiedBy: String
+  modifiedOn: DateTime
+  accessPoints: AccessPoint!
+  accessControllers: AccessController!
+  groups: Group!
+  users: User!
+  userId: String!
+}
+
+type AccessPoint {
+  externalId: String!
+  entity: String!
+  accessControllerId: String!
+  name: String!
+  createdOn: DateTime!
+  createdBy: String!
+  modifiedOn: DateTime
+  modifiedBy: String
+  events: [DoorAccessAttemptEventsIndexResult!]
+  schedules: [Schedule!]
+  "Resolves the group documents from the group IDs"
+  groups: [Group!]
+  restricted: Boolean!
+  failedAccessAlertSettings: FailedAccessAlertSettings
+  camera: AccessPointCamera
+  id: String!
+  active: Boolean!
+}
+
+type AccessPointCamera {
+  cameraName: String!
+  ipAddress: String!
+  rtspUrl: String!
+  snapshotUrl: String!
+  username: String
+  password: String
+  createdUtc: DateTime!
+}
+
+type AccessProfile {
+  externalId: String!
+  name: String!
+  description: String!
+  schedules: [String!]!
+}
+
+type AttributeItem {
+  type: String!
+  name: String!
+  value: String!
+}
+
+type Door {
+  externalId: String!
+  name: String!
+  description: String!
+  accessTime: String!
+  openTooLongTime: String!
+  preAlarmTime: String!
+  extendedAccessTime: String!
+  extendedOpenTooLongTime: String!
+  heartbeatInterval: String!
+  priorityConfiguration: DoorPriorityConfiguration
+  defaultPriority: String!
+  scheduleConfiguration: DoorScheduleConfiguration
+}
+
+type DoorAccessAttemptEventsIndexResult {
+  id: String!
+  rowId: Long!
+  accessControllerId: String!
+  siteId: String
+  siteName: String
+  utcTime: DateTime!
+  topic0: String
+  topic1: String
+  topic2: String
+  accessPointId: String
+  accessPointName: String
+  accessPointRestricted: Boolean
+  userId: String
+  name: String
+  email: String
+  cardNumber: String
+  rawCardNumber: String
+  accessResponse: String
+  snapshotUrl: String
+  snapshotReason: SnapshotReasonEnum
+}
+
+type DoorAndPriorityState {
+  doorState: DoorState!
+  priorityStates: [PriorityAction!]!
+}
+
+type DoorPriorityAction {
+  priorityLevel: String!
+  doorAction: String!
+}
+
+type DoorPriorityConfiguration {
+  externalId: String!
+  name: String!
+  defaultPriority: String!
+  doorPriorityAction: [DoorPriorityAction!]!
+}
+
+type DoorScheduleConfiguration {
+  externalId: String!
+  name: String!
+  description: String!
+  doorSchedule: [DoorScheduleItem!]!
+}
+
+type DoorScheduleItem {
+  priorityLevel: String!
+  scheduledState: [DoorScheduledState!]!
+}
+
+type DoorScheduledState {
+  scheduleToken: [String!]!
+  enterAction: String!
+}
+
+type DoorSearchIndexResult {
+  accessControllerId: String!
+  accessControllerName: String!
+  siteId: String
+  siteName: String
+  doorExternalId: String!
+  doorName: String!
+  priorityConfigId: String
+  priorityConfigName: String
+  defaultPriority: String
+  scheduleConfigId: String
+  scheduleConfigName: String
+}
+
+type DoorState {
+  doorMode: String!
+}
+
+type FailedAccessAlertSettings {
+  enabled: Boolean!
+  attemptThreshold: Int!
+  window: TimeSpan!
+  cooldown: TimeSpan!
+}
+
+type FloorPlan {
+  siteId: String!
+  imageUrl: String!
+  hotspots: [Hotspot!]!
+  createdOn: DateTime!
+  createdBy: String!
+  id: String!
+  name: String!
+  modifiedOn: DateTime
+  modifiedBy: String
+  active: Boolean!
+}
+
+type FloorPlanPayload {
+  url: String!
+}
+
+type Group {
+  azureId: String
+  name: String!
+  users: [String!]!
+  accessPoints: [KeyValuePairOfStringAndAccessProfile!]!
+  lastUpdatedFromAzureAdOn: DateTime
+  createdOn: DateTime!
+  createdBy: String!
+  id: String!
+  active: Boolean!
+  modifiedOn: DateTime
+  modifiedBy: String
+}
+
+"A connection to a list of items."
+type GroupsConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [GroupsEdge!]
+  "A flattened list of the nodes."
+  nodes: [Group!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GroupsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Group!
+}
+
+type Hotspot {
+  id: String!
+  name: String!
+  x: Float!
+  y: Float!
+  status: String!
+  accessPointId: String!
+  orderIndex: Int!
+}
+
+type KeyValuePairOfStringAndAccessProfile {
+  key: String!
+  value: AccessProfile!
+}
+
+type LatLong {
+  latitude: Decimal!
+  longitude: Decimal!
+}
+
+type Mutation {
+  upsertSite(input: UpsertSiteInput!): Site!
+    @authorize(policy: "Function:UpsertSite")
+  deleteSite(siteId: String!): Boolean!
+    @authorize(policy: "Function:DeleteSite")
+  restoreSite(siteId: String!): Boolean!
+    @authorize(policy: "Function:RestoreSite")
+  restrictAccessPoint(accessPointId: String!): Boolean!
+    @authorize(policy: "Function:RestrictAccessPoint")
+  permitAccessPoint(accessPointId: String!): Boolean!
+    @authorize(policy: "Function:PermitAccessPoint")
+  deleteAccessController(accessControllerId: String!): Boolean!
+    @authorize(policy: "Function:DeleteAccessController")
+  syncAccessPoints(accessControllerId: String!): Boolean!
+    @authorize(policy: "Function:SyncAccessPoints")
+  restoreAccessController(accessControllerId: String!): Boolean!
+    @authorize(policy: "Function:RestoreAccessController")
+  upsertFullDoorConfiguration(
+    upsertDoorConfiguration: UpsertFullDoorConfigurationInput!
+  ): Boolean! @authorize(policy: "Function:RestoreAccessController")
+  upsertPartialDoorConfiguration(
+    upsertDoorConfigurations: [UpsertPartialDoorConfigurationInput!]!
+  ): Boolean! @authorize(policy: "Function:RestoreAccessController")
+  seedAxisData: Boolean! @authorize(policy: "Function:SeedAxisData")
+  createAccessController(input: CreateAccessControllerInput!): Boolean!
+    @authorize(policy: "Function:CreateAccessController")
+  updateAccessController(
+    input: UpdateAccessControllerInput!
+  ): AccessController! @authorize(policy: "Function:UpdateAccessController")
+  pullNewGroupFromAD(groupId: String!): Boolean!
+    @authorize(policy: "Function:PullNewGroupFromAD")
+  linkGroupAndAccessPoint(input: CreateGroupAndAccessPointLinkInput!): Boolean!
+    @authorize(policy: "Function:LinkGroupAndAccessPoint")
+  deLinkGroupAndAccessPoint(input: DelinkGroupAndAccessPointInput!): Boolean!
+    @authorize(policy: "Function:DeLinkGroupAndAccessPoint")
+  createSchedule(input: CreateScheduleInput!): Boolean!
+    @authorize(policy: "Function:CreateSchedule")
+  unlockAccessPoint(input: UnlockAccessPointInput!): Boolean!
+    @authorize(policy: "Function:UnlockAccessPoint")
+  deleteCredential(accessCredentialId: String!): Boolean!
+    @authorize(policy: "Function:DeleteCredential")
+  restoreCredential(accessCredentialId: String!): Boolean!
+    @authorize(policy: "Function:RestoreCredential")
+  syncCredential(accessCredentialId: String!): Boolean!
+    @authorize(policy: "Function:SyncCredential")
+  uploadFloorPlan(file: Upload!): FloorPlanPayload!
+  saveFloorPlan(input: UpsertFloorPlanInput!): Boolean!
+    @authorize(policy: "Function:SaveFloorPlan")
+  deleteFloorPlan(floorPlanId: String!): Boolean!
+    @authorize(policy: "Function:DeleteFloorPlan")
+  broadcast(
+    title: String!
+    message: String!
+    notificationType: NotificationSeverityEnum!
+  ): Boolean! @authorize(policy: "Function:BroadcastNotification")
+  addCameraToAccessPoint(input: SaveAccessPointCameraInput!): AccessPoint!
+    @authorize(policy: "Function:PermitAccessPoint")
+  removeDoorControllerData(accessControllerId: String!): Boolean!
+    @authorize(policy: "Function:DeleteAccessController")
+  resetBackgroundWorkerSettings: Boolean! @authorize(policy: "Function:")
+  sendEmail(request: EmailMessageInput!): Boolean! @authorize
+  auditInImmudb: Boolean! @authorize
+  performCredentialComparisons: Boolean! @authorize
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+  "Indicates whether more edges exist following the set defined by the clients arguments."
+  hasNextPage: Boolean!
+  "Indicates whether more edges exist prior the set defined by the clients arguments."
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+}
+
+type PriorityAction {
+  priorityLevel: String!
+  doorAction: String!
+}
+
+type Query {
+  permmissions(forceRefresh: Boolean!): [String!]! @authorize
+  users(
+    userIds: [String!]
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: UserFilterInput
+    order: [UserSortInput!]
+  ): UsersConnection @authorize(policy: "Function:GetUsers")
+  allUsers(userIds: [String!]): [User!]! @authorize(policy: "Function:GetUsers")
+  groups(
+    groupIds: [String!]
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: GroupFilterInput
+    order: [GroupSortInput!]
+  ): GroupsConnection @authorize(policy: "Function:GetGroups")
+  allGroups(groupIds: [String!]): [Group!]!
+    @authorize(policy: "Function:GetAllGroups")
+  sites(
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: SiteFilterInput
+    order: [SiteSortInput!]
+  ): SitesConnection @authorize(policy: "Function:GetSites")
+  allSites: [Site!]! @authorize(policy: "Function:GetAllSites")
+  accessControllers(
+    siteId: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: AccessControllerFilterInput
+    order: [AccessControllerSortInput!]
+  ): AccessControllersConnection
+    @authorize(policy: "Function:GetAccessControllers")
+  searchAccessCredentials(
+    input: SearchAccessCredentialsInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: AccessCredentialFilterInput
+    order: [AccessCredentialSortInput!]
+  ): SearchAccessCredentialsConnection
+    @authorize(policy: "Function:GetAccessCredentials")
+  allAccessControllers(
+    siteId: String
+    accessControllerId: String
+  ): [AccessController!]! @authorize(policy: "Function:GetAllAccessControllers")
+  accessPoints(
+    siteId: String
+    accessControllerId: String
+    accessPointId: String
+  ): [AccessPoint!]! @authorize(policy: "Function:GetAccessPoints")
+  adGroups(searchQuery: String!): [Group!]!
+    @authorize(policy: "Function:GetADGroups")
+  searchDoorAccessAttempts(
+    input: SearchDoorAccessAttemptsInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: DoorAccessAttemptEventsIndexResultFilterInput
+    order: [DoorAccessAttemptEventsIndexResultSortInput!]
+  ): SearchDoorAccessAttemptsConnection
+    @authorize(policy: "Function:SearchDoorAccessAttempts")
+  searchDoorAccessAttemptSnapshots(
+    input: SearchDoorAccessAttemptsInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: DoorAccessAttemptEventsIndexResultFilterInput
+    order: [DoorAccessAttemptEventsIndexResultSortInput!]
+  ): SearchDoorAccessAttemptSnapshotsConnection
+    @authorize(policy: "Function:SearchDoorAccessAttempts")
+  searchScheduleUpdates(
+    input: SearchScheduleUpdateInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: ScheduleUpdateEventsIndexResultFilterInput
+    order: [ScheduleUpdateEventsIndexResultSortInput!]
+  ): SearchScheduleUpdatesConnection
+    @authorize(policy: "Function:SearchScheduleUpdates")
+  searchScheduleStateChanges(
+    input: SearchScheduleStateChangeInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: ScheduleStateChangeEventsIndexResultFilterInput
+    order: [ScheduleStateChangeEventsIndexResultSortInput!]
+  ): SearchScheduleStateChangesConnection
+    @authorize(policy: "Function:SearchScheduleUpdates")
+  schedules(
+    accessControllerId: String!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: ScheduleFilterInput
+    order: [ScheduleSortInput!]
+  ): SchedulesConnection @authorize(policy: "Function:GetSchedules")
+  allSchedules(accessControllerId: String!): [Schedule!]!
+    @authorize(policy: "Function:GetSchedules")
+  checkHealth: String! @authorize(policy: "Function:CheckHealth")
+  floorPlans(siteId: String!): [FloorPlan!]!
+    @authorize(policy: "Function:GetFloorPlans")
+  searchDoors(
+    input: SearchDoorInput!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    where: DoorSearchIndexResultFilterInput
+    order: [DoorSearchIndexResultSortInput!]
+  ): SearchDoorsConnection @authorize(policy: "Function:GetAccessControllers")
+  doorAndPriorityState(
+    accessControllerId: String!
+    doorExternalId: String!
+  ): DoorAndPriorityState @authorize(policy: "Function:GetAccessControllers")
+  sasUrl(fileName: String!): String!
+}
+
+type Schedule {
+  token: String!
+  name: String!
+  description: String!
+  scheduleDefinition: String!
+  attribute: [AttributeItem!]!
+  exceptionScheduleDefinition: String!
+  userFriendlyStrings: [String]
+}
+
+type ScheduleStateChangeEventsIndexResult {
+  rowId: Long!
+  accessControllerId: String!
+  accessControllerName: String
+  scheduleToken: String
+  scheduleName: String
+  siteId: String
+  siteName: String
+  utcTime: DateTime!
+  topic2: String
+  active: Boolean!
+  specialDay: Boolean!
+}
+
+type ScheduleUpdateEventsIndexResult {
+  rowId: Long!
+  accessControllerId: String!
+  accessControllerName: String
+  scheduleToken: String
+  siteId: String
+  siteName: String
+  utcTime: DateTime!
+  topic2: String
+}
+
+"A connection to a list of items."
+type SchedulesConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SchedulesEdge!]
+  "A flattened list of the nodes."
+  nodes: [Schedule!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SchedulesEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Schedule!
+}
+
+"A connection to a list of items."
+type SearchAccessCredentialsConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchAccessCredentialsEdge!]
+  "A flattened list of the nodes."
+  nodes: [AccessCredential!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchAccessCredentialsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: AccessCredential!
+}
+
+"A connection to a list of items."
+type SearchDoorAccessAttemptSnapshotsConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchDoorAccessAttemptSnapshotsEdge!]
+  "A flattened list of the nodes."
+  nodes: [DoorAccessAttemptEventsIndexResult!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchDoorAccessAttemptSnapshotsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DoorAccessAttemptEventsIndexResult!
+}
+
+"A connection to a list of items."
+type SearchDoorAccessAttemptsConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchDoorAccessAttemptsEdge!]
+  "A flattened list of the nodes."
+  nodes: [DoorAccessAttemptEventsIndexResult!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchDoorAccessAttemptsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DoorAccessAttemptEventsIndexResult!
+}
+
+"A connection to a list of items."
+type SearchDoorsConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchDoorsEdge!]
+  "A flattened list of the nodes."
+  nodes: [DoorSearchIndexResult!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchDoorsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DoorSearchIndexResult!
+}
+
+"A connection to a list of items."
+type SearchScheduleStateChangesConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchScheduleStateChangesEdge!]
+  "A flattened list of the nodes."
+  nodes: [ScheduleStateChangeEventsIndexResult!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchScheduleStateChangesEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: ScheduleStateChangeEventsIndexResult!
+}
+
+"A connection to a list of items."
+type SearchScheduleUpdatesConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SearchScheduleUpdatesEdge!]
+  "A flattened list of the nodes."
+  nodes: [ScheduleUpdateEventsIndexResult!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SearchScheduleUpdatesEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: ScheduleUpdateEventsIndexResult!
+}
+
+type Site {
+  yardCode: String!
+  name: String!
+  createdOn: DateTime!
+  createdBy: String!
+  id: String!
+  active: Boolean!
+  modifiedOn: DateTime
+  modifiedBy: String
+}
+
+"A connection to a list of items."
+type SitesConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [SitesEdge!]
+  "A flattened list of the nodes."
+  nodes: [Site!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SitesEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: Site!
+}
+
+type User {
+  id: ID!
+  azureId: String
+  name: String!
+  userName: String!
+  cardNumber: String!
+  externalId: String
+  events: [DoorAccessAttemptEventsIndexResult!]
+  groups: [Group!]
+  createdOn: DateTime!
+  createdBy: String!
+  active: Boolean!
+  modifiedOn: DateTime
+  modifiedBy: String
+}
+
+"A connection to a list of items."
+type UsersConnection {
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "A list of edges."
+  edges: [UsersEdge!]
+  "A flattened list of the nodes."
+  nodes: [User!]
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type UsersEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: User!
+}
+
+input AccessControllerFilterInput {
+  and: [AccessControllerFilterInput!]
+  or: [AccessControllerFilterInput!]
+  name: StringOperationFilterInput
+  site: StringOperationFilterInput
+  location: LatLongFilterInput
+  uri: StringOperationFilterInput
+  username: StringOperationFilterInput
+  password: StringOperationFilterInput
+  accessPoints: ListStringOperationFilterInput
+  doors: ListFilterInputTypeOfDoorFilterInput
+  externalId: StringOperationFilterInput
+  externalName: StringOperationFilterInput
+  createdOn: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  id: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  modifiedOn: DateTimeOperationFilterInput
+  modifiedBy: StringOperationFilterInput
+}
+
+input AccessControllerSortInput {
+  name: SortEnumType
+  site: SortEnumType
+  location: LatLongSortInput
+  uri: SortEnumType
+  username: SortEnumType
+  password: SortEnumType
+  externalId: SortEnumType
+  externalName: SortEnumType
+  createdOn: SortEnumType
+  createdBy: SortEnumType
+  id: SortEnumType
+  active: SortEnumType
+  modifiedOn: SortEnumType
+  modifiedBy: SortEnumType
+}
+
+input AccessCredentialFilterInput {
+  and: [AccessCredentialFilterInput!]
+  or: [AccessCredentialFilterInput!]
+  userId: StringOperationFilterInput
+  groupId: StringOperationFilterInput
+  accessPointId: StringOperationFilterInput
+  accessControllerId: StringOperationFilterInput
+  externalId: StringOperationFilterInput
+  deletedOn: DateTimeOperationFilterInput
+  createdInDoorControllerOn: DateTimeOperationFilterInput
+  deletedInDoorControllerOn: DateTimeOperationFilterInput
+  createdOn: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  id: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  modifiedOn: DateTimeOperationFilterInput
+  modifiedBy: StringOperationFilterInput
+}
+
+input AccessCredentialSortInput {
+  userId: SortEnumType
+  groupId: SortEnumType
+  accessPointId: SortEnumType
+  accessControllerId: SortEnumType
+  externalId: SortEnumType
+  deletedOn: SortEnumType
+  createdInDoorControllerOn: SortEnumType
+  deletedInDoorControllerOn: SortEnumType
+  createdOn: SortEnumType
+  createdBy: SortEnumType
+  id: SortEnumType
+  active: SortEnumType
+  modifiedOn: SortEnumType
+  modifiedBy: SortEnumType
+}
+
+input AccessProfileFilterInput {
+  and: [AccessProfileFilterInput!]
+  or: [AccessProfileFilterInput!]
+  externalId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  description: StringOperationFilterInput
+  schedules: ListStringOperationFilterInput
+}
+
+input AttributeItemFilterInput {
+  and: [AttributeItemFilterInput!]
+  or: [AttributeItemFilterInput!]
+  type: StringOperationFilterInput
+  name: StringOperationFilterInput
+  value: StringOperationFilterInput
+}
+
+input BooleanOperationFilterInput {
+  eq: Boolean
+  neq: Boolean
+}
+
+input CreateAccessControllerInput {
+  url: String!
+  username: String!
+  password: String!
+  siteId: String!
+  name: String!
+}
+
+input CreateGroupAndAccessPointLinkInput {
+  groupId: String!
+  accessPointIds: [String!]!
+  schedules: [String!]!
+}
+
+input CreateScheduleInput {
+  accessControllerId: String!
+  token: String!
+  scheduleName: String!
+  definition: String!
+}
+
+input DateTimeOperationFilterInput {
+  eq: DateTime
+  neq: DateTime
+  in: [DateTime]
+  nin: [DateTime]
+  gt: DateTime
+  ngt: DateTime
+  gte: DateTime
+  ngte: DateTime
+  lt: DateTime
+  nlt: DateTime
+  lte: DateTime
+  nlte: DateTime
+}
+
+input DecimalOperationFilterInput {
+  eq: Decimal
+  neq: Decimal
+  in: [Decimal]
+  nin: [Decimal]
+  gt: Decimal
+  ngt: Decimal
+  gte: Decimal
+  ngte: Decimal
+  lt: Decimal
+  nlt: Decimal
+  lte: Decimal
+  nlte: Decimal
+}
+
+input DelinkGroupAndAccessPointInput {
+  groupId: String!
+  accessPointIds: [String!]!
+}
+
+input DoorAccessAttemptEventsIndexResultFilterInput {
+  and: [DoorAccessAttemptEventsIndexResultFilterInput!]
+  or: [DoorAccessAttemptEventsIndexResultFilterInput!]
+  id: StringOperationFilterInput
+  rowId: LongOperationFilterInput
+  accessControllerId: StringOperationFilterInput
+  siteId: StringOperationFilterInput
+  siteName: StringOperationFilterInput
+  utcTime: DateTimeOperationFilterInput
+  topic0: StringOperationFilterInput
+  topic1: StringOperationFilterInput
+  topic2: StringOperationFilterInput
+  accessPointId: StringOperationFilterInput
+  accessPointName: StringOperationFilterInput
+  accessPointRestricted: BooleanOperationFilterInput
+  userId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  email: StringOperationFilterInput
+  cardNumber: StringOperationFilterInput
+  rawCardNumber: StringOperationFilterInput
+  accessResponse: StringOperationFilterInput
+  snapshotUrl: StringOperationFilterInput
+  snapshotReason: NullableOfSnapshotReasonEnumOperationFilterInput
+}
+
+input DoorAccessAttemptEventsIndexResultSortInput {
+  id: SortEnumType
+  rowId: SortEnumType
+  accessControllerId: SortEnumType
+  siteId: SortEnumType
+  siteName: SortEnumType
+  utcTime: SortEnumType
+  topic0: SortEnumType
+  topic1: SortEnumType
+  topic2: SortEnumType
+  accessPointId: SortEnumType
+  accessPointName: SortEnumType
+  accessPointRestricted: SortEnumType
+  userId: SortEnumType
+  name: SortEnumType
+  email: SortEnumType
+  cardNumber: SortEnumType
+  rawCardNumber: SortEnumType
+  accessResponse: SortEnumType
+  snapshotUrl: SortEnumType
+  snapshotReason: SortEnumType
+}
+
+input DoorFilterInput {
+  and: [DoorFilterInput!]
+  or: [DoorFilterInput!]
+  externalId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  description: StringOperationFilterInput
+  accessTime: StringOperationFilterInput
+  openTooLongTime: StringOperationFilterInput
+  preAlarmTime: StringOperationFilterInput
+  extendedAccessTime: StringOperationFilterInput
+  extendedOpenTooLongTime: StringOperationFilterInput
+  heartbeatInterval: StringOperationFilterInput
+  priorityConfiguration: DoorPriorityConfigurationFilterInput
+  defaultPriority: StringOperationFilterInput
+  scheduleConfiguration: DoorScheduleConfigurationFilterInput
+}
+
+input DoorPriorityActionFilterInput {
+  and: [DoorPriorityActionFilterInput!]
+  or: [DoorPriorityActionFilterInput!]
+  priorityLevel: StringOperationFilterInput
+  doorAction: StringOperationFilterInput
+}
+
+input DoorPriorityActionInput {
+  priorityLevel: String!
+  doorAction: String!
+}
+
+input DoorPriorityConfigurationFilterInput {
+  and: [DoorPriorityConfigurationFilterInput!]
+  or: [DoorPriorityConfigurationFilterInput!]
+  externalId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  defaultPriority: StringOperationFilterInput
+  doorPriorityAction: ListFilterInputTypeOfDoorPriorityActionFilterInput
+}
+
+input DoorPriorityConfigurationInput {
+  externalId: String!
+  name: String!
+  defaultPriority: String!
+  doorPriorityAction: [DoorPriorityActionInput!]!
+}
+
+input DoorScheduleConfigurationFilterInput {
+  and: [DoorScheduleConfigurationFilterInput!]
+  or: [DoorScheduleConfigurationFilterInput!]
+  externalId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  description: StringOperationFilterInput
+  doorSchedule: ListFilterInputTypeOfDoorScheduleItemFilterInput
+}
+
+input DoorScheduleConfigurationInput {
+  externalId: String!
+  name: String!
+  description: String!
+  doorSchedule: [DoorScheduleItemInput!]!
+}
+
+input DoorScheduleItemFilterInput {
+  and: [DoorScheduleItemFilterInput!]
+  or: [DoorScheduleItemFilterInput!]
+  priorityLevel: StringOperationFilterInput
+  scheduledState: ListFilterInputTypeOfDoorScheduledStateFilterInput
+}
+
+input DoorScheduleItemInput {
+  priorityLevel: String!
+  scheduledState: [DoorScheduledStateInput!]!
+}
+
+input DoorScheduledStateFilterInput {
+  and: [DoorScheduledStateFilterInput!]
+  or: [DoorScheduledStateFilterInput!]
+  scheduleToken: ListStringOperationFilterInput
+  enterAction: StringOperationFilterInput
+}
+
+input DoorScheduledStateInput {
+  scheduleToken: [String!]!
+  enterAction: String!
+}
+
+input DoorSearchIndexResultFilterInput {
+  and: [DoorSearchIndexResultFilterInput!]
+  or: [DoorSearchIndexResultFilterInput!]
+  accessControllerId: StringOperationFilterInput
+  accessControllerName: StringOperationFilterInput
+  siteId: StringOperationFilterInput
+  siteName: StringOperationFilterInput
+  doorExternalId: StringOperationFilterInput
+  doorName: StringOperationFilterInput
+  priorityConfigId: StringOperationFilterInput
+  priorityConfigName: StringOperationFilterInput
+  defaultPriority: StringOperationFilterInput
+  scheduleConfigId: StringOperationFilterInput
+  scheduleConfigName: StringOperationFilterInput
+}
+
+input DoorSearchIndexResultSortInput {
+  accessControllerId: SortEnumType
+  accessControllerName: SortEnumType
+  siteId: SortEnumType
+  siteName: SortEnumType
+  doorExternalId: SortEnumType
+  doorName: SortEnumType
+  priorityConfigId: SortEnumType
+  priorityConfigName: SortEnumType
+  defaultPriority: SortEnumType
+  scheduleConfigId: SortEnumType
+  scheduleConfigName: SortEnumType
+}
+
+input EmailMessageInput {
+  to: [String!]!
+  subject: String!
+  messageBody: String!
+  from: String!
+  cc: [String!]
+  bcc: [String!]
+  isHtmlMessageBody: Boolean!
+}
+
+input GroupFilterInput {
+  and: [GroupFilterInput!]
+  or: [GroupFilterInput!]
+  azureId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  users: ListStringOperationFilterInput
+  accessPoints: ListFilterInputTypeOfKeyValuePairOfStringAndAccessProfileFilterInput
+  lastUpdatedFromAzureAdOn: DateTimeOperationFilterInput
+  createdOn: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  id: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  modifiedOn: DateTimeOperationFilterInput
+  modifiedBy: StringOperationFilterInput
+}
+
+input GroupSortInput {
+  azureId: SortEnumType
+  name: SortEnumType
+  lastUpdatedFromAzureAdOn: SortEnumType
+  createdOn: SortEnumType
+  createdBy: SortEnumType
+  id: SortEnumType
+  active: SortEnumType
+  modifiedOn: SortEnumType
+  modifiedBy: SortEnumType
+}
+
+input HotspotInput {
+  id: String!
+  name: String!
+  x: Float!
+  y: Float!
+  status: String!
+  accessPointId: String
+  orderIndex: Int!
+}
+
+input KeyValuePairOfStringAndAccessProfileFilterInput {
+  and: [KeyValuePairOfStringAndAccessProfileFilterInput!]
+  or: [KeyValuePairOfStringAndAccessProfileFilterInput!]
+  key: StringOperationFilterInput
+  value: AccessProfileFilterInput
+}
+
+input LatLongFilterInput {
+  and: [LatLongFilterInput!]
+  or: [LatLongFilterInput!]
+  latitude: DecimalOperationFilterInput
+  longitude: DecimalOperationFilterInput
+}
+
+input LatLongSortInput {
+  latitude: SortEnumType
+  longitude: SortEnumType
+}
+
+input ListFilterInputTypeOfAttributeItemFilterInput {
+  all: AttributeItemFilterInput
+  none: AttributeItemFilterInput
+  some: AttributeItemFilterInput
+  any: Boolean
+}
+
+input ListFilterInputTypeOfDoorFilterInput {
+  all: DoorFilterInput
+  none: DoorFilterInput
+  some: DoorFilterInput
+  any: Boolean
+}
+
+input ListFilterInputTypeOfDoorPriorityActionFilterInput {
+  all: DoorPriorityActionFilterInput
+  none: DoorPriorityActionFilterInput
+  some: DoorPriorityActionFilterInput
+  any: Boolean
+}
+
+input ListFilterInputTypeOfDoorScheduleItemFilterInput {
+  all: DoorScheduleItemFilterInput
+  none: DoorScheduleItemFilterInput
+  some: DoorScheduleItemFilterInput
+  any: Boolean
+}
+
+input ListFilterInputTypeOfDoorScheduledStateFilterInput {
+  all: DoorScheduledStateFilterInput
+  none: DoorScheduledStateFilterInput
+  some: DoorScheduledStateFilterInput
+  any: Boolean
+}
+
+input ListFilterInputTypeOfKeyValuePairOfStringAndAccessProfileFilterInput {
+  all: KeyValuePairOfStringAndAccessProfileFilterInput
+  none: KeyValuePairOfStringAndAccessProfileFilterInput
+  some: KeyValuePairOfStringAndAccessProfileFilterInput
+  any: Boolean
+}
+
+input ListStringOperationFilterInput {
+  all: StringOperationFilterInput
+  none: StringOperationFilterInput
+  some: StringOperationFilterInput
+  any: Boolean
+}
+
+input LongOperationFilterInput {
+  eq: Long
+  neq: Long
+  in: [Long]
+  nin: [Long]
+  gt: Long
+  ngt: Long
+  gte: Long
+  ngte: Long
+  lt: Long
+  nlt: Long
+  lte: Long
+  nlte: Long
+}
+
+input NullableOfSnapshotReasonEnumOperationFilterInput {
+  eq: SnapshotReasonEnum
+  neq: SnapshotReasonEnum
+  in: [SnapshotReasonEnum]
+  nin: [SnapshotReasonEnum]
+}
+
+input SaveAccessPointCameraInput {
+  accessPointId: String!
+  cameraName: String!
+  ipAddress: String!
+  snapshotUrl: String!
+  username: String
+  password: String
+}
+
+input ScheduleFilterInput {
+  and: [ScheduleFilterInput!]
+  or: [ScheduleFilterInput!]
+  token: StringOperationFilterInput
+  name: StringOperationFilterInput
+  description: StringOperationFilterInput
+  scheduleDefinition: StringOperationFilterInput
+  attribute: ListFilterInputTypeOfAttributeItemFilterInput
+  exceptionScheduleDefinition: StringOperationFilterInput
+}
+
+input ScheduleSortInput {
+  token: SortEnumType
+  name: SortEnumType
+  description: SortEnumType
+  scheduleDefinition: SortEnumType
+  exceptionScheduleDefinition: SortEnumType
+}
+
+input ScheduleStateChangeEventsIndexResultFilterInput {
+  and: [ScheduleStateChangeEventsIndexResultFilterInput!]
+  or: [ScheduleStateChangeEventsIndexResultFilterInput!]
+  rowId: LongOperationFilterInput
+  accessControllerId: StringOperationFilterInput
+  accessControllerName: StringOperationFilterInput
+  scheduleToken: StringOperationFilterInput
+  scheduleName: StringOperationFilterInput
+  siteId: StringOperationFilterInput
+  siteName: StringOperationFilterInput
+  utcTime: DateTimeOperationFilterInput
+  topic2: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  specialDay: BooleanOperationFilterInput
+}
+
+input ScheduleStateChangeEventsIndexResultSortInput {
+  rowId: SortEnumType
+  accessControllerId: SortEnumType
+  accessControllerName: SortEnumType
+  scheduleToken: SortEnumType
+  scheduleName: SortEnumType
+  siteId: SortEnumType
+  siteName: SortEnumType
+  utcTime: SortEnumType
+  topic2: SortEnumType
+  active: SortEnumType
+  specialDay: SortEnumType
+}
+
+input ScheduleUpdateEventsIndexResultFilterInput {
+  and: [ScheduleUpdateEventsIndexResultFilterInput!]
+  or: [ScheduleUpdateEventsIndexResultFilterInput!]
+  rowId: LongOperationFilterInput
+  accessControllerId: StringOperationFilterInput
+  accessControllerName: StringOperationFilterInput
+  scheduleToken: StringOperationFilterInput
+  siteId: StringOperationFilterInput
+  siteName: StringOperationFilterInput
+  utcTime: DateTimeOperationFilterInput
+  topic2: StringOperationFilterInput
+}
+
+input ScheduleUpdateEventsIndexResultSortInput {
+  rowId: SortEnumType
+  accessControllerId: SortEnumType
+  accessControllerName: SortEnumType
+  scheduleToken: SortEnumType
+  siteId: SortEnumType
+  siteName: SortEnumType
+  utcTime: SortEnumType
+  topic2: SortEnumType
+}
+
+input SearchAccessCredentialsInput {
+  query: String
+  accessControllerIds: [String!]!
+  groupIds: [String!]!
+}
+
+input SearchDoorAccessAttemptsInput {
+  query: String
+  userIds: [String!]!
+  from: DateTime
+  to: DateTime
+  eventType: String
+  siteIds: [String!]!
+  accessControllerIds: [String!]!
+  syncEventsFirst: Boolean
+  unixUtcTime: Long
+}
+
+input SearchDoorInput {
+  query: String
+  siteIds: [String!]!
+  accessControllerIds: [String!]!
+}
+
+input SearchScheduleStateChangeInput {
+  query: String
+  from: DateTime
+  to: DateTime
+  siteIds: [String!]!
+  accessControllerIds: [String!]!
+}
+
+input SearchScheduleUpdateInput {
+  query: String
+  from: DateTime
+  to: DateTime
+  eventType: String
+  siteIds: [String!]!
+  accessControllerIds: [String!]!
+}
+
+input SiteFilterInput {
+  and: [SiteFilterInput!]
+  or: [SiteFilterInput!]
+  yardCode: StringOperationFilterInput
+  name: StringOperationFilterInput
+  createdOn: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  id: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  modifiedOn: DateTimeOperationFilterInput
+  modifiedBy: StringOperationFilterInput
+}
+
+input SiteSortInput {
+  yardCode: SortEnumType
+  name: SortEnumType
+  createdOn: SortEnumType
+  createdBy: SortEnumType
+  id: SortEnumType
+  active: SortEnumType
+  modifiedOn: SortEnumType
+  modifiedBy: SortEnumType
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+input UnlockAccessPointInput {
+  accessControllerId: String!
+  accessPointToken: String!
+  numberOfSeconds: Int!
+  reason: String!
+}
+
+input UpdateAccessControllerInput {
+  id: String!
+  name: String
+  username: String
+  password: String
+  siteId: String
+}
+
+input UpsertFloorPlanInput {
+  id: String!
+  siteId: String!
+  imageUrl: String!
+  name: String!
+  hotSpots: [HotspotInput!]!
+}
+
+input UpsertFullDoorConfigurationInput {
+  accessControllerId: String!
+  doorExternalId: String!
+  doorPriorityConfiguration: DoorPriorityConfigurationInput!
+  doorScheduleConfiguration: DoorScheduleConfigurationInput!
+}
+
+input UpsertPartialDoorConfigurationInput {
+  accessControllerId: String!
+  doorExternalId: String!
+  doorPriorityConfigurationToken: String!
+  doorScheduleConfigurationToken: String!
+}
+
+input UpsertSiteInput {
+  yardCode: String!
+  name: String!
+  id: String
+}
+
+input UserFilterInput {
+  and: [UserFilterInput!]
+  or: [UserFilterInput!]
+  azureId: StringOperationFilterInput
+  name: StringOperationFilterInput
+  userName: StringOperationFilterInput
+  cardNumber: StringOperationFilterInput
+  groups: ListStringOperationFilterInput
+  externalId: StringOperationFilterInput
+  createdOn: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  id: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  modifiedOn: DateTimeOperationFilterInput
+  modifiedBy: StringOperationFilterInput
+}
+
+input UserSortInput {
+  azureId: SortEnumType
+  name: SortEnumType
+  userName: SortEnumType
+  cardNumber: SortEnumType
+  externalId: SortEnumType
+  createdOn: SortEnumType
+  createdBy: SortEnumType
+  id: SortEnumType
+  active: SortEnumType
+  modifiedOn: SortEnumType
+  modifiedBy: SortEnumType
+}
+
+enum ApplyPolicy {
+  BEFORE_RESOLVER
+  AFTER_RESOLVER
+  VALIDATION
+}
+
+enum NotificationSeverityEnum {
+  ERROR
+  WARNING
+  INFORMATION
+  SUCCESS
+}
+
+enum SnapshotReasonEnum {
+  ACCESS_DENIED
+  RESTRICTED_ACCESS_POINT
+  UNKNOWN
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+directive @authorize(
+  "The name of the authorization policy that determines access to the annotated resource."
+  policy: String
+  "Roles that are allowed to access the annotated resource."
+  roles: [String!]
+  "Defines when when the authorize directive shall be applied.By default the authorize directives are applied during the validation phase."
+  apply: ApplyPolicy! = BEFORE_RESOLVER
+) repeatable on OBJECT | FIELD_DEFINITION
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime @specifiedBy(url: "https://www.graphql-scalars.com/date-time")
+
+"The built-in `Decimal` scalar type."
+scalar Decimal
+
+"The `Long` scalar type represents non-fractional signed whole 64-bit numeric values. Long can represent values between -(2^63) and 2^63 - 1."
+scalar Long
+
+"The `TimeSpan` scalar represents an ISO-8601 compliant duration type."
+scalar TimeSpan
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload

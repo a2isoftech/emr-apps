@@ -1,0 +1,10 @@
+query searchTicketSuggestions(
+  $searchText: String!
+) {
+  searchTicketSuggestions(
+    searchText: $searchText
+  ){
+    id
+    ticketNumber
+  }
+}

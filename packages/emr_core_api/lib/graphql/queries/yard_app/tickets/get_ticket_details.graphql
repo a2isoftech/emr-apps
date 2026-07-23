@@ -1,0 +1,69 @@
+query GetTicketDetails($input: String!) {
+  ticket(id: $input) {
+    id
+    yardCode
+    ticketType
+    containerNumber
+    created {
+      at
+    }
+    ticketNumber
+    account {
+      details {
+        primaryManager {
+          type
+          name
+        }
+      }
+      accountNumber
+      name
+    }
+    transportDetails {
+      vehicleReg
+    }
+    lines {
+      isActive
+      lineNumber
+      product {
+        code
+      }
+      inspectionDetails {
+        discrepancies
+        comments {
+          content
+          created {
+            user {
+              name
+              id
+            }
+            at
+          }
+        }
+        inspectionMedia {
+          inspectionNote
+          discrepantReason
+          url
+        }
+      }
+      grossWeight {
+        value
+        uom
+      }
+      netWeight {
+        value
+        uom
+      }
+      deductions {
+        weight {
+          value
+          uom
+        }
+      }
+    }
+    inspectionMedia {
+      inspectionNote
+      discrepantReason
+      url
+    }
+  }
+}

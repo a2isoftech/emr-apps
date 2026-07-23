@@ -1,0 +1,8 @@
+ mutation CreateAsset(
+  $input: CreateorUpdateAssetInput!
+) {
+  createAsset(input: $input) {
+    code
+    id
+  }
+}

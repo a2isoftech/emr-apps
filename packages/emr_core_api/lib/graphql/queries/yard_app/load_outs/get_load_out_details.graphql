@@ -1,0 +1,58 @@
+query GetLoadOutDetails($id: String, $ticketId: String) {
+  loadOut(id: $id, ticketId: $ticketId) {
+    id
+    ticketId
+    active
+    yardId
+    completed
+    containerId
+    containerSealDetails {
+      sealNumber
+      sealType
+      imagePath
+    }
+    containerSize
+    ticket {
+      id
+      ticketNumber
+      account {
+        accountNumber
+        name
+      }
+    }
+    preConditionQuestions {
+      sideIsIntact
+      backIsIntact
+      frontIsIntact
+      lockingIsIntact
+      cornerCastingIsIntact
+      roofIsIntact
+      floorIsIntact
+      otherIsIntact
+      maxPayloadIsSuitable
+      containerAgeIsSuitable
+    }
+    postConditionQuestions {
+      sideIsIntact
+      backIsIntact
+      frontIsIntact
+      lockingIsIntact
+      cornerCastingIsIntact
+      roofIsIntact
+      floorIsIntact
+      netWeightUnderPayload
+    }
+    containerImages {
+      heap
+      empty
+      halfLoadedWithContainerNumber
+      fullyLoaded
+      fullyLoadedOneDoorShut
+      fullyLoadedOneDoorShutRadiation
+      fullyLoadedBothDoorsShutSeals
+      leftSideQualityCheck
+      rightSideQualityCheck
+      additionalImages
+    }
+  }
+}

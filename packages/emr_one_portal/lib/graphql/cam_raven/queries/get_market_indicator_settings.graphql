@@ -1,0 +1,7 @@
+query GetMarketIndicatorSettings{
+    account{
+      settings{
+        marketIndicatorEnabled
+      }
+    }
+}

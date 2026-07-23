@@ -1,0 +1,27 @@
+fragment CompanyBankAccountFragment on CompanyBankAccount {
+    bankName
+    code
+    companyCode
+    companyId
+    defaultAccount
+    id
+    territoryCode
+    territoryId
+    company {
+      ...CompanyFragment
+    }
+    territory {
+      ...TerritoryFragment
+    }
+    sortCode
+    accountNumber
+    address {
+      address1
+      address2
+      address3
+      address4
+      address5
+      address6
+      postCode
+    }
+}

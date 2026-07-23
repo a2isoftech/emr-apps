@@ -1,0 +1,13 @@
+query SearchAccountsFacet($input: AccountsSearchInput!) {
+  searchAccountsFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        range
+        count
+        name
+      }
+    }
+  }
+}

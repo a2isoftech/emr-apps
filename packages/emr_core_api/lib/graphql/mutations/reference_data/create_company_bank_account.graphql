@@ -1,0 +1,7 @@
+mutation CreateCompanyBankAccount ($input : CreateCompanyBankAccountInput! ) {
+  createCompanyBankAccount(
+    input: $input
+  ) {
+    ...CompanyBankAccountFragment
+  }
+}

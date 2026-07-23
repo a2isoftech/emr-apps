@@ -1,0 +1,5 @@
+mutation saveAdvance($input: AdvanceInput!) {
+  saveAdvance(input: $input) {
+    id
+  }
+}

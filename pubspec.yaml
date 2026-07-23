@@ -1,0 +1,152 @@
+name: emrone_workspace
+
+environment:
+  sdk: ^3.11.0
+
+dev_dependencies:
+  ffigen: ^18.0.0
+  melos: ^7.5.1
+
+workspace:
+  - packages/emr_account_registration
+  - packages/emr_core_api
+  - packages/emr_one_accounts
+  - packages/emr_one_builders
+  - packages/emr_one_can_scale
+  - packages/emr_one_cashiersearch
+  - packages/emr_one_core
+  - packages/emr_one_crm
+  - packages/emr_one_data_management
+  - packages/emr_one_door_access
+  - packages/emr_one_eam
+  - packages/emr_one_elv_core
+  - packages/emr_one_elv_dismantling
+  - packages/emr_one_elv_inspection
+  - packages/emr_one_elv_quote_api
+  - packages/emr_one_elv_quotes
+  - packages/emr_one_elv_t2
+  - packages/emr_one_fire_register
+  - packages/emr_one_forms_engine
+  - packages/emr_one_inform
+  - packages/emr_one_inventory
+  - packages/emr_one_localisations
+  - packages/emr_one_piweigh
+  - packages/emr_one_portal
+  - packages/emr_one_portal_tickets
+  - packages/emr_one_prefs
+  - packages/emr_one_securitymgmt
+  - packages/emr_one_shell_native
+  - packages/emr_one_shell_web
+  - packages/emr_one_stock_take
+  - packages/emr_one_theme
+  - packages/emr_one_tickets
+  - packages/emr_one_transport
+  - packages/emr_one_wizard
+  - packages/emr_one_yard_app
+  - packages/emr_one_yard_logistics
+  - packages/emr_one_yard_management
+  - packages/emr_sharedtypes
+  - packages/portal_shell_web
+  - packages/psnop
+
+flutter:
+  uses-material-design: true
+
+melos:
+  scripts:
+    analyze: melos exec -- "dart analyze ."
+
+    # Clean Flutter packages.
+    clean:
+      run: melos exec -- \
+        "flutter clean"
+      description: Clean all Flutter packages in this project.
+
+    # Clean, restore packages and generate files.
+    fix:
+      run: melos clean &&
+        melos gen-l10n --no-select &&
+        melos bootstrap &&
+        melos coverage:generate-helpers --no-select
+      description: Clean, generate localisation files, bootstrap and create test helpers.
+
+    # Test all packages.
+    # From https://github.com/firebase/flutterfire/blob/master/melos.yaml
+    test:
+      run: melos run coverage:clean && melos run coverage:generate-helpers --no-select && melos run test:package --no-select && melos run coverage:combine
+      description: Test all packages and combine code coverage results.
+
+    # Test a specific package.
+    test:package:
+      run: |
+        melos exec -c 6 --fail-fast -- \
+          "flutter test --no-pub --coverage --reporter json | tojunit > TEST-RESULTS.xml"
+      description: Run `flutter test` for a specific package.
+      packageFilters:
+        dirExists: test
+        ignore:
+          - "*example*"
+
+    # Generate a generate_coverage_helper_test.dart file in each package so we can see the code
+    # coverage even for files not covered by unit tests.
+    coverage:generate-helpers:
+      run: melos exec -- dart "../../melos.dart coverage:generate-helpers"
+      packageFilters:
+        dirExists:
+          - test
+        ignore:
+          - "*example*"
+
+    # Combine code coverage results from multiple packages by running the bash script.
+    coverage:combine:
+      run: melos exec -c 1 --file-exists=coverage/lcov.info -- dart "../../melos.dart coverage:combine"
+
+    # Remove the coverage folder in preparation for a new test.
+    coverage:clean:
+      run: melos exec --scope "*emr_one_core" -- dart "../../melos.dart coverage:clean"
+
+    # Generate and view the code coverage report.
+    coverage:report:
+      run: melos exec --scope "*emr_one_core" -- dart "../../melos.dart coverage:report"
+
+    # Generate localisation files.
+    l10n:
+      run: melos gen-l10n --no-select
+      description: Generate localisation files for all packages in this project.
+
+    gen-l10n:
+      run: melos exec -- dart "../../melos.dart gen-l10n:copy-l10n-files" &&
+        melos exec -- "flutter gen-l10n"
+      packageFilters:
+        dirExists:
+          - "lib/l10n"
+      description: Generate localisation files.
+
+    # Build generated files.
+    generate:
+      run: melos exec -c 1 -- "dart run build_runner build --delete-conflicting-outputs"
+      description: Build all generated files for packages in this project.
+      packageFilters:
+        dependsOn:
+          - "build_runner"
+
+    # Cocoapods.
+    pod:install:
+      # `pod install` seems to need a 'real' `flutter pub get` to be run, so we do that and then run `melos bootstrap` afterwards to revert to how it was before.
+      # We only need to do this for the iOS package.
+      run: |
+        melos exec -- \
+          "flutter pub get && flutter precache --ios && cd ios && rm -rf Podfile.lock && pod install --repo-update" &&
+        melos bootstrap
+      packageFilters:
+        dirExists:
+          - "ios"
+      description: Run Cocoapods install for iOS projects.
+
+    pub:upgrade:
+      run: melos exec -- "flutter pub upgrade"
+      description: Run flutter pub upgrade in packages.
+
+    dart:fix:
+      run: melos exec -- "dart fix --apply"
+      description: Run dart fix in packages.

@@ -1,0 +1,30 @@
+query SearchInventory($input: SearchInventoryInput!, $first: Int, $last: Int, $before: String, $after: String, $order: [InventorySearchResultSortInput!]) {
+  searchInventory(first: $first, last: $last, before: $before, after: $after, input: $input, order: $order) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      code
+      description
+      active
+      weight{
+        uom
+        value
+        mtValue
+      }
+      value
+      rate{
+        uom
+        value
+        mtValue
+      }
+      yardId
+      productCode
+    }
+  }
+}

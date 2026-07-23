@@ -1,0 +1,5 @@
+mutation createDirectQuery($input: CreateDirectQueryInput!) {
+  createDirectQuery(input: $input) {
+    ...DirectQueryFields
+  }
+}

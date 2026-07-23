@@ -1,0 +1,14 @@
+query GetBankDetails{
+  account {
+      name
+      bankAccounts {
+        accountNumber
+        sortCode
+        reference
+        bankName
+        accountHolderName
+        ibanCode
+        swiftCode        
+      }
+    }  
+}

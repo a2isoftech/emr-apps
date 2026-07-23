@@ -1,0 +1,13 @@
+query CalculateEncashmentValues(
+  $amount: Decimal!
+  $yardId: String!
+  $paymentMethod: PaymentMethod!
+) {
+  calculateEncashmentValues(
+    amount: $amount
+    yardId: $yardId
+    paymentMethod: $paymentMethod
+  ) {
+    ... EncashmentValueFields
+  }
+}

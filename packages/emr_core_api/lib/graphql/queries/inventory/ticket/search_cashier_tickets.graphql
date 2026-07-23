@@ -1,0 +1,91 @@
+query searchCashierTickets(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: SearchCashierTicketsInput!
+  $order: [SearchTicketsSortInput!]
+  $includeAllWbSyncTasks: Boolean = false
+) {
+  searchCashierTickets(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      ...TicketFields
+      paymentValidationResult {
+        ...PaymentRuleResultFields
+      }
+      paymentRecord {
+        paymentMethod
+        cashDeductions
+        needAuthorization
+        authorizationDetails {
+          type
+          referenceId
+        }
+        paymentRecordItems{
+          ... PaymentRecordItemFields
+        }
+        id
+        tags
+        extendedProperties
+        active
+        created {
+          userInfoId
+          at
+          userName
+        }
+        yardCode
+        modified {
+          userInfoId
+          at
+          userName
+        }
+        ticketIds
+        tickets{
+          id 
+          price
+          provPrice
+          yardCode
+          ticketNumber
+          currency
+          account {
+            ...TicketAccountFields
+          }
+        }
+        totalAmount
+        cashDeductions
+        roundingAdjustment
+        haulageCharge
+        advanceOffset
+        totalFee
+        roundingAdjustmentOnFee
+        payableAfterCostAndDeduction
+        payableAmount
+        paymentMethodDetails
+        status
+        paymentPostingTask{
+          ...PaymentPostingTaskFields
+        }
+      }
+      syncWeighbridgeTicketTask @skip(if: $includeAllWbSyncTasks){
+        ... SyncWeighbridgeTicketTaskFields
+      }
+      syncWeighbridgeTicketTasks @include(if: $includeAllWbSyncTasks){
+        ... SyncWeighbridgeTicketTaskFields
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+fragment CollectedTag on CollectedTag {
+  id
+  effectiveTo
+  effectiveToEpoch
+  showToCustomer
+  fullyCharged
+  accountLocationKeys
+  __typename
+}

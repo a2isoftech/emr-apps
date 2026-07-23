@@ -1,0 +1,3 @@
+mutation LinkGroupAndAccessPoint($input: CreateGroupAndAccessPointLinkInput!){
+  linkGroupAndAccessPoint(input: $input)
+}

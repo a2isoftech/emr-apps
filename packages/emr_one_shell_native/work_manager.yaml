@@ -1,0 +1,21 @@
+# Run with `cd packages/emr_one_shell_native && dart run jnigen --config work_manager.yaml && cd ../..`
+#
+# You may need to run these in the android folder first:
+# cd android && ./gradlew clean build && cd ..
+
+android_sdk_config:
+  add_gradle_deps: true
+
+source_path:
+  - 'android/app/src/main/java'
+
+# log_level: all
+
+classes:
+  - com.emrgroup.emrone.nativeshell.WorkManagerCallback
+  - com.emrgroup.emrone.nativeshell.WorkManagerWrapper
+
+output:
+  dart:
+    path: ../emr_one_core/lib/services/emr_background_service/work_manager/java_bindings.dart
+    structure: single_file

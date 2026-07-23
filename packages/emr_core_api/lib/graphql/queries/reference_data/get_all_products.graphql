@@ -1,0 +1,35 @@
+query GetAllProducts(
+  $query: String
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $order: [ProductSortInput!]
+) {
+  products(
+    query: $query
+    first: $first 
+    after: $after
+    last: $last
+    before: $before
+    order: $order
+  ) {
+    totalCount
+    edges {
+      node {
+        active
+        description
+        id
+        code
+        itemType
+      }
+      cursor
+    }
+     pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

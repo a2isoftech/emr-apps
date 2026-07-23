@@ -1,0 +1,416 @@
+type Query {
+  tickets(
+    """
+    Returns the first _n_ elements from the list.
+    """
+    first: Int
+
+    """
+    Returns the elements in the list that come after the specified cursor.
+    """
+    after: String
+
+    """
+    Returns the last _n_ elements from the list.
+    """
+    last: Int
+
+    """
+    Returns the elements in the list that come before the specified cursor.
+    """
+    before: String
+    where: TicketFilterInput
+    order: [TicketSortInput!]
+  ): TicketsConnection
+}
+
+type Mutation {
+  createTicket(input: TicketInput!): Ticket
+  createCanScaleTicket(input: CreateCanScaleTicketInput!): Ticket
+  ticketsByDepot_CreateIndex: Boolean!
+  createHeap(input: HeapInput!): Heap
+  createHeapTransaction(input: HeapTransactionInput!): HeapTransaction
+  createHeaps_ByWeightIndex: Boolean!
+}
+
+type Subscription {
+  ticketClosed: Ticket!
+}
+
+input UomValueInput {
+  uom: Uom!
+  value: Decimal!
+}
+
+input TicketInput {
+  id: String
+  depotNo: String!
+  ticketNumber: Long!
+  ticketType: TicketType!
+  partyAccountNo: String!
+  lines: [TicketLineInput!]!
+  publishedToTrade: DateTime
+  ticketStatus: TicketStatus!
+  createdDate: DateTime!
+  createdBy: String!
+}
+
+enum Uom {
+  TONNES
+  POUNDS
+  GROSS_TON
+  NET_TONNE
+  KILOGRAMS
+  LOADS
+  EACH
+  LITRES
+  HOURS
+  HUNDREDWEIGHT
+}
+
+"""
+The built-in `Decimal` scalar type.
+"""
+scalar Decimal
+
+"""
+The `Long` scalar type represents non-fractional signed whole 64-bit numeric values. Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+enum TicketType {
+  INWARDS
+  OUTWARDS
+}
+
+input TicketLineInput {
+  grossWeight: UomValueInput!
+  gradeCode: String!
+  lineNumber: Int!
+  heapId: Int!
+  heapCode: String!
+  rate: UomValueInput!
+  weightSerial: String
+}
+
+"""
+The `DateTime` scalar represents an ISO-8601 compliant date time type.
+"""
+scalar DateTime
+
+enum TicketStatus {
+  OPEN
+  CLOSED
+}
+
+input TicketFilterInput {
+  and: [TicketFilterInput!]
+  or: [TicketFilterInput!]
+  id: StringOperationFilterInput
+  key: StringOperationFilterInput
+  depotNo: StringOperationFilterInput
+  yardCode: StringOperationFilterInput
+  ticketNumber: LongOperationFilterInput
+  ticketType: TicketTypeOperationFilterInput
+  partyAccountNo: StringOperationFilterInput
+  lines: ListFilterInputTypeOfTicketLineFilterInput
+  publishedToTrade: DateTimeOperationFilterInput
+  ticketStatus: TicketStatusOperationFilterInput
+  createdDate: DateTimeOperationFilterInput
+  createdBy: StringOperationFilterInput
+  price: DecimalOperationFilterInput
+}
+
+input TicketSortInput {
+  id: SortEnumType
+  key: SortEnumType
+  depotNo: SortEnumType
+  yardCode: SortEnumType
+  ticketNumber: SortEnumType
+  ticketType: SortEnumType
+  partyAccountNo: SortEnumType
+  publishedToTrade: SortEnumType
+  ticketStatus: SortEnumType
+  createdDate: SortEnumType
+  createdBy: SortEnumType
+  price: SortEnumType
+}
+
+"""
+A connection to a list of items.
+"""
+type TicketsConnection {
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  A list of edges.
+  """
+  edges: [TicketsEdge!]
+
+  """
+  A flattened list of the nodes.
+  """
+  nodes: [Ticket!]
+
+  """
+  Identifies the total count of items in the connection.
+  """
+  totalCount: Int!
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+input LongOperationFilterInput {
+  eq: Long
+  neq: Long
+  in: [Long]
+  nin: [Long]
+  gt: Long
+  ngt: Long
+  gte: Long
+  ngte: Long
+  lt: Long
+  nlt: Long
+  lte: Long
+  nlte: Long
+}
+
+input TicketTypeOperationFilterInput {
+  eq: TicketType
+  neq: TicketType
+  in: [TicketType!]
+  nin: [TicketType!]
+}
+
+input ListFilterInputTypeOfTicketLineFilterInput {
+  none: TicketLineFilterInput
+  some: TicketLineFilterInput
+  any: Boolean
+}
+
+input DateTimeOperationFilterInput {
+  eq: DateTime
+  neq: DateTime
+  in: [DateTime]
+  nin: [DateTime]
+  gt: DateTime
+  ngt: DateTime
+  gte: DateTime
+  ngte: DateTime
+  lt: DateTime
+  nlt: DateTime
+  lte: DateTime
+  nlte: DateTime
+}
+
+input TicketStatusOperationFilterInput {
+  eq: TicketStatus
+  neq: TicketStatus
+  in: [TicketStatus!]
+  nin: [TicketStatus!]
+}
+
+input DecimalOperationFilterInput {
+  eq: Decimal
+  neq: Decimal
+  in: [Decimal]
+  nin: [Decimal]
+  gt: Decimal
+  ngt: Decimal
+  gte: Decimal
+  ngte: Decimal
+  lt: Decimal
+  nlt: Decimal
+  lte: Decimal
+  nlte: Decimal
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+"""
+Information about pagination in a connection.
+"""
+type PageInfo {
+  """
+  Indicates whether more edges exist following the set defined by the clients arguments.
+  """
+  hasNextPage: Boolean!
+
+  """
+  Indicates whether more edges exist prior the set defined by the clients arguments.
+  """
+  hasPreviousPage: Boolean!
+
+  """
+  When paginating backwards, the cursor to continue.
+  """
+  startCursor: String
+
+  """
+  When paginating forwards, the cursor to continue.
+  """
+  endCursor: String
+}
+
+type Ticket {
+  id: String
+  key: String!
+  depotNo: String!
+  yardCode: String!
+  ticketNumber: Long!
+  ticketType: TicketType!
+  partyAccountNo: String!
+  lines: [TicketLine!]!
+  publishedToTrade: DateTime
+  ticketStatus: TicketStatus!
+  createdDate: DateTime!
+  createdBy: String!
+  price: Decimal!
+}
+
+"""
+An edge in a connection.
+"""
+type TicketsEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: Ticket!
+}
+
+input TicketLineFilterInput {
+  and: [TicketLineFilterInput!]
+  or: [TicketLineFilterInput!]
+  grossWeight: UomValueFilterInput
+  gradeCode: StringOperationFilterInput
+  lineNumber: IntOperationFilterInput
+  heapId: IntOperationFilterInput
+  heapCode: StringOperationFilterInput
+  rate: UomValueFilterInput
+  weightSerial: StringOperationFilterInput
+}
+
+input UomValueFilterInput {
+  and: [UomValueFilterInput!]
+  or: [UomValueFilterInput!]
+  uom: UomOperationFilterInput
+  value: DecimalOperationFilterInput
+  id: IntOperationFilterInput
+}
+
+input IntOperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int]
+  nin: [Int]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input UomOperationFilterInput {
+  eq: Uom
+  neq: Uom
+  in: [Uom!]
+  nin: [Uom!]
+}
+
+input HeapTransactionInput {
+  id: String
+  heapId: String!
+  quantity: Decimal!
+  commRate: Decimal!
+  commValue: Decimal!
+  refSource: RefSource!
+  transactionDirection: TransactionDirection!
+}
+
+type HeapTransaction {
+  id: String
+  heapId: String!
+  quantity: Decimal!
+  commRate: Decimal!
+  commValue: Decimal!
+  refSource: RefSource!
+  transactionDirection: TransactionDirection!
+}
+
+input HeapInput {
+  id: String
+  heapDescription: String!
+  heapShortName: String!
+  gradeCode: String!
+  heapNo: Long!
+  depotCode: String!
+  active: Boolean!
+}
+
+type Heap {
+  id: String
+  heapDescription: String!
+  heapShortName: String!
+  gradeCode: String!
+  heapNo: Long!
+  depotCode: String!
+  active: Boolean!
+}
+
+input CreateCanScaleTicketInput {
+  createdBy: String!
+}
+
+type TicketLine {
+  grossWeight: UomValue!
+  gradeCode: String!
+  lineNumber: Int!
+  heapId: Int!
+  heapCode: String!
+  rate: UomValue!
+  weightSerial: String
+}
+
+type UomValue {
+  uom: Uom!
+  value: Decimal!
+  id: Int!
+}
+
+enum TransactionDirection {
+  RECEIPT
+  ISSUE
+}
+
+enum RefSource {
+  HTXF
+  TIWN
+  TOWN
+}

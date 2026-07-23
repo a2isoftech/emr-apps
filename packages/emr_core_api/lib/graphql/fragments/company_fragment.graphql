@@ -1,0 +1,20 @@
+fragment CompanyFragment on Company {
+    active
+    code
+    fullName
+    id
+    shortName
+    territory {
+      active
+      code
+      currencyCode
+      defaultCompanyId
+      id
+      name
+      uomId
+    }
+    territoryCode
+    territoryId
+    valueRequiredForTwoSignaturesOnCheque
+    chequeSignatures
+}

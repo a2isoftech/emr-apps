@@ -1,0 +1,22 @@
+mutation updatePostingTaskStatus($postingTaskId:String!, $paymentPostingTaskStatus: PaymentPostingTaskStatus!) {
+  setPostingTaskStatus(postingTaskId: $postingTaskId, paymentPostingTaskStatus: $paymentPostingTaskStatus) {
+    result
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

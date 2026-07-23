@@ -1,0 +1,10 @@
+mutation AddAccountLoyaltyCards($input: CreateOrUpdateAccountLoyaltyCardInput!) {
+  addAccountLoyaltyCards(input: $input) {
+    ... on Account {
+      name
+    }
+    ... on AccountLoyaltyCardsError {
+      message
+    }
+  }
+}

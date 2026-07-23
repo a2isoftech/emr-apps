@@ -1,0 +1,23 @@
+query GetAccessPointsWithoutExternalData($siteId: String, $accessControllerId: String, $accessPointId: String) {
+  accessPoints(siteId: $siteId, accessControllerId: $accessControllerId, accessPointId: $accessPointId) {
+    id
+    externalId
+    entity
+    accessControllerId
+    name   
+    restricted
+    groups {
+      azureId
+      name
+      id      
+    }
+    camera {
+      cameraName
+      ipAddress
+      rtspUrl
+      snapshotUrl
+      username
+      createdUtc
+    }
+  }
+}

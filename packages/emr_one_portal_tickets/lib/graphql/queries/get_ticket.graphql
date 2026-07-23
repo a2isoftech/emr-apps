@@ -1,0 +1,36 @@
+query GetTicket($ticketNumber: Int!, $depotNumber: String!) {
+  ticket(ticketNumber: $ticketNumber, depotNumber: $depotNumber) {
+    depotNo
+    yardCode
+    extendedAttributes {
+      ticketStatus
+    }
+    ticketDate
+    currency
+    legacyTicketNumber
+    ticketNumber
+    ticketLines {
+      price
+      ewcCode
+      netWeight
+      rate
+      gradeName
+      gradeCode
+      netWeightUom
+      rateUom
+    }
+    yard {
+      shortName
+      wasteCarrierRegNo
+      addressLine1
+      addressLine2
+      addressLine3
+      addressLine4
+      addressLine5
+      addressLine6
+      postCode
+      telephone
+      wmlExemptionNo
+    }
+  }
+}

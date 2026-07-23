@@ -1,0 +1,8 @@
+query Assets($filter: AssetQueryFilterInput!) {
+    assets(filter: $filter) {
+        assetCode
+        name
+        yardCode
+        depotNo
+    }
+}

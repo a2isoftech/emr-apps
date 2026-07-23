@@ -1,0 +1,7 @@
+mutation CreateDevices ($input : CreateDevicesInput! ) {
+  createDevices(
+    input: $input
+  ) {
+    ...DevicesFragment
+  }
+}

@@ -1,0 +1,10 @@
+mutation TakeSnapshots($input: String!, $overrideExisting: Boolean!) {
+  takeSnapshots(stocktakeId: $input, overrideExisting: $overrideExisting) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

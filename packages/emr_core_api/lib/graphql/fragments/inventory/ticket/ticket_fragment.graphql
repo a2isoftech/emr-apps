@@ -1,0 +1,131 @@
+fragment TicketFields on Ticket {
+  id
+  yardId
+  yardCode
+  ticketNumber
+  ticketType
+  date
+  serviceType
+  ticketCategory
+  ticketStatus
+  contractId
+  defaultPaymentMethod
+  account {
+    ...TicketAccountFields
+  }
+  contract {
+    id
+    accountId
+    internalReference
+    customerReference
+    contractOrderBookTypeName
+    customerReference
+    internalReference
+  }
+  transportDetails {
+    transportType
+    jobNumber
+    vehicleReg
+    deliveryNote
+  }
+  deductions {
+    typeId
+    value
+  }
+  haulageCharge {
+    provRate {
+      ...UomValueFields
+    }
+    confRate {
+      ...UomValueFields
+    }
+    provValue
+    confValue
+    charge {
+      ...UomValueFields
+    }
+  }
+  haulagePrice
+  haulier {
+    ...TicketAccountFields
+  }
+  lines {
+    ...TicketLineFields
+  }
+  nonStockTicketLines {
+    ...NonStockTicketLineFields
+  }
+  tags
+  extendedProperties
+  active
+  price
+  provPrice
+  yardCode
+  ticketNumber
+  outwardTicketNo
+  currency
+  mediaAssets {
+    ...MediaAssetFields
+  }
+  inspectionMedia {
+    url
+    sasUrl
+    sasThumbnailUrl
+  }
+  account {
+    accountNumber
+    name
+  }
+  created {
+    at
+    userName
+    userInfoId
+  }
+  acceptedConsignmentNote {
+    code
+    mediaUrl
+    created {
+      at
+      userName
+      userInfoId
+    }
+    modified {
+      at
+      userName
+      userInfoId
+    }
+  }
+  rejectedConsignmentNote {
+    code
+    mediaUrl
+    created {
+      at
+      userName
+      userInfoId
+    }
+    modified {
+      at
+      userName
+      userInfoId
+    }
+  }
+  paymentDeduction {
+    ... PaymentDeductionFields
+  }
+  remittanceDetails {
+    mediaUrl
+    created {
+      at
+      userName
+      userInfoId
+    }
+    modified {
+      at
+      userName
+      userInfoId
+    }
+  }
+  isPayableAtEdge
+  isPaymentAuthorizationRequired
+  metadata
+}

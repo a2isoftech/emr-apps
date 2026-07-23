@@ -1,0 +1,11 @@
+mutation AddAccountPrepayCard($addPrepaycardInput: CreateOrUpdateAccountPrepayCardsInput!) {
+  addAccountPrepayCards(addPrepayCardInput: $addPrepaycardInput)
+  {
+    ... on AccountPrepayCardError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

@@ -1,0 +1,17 @@
+query workspaceLibrarySearch($input: SearchWorkspaceLibraryInput!) {
+  workspaceLibrarySearch(input: $input, first: 50) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    nodes {
+      __typename
+      ... on DirectQuery {
+        ...DirectQueryFields
+      }
+    }
+  }
+}

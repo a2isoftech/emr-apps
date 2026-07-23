@@ -1,0 +1,13 @@
+
+query SearchBomFacets($input: SearchBomInput!) {
+  searchBomFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        range
+        count
+      }
+    }
+  }
+}

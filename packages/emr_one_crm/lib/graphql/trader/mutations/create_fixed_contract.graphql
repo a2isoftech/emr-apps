@@ -1,0 +1,5 @@
+mutation CreateFixedContract($input: CreateFixedContractInput!) {
+    createFixedContract(input: $input) {
+        contractRef
+    }         
+}

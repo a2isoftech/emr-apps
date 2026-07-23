@@ -1,0 +1,14 @@
+query GetAllSchedules($accessControllerId: String!) {
+  allSchedules(accessControllerId: $accessControllerId) {
+    token
+    name
+    description
+    scheduleDefinition
+    attribute {
+      type
+      name
+      value
+    }
+    exceptionScheduleDefinition
+  }
+}

@@ -1,0 +1,3 @@
+mutation RestrictAccessPoint($accessPointId: String!){
+  restrictAccessPoint(accessPointId: $accessPointId)
+}

@@ -1,0 +1,10 @@
+mutation UpdateStockTakeLocationStatus($input: UpdateLocationStatusInput!) {
+  updateStockTakeLocationStatus(updateLocationStatusInput: $input) {
+    success
+    message
+    errorCode
+    data {
+      ...StocktakeFields
+    }
+  }
+}

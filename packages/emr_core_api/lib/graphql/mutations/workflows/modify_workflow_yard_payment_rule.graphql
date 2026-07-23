@@ -1,0 +1,12 @@
+mutation ModifyWorkflowYardPaymentRule($input: ModifyWorkflowYardPaymentRuleInput!) {
+   modifyWorkflowYardPaymentRule(input: $input) {
+    id
+    yardCode
+    minAmount
+    maxAmount
+    levelUserEmails {
+      key
+      value
+    }
+   }
+}

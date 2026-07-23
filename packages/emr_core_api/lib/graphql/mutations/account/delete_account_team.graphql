@@ -1,0 +1,13 @@
+mutation DeleteAccountTeam($accountId: String!, $teamId: String!)
+{
+  deleteAccountTeam(accountId: $accountId, teamId:$teamId)
+  {
+     ...on AccountTeamError {
+      message
+    }
+    
+    ... on Account {
+      id
+    }
+  }
+}

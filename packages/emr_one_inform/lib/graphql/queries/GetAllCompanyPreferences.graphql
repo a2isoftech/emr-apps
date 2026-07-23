@@ -1,0 +1,7 @@
+query GetAllCompanyPreferences {
+  allCompanyPreferences {
+    companyCode
+    isActive
+    preferenceJson
+  }
+}

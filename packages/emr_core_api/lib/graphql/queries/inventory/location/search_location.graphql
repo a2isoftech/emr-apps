@@ -1,0 +1,16 @@
+query serachLocation($input:SearchInventoryLocationsInput!)
+{
+  searchInventoryLocations(input: $input)
+  {
+    nodes
+    {
+      description
+      yardId
+      id
+      code
+      active
+      what3Words
+      parentId    
+    }
+  }
+}

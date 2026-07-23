@@ -1,0 +1,12 @@
+mutation UpdatePaymentDetailsInternal(
+  $accountNumber: String!
+  $input: UpdatePaymentDetailsInput
+) {
+  updatePaymentDetailsInternal(accountNumber: $accountNumber, input: $input) {
+    accountNumber
+    errors {
+      message
+      code
+    }
+  }
+}

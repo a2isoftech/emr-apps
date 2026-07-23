@@ -1,0 +1,8 @@
+mutation approveNewAssets($input: BulkAssetRequestInput!)
+{
+  approveAsset(input: $input)
+  {
+    successAssetIds
+    failedAssetIds
+  }
+}

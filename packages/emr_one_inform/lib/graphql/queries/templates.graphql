@@ -1,0 +1,32 @@
+query Templates($filter: SearchQueryFilterInput!) {
+    formTemplatesByName(filter: $filter) {
+        id
+        title
+        clientName
+        referenceId
+        createdBy
+        createdDate
+        versions {
+            id
+            uuid
+            templateId
+            version
+            description
+            documentSchemaId
+            documentPath
+            isActive
+            createdBy
+            createdDate
+        }
+        isDigitalSignatureRequired
+        validateBySignature
+        validateByWorkOrder
+        validateFrom
+        isEmailNotificationRequired
+        sendEmailOnFailedQuestions
+        emailIds
+        assignFailedQuestionToTeam
+        assignFailedQuestionToTeamId
+        isPublished
+    }
+}

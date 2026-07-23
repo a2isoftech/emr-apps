@@ -1,0 +1,12 @@
+mutation UpdateAccountMainDetail($input: AccountMainDetailsInput!)
+{
+  updateAccountMainDetail(input:  $input)
+  {
+     ...on AccountMainDetailsError {
+      message
+    }
+     ... on Account {
+      id
+    }
+  }
+}

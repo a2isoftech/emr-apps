@@ -1,0 +1,48 @@
+query SearchInventoryLocations(
+  $input: SearchInventoryLocationsInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+) {
+  searchInventoryLocations(
+    input: $input
+    after: $after
+    first: $first
+    before: $before
+    last: $last
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      description
+      yardId
+      id
+      code
+      active
+      parentId
+      barcode
+      weight {
+        ...UomValueFragment
+      }
+      rate {
+        ...UomValueFragment
+      }
+      product {
+        code
+        classification {
+          family
+          line
+          class
+        }
+        description
+      }
+      inventoryLocationType
+    }
+  }
+}

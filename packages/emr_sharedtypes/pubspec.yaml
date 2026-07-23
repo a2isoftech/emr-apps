@@ -1,0 +1,32 @@
+name: emr_sharedtypes
+description: EMR common types and definitions
+version: 2.2.0
+
+homepage: https://dev.azure.com/emrtf01/EMR_Software/_git/emr_one?version=GBdevelop&path=/packages/emr_sharedtypes
+repository: https://dev.azure.com/emrtf01/EMR_Software/_git/emr_one?version=GBdevelop
+publish_to: "none"
+
+environment:
+  sdk: ^3.11.0
+
+resolution: workspace
+
+dependencies:
+  decimal: ^3.2.4
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  graphql_codegen: ^3.0.1
+  json_serializable: ^6.8.0
+  patrol: ^3.11.1
+  very_good_analysis: ^6.0.0
+
+flutter:
+  generate: false

@@ -1,0 +1,16 @@
+query Location($id: String!) {
+  inventoryLocation(locationId: $id) {
+    code
+    description
+    mediaAssets {
+      url
+      created {
+        at
+        user {
+          name
+        }
+      }
+    }
+    id
+  }
+}

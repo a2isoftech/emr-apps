@@ -1,0 +1,32 @@
+query searchVehiclesForInspection(
+  $first: Int!
+  $yardCode: String!
+  $searchText: String!
+) {
+  searchVehiclesForInspection(
+    first: $first
+    after: null
+    before: null
+    last: null
+    input: { query: $searchText, yardCode: $yardCode }
+  ) {
+    nodes {
+      id
+      status
+      vehicleKey
+      vin
+      vrn
+      make
+      model
+      year
+      quoteNumber
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

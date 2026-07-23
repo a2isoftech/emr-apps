@@ -1,0 +1,27 @@
+query GetFireRegisterPunchEvents(
+  $date: DateTime!
+  $yardCode: String!
+  $zone: String!
+  $area: String!
+  ) {
+  fireRegisterPunchEvents(
+    input: {
+      date: $date,
+      yardCode: $yardCode,
+      zone: $zone,
+      area: $area
+    }
+  ) {
+    id
+    subjectName
+    subjectType
+    punchTime
+    punchType
+    badgeNo
+    visitorHost
+    visitorCmpName
+    visitorPhoneNo
+    visitorVehicleReg
+    note
+  }
+}

@@ -1,0 +1,36 @@
+query SearchDoors(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: SearchDoorInput!
+) {
+  searchDoors(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      accessControllerId
+      scheduleConfigName
+      accessControllerName
+      siteId
+      siteName
+      doorExternalId
+      doorName
+      priorityConfigId
+      priorityConfigName
+      defaultPriority
+      scheduleConfigId
+    }
+  }
+}

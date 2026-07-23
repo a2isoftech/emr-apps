@@ -1,0 +1,5 @@
+query getPaymentPostingTasksForPaymentRecord($paymentRecordIds: [String!]!) {
+  paymentPostingTasksForPaymentRecord(paymentRecordIds: $paymentRecordIds) {
+    ...PaymentPostingTaskFields
+  }
+}

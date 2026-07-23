@@ -1,0 +1,5 @@
+query getTicketById($id: String!) {
+  ticket(id: $id) {
+    ...TicketFields
+  }
+}

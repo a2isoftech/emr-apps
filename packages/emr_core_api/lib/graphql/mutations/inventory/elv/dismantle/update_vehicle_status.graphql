@@ -1,0 +1,5 @@
+mutation UpdateVehicleStatus($input: UpdateItemInputOfVehicleStatusInput!){
+  setVehicleStatus(input: $input){
+    ...VehicleFields
+  }
+}

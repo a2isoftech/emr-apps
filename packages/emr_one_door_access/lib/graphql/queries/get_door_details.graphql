@@ -1,0 +1,45 @@
+query GetDoorDetails($siteId: String, $accessControllerId: String) {
+  allAccessControllers(
+    siteId: $siteId
+    accessControllerId: $accessControllerId
+  ) {
+    id
+    name
+    site    
+    externalId
+    externalName
+    doors{
+      externalId
+      defaultPriority
+      name
+      description
+      accessTime
+      openTooLongTime
+      preAlarmTime
+      extendedAccessTime
+      extendedOpenTooLongTime
+      heartbeatInterval
+      scheduleConfiguration{
+        externalId
+        name
+        description
+        doorSchedule{
+          priorityLevel
+          scheduledState{
+            scheduleToken
+            enterAction
+          }
+        }
+      }
+      priorityConfiguration{
+        externalId
+        name
+        defaultPriority
+        doorPriorityAction{
+          priorityLevel
+          doorAction
+        }
+      }
+    }
+  }
+}

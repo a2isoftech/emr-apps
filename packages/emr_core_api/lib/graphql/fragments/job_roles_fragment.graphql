@@ -1,0 +1,7 @@
+fragment JobRolesFragment on JobRole
+{
+      id
+      name
+      description
+      active
+}

@@ -1,0 +1,21 @@
+query GetWeighbridgeProfiles($yardCode: String!, $includeScales: Boolean!, $includeCameras: Boolean!) {
+  weighbridgeProfiles(yardCode: $yardCode) {
+    nodes {
+      id
+      yardId
+      yardCode
+      name
+      scales @include(if: $includeScales) {
+        name
+        url
+        assetCode
+        scaleNumber
+        cameras @include(if: $includeCameras) {
+          name
+          imageUrl
+          videoUrl
+        }
+      }
+    }
+  }
+}

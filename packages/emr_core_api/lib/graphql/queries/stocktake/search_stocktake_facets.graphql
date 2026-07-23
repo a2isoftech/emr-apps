@@ -1,0 +1,16 @@
+query SearchStocktakeFacets($input: StocktakeSearchInput!) {
+  searchStocktakeFacet(stocktakeSearchInput: $input) {
+    key
+    value {
+      name
+      values {
+        name
+        range
+        count
+        min
+        max
+        average
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mutation UpdateBom($input: UpdateBomInput!) {
+  updateBillOfMaterials(input: $input) {
+    hasError
+    errorCode
+    message
+    data {
+      id
+    }
+  }
+}

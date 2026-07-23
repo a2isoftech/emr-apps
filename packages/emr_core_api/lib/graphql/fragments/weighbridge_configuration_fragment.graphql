@@ -1,0 +1,21 @@
+fragment WeighbridgeConfigurationFragment on WeighbridgeConfiguration
+{
+    id
+    weighbridgeId
+    machineName
+    ipAddress
+    yardId
+    configurations
+    tags
+    created {
+      at
+      userInfoId
+      userName
+    }
+    modified {
+      at
+      userInfoId
+      userName
+    }
+    active
+}

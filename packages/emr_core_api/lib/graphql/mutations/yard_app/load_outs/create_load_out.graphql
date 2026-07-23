@@ -1,0 +1,3 @@
+mutation CreateLoadOut($input: CreateLoadOutInput!) {
+    createLoadOut(loadOutInput: $input)
+}

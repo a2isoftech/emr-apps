@@ -1,0 +1,5 @@
+mutation updateDirectQuery($input: UpdateDirectQueryInput!) {
+  updateDirectQuery(input: $input) {
+    ...DirectQueryFields
+  }
+}

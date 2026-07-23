@@ -1,0 +1,3 @@
+query GetMediaApiSasTokenInternal($fname:String!,$partyAccountNo:String!){
+  mediaApiUrlWithTokenInternal(fileName: $fname, partyAccountNumber: $partyAccountNo)
+}

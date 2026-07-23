@@ -1,0 +1,11 @@
+mutation CreateProspectRetailAccountInternal($input : CreateProspectRetailAccountInput){
+    createProspectAccountInternal(input: $input){
+      accountNumber
+      name
+      userId
+      errors {
+        message
+        code
+      }
+    }
+  }

@@ -1,0 +1,10 @@
+mutation CloneBom ($input: CloneBomInput!) {
+  cloneBillOfMaterials(input: $input) {
+    hasError
+    errorCode
+    message
+    data {
+      id
+    }
+  }
+}

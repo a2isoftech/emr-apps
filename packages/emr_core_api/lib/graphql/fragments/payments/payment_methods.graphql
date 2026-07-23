@@ -1,0 +1,104 @@
+fragment PaymentMethodFields on Yard{
+   paymentMethods{
+      atm{
+        rounding{
+          value
+          roundingType
+        }      
+        enabled
+        paymentMethod
+        maxUpperLimit
+      }
+      manualCheque{
+        enabled
+        paymentMethod
+        maxUpperLimit
+      }
+      autoCheque{
+        enforceIdentification
+        enabled
+        paymentMethod
+        logoPath
+        bankCode
+        maxUpperLimit
+      }
+      fasterpay{
+        flatFeeValue
+        paymentMethod
+        enabled
+        bankCode
+        maxUpperLimit
+      }
+      overnightFasterpay{     
+        paymentMethod
+        enabled
+        bankCode
+        maxUpperLimit
+      }
+      cash{
+        numberOfRemittancesToPrint
+        paymentMethod
+        enabled
+        maxUpperLimit
+      }
+       autoChequeWithEncashmentCash {
+        agent
+        commissionPercent
+        enabled
+        enforceIdentification
+        flatFeeThreshold
+        flatFeeValue
+        logoPath
+        minCommission
+        minDenomination
+        paymentMethod
+        bankCode
+        maxUpperLimit
+      }
+      autoChequeWithEncashmentAtm {
+        agent
+        commissionPercent
+        enabled
+        enforceIdentification
+        flatFeeThreshold
+        flatFeeValue
+        logoPath
+        minCommission
+        minDenomination
+        paymentMethod
+        bankCode
+        maxUpperLimit
+      }
+      secorePrepaid{
+        commissionPercent
+        paymentMethod
+        enabled
+        maxUpperLimit
+      }
+      digitalWalletWithAtm {
+        commissionPercent
+        enabled
+        paymentMethod
+        rounding {
+          roundingType
+          value
+        }
+        maxUpperLimit
+      }
+      digitalWalletWithCash {
+        commissionPercent
+        enabled
+        paymentMethod
+        rounding {
+          roundingType
+          value
+        }
+        maxUpperLimit
+      }
+      splitPayment {
+        enabled
+        paymentMethod
+        maxUpperLimit
+      }
+    }
+}

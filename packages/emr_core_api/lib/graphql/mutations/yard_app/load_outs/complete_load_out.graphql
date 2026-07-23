@@ -1,0 +1,5 @@
+mutation CompleteLoadOut ($input: SaveLoadOutInput!) {
+  completeLoadOut(loadOutInput: $input){
+    id
+  }
+}

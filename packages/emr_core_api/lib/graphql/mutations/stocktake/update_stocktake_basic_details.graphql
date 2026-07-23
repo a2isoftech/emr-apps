@@ -1,0 +1,10 @@
+mutation UpdateStockTakeBasicDetails($input: UpdateBasicDetailsInput!) {
+  updateStockTakeBasicDetails(stocktakeInput: $input) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

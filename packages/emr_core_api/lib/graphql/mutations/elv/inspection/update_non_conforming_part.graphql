@@ -1,0 +1,20 @@
+mutation UpdateNonConformingPart(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $partKey: UUID!
+  $partPhotoUrls: [String!]!
+) {
+  updateNonConformingPart(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      partKey: $partKey
+      partPhotoUrls: $partPhotoUrls
+    }
+  ) {
+    ...NonConformingPartFields
+    ...InspectionErrorFields
+  }
+}

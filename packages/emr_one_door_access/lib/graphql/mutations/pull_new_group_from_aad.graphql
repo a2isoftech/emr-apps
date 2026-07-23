@@ -1,0 +1,3 @@
+mutation PullNewGroupFromAD($groupId : String!){
+  pullNewGroupFromAD(groupId: $groupId)
+}

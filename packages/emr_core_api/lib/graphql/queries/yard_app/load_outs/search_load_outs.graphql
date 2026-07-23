@@ -1,0 +1,49 @@
+query SearchLoadOuts(
+  $input: SearchLoadOutsInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+  $order: [LoadOutSortInput!]
+) {
+  loadOuts(
+    input: $input
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      containerId
+      created {
+        at
+      }
+      completed
+      ticketId
+      containerImages {
+        heap
+        empty
+        halfLoadedWithContainerNumber
+        fullyLoaded
+        fullyLoadedOneDoorShut
+        fullyLoadedOneDoorShutRadiation
+        fullyLoadedBothDoorsShutSeals
+        leftSideQualityCheck
+        rightSideQualityCheck
+        additionalImages
+      }
+      containerSealDetails {
+        imagePath
+      }
+    }
+  }
+}

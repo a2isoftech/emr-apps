@@ -1,0 +1,27 @@
+query GetGroups($after: String, $before: String, $first: Int, $last: Int, $groupIds: [String!]) {
+  groups(after: $after, before: $before, first: $first, last: $last, groupIds: $groupIds) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      azureId
+      name
+      users
+      accessPoints {
+        key
+        value {
+          externalId
+          name
+          description
+        }
+      }
+      lastUpdatedFromAzureAdOn
+      id
+      createdOn
+    }
+  }
+}

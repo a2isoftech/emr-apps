@@ -1,0 +1,12 @@
+query PriceListFacet($input: GetGuidePricesInput!) {
+  priceListFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        range
+        count
+      }
+    }
+  }
+}

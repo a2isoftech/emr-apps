@@ -1,0 +1,7 @@
+mutation CreateYard($input: CreateYardInput!) {
+  createYard(
+    input: $input
+  ) {
+   ...YardFragment
+  }
+}

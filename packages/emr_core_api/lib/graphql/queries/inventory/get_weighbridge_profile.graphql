@@ -1,0 +1,59 @@
+query GetWeighbridgeProfile($id: String!) {
+  weighbridgeProfile(input: { id: $id }) {
+    changeVector
+    entity {
+      id
+      yardId
+      name
+      yardCode
+      enableCheckWeight
+      publishTicketToTrade
+      allowRollingWeights
+      rounding
+      scales {
+        name
+        url
+        assetCode
+        scaleNumber
+        cameras {
+          name
+          imageUrl
+          videoUrl
+        }
+      }
+      knownTares {
+        value {
+          uom
+          value
+          isRate
+          id
+          mtValue
+        }
+        serialNo
+        comments
+      }
+      ticketPrints {
+        name
+        headerText
+        numberOfCopies
+        printer {
+          name
+          url
+        }
+        printForTicketDirections
+        ticketPrintType
+        templateName
+      }
+      active
+      yardInformation {
+        wmlExemptionNo
+        wasteCarrierRegNo
+      }
+      currency
+      dirtDeductionUom
+      territoryCode
+      enableManualWeight
+      weighbridgeUom
+    }
+  }
+}

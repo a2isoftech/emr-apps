@@ -1,0 +1,7 @@
+mutation SaveFavouriteFilterParameters($input: SaveFilterParametersInput!){
+  saveFilterParameters(input: $input) {
+    filterName
+    moduleName
+    filterParameters
+  }
+}

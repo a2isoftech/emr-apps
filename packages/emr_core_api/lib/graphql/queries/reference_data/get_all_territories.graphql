@@ -1,0 +1,30 @@
+query GetAllTerritories(
+  $input: SearchTerritoryInput!
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $order: [TerritorySortInput!]
+) {
+  territories(
+    input: $input
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    order: $order
+  ) {
+    edges {
+      node {
+          ...TerritoryFragment
+      }
+    }
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

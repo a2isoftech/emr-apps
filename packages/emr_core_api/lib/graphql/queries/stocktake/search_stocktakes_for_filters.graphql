@@ -1,0 +1,20 @@
+query SearchStocktakesForFilters($input:StocktakeSearchFiltersInput!)
+{
+  searchStocktakesForFilters(input: $input)
+  {
+    conductor
+    {
+      id,
+      firstName
+      lastName
+    }
+    created
+    {
+      user
+      {
+        id,
+        name
+      }
+    }
+  }
+}

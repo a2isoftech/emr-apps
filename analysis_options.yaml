@@ -1,0 +1,4 @@
+analyzer:
+  exclude: [cli/**, flutter/**, example/**]
+formatter:
+  trailing_commas: preserve

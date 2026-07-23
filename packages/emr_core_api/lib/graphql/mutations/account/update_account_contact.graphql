@@ -1,0 +1,8 @@
+mutation UpdateAccountContact($input: UpdateAccountContactInput!)
+{
+  updateAccountContact(input:  $input)
+  {
+     ... AccountContactError
+     ... ContactWithKey
+  }
+}

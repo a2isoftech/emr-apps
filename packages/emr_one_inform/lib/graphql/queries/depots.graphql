@@ -1,0 +1,8 @@
+query Depots($filter: DepotQueryFilterInput!) {
+    depots(filter: $filter) {
+        companyCode
+        yardCode
+        depotNo
+        name
+    }
+}

@@ -1,0 +1,10 @@
+query getListValues {
+    listValues(listName: "PrimaryFunction") {
+        id
+        listId
+        text
+        value
+        orderIndex
+        active
+    }
+}

@@ -1,0 +1,9 @@
+export 'load_outs/complete_load_out.graphql.dart';
+export 'load_outs/create_load_out.graphql.dart';
+export 'load_outs/save_load_out.graphql.dart';
+export 'locations/add_location_media.graphql.dart';
+export 'locations/delete_location_media.graphql.dart';
+export 'tickets/move_ticket_inspection_media.graphql.dart';
+export 'tickets/update_media_comment.graphql.dart';
+export 'tickets/upsert_ticket_inspection_details.graphql.dart';
+export 'tickets/upsert_ticket_inspection_media.graphql.dart';

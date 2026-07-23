@@ -1,0 +1,5 @@
+mutation DeletePartsFromVehicle($input: VehiclePartsActionInput!){
+    deletePartsFromVehicle(input: $input){
+        ...VehicleFields
+    }
+}

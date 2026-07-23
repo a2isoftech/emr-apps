@@ -1,0 +1,4 @@
+fragment ContactWithKey on ContactWithKey {
+  key
+  __typename
+}

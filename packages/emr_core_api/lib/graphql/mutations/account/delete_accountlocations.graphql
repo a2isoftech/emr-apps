@@ -1,0 +1,10 @@
+mutation RemoveAccountLocations($locationInput: DeleteAccountLocationInput!){
+  deleteAccountLocations(deleteAccountLocationInput:  $locationInput){
+   ... on AccountLocationError{
+    message
+   }
+   ... on Account{
+    name
+   }
+  }
+}

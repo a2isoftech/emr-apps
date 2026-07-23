@@ -1,0 +1,72 @@
+query GetScheduledJobFormsForYard(
+    $firstSc: Int
+    $afterSc: String
+    $lastSc: Int
+    $beforeSc: String
+    $yardCode: String!, 
+    $startDate: DateTime,
+    $endDate: DateTime, 
+    $filterForUser: Boolean, 
+    $forcedUpdate: Boolean = false, 
+    $jobId: String, 
+    $assetCode: String) {
+    jobFormsForYard(yardCode: $yardCode, 
+    startDate: $startDate, 
+    endDate: $endDate, 
+    filterForUser: $filterForUser, 
+    forcedUpdate: $forcedUpdate, 
+    jobId: $jobId, 
+    assetCode: $assetCode) {
+        yardCode      
+        scheduled(first: $firstSc
+        after: $afterSc
+        last: $lastSc
+        before: $beforeSc) {
+            nodes {
+                scheduledItemId
+            job {
+                asset {
+                    assetCode
+                    depotNo
+                    name
+                    yardCode
+                }
+                workOrderId
+                expectedStartDate
+                jobType
+                jobTypeVariant
+                jobTrade
+                workOrderDescription
+                assignedTo
+                isDigitalSignatureRequired
+                assignedToTeam
+                assignedToTeamId
+                yardCode
+                depotNo
+                scheduleItemType
+                jobPriority
+                notes
+            }
+            template {
+                description
+                id
+                templateId
+                title
+                version
+                referenceId
+                isDigitalSignatureRequired
+                isEmailNotificationRequired
+                sendEmailOnFailedQuestions
+                emailIds
+                assignFailedQuestionToTeam
+                assignFailedQuestionToTeamId
+            }
+            }
+            pageInfo{
+            hasNextPage
+            startCursor
+            endCursor
+        }  
+        }
+    }
+} 

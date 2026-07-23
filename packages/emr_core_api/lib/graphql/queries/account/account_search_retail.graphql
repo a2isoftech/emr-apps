@@ -1,0 +1,55 @@
+query SearchRetailAccounts(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: RetailAccountsSearchInput!
+) {
+  searchRetailAccounts(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      code
+      accountStatus
+      lastTicketDate
+      accountContacts {
+        value {
+          firstName
+          lastName
+        }
+      }
+      name
+      
+      accountAddresses {
+        address1
+        postCode
+      }
+      accountManagers {
+        name
+        id
+        userInfo {
+          name
+          emailAddress
+        }
+      }
+      type
+      industryGroup
+      industryGroups{
+        trader
+        supplier
+      }
+      id
+    }
+  }
+}

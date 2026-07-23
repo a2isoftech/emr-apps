@@ -1,0 +1,8 @@
+query AccountSearchByAccountName($input: String!) {
+  searchAccountsByAccountName(input: $input, first: 500) {
+    nodes {
+      id
+      name
+    }
+  }
+}

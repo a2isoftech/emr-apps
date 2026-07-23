@@ -1,0 +1,5 @@
+query paymentRecordByTicketId($ticketId: String!) {
+  paymentRecordByTicketId(ticketId: $ticketId) {
+    ...PaymentRecordFields
+  }
+}

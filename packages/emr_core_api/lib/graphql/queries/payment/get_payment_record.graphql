@@ -1,0 +1,5 @@
+query GetPaymentRecord($id: String!) {
+  paymentRecord(id: $id) {
+    ... PaymentRecordFields
+  }
+}

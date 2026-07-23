@@ -1,0 +1,11 @@
+fragment PaymentDeductionItemFields on PaymentDeductionItem{
+    paymentMethod
+    grossAmount
+    totalFee
+    payableAfterCostAndDeduction
+    payableAmount
+    roundingAdjustment
+    encashmentValues {
+        ... EncashmentValueFields
+    }
+}

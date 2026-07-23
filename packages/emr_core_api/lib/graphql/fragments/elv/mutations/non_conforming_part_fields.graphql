@@ -1,0 +1,7 @@
+fragment NonConformingPartFields on NonConformingPart {
+  partKey
+  partName
+  partPhotos {
+    url
+  }
+}

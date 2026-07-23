@@ -1,0 +1,7 @@
+mutation UpsertPartialDoorConfiguration(
+  $upsertDoorConfigurations: [UpsertPartialDoorConfigurationInput!]!
+) {
+  upsertPartialDoorConfiguration(
+    upsertDoorConfigurations: $upsertDoorConfigurations
+  )
+}

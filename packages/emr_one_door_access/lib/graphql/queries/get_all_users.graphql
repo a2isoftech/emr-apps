@@ -1,0 +1,13 @@
+query GetAllUsers {
+  allUsers {
+    azureId
+    name
+    userName
+    cardNumber
+    id
+    groups {
+      id
+    }
+    externalId
+  }
+}

@@ -1,0 +1,7 @@
+mutation saveWeighbridgeGroup($input: WeighbridgeGroupInput!) {
+  saveWeighbridgeGroup(input: $input) {
+    yardCode
+    group
+  }
+}
+

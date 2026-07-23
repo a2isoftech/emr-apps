@@ -1,0 +1,10 @@
+mutation UpdateAccountLocations($updateAccountLocationInput: CreateOrUpdateAccountLocationInput!){
+  updateAccountLocations(updateAccountLocationInput:  $updateAccountLocationInput){
+   ... on AccountLocationError{
+    message
+   }
+   ... on Account{
+    name
+   }
+  }
+}

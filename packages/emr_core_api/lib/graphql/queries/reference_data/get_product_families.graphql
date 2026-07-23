@@ -1,0 +1,13 @@
+query GetProductFamilies(
+  $query: String
+  $productClasses: [String!]
+  $productCodes: [String!]
+  $productLines: [String!]
+) {
+  productFamilies(
+    query: $query
+    productClasses: $productClasses
+    productCodes: $productCodes
+    productLines: $productLines
+  )
+}

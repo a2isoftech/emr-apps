@@ -1,0 +1,8 @@
+mutation CreateAccountContact($input: CreateAccountContactInput!)
+{
+  createAccountContact( input:  $input)
+  {
+    ... AccountContactError
+    ... ContactWithKey
+  }
+}

@@ -1,0 +1,47 @@
+query SearchElvBatchQuotes(
+  $input: ElvBatchQuotesSearchInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+  $order: [ElvBatchQuotesSearchResultSortInput!]
+) {
+  searchElvBatchQuotes(
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+    input: $input
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      batchQuoteBundleId
+      accountCode
+      accountName
+      quoteValue
+      postCode
+      yardCode
+      yardName
+      vehiclesQuoted
+      vinList
+      vrnList
+      status
+      quoteSource
+      leadSource
+      acquisitionType
+      collectionStatus
+      collectionOperatorAccountCode
+      collectionOperatorAccountName
+      collectionDate
+      createdDate
+    }
+  }
+}

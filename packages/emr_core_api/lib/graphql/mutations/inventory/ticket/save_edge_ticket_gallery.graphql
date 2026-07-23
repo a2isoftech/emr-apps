@@ -1,0 +1,23 @@
+mutation SaveEdgeTicketGallery($gallery: EdgeTicketGalleryInput!, $changeVector: String!) {
+  saveEdgeTicketGallery(gallery: $gallery, changeVector: $changeVector) {
+    changeVector
+    gallery:entity {
+      id
+      title
+      excludedImageUrls
+      publicUrl
+      created{
+        userInfoId
+        userName
+        at
+      }
+      modified{
+        at
+        userInfoId
+        userName
+      }
+      tags
+      active
+    }
+  }
+}

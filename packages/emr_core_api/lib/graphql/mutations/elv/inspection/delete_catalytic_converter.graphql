@@ -1,0 +1,17 @@
+mutation DeleteCat(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $partKey: UUID!
+) {
+  deleteCatalyticConverter(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      partKey: $partKey
+    }
+  ) {
+    ...InspectionErrorFields
+  }
+}

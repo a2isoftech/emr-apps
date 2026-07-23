@@ -1,0 +1,31 @@
+query SearchWorkflowRules($input: WorkflowRuleSearchInput!) {
+  searchWorkflowRules(input: $input) {
+      ... on StocktakeRule{
+        id
+        productFamily
+        yardCode
+        levelUserEmails {
+          key
+          value
+        }
+      }
+      ... on YardPaymentRule{
+        id
+        yardCode
+        minAmount
+        maxAmount
+        levelUserEmails {
+          key
+          value
+        }
+      }
+      ... on AccountApprovalRule{
+        id
+        yardCode
+        levelUserEmails {
+          key
+          value
+        }
+      }
+    }
+  }

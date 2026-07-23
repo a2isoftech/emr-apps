@@ -1,0 +1,27 @@
+query searchSyncWeighbridgeTicketTasks(
+  $after: String, 
+  $before: String, 
+  $first: Int, 
+  $last: Int, 
+  $input: SyncWeighbridgeTicketTasksSearchInput!,
+  $order: [SyncWeighbridgeTicketTaskSortInput!]) {
+  searchSyncWeighbridgeTicketTasks(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+     ...SyncWeighbridgeTicketTaskFields
+    }
+  }
+}

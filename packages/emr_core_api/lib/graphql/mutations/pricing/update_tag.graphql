@@ -1,0 +1,6 @@
+mutation UpdateTagEndDate($input: UpdateTagEndDateInput!){
+  updateTagEndDate(input: $input) {
+    ... Tag
+    ... UpdateTagEndDateError
+  }
+}

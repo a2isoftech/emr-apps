@@ -1,0 +1,16 @@
+query GetRemittances($pageSize: Int!, $after: String, $sortOrders:[RemittanceSortOrderInput!], $searchText : String) {
+  supplierRemittances(first: $pageSize, after: $after, sortOrders: $sortOrders, searchText : $searchText ){
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+      __typename
+    }
+    totalCount,
+    nodes{
+      remittanceDate
+      remittanceFileName
+    }
+  }
+}

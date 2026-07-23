@@ -1,0 +1,15 @@
+query SearchWeighbridgeProfiles($query: String, $first: Int, $after: String) {
+  searchWeighbridgeProfiles(input: { query: $query }, first: $first, after: $after) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      yardId
+    }
+  }
+}

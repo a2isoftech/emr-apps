@@ -1,0 +1,8 @@
+fragment LocationFragment on InventoryLocation {
+  id
+  code
+  description
+  productId
+  productCode
+  depotId
+}

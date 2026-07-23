@@ -1,0 +1,49 @@
+query GetAccessControllers(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $siteId: String
+) {
+  accessControllers(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    siteId: $siteId
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      name
+      site
+      location {
+        latitude
+        longitude
+      }
+      uri
+      username
+      schedules {
+        token
+        name
+        description
+      }
+      accessPoints {
+        name
+        id
+        externalId
+        entity
+        restricted
+      }
+      active
+      externalId
+      externalName
+    }
+  }
+}

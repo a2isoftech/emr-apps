@@ -1,0 +1,11 @@
+query YardDetails($countryCode : CountryCode){
+  yards(countryCode: $countryCode){
+    shortName
+    yardCode
+    postCode
+    geoLocation{
+      latitude
+      longitude
+    }
+  }
+}

@@ -1,0 +1,12 @@
+fragment SystemRoleFragment on SystemRole
+{
+    id
+    name
+    description
+    permissions {
+      description
+      name
+    }
+    active
+    permissionNames
+}

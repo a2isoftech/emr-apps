@@ -1,0 +1,3 @@
+query salesGrade($searchTerm:String!){
+    salesGrade(searchTerm:$searchTerm)
+}

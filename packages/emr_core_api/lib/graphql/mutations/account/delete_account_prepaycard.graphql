@@ -1,0 +1,11 @@
+mutation DeleteAccountPrepayCards($deletePrepaycardInput: DeletePrepayCardInput!) {
+  deleteAccountPrepayCards(deletePrepayCardInput: $deletePrepaycardInput)
+  {
+    ... on AccountPrepayCardError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

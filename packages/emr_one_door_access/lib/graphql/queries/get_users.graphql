@@ -1,0 +1,34 @@
+query GetUsers(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int,
+  $userIds: [String!]
+) {
+  users(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    userIds: $userIds
+  ) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {      
+      azureId
+      name
+      userName
+      cardNumber
+      id
+      groups{
+        id
+      }
+      externalId
+    }
+  }
+}

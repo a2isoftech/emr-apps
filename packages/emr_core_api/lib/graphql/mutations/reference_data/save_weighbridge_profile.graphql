@@ -1,0 +1,15 @@
+mutation SaveWeighbridgeProfile(
+  $input: DocumentOfWeighbridgeProfileInput!
+) {
+  saveWeighbridgeProfileDocument(
+    input: $input
+  ) {
+    changeVector
+    entity {
+      id
+      name
+      yardCode
+      yardId
+    }
+  }
+}

@@ -1,0 +1,7 @@
+mutation UpsertTicketInspectionDetails($input:TicketInspectionInput!)
+{
+  upsertTicketInspection(ticketInspectionInput: $input)
+  {
+    id
+  }
+}

@@ -1,0 +1,49 @@
+query GetAccountDetails{
+  account {
+      name
+      accountContacts {
+        accountContactTypeId
+        contact {
+          firstName
+          middleName
+          lastName
+          contactInformation {
+            value
+            contactInformationTypeId
+            countryId  
+          }
+          address {
+            countryId
+            address1
+            address2
+            address3
+            address4
+            address5
+            address6
+            postCode            
+          }          
+        }
+      }
+      businessDetails {
+        vatNumber
+        paymentTerm {
+          paymentMethod {
+            name
+          }
+          paymentTermType {
+            name                        
+          }
+        }        
+      }
+      bankAccounts {
+        bankAccountNumber
+        sortCode
+        reference
+        bankName
+        accountHolderName
+        ibanCode
+        swiftCode        
+      }
+    }
+  
+}

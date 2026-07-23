@@ -1,0 +1,26 @@
+query GetCompanies(
+  $after: String,
+  $before: String,
+  $first: Int,
+  $last: Int,
+  $input: SearchCompanyInput
+  $order: [CompanySortInput!]) {
+  companies(
+    after: $after
+    before: $before
+    first: $first
+    last: $last,
+    order: $order
+    input: $input){
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+      ...CompanyFragment
+    }
+  }
+}

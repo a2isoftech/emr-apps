@@ -1,0 +1,38 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.emrgroup.emrone.nativeshell.dev",
+      "sha256_cert_fingerprints": [
+        "2C:6C:BA:B2:29:85:F2:40:E6:32:3D:A1:64:13:5F:0A:1C:B0:F2:94:8D:2E:44:94:FA:32:E0:B6:36:E7:A6:57"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.emrgroup.emrone.nativeshell.beta",
+      "sha256_cert_fingerprints": [
+        "2C:6C:BA:B2:29:85:F2:40:E6:32:3D:A1:64:13:5F:0A:1C:B0:F2:94:8D:2E:44:94:FA:32:E0:B6:36:E7:A6:57"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.emrgroup.emrone.nativeshell",
+      "sha256_cert_fingerprints": [
+        "2C:6C:BA:B2:29:85:F2:40:E6:32:3D:A1:64:13:5F:0A:1C:B0:F2:94:8D:2E:44:94:FA:32:E0:B6:36:E7:A6:57"
+      ]
+    }
+  }
+]

@@ -1,0 +1,10 @@
+query ValidateBankAccountInternal($sortCode:String!, $accountNumber:String!, $country:CountryId!){
+  validatedBankAccountInternal(sortCode: $sortCode, accountNumber: $accountNumber, country: $country){
+    isCorrect
+    bank
+    contactAddressLine1
+    contactAddressLine2,
+    contactPostTown,
+    contactPostcode
+  }
+}

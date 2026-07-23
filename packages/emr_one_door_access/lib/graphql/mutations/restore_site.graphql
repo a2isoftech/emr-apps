@@ -1,0 +1,3 @@
+mutation RestoreSite($siteId: String!){
+  restoreSite(siteId: $siteId)
+}

@@ -1,0 +1,5 @@
+query GetAccountDetails($accountId: String!) {
+  accountById(accountId: $accountId) {
+    ... AccountDetails
+  }
+}

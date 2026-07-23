@@ -1,0 +1,18 @@
+mutation UpdateJobRole($id: String!, $name: String!, $description: String!, $systemRoleIds: [String!]!, $territoryId: String!, $active: Boolean!) {
+  updateJobRole(
+    input: {
+      id: $id
+      name: $name
+      description: $description
+      systemRoleIds: $systemRoleIds
+      territoryId: $territoryId
+      active: $active
+    }
+  ) {
+    hasError
+    message
+    data {
+      ...JobRoleFragment
+    }
+  }
+}

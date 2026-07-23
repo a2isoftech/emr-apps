@@ -1,0 +1,6 @@
+query IsPaymentAuthorizationRequired(
+  $totalAmount: Decimal!
+  $yardCode: String!
+) {
+  isPaymentAuthorizationRequired(totalAmount: $totalAmount, yardCode: $yardCode)
+}

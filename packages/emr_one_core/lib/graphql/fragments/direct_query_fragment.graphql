@@ -1,0 +1,10 @@
+fragment DirectQueryFields on DirectQuery {
+  id
+  title
+  permissions
+  rql
+  kind
+  parameters {
+    ...DirectQueryParameterFields
+  }
+}

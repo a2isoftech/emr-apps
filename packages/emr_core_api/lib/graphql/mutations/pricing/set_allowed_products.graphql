@@ -1,0 +1,12 @@
+mutation SetAllowedProducts($input: CreateAllowedProductsInput!) {
+  setAllowedProducts(input: $input) {
+    ... on AccountPriceMapping {
+      id
+      accountCode
+    }
+    ... on CreateAllowedProductsError {
+      message
+      errorCode
+    }
+  }
+}

@@ -1,0 +1,9 @@
+query searchSuggestion(
+  $searchText : String!
+  $input : SearchPropertyType!
+) {
+  searchSuggestion(
+    searchText: $searchText
+    propertyType: $input
+  )
+}

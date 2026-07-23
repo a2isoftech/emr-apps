@@ -1,0 +1,128 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    compileSdkVersion 36
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.emrgroup.emrone.nativeshell"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {
+            dimension "app"
+            resValue "string", "app_name", "EMR Dev" //this maps to @string/app_name in the android manifest
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            manifestPlaceholders.appLinksHost = "emrapps-dev.emrgroup.com"
+        }
+
+        beta {
+            dimension "app"
+            resValue "string", "app_name", "EMR Beta" //this maps to @string/app_name in the android manifest
+            applicationIdSuffix ".beta"
+            versionNameSuffix "-beta"
+            manifestPlaceholders.appLinksHost = "emrapps-beta.emrgroup.com"
+        }
+
+        prerelease {
+            dimension "app"
+            resValue "string", "app_name", "EMR Prerelease" //this maps to @string/app_name in the android manifest
+            applicationIdSuffix ".prerelease"
+            versionNameSuffix "-prerelease"
+            manifestPlaceholders.appLinksHost = "emrapps-prerelease.emrgroup.com"
+        }
+
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "EMR" //this maps to @string/app_name in the android manifest
+            manifestPlaceholders.appLinksHost = "emrapps.emrgroup.com"
+        }
+    }
+    namespace 'com.emrgroup.emrone.nativeshell'
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    // Need to update to android-35+ to use 2.10.0
+    def work_version = "2.9.1"
+
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // optional - RxJava2 support
+    // implementation "androidx.work:work-rxjava2:$work_version"
+
+    // optional - GCMNetworkManager support
+    // implementation "androidx.work:work-gcm:$work_version"
+
+    // optional - Test helpers
+    // androidTestImplementation "androidx.work:work-testing:$work_version"
+
+    // optional - Multiprocess support
+    // implementation "androidx.work:work-multiprocess:$work_version"
+
+    // https://stackoverflow.com/a/64733418/1016377
+    implementation 'com.google.guava:guava:31.0.1-android'
+}

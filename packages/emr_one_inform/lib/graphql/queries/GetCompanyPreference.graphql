@@ -1,0 +1,7 @@
+query GetCompanyPreference($companyCode:String!){
+  companyPreference(companyCode: $companyCode) {
+    companyCode
+    isActive
+    preferenceJson
+  }
+}

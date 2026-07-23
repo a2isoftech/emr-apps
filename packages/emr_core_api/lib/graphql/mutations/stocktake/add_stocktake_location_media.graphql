@@ -1,0 +1,20 @@
+mutation AddStockTakeLocationMedia($input: StockLocationMediaInput!) {
+  addStockTakeLocationMedia(input: $input) {
+    success
+    data {
+      url
+      created {
+        at
+        userName
+        userInfoId
+      }
+      modified {
+        at
+        userName
+        userInfoId
+      }
+    }
+    message
+    errorCode
+  }
+}

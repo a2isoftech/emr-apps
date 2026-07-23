@@ -1,0 +1,8 @@
+query GetTerritoryDocumentTypes($territoryId: TerritoryId!) {
+  territoryDocumentType(where: { territoryId: { eq: $territoryId } }) {
+    documentType {
+      id
+      description
+    }
+  }
+}

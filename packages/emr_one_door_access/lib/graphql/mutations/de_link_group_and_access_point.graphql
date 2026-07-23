@@ -1,0 +1,3 @@
+mutation DeLinkGroupAndAccessPoint($input: DelinkGroupAndAccessPointInput!){
+  deLinkGroupAndAccessPoint(input: $input)
+}

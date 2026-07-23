@@ -1,0 +1,13 @@
+query GetAddressDetails($addressId:String!){
+  lookupAddressDetails(addressId:$addressId) {
+    address1
+    address2
+    address3
+    address4
+    address5
+    address6
+    latitude
+    longitude
+    postCode
+  }
+}

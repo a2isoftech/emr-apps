@@ -1,0 +1,5 @@
+mutation syncWeighbridgeTicketTasksSyncAll($taskIds: [String!]!) {
+  syncWeighbridgeTicketTasks(input: { taskIds: $taskIds }) {
+    ...SyncWeighbridgeTicketTaskFields
+  }
+}

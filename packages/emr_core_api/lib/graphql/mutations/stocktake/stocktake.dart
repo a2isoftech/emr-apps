@@ -1,0 +1,17 @@
+export 'add_comment.graphql.dart';
+export 'add_stocktake_comment.graphql.dart';
+export 'add_stocktake_location_media.graphql.dart';
+export 'add_stocktake_weight.graphql.dart';
+export 'clone_stocktake.graphql.dart';
+export 'complete_stocktake.graphql.dart';
+export 'create_stocktake.graphql.dart';
+export 'delete_comment.graphql.dart';
+export 'delete_stocktake.graphql.dart';
+export 'delete_stocktake_location_media.graphql.dart';
+export 'execute_stocktake_approval.graphql.dart';
+export 'move_weight_line.graphql.dart';
+export 'save_stock_take_configuration.graphql.dart';
+export 'take_snapshots.graphql.dart';
+export 'update_stocktake.graphql.dart';
+export 'update_stocktake_location_status.graphql.dart';
+export 'vote_for_stocktake_workflow.graphql.dart';

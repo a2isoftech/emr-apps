@@ -1,0 +1,8 @@
+mutation UpdateYardPaymentRule($input: UpdateYardPaymentRuleInput!) {
+  updateYardPaymentRule(
+    input: $input
+  )
+  {     
+       ...PaymentRuleFragment
+      }
+    }

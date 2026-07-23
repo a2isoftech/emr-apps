@@ -1,0 +1,31 @@
+query GetAllYards(
+  $input: SearchYardInput!
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $order: [YardSortInput!]
+ )
+{
+  yards(
+    input: $input
+    first: $first
+    after: $after
+    last: $last
+    before: $before
+    order: $order
+  ) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    edges {
+      node {
+        ...YardFragment
+      }
+    }
+  }
+}

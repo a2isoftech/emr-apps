@@ -1,0 +1,15 @@
+mutation SaveInspectionMutation(
+  $batchQuoteId: Int!
+  $quoteId: Int!
+  $territory: String!
+  $configuration: VehicleConfigurationModelInput!
+  $quoteChangedValue: Float!
+) {
+  saveInspection(
+    batchQuoteId: $batchQuoteId
+    quoteId: $quoteId
+    configuration: $configuration
+    territory: $territory
+    quoteChangedValue: $quoteChangedValue
+  )
+}

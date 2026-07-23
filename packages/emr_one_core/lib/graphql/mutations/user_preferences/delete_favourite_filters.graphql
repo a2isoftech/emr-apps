@@ -1,0 +1,3 @@
+mutation DeleteFilterParameters($input: DeleteFilterParametersInput!){
+  deleteFilterParameters(input: $input)
+}

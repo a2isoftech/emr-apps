@@ -1,0 +1,46 @@
+fragment AdvanceFields on Advance{
+    accountId
+    active
+    allowFlexiblePay
+    arrangedByUserId
+    companyId
+    handlingYardId
+    id
+    offsetStatus
+    paidInFullDueDate
+    payableYardId
+    paymentMethod
+    reason
+    reference
+    status
+    tags
+    paymentAmount {
+    amount
+    currencyCode
+    exchangeRate
+    }
+    paymentInfo {
+    outstandingBalance
+    transactionDetails {
+        paymentRecordId
+        transactionType
+        amount
+        at
+    }
+    }
+    term {
+    ... on FixedTermDetails {
+        amount
+        termType
+    }
+    ... on PartialPayTermDetails {
+        termType
+        ticketIds
+    }
+    ... on PercentageTermDetails {
+        amount
+        percentage
+        termType
+    }
+    }
+}

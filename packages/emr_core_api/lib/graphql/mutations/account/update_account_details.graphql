@@ -1,0 +1,47 @@
+mutation UpdateAccountDetails($input: UpdateAccountDetailsInput!){
+  updateAccountDetails(input: $input){
+    ... on Account {
+      id
+      code
+      name
+      originatingCountry
+      parentAccount
+      currencyId
+      customerVatGroupType
+      supplierVatGroupType
+      financialCustomerGroupId
+      financialSupplierGroupId
+      businessDetail {
+        vatNumber
+        eoriNumber
+        website
+        companyRegistrationNumber
+        isTradingCompany
+        licenseExemption {
+          annualWasteTransferNote
+          wasteProducer
+          wasteImporter
+          wasteTransporter
+          wasteRegCarrier
+          wasteRegCarrierNumber
+        }
+      }
+      taxSettings {
+        taxId
+        w9Received
+        nameFor1099
+        doingBusinessAs
+      }
+      settings {
+        stateReportingEnabled
+        isWasteProducer
+        isWasteImporter
+        isWasteTransporter
+        isWasteRegisteredCarrier
+      }
+    }
+    ... on AccountDetailsError {
+      message
+    }
+  }
+}

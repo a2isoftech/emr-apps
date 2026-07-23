@@ -1,0 +1,1599 @@
+{
+  "Data": [
+    {
+      "path": "/",
+      "name": "home",
+      "displayNameKey": "home",
+      "iconData": "0xf107,MaterialIcons"
+    },
+    {
+      "path": "/accounts-payable",
+      "widgetBuilderKey": "generic-route-screen",
+      "displayNameKey": "accountsPayable",
+      "iconData": "0xec5e,MaterialIcons",
+      "permission": "permissions/accounts-payable/view",
+      "children": [
+        {
+          "path": "advances",
+          "iconData": "0xeb78,MaterialIcons",
+          "displayNameKey": "advanceMaintenance",
+          "name": "Advances",
+          "permission": "permissions/accounts-payable/advance-maintenance/view",
+          "children": [
+            {
+              "path": "advancePaymentBasket",
+              "displayNameKey": "paymentBasket",
+              "name": "Advance_Payment_Basket"
+            },
+            {
+              "path": ":id",
+              "displayNameKey": "advance",
+              "name": "advance-form"
+            }
+          ]
+        },
+        {
+          "path": "retailPayments",
+          "iconData": "0xf266,MaterialIcons",
+          "displayNameKey": "retailPayments",
+          "name": "Retail_Payments",
+          "permission": "permissions/accounts-payable/retail-payment/view",
+          "children": [
+            {
+              "path": "paymentBasket",
+              "displayNameKey": "paymentBasket",
+              "name": "Payment_Basket"
+            },
+            {
+              "path": "ticketgallery",
+              "displayNameKey": "ticketGallery",
+              "name": "Ticket_Gallery"
+            },
+            {
+              "path": "ticketpayments",
+              "displayNameKey": "ticketPayments",
+              "name": "Ticket_Payments"
+            },
+            {
+              "path": "upload-id-doc",
+              "displayNameKey": "uploadIdDocument",
+              "name": "upload-id-doc"
+            }
+          ]
+        },
+        {
+          "path": "edge-tickets-accounts",
+          "displayNameKey": "tickets",
+          "iconData": "0xf171,MaterialIcons",
+          "name": "tickets",
+          "permission": "permissions/accounts-payable/ticket-search/view",
+          "platform": "web",
+          "children": [
+            {
+              "path": ":yardCode/:ticketNumber",
+              "displayNameKey": "ticket",
+              "name": "ticketDetails"
+            }
+          ]
+        },
+        {
+          "path": "accounts",
+          "name": "accounts",
+          "widgetBuilderKey": "generic-route-screen",
+          "displayNameKey": "accounts",
+          "iconData": "0xf0563,MaterialIcons",
+          "permission": "permissions/accounts-management/view",
+          "children": [
+            {
+              "path": "account-management",
+              "displayNameKey": "accountManagement",
+              "iconData": "0xe042,MaterialIcons",
+              "name": "account-management",
+              "children": [
+                {
+                  "path": ":accountId",
+                  "displayNameKey": "details",
+                  "name": "detail"
+                }
+              ]
+            },
+            {
+              "path": "reset-registration",
+              "displayNameKey": "reset",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "reset-register",
+              "isManuallyNavigable": false
+            },
+            {
+              "path": "register-retail",
+              "displayNameKey": "register",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "register"
+            },
+            {
+              "path": "replay-retail-registration",
+              "displayNameKey": "replayRegistration",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "replay-retail-registration"
+            },
+            {
+              "path": "attach-docs",
+              "displayNameKey": "attachDocuments",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "attach-docs"
+            },
+            {
+              "path": "generate-qr-code",
+              "displayNameKey": "generateQrCode",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "generate-qr-code"
+            },
+            {
+              "path": "scan-qr-code",
+              "displayNameKey": "scanQrCode",
+              "iconData": "0xe22a,MaterialIcons",
+              "name": "scan-qr-code"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/accounts-receivable",
+      "widgetBuilderKey": "generic-route-screen",
+      "displayNameKey": "accountsReceivable",
+      "iconData": "0xe2a5,MaterialIcons",
+      "permission": "permissions/accounts-receivable/view",
+      "children": []
+    },
+    {
+      "path": "/asset-management",
+      "widgetBuilderKey": "generic-route-screen",
+      "displayNameKey": "assetManagement",
+      "iconData": "0xe148,MaterialIcons",
+      "permission": "permissions/asset-management/view",
+      "children": [
+        {
+          "path": "/inform",
+          "displayNameKey": "inForm",
+          "iconData": "0xf31c,FontAwesomeIcons",
+          "name": "Inform",
+          "permission": "permissions/inform/view",
+          "children": [
+            {
+              "path": "asset",
+              "displayNameKey": "asset",
+              "name": "asset"
+            },
+            {
+              "path": "Inform_Yard_Selection",
+              "displayNameKey": "yardSelection",
+              "name": "Inform_Yard_Selection"
+            },
+            {
+              "path": "Inform_Create_Work_Order",
+              "displayNameKey": "createWorkOrder",
+              "name": "Inform_Create_Work_Order",
+              "children": [
+                {
+                  "path": "Inform_Create_Adhoc_Template",
+                  "displayNameKey": "createAdhocTemplate",
+                  "name": "Inform_Create_Adhoc_Template"
+                },
+                {
+                  "path": "Inform_Create_Adhoc_Template_New",
+                  "displayNameKey": "createAdhocTemplateNew",
+                  "name": "Inform_Create_Adhoc_Template_New"
+                }
+              ]
+            },
+            {
+              "path": "Inform_Create_Work_Request",
+              "displayNameKey": "createWorkOrderRequest",
+              "name": "Inform_Create_Work_Request"
+            },
+            {
+              "path": "Inform_Completed_Jobs",
+              "displayNameKey": "completedJobs",
+              "name": "Inform_Completed_Jobs"
+            },
+            {
+              "path": "Inform_View_Work_Request",
+              "displayNameKey": "inForm",
+              "name": "Inform_View_Work_Request"
+            },
+            {
+              "path": "Inform_Jobs_Assigned_To_Me",
+              "displayNameKey": "jobsAssigedToMe",
+              "name": "Inform_Jobs_Assigned_To_Me",
+              "children": [
+                {
+                  "path": "Inform_Job_Page",
+                  "displayNameKey": "jobPage",
+                  "name": "Inform_Job_Page"
+                }
+              ]
+            },
+            {
+              "path": "Inform_Jobs_Assigned_To_Yard",
+              "displayNameKey": "jobsAssignedToYard",
+              "name": "Inform_Jobs_Assigned_To_Yard"
+            },
+            {
+              "path": "Inform_Question_Media_Capture",
+              "displayNameKey": "questionMediaCapture",
+              "name": "Inform_Question_Media_Capture"
+            },
+            {
+              "path": "Inform_Media_Capture",
+              "displayNameKey": "mediaCapture",
+              "name": "Inform_Media_Capture"
+            },
+            {
+              "path": "Informs_Preview_Template",
+              "displayNameKey": "previewTemplate",
+              "name": "Informs_Preview_Template"
+            },
+            {
+              "path": "completedWorkOrder/:companyCode/:workOrderId",
+              "displayNameKey": "inForm",
+              "name": "Inform_Completed_Jobs_PDF"
+            },
+            {
+              "path": "Informs_Template_Library",
+              "displayNameKey": "inForm",
+              "name": "Informs_Template_Library"
+            },
+            {
+              "path": "clients",
+              "displayNameKey": "inForm",
+              "name": "clients"
+            },
+            {
+              "path": "addclient",
+              "displayNameKey": "addClient",
+              "name": "addclient"
+            },
+            {
+              "path": "lists",
+              "displayNameKey": "inForm",
+              "name": "lists"
+            },
+            {
+              "path": "companyPreference",
+              "displayNameKey": "companyPreference",
+              "name": "companyPreference"
+            },
+            {
+              "path": "addlist",
+              "displayNameKey": "addList",
+              "name": "addlist"
+            },
+            {
+              "path": "Inform_Allocate_User_To_Work_Orders",
+              "displayNameKey": "allocateUserToWorkOrders",
+              "name": "Inform_Allocate_User_To_Work_Orders"
+            },
+            {
+              "path": "scheduler",
+              "displayNameKey": "scheduler",
+              "name": "scheduler",
+              "children": [
+                {
+                  "path": "edit-scheduler",
+                  "displayNameKey": "editScheduler",
+                  "name": "edit-scheduler"
+                }
+              ]
+            },
+            {
+              "path": "import-template",
+              "displayNameKey": "importTemplate",
+              "name": "import-template",
+              "permission": "permissions/inform/admin/view"
+            },
+            {
+              "path": "diagnostic",
+              "displayNameKey": "diagnostic",
+              "name": "diagnostic",
+              "permission": "permissions/inform/admin/view"
+            },
+            {
+              "path": "clientDiagnostic",
+              "displayNameKey": "clientDiagnosticTool",
+              "name": "clientDiagnostic",
+              "permission": "permissions/inform/admin/view",
+              "children": [
+                {
+                  "path": "diagnostic-media",
+                  "displayNameKey": "diagnosticMedia",
+                  "name": "diagnostic-media"
+                }
+              ]
+            },
+            {
+              "path": "audit",
+              "displayNameKey": "auditLogs",
+              "name": "audit",
+              "permission": "permissions/inform/admin/view"
+            },
+            {
+              "path": "menu",
+              "displayNameKey": "menu",
+              "name": "menu",
+              "permission": "permissions/inform/admin/view"
+            },
+            {
+              "path": "media-search",
+              "displayNameKey": "mediaSearch",
+              "name": "media-search"
+            },
+            {
+              "path": "maintenanceRequestMedia/:cmpCode/:workRequestId",
+              "displayNameKey": "mediaItems",
+              "name": "media-items"
+            },
+            {
+              "path": "teams",
+              "displayNameKey": "inForm",
+              "name": "teams"
+            },
+            {
+              "path": "addteam",
+              "displayNameKey": "addTeam",
+              "name": "addteam"
+            },
+            {
+              "path": "myCalendar",
+              "displayNameKey": "myCalendar",
+              "name": "myCalendar"
+            },
+            {
+              "path": "help",
+              "displayNameKey": "help",
+              "name": "help"
+            }
+          ]
+        },
+        {
+          "path": "https://mro.emrgroup.com",
+          "displayNameKey": "mro",
+          "iconData": "0xe148,MaterialIcons",
+          "permission": "permissions/mro/view"
+        }
+      ]
+    },
+    {
+      "path": "/commercial-buying-admin",
+      "iconData": "0xe59a,MaterialIcons",
+      "displayNameKey": "commercialBuyingAdmin",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/commercial-buying-admin/view",
+      "children": [
+        {
+          "path": "trader",
+          "iconData": "0xf26e,MaterialIcons",
+          "displayNameKey": "tradeR",
+          "name": "trader",
+          "children": [
+            {
+              "path": "party/:partyAccountNo",
+              "displayNameKey": "account",
+              "name": "traderParty",
+              "children": [
+                {
+                  "path": "upload",
+                  "displayNameKey": "uploadDocument",
+                  "name": "partyDocumentUpload"
+                },
+                {
+                  "path": "edit",
+                  "displayNameKey": "edit",
+                  "name": "traderPartyEditDetails"
+                },
+                {
+                  "path": "nearby",
+                  "displayNameKey": "nearby",
+                  "name": "traderPartyNearby"
+                },
+                {
+                  "path": "prices",
+                  "displayNameKey": "accountPrices",
+                  "name": "traderPartyPrices",
+                  "children": [
+                    {
+                      "path": "price-details",
+                      "displayNameKey": "prices",
+                      "name": "priceDetails"
+                    },
+                    {
+                      "path": "price-list-details",
+                      "displayNameKey": "prices",
+                      "name": "priceListDetails"
+                    },
+                    {
+                      "path": "new/spot",
+                      "displayNameKey": "newSpotContract",
+                      "name": "traderPartyPricesNewSpot"
+                    },
+                    {
+                      "path": "edit/spot",
+                      "displayNameKey": "editSpotContract",
+                      "name": "traderPartyPricesEditSpot"
+                    },
+                    {
+                      "path": "new/fixed",
+                      "displayNameKey": "newFixedContract",
+                      "name": "traderPartyPricesNewFixed"
+                    },
+                    {
+                      "path": "edit/fixed",
+                      "displayNameKey": "editFixedContract",
+                      "name": "traderPartyPricesEditFixed"
+                    },
+                    {
+                      "path": "new/pricelist",
+                      "displayNameKey": "newPriceList",
+                      "name": "traderPartyPricesNewPricelist"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "pricing",
+          "iconData": "0xf3d1,FontAwesomeIcons",
+          "displayNameKey": "pricing",
+          "widgetBuilderKey": "generic-route-screen",
+          "children": [
+            {
+              "path": "admin",
+              "iconData": "0xf3d1,FontAwesomeIcons",
+              "displayNameKey": "adminPricing",
+              "name": "pricingAdmin"
+            },
+            {
+              "path": "yard",
+              "iconData": "0xf3d1,FontAwesomeIcons",
+              "displayNameKey": "yardPricing",
+              "name": "pricingYard"
+            },
+            {
+              "path": "upload",
+              "iconData": "0xf093,FontAwesomeIcons",
+              "displayNameKey": "upload",
+              "name": "pricingUpload"
+            }
+          ]
+        },
+        {
+          "path": "/contracts",
+          "iconData": "0xf56c,FontAwesomeIcons",
+          "displayNameKey": "contracts",
+          "name": "contracts"
+        }
+      ]
+    },
+    {
+      "path": "/commercial-sales-admin",
+      "iconData": "0xec5e,MaterialIcons",
+      "displayNameKey": "commercialSalesAdmin",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/commercial-sales-admin/view",
+      "platform": "web",
+      "children": [
+        {
+          "path": "edge-tickets-commercial",
+          "iconData": "0xf171,MaterialIcons",
+          "displayNameKey": "tickets",
+          "name": "edgeTicketCommercialSearch",
+          "permission": "permissions/commercial-sales-admin/ticket-search/view",
+          "children": [
+            {
+              "path": "gallery/:id",
+              "displayNameKey": "gallery",
+              "name": "edge-ticketGallery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/data-management",
+      "iconData": "0xf0563,MaterialIcons",
+      "displayNameKey": "dataManagement",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/data-management/view",
+      "children": [
+        {
+          "path": "cheque-books",
+          "iconData": "0xf19c,FontAwesomeIcons",
+          "displayNameKey": "chequeBooks",
+          "name": "cheque-books",
+          "permission": "permissions/data-management/cheque-books/view"
+        },
+        {
+          "path": "companies",
+          "iconData": "0xf1ad,FontAwesomeIcons",
+          "displayNameKey": "companies",
+          "name": "companies",
+          "children": [
+            {
+              "path": "add",
+              "displayNameKey": "add",
+              "name": "company-add"
+            },
+            {
+              "path": ":code",
+              "displayNameKey": "edit",
+              "name": "company-edit"
+            }
+          ]
+        },
+        {
+          "path": "company-bank-accounts",
+          "iconData": "0xf19c,FontAwesomeIcons",
+          "displayNameKey": "companyBankAccounts",
+          "name": "company-bank-accounts",
+          "children": [
+            {
+              "path": ":code",
+              "displayNameKey": "companyBankAccount",
+              "name": "company-bank-account-form"
+            }
+          ]
+        },
+        {
+          "path": "example-editable-grid",
+          "iconData": "0xe4e5,FontAwesomeIcons",
+          "displayNameKey": "exampleEditableGrid",
+          "name": "ExampleEditableGrid",
+          "permission": "permissions/data-management/example-forms/view"
+        },
+        {
+          "path": "example-form",
+          "iconData": "0xe4e5,FontAwesomeIcons",
+          "displayNameKey": "exampleForm",
+          "name": "ExampleForm",
+          "permission": "permissions/data-management/example-forms/view"
+        },
+        {
+          "path": "job-roles",
+          "iconData": "0xf0b1,FontAwesomeIcons",
+          "displayNameKey": "jobRoles",
+          "name": "job-roles",
+          "children": [
+            {
+              "path": ":id",
+              "displayNameKey": "jobRole",
+              "name": "job-roles-form"
+            }
+          ]
+        },
+        {
+          "path": "notification-test",
+          "iconData": "0xe44f,MaterialIcons",
+          "displayNameKey": "notificationTest",
+          "name": "NotificationTest",
+          "isManuallyNavigable": false
+        },
+        {
+          "path": "payment-rules",
+          "iconData": "0xf571,FontAwesomeIcons",
+          "displayNameKey": "paymentRules",
+          "name": "yard-payment-rules",
+          "children": [
+            {
+              "path": ":territoryCode/:yardCode",
+              "displayNameKey": "paymentRule",
+              "name": "yard-payment-rules-form"
+            }
+          ]
+        },
+        {
+          "path": "query-layout-example",
+          "iconData": "0xe4e5,FontAwesomeIcons",
+          "displayNameKey": "queryLayoutExample",
+          "name": "QueryLayoutExample"
+        },
+        {
+          "path": "system-roles",
+          "iconData": "0xf1c0,FontAwesomeIcons",
+          "displayNameKey": "systemRoles",
+          "name": "system-roles",
+          "children": [
+            {
+              "path": ":id",
+              "displayNameKey": "systemRole",
+              "name": "system-roles-form"
+            }
+          ]
+        },
+        {
+          "path": "example-form-2",
+          "iconData": "0xe4e5,FontAwesomeIcons",
+          "displayNameKey": "tabToScroll",
+          "name": "ExampleForm2",
+          "permission": "permissions/data-management/example-forms/view"
+        },
+        {
+          "path": "territories",
+          "iconData": "0xf0ac,FontAwesomeIcons",
+          "displayNameKey": "territories",
+          "name": "territories",
+          "children": [
+            {
+              "path": ":code",
+              "displayNameKey": "territory",
+              "name": "territory-form"
+            }
+          ]
+        },
+        {
+          "path": "users",
+          "iconData": "0xf007,FontAwesomeIcons",
+          "displayNameKey": "users",
+          "name": "users",
+          "children": [
+            {
+              "path": ":id",
+              "displayNameKey": "user",
+              "name": "user-form"
+            }
+          ]
+        },
+        {
+          "path": "weighbridge-configurations",
+          "iconData": "0xf085,FontAwesomeIcons",
+          "displayNameKey": "weighbridgeConfigs",
+          "name": "weighbridge-configurations",
+          "children": [
+            {
+              "path": ":id",
+              "displayNameKey": "weighbridgeConfig",
+              "name": "weighbridge-configuration-form"
+            }
+          ]
+        },
+        {
+          "path": "weighbridge-groups",
+          "iconData": "0xf5fd,FontAwesomeIcons",
+          "displayNameKey": "weighbridgeGroups",
+          "name": "weighbridge-groups",
+          "children": [
+            {
+              "path": ":code",
+              "displayNameKey": "weighbridgeGroup",
+              "name": "weighbridge-group-form"
+            }
+          ]
+        },
+        {
+          "path": "weighbridge-profiles",
+          "iconData": "0xe4e5,FontAwesomeIcons",
+          "displayNameKey": "weighbridgeProfiles",
+          "name": "weighbridge-profiles",
+          "children": [
+            {
+              "path": ":id",
+              "displayNameKey": "weighbridgeProfile",
+              "name": "weighbridge-profile-form"
+            }
+          ]
+        },
+        {
+          "path": "yards",
+          "iconData": "0xf494,FontAwesomeIcons",
+          "displayNameKey": "yards",
+          "name": "yards",
+          "children": [
+            {
+              "path": ":code",
+              "displayNameKey": "yard",
+              "name": "yard-form"
+            }
+          ]
+        },
+        {
+          "path": "workflows",
+          "iconData": "0xf0ae,FontAwesomeIcons",
+          "displayNameKey": "workflows",
+          "name": "workflows"
+        },
+        {
+          "path": "stock-take-configs",
+          "iconData": "0xf086f,MaterialIcons",
+          "displayNameKey": "stockTakeConfigs",
+          "name": "stock-take-config",
+          "permission": "permissions/data-management/stock-take-configs/view",
+          "children": [
+            {
+              "path": ":yardCode",
+              "displayNameKey": "edit",
+              "name": "stock-take-config-edit",
+              "permission": "permissions/data-management/stock-take-configs/edit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/elv",
+      "iconData": "0xe1d7,MaterialIcons",
+      "displayNameKey": "elv",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/elv/view",
+      "children": [
+        {
+          "path": "elv-dismantling",
+          "iconData": "0xf5e1,FontAwesomeIcons",
+          "displayNameKey": "elvDismantle",
+          "name": "elvDismantleSearch",
+          "children": [
+            {
+              "path": "dismantle",
+              "displayNameKey": "dismantle",
+              "name": "elvDismantle"
+            }
+          ]
+        },
+        {
+          "path": "elv-inspection",
+          "iconData": "0xf002,FontAwesomeIcons",
+          "displayNameKey": "elvInspection",
+          "name": "elvInspectionHome",
+          "children": [
+            {
+              "path": "inspect/:quoteId/:identifier",
+              "displayNameKey": "inspection",
+              "name": "elvInspection"
+            },
+            {
+              "path": "inspect/failed",
+              "displayNameKey": "inspection",
+              "name": "elvInspectionFailed"
+            }
+          ]
+        },
+        {
+          "path": "elv-quotes",
+          "iconData": "0xf658,FontAwesomeIcons",
+          "displayNameKey": "elvQuotes",
+          "name": "elvQuotes",
+          "children": [
+            {
+              "path": "quick-quote/:batchQuoteId",
+              "displayNameKey": "quickQuote",
+              "name": "elvQuickQuote"
+            },
+            {
+              "path": "quote-search",
+              "displayNameKey": "quoteSearch",
+              "name": "elvQuoteSearch",
+              "children": [
+                {
+                  "path": "summary/:batchQuoteId",
+                  "displayNameKey": "summary",
+                  "name": "elvQuotesSummary",
+                  "children": [
+                    {
+                      "path": "documents/:quoteId",
+                      "displayNameKey": "documents",
+                      "name": "elvVehicleDocuments"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "vin-scrap-quote",
+              "displayNameKey": "vinScrap",
+              "name": "elvVinScrapQuote"
+            }
+          ]
+        },
+        {
+          "path": "elv-t2",
+          "iconData": "0xf0ac,FontAwesomeIcons",
+          "displayNameKey": "elvT2",
+          "name": "elvT2"
+        }
+      ]
+    },
+    {
+      "path": "/inventory-management",
+      "iconData": "0xe349,MaterialIcons",
+      "displayNameKey": "inventoryManagement",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/inventory-management/view",
+      "platform": "web",
+      "children": [
+        {
+          "path": "search",
+          "iconData": "0xf2e4,MaterialIcons",
+          "displayNameKey": "inventorySearch",
+          "name": "inventorySearch"
+        },
+        {
+          "path": "bom",
+          "iconData": "0xf045,MaterialIcons",
+          "displayNameKey": "billOfMaterials",
+          "name": "bomSearch",
+          "permission": "permissions/production/bill-of-material/view",
+          "children": [
+            {
+              "path": "create",
+              "displayNameKey": "create",
+              "name": "createBom",
+              "permission": "permissions/production/bill-of-material/view"
+            },
+            {
+              "path": ":id",
+              "displayNameKey": "edit",
+              "name": "editBom",
+              "permission": "permissions/production/bill-of-material/view"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/operations",
+      "iconData": "0xe673,MaterialIcons",
+      "displayNameKey": "operations",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/operations/view",
+      "children": [
+        {
+          "path": "instructions-to-move",
+          "iconData": "0xf2e4,MaterialIcons",
+          "displayNameKey": "yardInstructionsToMove",
+          "name": "yardInstructionsToMove"
+        },
+        {
+          "path": "live-loads",
+          "iconData": "0xf2e4,MaterialIcons",
+          "displayNameKey": "psnopMainMenuYardManagementLiveLoads",
+          "name": "yardLiveLoads"
+        },
+        {
+          "path": "route-to-market",
+          "iconData": "0xf2e4,MaterialIcons",
+          "displayNameKey": "psnopMainMenuYardManagementRouteToMarket",
+          "name": "routeToMarket"
+        }
+      ]
+    },
+    {
+      "path": "/psnop",
+      "iconData": "0xf3ee,MaterialIcons",
+      "displayNameKey": "psnop",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/psnop/view",
+      "platform": "web",
+      "children": [
+        {
+          "path": "/depot-position",
+          "iconData": "0xf2e4,MaterialIcons",
+          "displayNameKey": "psnopDepotPosition",
+          "name": "psnopDepotPosition"
+        },
+        {
+          "path": "/planned-movements",
+          "iconData": "0xf18e,MaterialIcons",
+          "displayNameKey": "psnopPlannedMovements",
+          "name": "psnopPlannedMovements"
+        },
+        {
+          "path": "/instructions-to-move",
+          "iconData": "0xe3a6,MaterialIcons",
+          "displayNameKey": "psnopInstructionsToMove",
+          "name": "psnopInstructionsToMove"
+        },
+        {
+          "path": "/ticket-summary",
+          "iconData": "0xef75,MaterialIcons",
+          "displayNameKey": "psnopTicketSummary",
+          "name": "psnopTicketSummary"
+        }
+      ]
+    },
+    {
+      "path": "/sheq",
+      "iconData": "0xe305,MaterialIcons",
+      "displayNameKey": "sheq",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/sheq/view",
+      "children": [
+        {
+          "path": "/fire-register",
+          "iconData": "0xf06d,FontAwesomeIcons",
+          "displayNameKey": "fireRegister",
+          "name": "fireRegister"
+        }
+      ]
+    },
+    {
+      "path": "/site-ops",
+      "iconData": "0xf0866,MaterialIcons",
+      "displayNameKey": "siteOps",
+      "name": "siteOps",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/siteops/view",
+      "platform": "native",
+      "children": [
+        {
+          "path": "ticket-list",
+          "iconData": "0xe44c,MaterialIcons",
+          "displayNameKey": "inspection",
+          "name": "siteOpsTicketList"
+        },
+        {
+          "path": "ticket-details/:id",
+          "displayNameKey": "ticketDetails",
+          "name": "siteOpsTicketDetails",
+          "isManuallyNavigable": false,
+          "children": [
+            {
+              "path": "discrepant-details",
+              "displayNameKey": "discrepancy",
+              "name": "siteOpsDiscrepantDetails",
+              "permission": "permissions/siteops/viewTickets"
+            }
+          ]
+        },
+        {
+          "path": "load-out",
+          "iconData": "0xee98,MaterialIcons",
+          "displayNameKey": "loadOut",
+          "name": "siteOpsLoadOutList",
+          "permission": "permissions/siteops/viewLoadOuts"
+        },
+        {
+          "path": "load-out-details",
+          "displayNameKey": "loadoutDetails",
+          "name": "siteOpsLoadOutDetails",
+          "permission": "permissions/siteops/viewLoadOuts",
+          "isManuallyNavigable": false
+        },
+        {
+          "path": "locations",
+          "iconData": "0xf07a6,MaterialIcons",
+          "displayNameKey": "locations",
+          "name": "siteOpsLocations"
+        },
+        {
+          "path": "location-details/:id",
+          "displayNameKey": "locationDetails",
+          "name": "siteOpsLocationDetails",
+          "isManuallyNavigable": false
+        }
+      ]
+    },
+    {
+      "path": "/stock-take",
+      "iconData": "0xf086f,MaterialIcons",
+      "displayNameKey": "stockTakes",
+      "name": "stockTake_Home",
+      "permission": "permissions/stocktake/view",
+      "children": [
+        {
+          "path": "create/:id",
+          "displayNameKey": "create",
+          "name": "stockTake_create",
+          "permission": "permissions/stocktake/create"
+        },
+        {
+          "path": "edit-stocktake/:id",
+          "displayNameKey": "edit",
+          "name": "stockTake_edit",
+          "permission": "permissions/stocktake/create"
+        },
+        {
+          "path": "clone-create/:id",
+          "displayNameKey": "cloneStocktake",
+          "name": "stockTake_cloneCreate",
+          "permission": "permissions/stocktake/create"
+        },
+        {
+          "path": ":id/submission",
+          "displayNameKey": "submissionTitle",
+          "name": "stockTake_locationWeights",
+          "permission": "permissions/stocktake/perform",
+          "children": [
+            {
+              "path": "/:locationid/addweight",
+              "displayNameKey": "addWeight",
+              "name": "stockTake_addWeight",
+              "platform": "native",
+              "children": [
+                {
+                  "path": "gallery",
+                  "displayNameKey": "gallery",
+                  "name": "stockTake_locationGallery",
+                  "platform": "native"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": ":id",
+          "displayNameKey": "stockTakeDetails",
+          "name": "stockTake_view"
+        },
+        {
+          "path": ":id/gallery",
+          "displayNameKey": "gallery",
+          "name": "stockTake_imageGallery"
+        }
+      ]
+    },
+    {
+      "path": "/stock-take/:id/review/level/:level",
+      "iconData": "0xf086f,MaterialIcons",
+      "displayNameKey": "stocktakeApproval",
+      "name": "stockTake_review",
+      "isManuallyNavigable": false
+    },
+    {
+      "path": "/system-admin",
+      "iconData": "0xe189,MaterialIcons",
+      "displayNameKey": "systemAdmin",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/system-admin/view",
+      "children": [
+        {
+          "path": "/diagnostics",
+          "iconData": "0xe116,MaterialIcons",
+          "displayNameKey": "diagnostics",
+          "name": "Diagnostics",
+          "widgetBuilderKey": "generic-route-screen",
+          "children": [
+            {
+              "path": "sync-ticket-tasks",
+              "iconData": "0xe62f,MaterialIcons",
+              "displayNameKey": "syncTicketTasks",
+              "permission": "permissions/system-admin/diagnostic/SyncTicketTask/view",
+              "name": "sync-ticket-tasks"
+            },
+            {
+              "path": "locked-tickets",
+              "iconData": "0xe3ae,MaterialIcons",
+              "displayNameKey": "lockedTickets",
+              "permission": "permissions/system-admin/diagnostic/LockedTickets/view",
+              "name": "locked-tickets"
+            },
+            {
+              "path": "audit-tickets",
+              "iconData": "0xe3ae,MaterialIcons",
+              "displayNameKey": "auditTickets",
+              "permission": "permissions/system-admin/diagnostic/AuditTickets/view",
+              "name": "audit-tickets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/ontrack",
+      "iconData": "0xe3a6,MaterialIcons",
+      "displayNameKey": "ontrack",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/transport/view",
+      "platform": "web",
+      "children": [
+        {
+          "path": "jobs",
+          "iconData": "0xf06f2,MaterialIcons",
+          "displayNameKey": "jobs",
+          "name": "Transport_Jobs",
+          "children": [
+            {
+              "path": "createJob",
+              "displayNameKey": "createJob",
+              "name": "Transport_Create_Job"
+            },
+            {
+              "path": "track/:jobId",
+              "iconData": "0xf134,MaterialIcons",
+              "displayNameKey": "jobTracking",
+              "name": "Transport_Job_Tracking"
+            }
+          ]
+        },
+        {
+          "path": "standing-order",
+          "iconData": "0xf134,MaterialIcons",
+          "displayNameKey": "standingOrder",
+          "name": "Transport_Standing_Order",
+          "children": [
+            {
+              "path": "createStandingOrder",
+              "displayNameKey": "createStandingOrder",
+              "name": "Transport_Create_Standing_Order"
+            }
+          ]
+        },
+        {
+          "path": "planner",
+          "iconData": "0xf600,MaterialIcons",
+          "displayNameKey": "planner",
+          "name": "Transport_Planner",
+          "children": [
+            {
+              "path": "createPlan",
+              "displayNameKey": "createPlan",
+              "name": "Transport_Create_Plan"
+            },
+            {
+              "path": "editPlan/:planId",
+              "displayNameKey": "editPlan",
+              "name": "Transport_Edit_Plan"
+            }
+          ]
+        },
+        {
+          "path": "scheduler",
+          "iconData": "0xf06bb,MaterialIcons",
+          "displayNameKey": "scheduler",
+          "name": "Transport_Scheduler"
+        },
+        {
+          "path": "locate-job/:jobNumber",
+          "displayNameKey": "locateJob",
+          "name": "Transport_Locate_Job",
+          "isManuallyNavigable": false
+        },
+        {
+          "path": "assets",
+          "iconData": "0xe87d,MaterialIcons",
+          "displayNameKey": "assets",
+          "name": "Transport_Assets",
+          "widgetBuilderKey": "generic-route-screen",
+          "children": [
+            {
+              "path": "internalTrucks",
+              "iconData": "0xf4df,FontAwesomeIcons",
+              "displayNameKey": "internalTrucks",
+              "name": "Transport_Internal_Trucks",
+              "children": [
+                {
+                  "path": "editTruck/:truckId",
+                  "displayNameKey": "editTruck",
+                  "name": "Transport_Edit_Trucks"
+                }
+              ]
+            },
+            {
+              "path": "managedTrucks",
+              "iconData": "0xe2b7,FontAwesomeIcons",
+              "displayNameKey": "managedThirdPartyTrucks",
+              "name": "Transport_Managed_Trucks",
+              "children": [
+                {
+                  "path": "addManagedTruck",
+                  "displayNameKey": "addManagedThirdPartyTruck",
+                  "name": "Transport_Add_Managed_Truck"
+                },
+                {
+                  "path": "editManagedTruck/:truckId",
+                  "displayNameKey": "editManagedThirdPartyTruck",
+                  "name": "Transport_Edit_Managed_Truck"
+                }
+              ]
+            },
+            {
+              "path": "containers",
+              "iconData": "0xf466,FontAwesomeIcons",
+              "displayNameKey": "containers",
+              "name": "Transport_Containers",
+              "children": [
+                {
+                  "path": "addContainer",
+                  "displayNameKey": "addContainer",
+                  "name": "Transport_Add_Container"
+                },
+                {
+                  "path": "editContainer/:containerId",
+                  "displayNameKey": "editContainer",
+                  "name": "Transport_Edit_Container"
+                }
+              ]
+            },
+            {
+              "path": "asset-locator",
+              "iconData": "0xe55b,MaterialIcons",
+              "displayNameKey": "assetLocator",
+              "name": "Transport_Asset_Locator"
+            },
+            {
+              "path": "trailers",
+              "iconData": "0xe041,FontAwesomeIcons",
+              "displayNameKey": "trailers",
+              "name": "Transport_Trailers"
+            }
+          ]
+        },
+        {
+          "path": "customers",
+          "iconData": "0xeb7f,MaterialIcons",
+          "displayNameKey": "customers",
+          "name": "Transport_Customers"
+        },
+        {
+          "path": "reports",
+          "iconData": "0xe0cc,MaterialIcons",
+          "displayNameKey": "reports",
+          "name": "Transport_Reports",
+          "children": [
+            {
+              "path": "viewReport",
+              "iconData": "0xe0cc,MaterialIcons",
+              "displayNameKey": "viewReport",
+              "name": "Transport_View_Report"
+            }
+          ]
+        },
+        {
+          "path": "needs-container",
+          "iconData": "0xe52a,MaterialIcons",
+          "displayNameKey": "needsContainer",
+          "name": "Transport_Needs_Container"
+        },
+        {
+          "path": "haulier-settings",
+          "iconData": "0xf36e,MaterialIcons",
+          "displayNameKey": "haulierSettings",
+          "name": "Transport_Haulier_Settings"
+        },
+        {
+          "path": "user-preferences",
+          "iconData": "0xf04f1,MaterialIcons",
+          "displayNameKey": "userPreferences",
+          "widgetBuilderKey": "generic-route-screen",
+          "children": [
+            {
+              "path": "scheduler-preferences",
+              "iconData": "0xe4f6,MaterialIcons",
+              "displayNameKey": "schedulerPreferences",
+              "name": "Transport_Scheduler_Preferences"
+            },
+            {
+              "path": "dispatchyards",
+              "iconData": "0xf04fd,MaterialIcons",
+              "displayNameKey": "dispatchYards",
+              "name": "Transport_Dispatch_Yards"
+            },
+            {
+              "path": "managedthirdparty",
+              "iconData": "0xf0d1,MaterialIcons",
+              "displayNameKey": "managedThirdPartyHauliers",
+              "name": "Transport_Managed_Thirdparty"
+            },
+            {
+              "path": "thirdparty",
+              "iconData": "0xe2b7,MaterialIcons",
+              "displayNameKey": "thirdPartyHauliers",
+              "name": "Transport_Thirdparty"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/workflows",
+      "displayNameKey": "workflows",
+      "widgetBuilderKey": "404",
+      "isManuallyNavigable": false,
+      "children": [
+        {
+          "path": "paymentapproval/PaymentApprovals/:yard/:id",
+          "displayNameKey": "paymentApproval",
+          "name": "paymentApproval"
+        },
+        {
+          "path": "ticket/createconsignment/:yard/:ticketNo",
+          "displayNameKey": "consignmentNote",
+          "name": "Consignment_Note",
+          "children": [
+            {
+              "path": "create-consignment",
+              "displayNameKey": "createConsignmentNote",
+              "name": "Create_Consignment_Note"
+            }
+          ]
+        },
+        {
+          "path": "ticket/consignmentsignature/:yardCode/:ticketNo/:signatureId",
+          "displayNameKey": "signature",
+          "name": "Signature"
+        }
+      ]
+    },
+    {
+      "path": "/workplace",
+      "iconData": "0xefe3,MaterialIcons",
+      "displayNameKey": "workplace",
+      "widgetBuilderKey": "generic-route-screen",
+      "permission": "permissions/workplace/view",
+      "platform": "web",
+      "children": [
+        {
+          "path": "/desks",
+          "iconData": "0xf06ea,MaterialIcons",
+          "displayNameKey": "desks",
+          "name": "Desks",
+          "permission": "permissions/workplace/desks/view"
+        },
+        {
+          "path": "/door-access",
+          "widgetBuilderKey": "da-door-access",
+          "displayNameKey": "doorAccess",
+          "name": "da-doorAccess",
+          "iconData": "0xf1ff,MaterialIcons",
+          "permission": "permissions/door-access",
+          "children": [
+            {
+              "path": "sites",
+              "iconData": "0xe55f,MaterialIcons",
+              "displayNameKey": "daSites",
+              "widgetBuilderKey": "da-sites",
+              "name": "da-sites",
+              "permission": "permissions/door-access/site/view",
+              "children": [
+                {
+                  "path": ":siteId",
+                  "displayNameKey": "daSiteDetails",
+                  "widgetBuilderKey": "da-site-details",
+                  "name": "da-site-details",
+                  "permission": "permissions/door-access/site/details/view",
+                  "children": [
+                    {
+                      "path": "access-points",
+                      "displayNameKey": "daAccessPoints",
+                      "widgetBuilderKey": "da-access-points",
+                      "name": "da-access-points",
+                      "permission": "permissions/door-access/access-point/view",
+                      "children": [
+                        {
+                          "path": ":accessPointId/detail",
+                          "displayNameKey": "daAccessPointDetail",
+                          "widgetBuilderKey": "da-access-point-details",
+                          "name": "da-access-point-details",
+                          "permission": "permissions/door-access/access-point/details/view"
+                        }
+                      ]
+                    },
+                    {
+                      "path": "door-controllers",
+                      "displayNameKey": "daDoorControllers",
+                      "name": "da-door-controllers",
+                      "widgetBuilderKey": "da-door-controllers",
+                      "permission": "permissions/door-access/controller/view",
+                      "children": [
+                        {
+                          "path": ":accessControllerId/detail",
+                          "displayNameKey": "daDoorControllerDetail",
+                          "widgetBuilderKey": "da-door-controller-detail",
+                          "name": "da-door-controller-detail",
+                          "permission": "permissions/door-access/controller/details/view"
+                        },
+                        {
+                          "path": ":accessControllerId/schedules",
+                          "displayNameKey": "daSchedules",
+                          "widgetBuilderKey": "da-schedules",
+                          "name": "da-schedules",
+                          "permission": "permissions/door-access/schedule/view",
+                          "children": [
+                            {
+                              "path": "add-schedule",
+                              "displayNameKey": "daAddSchedule",
+                              "widgetBuilderKey": "da-add-schedule",
+                              "name": "da-add-schedule",
+                              "permission": "permissions/door-access/schedule/write"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "path": "floor-plans",
+                      "displayNameKey": "daFloorPlans",
+                      "name": "da-floor-plans",
+                      "widgetBuilderKey": "da-floor-plans",
+                      "permission": "permissions/door-access/floor-plan/view"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "door-access-users",
+              "iconData": "0xe7fb,MaterialIcons",
+              "widgetBuilderKey": "da-users",
+              "displayNameKey": "daUsers",
+              "name": "da-users",
+              "permission": "permissions/door-access/user/view",
+              "children": [
+                {
+                  "path": ":userId/details",
+                  "displayNameKey": "daUserDetails",
+                  "widgetBuilderKey": "da-user-details",
+                  "name": "da-user-details",
+                  "permission": "permissions/door-access/user/details/view"
+                }
+              ]
+            },
+            {
+              "path": "groups",
+              "iconData": "0xf233,MaterialIcons",
+              "displayNameKey": "daGroups",
+              "widgetBuilderKey": "da-groups",
+              "name": "da-groups",
+              "permission": "permissions/door-access/group/view",
+              "children": [
+                {
+                  "path": "add-new-group",
+                  "displayNameKey": "daAddNewGroup",
+                  "widgetBuilderKey": "da-add-new-group",
+                  "name": "da-add-new-group",
+                  "permission": "permissions/door-access/group/write"
+                },
+                {
+                  "path": ":groupId/link-access-point",
+                  "displayNameKey": "daLinkAccessPoint",
+                  "widgetBuilderKey": "da-link-group-access-point",
+                  "name": "da-link-group-access-point",
+                  "permission": "permissions/door-access/access-point/link/action"
+                }
+              ]
+            },
+            {
+              "path": "alerts",
+              "iconData": "0xe002,MaterialIcons",
+              "displayNameKey": "daAlerts",
+              "widgetBuilderKey": "da-alerts",
+              "name": "da-alerts",
+              "permission": "permissions/door-access/alert/view",
+              "children": [
+                {
+                  "path": "door-access-attempts",
+                  "displayNameKey": "daAlertsDoorAccessAttempts",
+                  "widgetBuilderKey": "da-alerts-door-access-attempts",
+                  "name": "da-alerts-door-access-attempts",
+                  "permission": "permissions/door-access/alert/door-access-attempt/read"
+                },
+                 {
+                  "path": "door-access-attempt-snapshots",
+                  "displayNameKey": "daAlertsDoorAccessAttemptSnapshots",
+                  "widgetBuilderKey": "da-alerts-door-access-attempt-snapshots",
+                  "name": "da-alerts-door-access-attempt-snapshots",
+                  "permission": "permissions/door-access/alert/door-access-attempt/read"
+                },
+                {
+                  "path": "schedule-updates",
+                  "displayNameKey": "daAlertsScheduleUpdates",
+                  "widgetBuilderKey": "da-alerts-schedule-updates",
+                  "name": "da-alerts-schedule-updates",
+                  "permission": "permissions/door-access/alert/schedule-update/read"
+                }
+              ]
+            },
+            {
+              "path": "accessCredentials",
+              "iconData": "0xe73b,MaterialIcons",
+              "displayNameKey": "daAccessCredentials",
+              "widgetBuilderKey": "da-access-credentials",
+              "name": "da-access-credentials",
+              "permission": "permissions/door-access/credential/view"
+            },
+            {
+              "path": "doorSchedules",
+              "iconData": "0xe73b,MaterialIcons",
+              "displayNameKey": "da-door-schedules",
+              "widgetBuilderKey": "da-door-schedules",
+              "name": "da-door-schedules",
+              "permission": "permissions/door-access/controller/view"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "path": "/yard-logistics",
+      "iconData": "0xf05a4,MaterialIcons",
+      "displayNameKey": "yardLogistics",
+      "name": "ylHome",
+      "permission": "permissions/yard-logistics/view",
+      "children": [
+        {
+          "path": "new-lot",
+          "iconData": "0xf5a4,Symbols",
+          "displayNameKey": "ylNewLot",
+          "name": "ylNewLot",
+          "platform": "native"
+        },
+        {
+          "path": "new-pallet",
+          "iconData": "0xf5a4,Symbols",
+          "displayNameKey": "ylNewPallet",
+          "name": "ylNewPallet",
+          "platform": "native"
+        },
+        {
+          "path": "new-bag",
+          "iconData": "0xe146,Symbols",
+          "displayNameKey": "ylNewBag",
+          "name": "ylNewBag",
+          "platform": "native"
+        },
+        {
+          "path": "new-packinglist",
+          "iconData": "0xe0ee,Symbols",
+          "displayNameKey": "ylNewPackinglist",
+          "name": "ylNewPackinglist",
+          "platform": "native"
+        },
+        {
+          "path": "existing-lot",
+          "iconData": "0xe049,MaterialIcons",
+          "displayNameKey": "ylExistingLot",
+          "name": "ylExistingLot",
+          "isManuallyNavigable": false,
+          "platform": "native"
+        },
+        {
+          "path": "ticket-with-lots",
+          "iconData": "0xe049,MaterialIcons",
+          "displayNameKey": "ylTicketWithLots",
+          "name": "ylTicketWithLots",
+          "isManuallyNavigable": false,
+          "platform": "native"
+        },
+        {
+          "path": "existing-pallet",
+          "iconData": "0xe049,MaterialIcons",
+          "displayNameKey": "ylExistingPallet",
+          "name": "ylExistingPallet",
+          "isManuallyNavigable": false,
+          "platform": "native"
+        },
+        {
+          "path": "existing-bag",
+          "iconData": "0xe049,MaterialIcons",
+          "displayNameKey": "ylExistingBag",
+          "name": "ylExistingBag",
+          "isManuallyNavigable": false,
+          "platform": "native"
+        },
+        {
+          "path": "existing-packinglist",
+          "iconData": "0xe049,MaterialIcons",
+          "displayNameKey": "ylExistingPackinglist",
+          "name": "ylExistingPackinglist",
+          "isManuallyNavigable": false,
+          "platform": "native"
+        },
+        {
+          "path": "view-lots",
+          "iconData": "0xf500,Symbols",
+          "displayNameKey": "ylViewLots",
+          "name": "ylViewLots"
+        }
+      ]
+    },
+    {
+      "path": "/settings",
+      "iconData": "0xe57f,MaterialIcons",
+      "displayNameKey": "settings",
+      "name": "settings"
+    }
+  ],
+  "@metadata": {
+    "@collection": "ReferenceData"
+  }
+}

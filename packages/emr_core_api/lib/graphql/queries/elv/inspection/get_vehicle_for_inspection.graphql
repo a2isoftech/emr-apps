@@ -1,0 +1,83 @@
+query GetVehicleForInspection(
+  $yardCode: String!
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+) {
+  vehicleForInspection(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      yardCode: $yardCode
+    }
+  ) {
+    elvQuotationId
+    quoteSource
+    vehicleInfo {
+      detail {
+        vin
+        vrn
+        engineSize
+        curbWeight {
+          id
+          uom
+          value
+        }
+        make
+        model
+        fuelType
+        year
+      }
+      configuration {
+        vinUnreadable
+        hasBattery
+        parts {
+          ... on VehiclePartConfig {
+            partKey
+            partInfo {
+              partType
+              partLocation
+            }
+            partPhotos {
+              url
+            }
+          }
+          ... on CatalyticConverterConfig {
+            ...CatalyticConverterFields
+          }
+        }
+        nonConformingParts {
+          ...NonConformingPartFields
+        }
+      }
+      documents {
+        frontPhoto {
+          url
+        }
+        rearPhoto {
+          url
+        }
+        vinPhoto {
+          url
+        }
+        v5LogBook {
+          url
+        }
+      }
+    }
+    vehiclePriceDetail {
+      price
+      totalCatPrice
+      status
+      partPrices {
+        price
+        partInfo {
+          partType
+          partLocation
+        }
+        vehiclePartKeys
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mutation SaveStockTakeConfiguration($input: SaveStockTakeConfigurationInput!) {
+  saveStockTakeConfigurations(input: $input) {
+    success
+    message
+    errorCode
+    data
+  }
+}

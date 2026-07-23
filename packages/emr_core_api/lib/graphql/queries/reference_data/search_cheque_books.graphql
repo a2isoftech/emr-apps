@@ -1,0 +1,9 @@
+query SearchChequeBooks ($bankAccountCode: String!, $yardCode: String) {
+    searchChequeBooks(input: { bankAccountCode: $bankAccountCode, yardCode: $yardCode}) {
+        yardCode
+        bankAccountCode
+        startNumber
+        count
+        remaining
+    }
+}

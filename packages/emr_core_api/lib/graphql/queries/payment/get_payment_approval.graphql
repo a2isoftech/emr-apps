@@ -1,0 +1,8 @@
+query getPaymentApproval($id:String!) {
+  loadPaymentApproval(id:$id) {
+    changeVector
+    entity {
+      ...PaymentApproval
+    }
+  }
+}

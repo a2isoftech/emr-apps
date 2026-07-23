@@ -1,0 +1,9 @@
+fragment EwcControlFragment on EwcControl 
+{
+   enabled
+   commoditySourceTypeId
+   enablePartyWasteStream
+   commoditySourceType{
+    ...CommoditySourceTypesFragment
+   }
+}

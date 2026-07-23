@@ -1,0 +1,412 @@
+query GetAccountInfo($accountId: String!, $includePublicationData: Boolean = true) {
+  accountById(accountId: $accountId) {
+    id
+    code
+    name
+    type
+    accountStatus
+    currencyId
+    productEWC {
+      key {
+        code
+        id
+        description
+      }
+      value
+    }
+    sicCodeId
+    prospectId
+    originatingCountry
+    preferredPaymentMethod
+    customerVatGroupType
+    supplierVatGroupType
+    financialCustomerGroupId
+    financialSupplierGroupId
+    parentAccount
+    vihbNumber
+    linkedPublications @include(if: $includePublicationData) {
+      publicationId
+      allowedProductIds
+      allowedYardIds
+      publication {
+        id
+        name
+        availableProducts {
+          id
+          code
+          description
+        }
+        availableYards {
+          id
+          name
+          yardCode
+        }
+      }      
+    }
+    loyaltyCards {
+      code
+      locationCode
+      issueDate
+      provider
+    }
+    prepaymentCards {
+      code
+      panDigits
+      issuerType
+      issueDate
+      active
+    }
+    settings {
+      stateReportingEnabled
+      negativeInwardsEnabled
+      transformationEnabled
+      validFrom
+      validTo
+      marketIndicatorEnabled
+      isWasteProducer
+      isWasteImporter
+      isWasteTransporter
+      isWasteRegisteredCarrier
+      annualWtnSsaRequired
+      wtnSsaExpiryDate
+      isDigitalWalletActivated
+      hasHazardousWasteConsignmentNote
+    }
+    industryGroups {
+      trader
+      supplier
+    }
+    pricingControl {
+      priceChangesRestricted
+    }
+    territory {
+      id
+      code
+      name
+      active
+      currencyCode
+      uomId
+      defaultCompanyId
+    }
+    locations {
+      name
+      code
+      addressKey
+      primaryContactId
+      description
+      active
+      sitePermitHolder
+      sitePermitOrExemptionNumber
+    }
+
+    bankAccounts {
+      bankName
+      accountHolderName
+      sortCode
+      accountNumber
+      currencyId
+      address {
+        address1
+        address2
+        address3
+        address4
+        address5
+        address6
+        postCode
+        countryCode
+      }
+      ibanCode
+      reference
+      swiftCode
+      countryCurrencyId
+      bankAccountType
+      verificationType
+      comments{
+        content
+      }
+      fasterPaymentSupported
+    }
+
+    businessDetail {
+      vatNumber
+      eoriNumber
+      companyRegistrationNumber
+      isTradingCompany
+      website
+      paymentTerm {
+        taxMethod
+        documentHoldStatusType
+        financialPaymentMethod
+        paymentTermTypeId
+        paymentTermTypeName
+        defaultMedia
+        discountType
+        adjustTax
+        discountTerms
+        discountPercentage
+      }
+      creditTerm {
+        vatClass
+        paymentTermTypeId
+        paymentTermTypeName
+        dueDateFrom
+        limitDecisionType
+        invoicePeriodicity
+        invoicePeriodicityDays
+        onStop
+      }
+      invoicingOptions {
+        bulkPod
+        multiLoad
+        multiDepot
+        multiGrade
+        multiTicketDate
+        multiLocation
+        useDeliveryAddress
+        suppressInvoice
+        suppressStatement
+      }
+      selfBilling {
+        selfBillingDate
+        frequency
+        autoApprove
+        doNotPayTicketsOlderThan
+        payTicketsOlderThan
+        payCentre
+      }
+      creditControl {
+        contraAgreed
+        insurerPolicyName
+        creditLimit
+        overrideLimit
+        decisionLimit
+        creditReportDate
+        creditReportValue
+        creditLimitReviewDate
+        currencyId
+      }
+      licenseExemption {
+        wasteTransferLicense {
+          media {
+            url
+          }
+          documentType
+          validFrom
+          validTo
+        }
+        annualWasteTransferNote
+        wasteProducer
+        wasteImporter
+        wasteTransporter
+        wasteRegCarrier
+        wasteRegCarrierNumber
+      }
+    }
+    celAgreement {
+      agreementDate
+      expiryDate
+    }
+    cfcAgreement {
+      agreementDate
+      expiryDate
+    }
+    accountManagers {
+      serviceType
+      type
+      id
+      name
+      priority
+      userInfo {
+        id
+        name
+        emailAddress
+        permissions
+        yards {
+          yardCode
+          shortName
+          name
+        }
+        territories {
+          name
+          territoryCode
+        }
+        defaultDepot
+        defaultTerritory
+        defaultOrderBookTypeId
+        userOrderBooks {
+          orderBookTypeId
+          orderBookName
+          gradeType
+        }
+        t2UserId
+        allAccountAccess
+        azureUserId
+      }
+    }
+    primaryManager {
+      type
+      id
+      name
+      priority
+      userInfo {
+        id
+        name
+        emailAddress
+        permissions
+        yards {
+          yardCode
+          shortName
+          name
+        }
+        territories {
+          name
+          territoryCode
+        }
+        defaultDepot
+        defaultTerritory
+        defaultOrderBookTypeId
+        userOrderBooks {
+          orderBookTypeId
+          orderBookName
+          gradeType
+        }
+        t2UserId
+        allAccountAccess
+        azureUserId
+      }
+    }
+    accountContacts {
+      key
+      value {
+        addressKey
+        contactTypes
+        title
+        jobTitle
+        dateOfBirth
+        firstName
+        middleName
+        lastName
+        contactPreferences {
+          mobile {
+            value
+            enabled
+          }
+          email {
+            value
+            enabled
+          }
+          phone {
+            value
+            enabled
+          }
+          fax {
+            value
+            enabled
+          }
+          post {
+            value
+            enabled
+          }
+          otherContactMethods {
+            key
+            value {
+              value
+              enabled
+            }
+          }
+        }
+        proofOfAddress {
+          validFrom
+          validTo
+          type
+          subType
+          fileId
+          filePath
+          tradeDocumentId
+          identificationNumber
+          sasUrl
+          media {
+            url
+            created {
+              userInfoId
+              at
+              userName
+            }
+          }
+        }
+        proofOfIdentification {
+          validFrom
+          validTo
+          type
+          subType
+          fileId
+          filePath
+          tradeDocumentId
+          identificationNumber
+          sasUrl
+          media {
+            url
+            created {
+              userInfoId
+              at
+              userName
+            }
+          }
+        }
+        signature {
+          url
+          sasUrl
+          created {
+              userInfoId
+              at
+              userName
+            }
+        }
+        signatureSasUrl
+      }
+    }
+    industryGroup
+    accountAddresses {
+      key
+      address1
+      address2
+      address3
+      address4
+      address5
+      address5
+      address6
+      postCode
+      countryCode
+      what3Words
+      geoLocation {
+        latitude
+        longitude
+      }
+    }
+    defaultYardCode
+    amiceCompanyNumber
+    reportingFrequency
+    visitFrequency
+    validTerritoryIds
+    portalEnabledContacts
+    taxSettings {
+      taxId
+      w9Received
+      checkForW9
+      nameFor1099
+      doingBusinessAs
+      foreignEntityIndicator
+      secondTin
+      reportingDate
+      cashPaymentLimitExemptionDate
+    }
+     accountSubTypes{
+      key
+      value
+    }
+    managingTeams{
+      teamId
+      teamName
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation UpsertFullDoorConfiguration(
+  $upsertDoorConfiguration: UpsertFullDoorConfigurationInput!
+) {
+  upsertFullDoorConfiguration(upsertDoorConfiguration: $upsertDoorConfiguration)
+}

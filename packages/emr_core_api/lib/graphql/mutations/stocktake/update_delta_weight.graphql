@@ -1,0 +1,8 @@
+mutation UpdateDeltaWeight($input: UpdateDeltaWeightInput!) {
+  updateDeltaWeight(input: $input) {
+    success
+    data
+    message
+    errorCode
+  }
+}

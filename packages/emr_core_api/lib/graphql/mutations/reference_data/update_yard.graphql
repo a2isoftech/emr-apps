@@ -1,0 +1,7 @@
+mutation UpdateYard($input: UpdateYardInput!) {
+  updateYard(
+    input: $input
+  ) {
+    ...YardFragment    
+  }
+}

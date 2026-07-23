@@ -1,0 +1,20 @@
+mutation UpdateAccountManager($input: UpdateAccountManagerInput!) {
+  updateAccountManager(updateAccountManagerInput: $input) {
+    ... on Account{
+      primaryManager{
+        name
+      }
+      accountManagers{
+        name
+        type
+        priority
+        serviceType
+        
+      }
+    }
+    ...on AccountManagerError{
+      message
+    }
+  }
+}
+

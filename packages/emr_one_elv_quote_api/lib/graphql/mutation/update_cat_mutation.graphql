@@ -1,0 +1,13 @@
+mutation UpdateCATMutation(
+  $quoteId: Int!
+  $vehicleId: Int!
+  $territory: String
+  $input: VehicleCatDetailRequestInput!
+) {
+  updateCat(
+    quoteId: $quoteId
+    vehicleId: $vehicleId
+    territory: $territory
+    input: $input
+  )
+}

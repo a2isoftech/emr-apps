@@ -1,0 +1,16 @@
+mutation CreateAccountProductEwc(
+  $input: CreateOrUpdateAccountProductEwcInput!
+) {
+  createAccountProductEwc(input: $input) {
+    ... on Account {
+      id
+      productEWCCodes {
+        key
+        value
+      }
+    }
+    ... on AccountProductEwcError {
+      message
+    }
+  }
+}

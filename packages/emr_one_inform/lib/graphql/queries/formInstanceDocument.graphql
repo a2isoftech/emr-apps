@@ -1,0 +1,11 @@
+query FormInstanceDocument($id: UUID!) {
+    formInstance(id: $id) {
+        document 
+        template { 
+            document 
+        }
+        workOrderId
+        jobType
+        assetCode 
+    }
+}

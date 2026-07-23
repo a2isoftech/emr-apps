@@ -1,0 +1,6 @@
+query Companies {
+  companies{
+    code,
+    fullName
+  }
+}

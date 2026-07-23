@@ -1,0 +1,6 @@
+mutation CreateYardPaymentRule(
+    $PaymentRule: CreatePaymentRuleInput!) {
+    createYardPaymentRule(input: $PaymentRule ) {
+        ...PaymentRuleFragment
+  }
+}

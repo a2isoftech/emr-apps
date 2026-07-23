@@ -1,0 +1,9 @@
+query GetTerritoryById(
+    $territoryId: String!) {
+    territoryById(territoryId: $territoryId) {
+      ...TerritoryFragment
+    defaultCompany {
+      ...CompanyFragment
+    }
+  }
+}

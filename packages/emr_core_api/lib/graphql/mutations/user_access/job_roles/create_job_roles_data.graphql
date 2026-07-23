@@ -1,0 +1,17 @@
+mutation CreateJobRole($name: String!, $description: String!, $systemRoleIds: [String!]!, $territoryId: String!, $active: Boolean!) {
+  createJobRole(
+    input: {
+      name: $name
+      description: $description
+      systemRoleIds: $systemRoleIds
+      territoryId: $territoryId
+      active: $active
+    }
+  ) {
+    hasError
+    message
+    data {
+      ...JobRoleFragment
+    }
+  }
+}

@@ -1,0 +1,6 @@
+query GetCompanyById(
+    $id: String!) {
+    companyById(id: $id) {
+        ...CompanyFragment
+    }
+}

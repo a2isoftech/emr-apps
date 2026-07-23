@@ -1,0 +1,30 @@
+query GetAllUsers(
+  $input: SearchUsersInput!
+  $before: String
+  $after: String
+  $first: Int
+  $last: Int
+  $order: [UserSortInput!]
+) {
+  users(
+    input: $input
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    order: $order
+  ) {
+    edges {
+      node {
+        ...UserFragment
+      }
+    }
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

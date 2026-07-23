@@ -1,0 +1,100 @@
+fragment AccountDetails on Account {
+    accountContacts {
+      key
+      value {
+        title
+        firstName
+        lastName
+        dateOfBirth
+        contactTypes
+        contactPreferences {
+          mobile {
+            enabled
+            value
+          }
+          email {
+            enabled
+            value
+          }
+        }
+        signature {
+          url
+        }
+        proofOfIdentification {
+          media {
+            url
+          }
+          type
+          subType
+          validFrom
+          validTo
+        }
+        proofOfAddress {
+          media {
+            url
+          }
+          type
+          subType
+          validFrom
+          validTo
+        }
+      }
+    }
+    id
+    type
+    code
+    name
+    sicCodeId
+    allowPayment
+    celAgreement {
+      agreementDate
+      expiryDate
+    }
+    secoreAgreement {
+      agreementDate
+      expiryDate
+    }
+    preferredPaymentMethod
+    bankAccounts {
+      bankName
+      accountHolderName
+      accountNumber
+      sortCode
+    }
+    prepaymentCards {
+      code
+      active
+      panDigits
+      issuerType
+      issueDate
+    }
+    accountStatus
+    settings {
+      isDigitalWalletActivated
+    }
+    addresses {
+    key
+    value {
+      address1
+      address2
+      address3
+      address4
+      address5
+      address6
+      postCode
+      countryCode
+      what3Words
+      geoLocation {
+        latitude
+        longitude
+      }
+    }
+  }
+  locations(
+    includeOnlyMatchedLocations: false
+  ) {
+    code
+    name
+    addressKey
+  }
+}

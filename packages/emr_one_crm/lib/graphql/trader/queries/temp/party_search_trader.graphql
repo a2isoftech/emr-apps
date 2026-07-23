@@ -1,0 +1,6 @@
+query PartySearchTradeR($query: String!, $skip: Int!, $take: Int!) {
+  partiesManaged(query: $query, skip: $skip, take: $take) {
+    party_account_no
+    party_name
+  }
+}

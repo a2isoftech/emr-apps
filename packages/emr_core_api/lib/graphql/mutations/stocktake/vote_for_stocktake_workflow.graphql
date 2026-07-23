@@ -1,0 +1,22 @@
+mutation VoteForStocktakeWorkflow(
+  $input: ApproveOrRejectStocktakeApprovalInput!
+) {
+  approveOrRejectStocktakeApproval(
+    approveOrRejectStocktakeApprovalInput: $input
+  ) {
+    success
+    message
+    errorCode
+    data {
+      status
+      approvers {
+        key
+      }
+      rejectors {
+        key
+      }
+      userEmails
+      notifiedOn
+    }
+  }
+}

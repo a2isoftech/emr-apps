@@ -1,0 +1,43 @@
+fragment StocktakeSearchFields on Stocktake {
+  id
+  name
+  status
+  conductedBy
+  productFamily
+  isRoutineCheck
+  defaultUom
+  currencyCode
+  modified {
+    at
+  }
+  workflow {
+    currentLevel
+    stocktakeStatus
+  }
+  conductor {
+    firstName
+    lastName
+    id
+  }
+  yardCode
+  created {
+    at
+    userInfoId
+    userName
+    user {
+      name
+      id
+    }
+  }
+  stocktakeLocations {
+    location {
+      code
+    }
+    locationId
+    snapshot {
+      created {
+        at
+      }
+    }
+  }
+}

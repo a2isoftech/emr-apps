@@ -1,0 +1,22 @@
+mutation ExecuteStocktakeApproval($stocktakeId: String!) {
+  executeApprovalForStocktake(
+    stocktakeApprovalInput: { stocktakeId: $stocktakeId }
+  ) {
+    success
+    message
+    errorCode
+    data {
+      id
+      stocktakeId
+      stocktakeStatus
+      currentLevel
+      levels {
+        key
+        value {
+          status
+          userEmails
+        }
+      }
+    }
+  }
+}

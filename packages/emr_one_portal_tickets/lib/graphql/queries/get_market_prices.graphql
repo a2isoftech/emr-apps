@@ -1,0 +1,14 @@
+query GetMarketPrices($productType: String!, $territoryCode: String!, $cutOffDate: DateTime) {
+  marketPrice(productType: $productType, territoryCode: $territoryCode, cutOffDate: $cutOffDate) {
+    productType
+    territory
+    prices {
+      createdDate
+      amount
+      updatedDate
+    }
+    updatedDate
+    totalMWPValue
+    currency
+  }
+}

@@ -1,0 +1,5 @@
+query searchCommoditySourceTypes($input: CommoditySourceTypeInput!) {
+  searchCommoditySourceTypes(input: $input) {
+       ...CommoditySourceTypesFragment
+  }
+}

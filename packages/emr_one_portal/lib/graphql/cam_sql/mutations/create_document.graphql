@@ -1,0 +1,9 @@
+mutation CreateDocument($input: CreateNewDocumentInput) {
+  createDocument(input: $input) {
+    accountNumber
+    errors {
+      message
+      code
+    }
+  }
+}

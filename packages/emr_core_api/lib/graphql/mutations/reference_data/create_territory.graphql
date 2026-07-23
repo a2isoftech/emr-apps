@@ -1,0 +1,24 @@
+mutation CreateTerritory(
+  $id: String!
+  $name: String!
+  $uomId: Int!
+  $defaultCompanyId: String!
+  $currencyCode: String!
+  $code: String!
+) {
+  createTerritory(
+    input: {
+      id: $id
+      name: $name
+      uomId: $uomId
+      defaultCompanyId: $defaultCompanyId
+      currencyCode: $currencyCode
+      code: $code  
+    }
+  ) {    
+    ...TerritoryFragment
+    defaultCompany {
+      ...CompanyFragment
+    }  
+  }
+}

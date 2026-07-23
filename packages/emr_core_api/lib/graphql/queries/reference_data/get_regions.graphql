@@ -1,0 +1,11 @@
+query GetRegions($input: RegionSearchInput!) {
+  regions(input: $input) {
+    edges {
+      node {
+        id
+        name
+        parentRegionId
+      }
+    } 
+  }
+}

@@ -1,0 +1,35 @@
+query searchFreeText(
+    $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: String!
+) {
+  searchAssetsFreeText(
+    input: $input
+   after: $after
+    before: $before
+    first: $first
+    last: $last) {
+        pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+
+    assetType
+    status
+   code
+   name
+   make
+   model
+   serialNumber
+   depotNo 
+   approved
+    }
+  }
+}
+

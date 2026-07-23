@@ -1,0 +1,8 @@
+query GetLocations($input: InventoryLocationsInput){
+  inventoryLocations(input: $input) {
+    nodes{
+      code
+      description
+    }
+  }
+}

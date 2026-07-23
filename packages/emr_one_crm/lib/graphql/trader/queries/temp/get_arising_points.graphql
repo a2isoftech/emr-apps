@@ -1,0 +1,11 @@
+query getArisingPoints($partyAccountNo: String!) {
+  partyArisingPoints(partyAccountNo: $partyAccountNo) {
+    nodes {
+      locationId
+      locationCustomerDescription
+      locationAliasDescription
+      isArisingPointDefault
+      locationAliasCode
+    }
+  }
+}

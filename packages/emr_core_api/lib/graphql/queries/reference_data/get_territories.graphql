@@ -1,0 +1,9 @@
+query GetTerritories($query: String!, $first: Int!) {
+  territories(input: { query: $query }, first: $first) {
+    nodes {
+      id
+      name
+      code
+    }
+  }
+}

@@ -1,0 +1,20 @@
+query LoadJobRoleSearchData($name: String, $active: Boolean, $before: String, $after: String, $first: Int, $last: Int, $order: [JobRoleSortInput!]) {
+  jobRoles(
+    input: { name: $name, active: $active },
+    first: $first, 
+    after: $after, 
+    last: $last, 
+    before: $before,
+    order: $order) {
+    totalCount
+    nodes {
+      ...JobRolesFragment
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

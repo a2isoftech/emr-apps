@@ -1,0 +1,19 @@
+query ExportAssets($input: SearchAssetInput!){
+  exportAssets(input: $input)
+}
+
+query ExportAssetMainAttributes($input: SearchAssetInput!){
+  exportAssetMainAttributes(input: $input)
+}
+
+query ExportAssetCounters($input: SearchAssetInput!){
+  exportAssetCounters(input: $input)
+}
+
+query ExportAssetEvents($input: SearchAssetInput!){
+  exportAssetEvents(input: $input)
+}
+
+query ExportQrCodes($input: SearchAssetInput!){
+  exportAssetQrCodes(input: $input)
+}

@@ -1,0 +1,22 @@
+mutation UnpayPaymentRecord($paymentRecordId : String!){
+  unpayPaymentRecord(paymentRecordId: $paymentRecordId){
+    result
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

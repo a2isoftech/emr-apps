@@ -1,0 +1,8 @@
+mutation DeleteBom($id: String!) {
+  deleteBillOfMaterials(id: $id) {
+    hasError
+    errorCode
+    message
+    data
+  }
+}

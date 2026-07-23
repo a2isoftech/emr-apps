@@ -1,0 +1,3 @@
+mutation AddUserLevel($input: AddUserLevelInput!){
+  addUserLevel(input:$input)
+}

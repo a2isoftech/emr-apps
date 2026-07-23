@@ -1,0 +1,14 @@
+mutation UpdateAccountHeadOfficeDetails(
+  $headOfficeInput: UpdateAccountHeadOfficeDetailsInput!
+) {
+  updateAccountHeadOfficeDetails(
+    updateHeadOfficeDetailInput: $headOfficeInput
+  ) {
+    ... on HeadOfficeDetailsError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

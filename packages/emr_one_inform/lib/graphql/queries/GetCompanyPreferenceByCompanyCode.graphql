@@ -1,0 +1,33 @@
+query GetCompanyPreference($companyCode:String!){
+  companyPreference(companyCode: $companyCode) {
+    companyCode
+    isActive
+    preference {
+      isD365Enabled
+      isMROEnabled
+      isLoggingEnabled
+      pageSize
+      importWithAdhocTemplate {
+        value
+        overrides{
+          key
+          value
+        }
+      }
+      isDigitalSignForWorkOrdersEnabled {
+        value
+        overrides{
+          key
+          value
+        }
+      }
+      isScannerForAssetSearchEnabled {
+        value
+        overrides{
+          key
+          value
+        }
+      }
+    }
+  }
+}

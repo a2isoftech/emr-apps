@@ -1,0 +1,22 @@
+query getAssetHistory($input: AssetHistoryRequestInput!){
+  revisions(input: $input)
+  {
+    attributes
+    {
+      key
+      name
+      dataType
+      values
+      {
+        value
+        text
+      }
+
+    }
+    users{
+      id
+      displayName
+    }
+    timestamps
+  }
+}

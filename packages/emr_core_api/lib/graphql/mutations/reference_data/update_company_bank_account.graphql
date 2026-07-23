@@ -1,0 +1,7 @@
+mutation UpdateCompanyBankAccount ($input : UpdateCompanyBankAccountInput! ) {
+  updateCompanyBankAccount(
+    input: $input
+  ) {
+    ...CompanyBankAccountFragment
+  }
+}

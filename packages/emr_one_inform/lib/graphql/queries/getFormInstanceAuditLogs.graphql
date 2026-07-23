@@ -1,0 +1,19 @@
+query FormInstanceStatusLogs($id: UUID!) {
+  formInstance(id: $id){
+    workOrderId
+    workOrderDescription
+    id
+    d365Error
+    reProcessedStatus
+    logs
+    {
+      id
+      uuid
+      instanceId
+      loggedBy
+      loggedByUuid
+      loggedDate   
+      status
+    }
+  }
+}

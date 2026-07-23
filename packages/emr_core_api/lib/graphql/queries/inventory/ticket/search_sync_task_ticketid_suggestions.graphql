@@ -1,0 +1,6 @@
+query searchSyncTaskTicketIdSuggestions($input: SyncWeighbridgeTicketTasksSuggestionsInput!, $searchText: String!) {
+  searchSyncTaskTicketIdSuggestions(
+    input: $input,
+    searchText: $searchText,
+  )
+}

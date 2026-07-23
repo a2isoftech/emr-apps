@@ -1,0 +1,26 @@
+fragment TicketAccountFields on TicketAccount {
+  details {
+    ... AccountDetails
+  }
+  accountId
+  accountNumber
+  name
+  locationId
+  locationName
+  address {
+    address1
+    address2
+    address3
+    address4
+    address5
+    address6
+    postCode
+    what3Words
+    countryCode
+    geoLocation {
+      longitude
+      latitude
+    }
+  }
+  sicCode
+}

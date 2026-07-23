@@ -1,0 +1,12 @@
+mutation SaveWeighbridgeConfiguration(
+  $input: DocumentOfWeighbridgeConfigurationInput!
+) {
+  saveWeighbridgeConfigurationDocument(
+    input: $input
+  ) {
+    changeVector
+    entity {
+      ...WeighbridgeConfigurationFragment
+    }
+  }
+}

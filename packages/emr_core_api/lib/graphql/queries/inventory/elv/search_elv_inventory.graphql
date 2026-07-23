@@ -1,0 +1,39 @@
+query SearchELVInventory($input: SearchELVInventoryInput!, $first: Int, $last: Int, $before: String, $after: String, $order: [ELVInventory_SearchResultSortInput!]) {
+  searchELVInventory(first: $first, last: $last, before: $before, after: $after, input: $input, order: $order) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes{
+      __typename
+      ...on Vehicle{
+        ...VehicleFields
+      }
+      ...on VehiclePart{
+        type
+        manufacturer
+        description
+        partStatus
+        stockValue
+        weight{
+          uom
+          value
+        }
+        location{
+          code
+          yard{
+            yardCode
+          }
+        }
+        vehicleIdentifier
+        vehicle{
+          vin
+          vrn
+        }
+      }
+    }
+  }
+}

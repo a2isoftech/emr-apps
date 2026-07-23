@@ -1,0 +1,31 @@
+fragment PaymentDeductionFields on PaymentDeductions{
+    grossAmount
+    cashDeductions
+    totalFee
+    totalAdvanceOffset
+    netPayable
+    netPaid
+    roundingAdjustmentOnFee
+    haulageCharges
+    encashmentValues {
+      ... EncashmentValueFields
+    }
+    paymentDeductionItems {
+      ... PaymentDeductionItemFields
+    }
+    advanceDetails
+    {
+      totalOffset
+      advanceAmountBreakup
+      {
+        advanceId
+        advanceAmountBeforeOffset
+        applicableOffset
+        advanceAmountAfterOffset
+        details
+        {
+          ... AdvanceFields
+        }
+      }
+    }
+}

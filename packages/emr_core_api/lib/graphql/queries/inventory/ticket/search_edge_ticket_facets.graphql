@@ -1,0 +1,16 @@
+query SearchEdgeTicketsFacet($input: SearchTicketsInput!) {
+  searchTicketsFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        name
+        range
+        count
+        min
+        max
+        average
+      }
+    }
+  }
+}

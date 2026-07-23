@@ -1,0 +1,8 @@
+mutation RestoreBom($id: String!) {
+  restoreBillOfMaterials(id: $id) {
+    hasError
+    errorCode
+    message
+    data
+  }
+}

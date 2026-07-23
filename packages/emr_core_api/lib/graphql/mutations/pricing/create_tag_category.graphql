@@ -1,0 +1,6 @@
+mutation CreateTagCategory($input: CreateTagCategoryInput!) {
+  createTagCategory(input: $input) {
+    ... CreateTagCategoryError
+    ... TagCategory
+  }
+}

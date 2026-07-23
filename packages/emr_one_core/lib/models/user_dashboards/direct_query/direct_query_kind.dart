@@ -1,0 +1,1 @@
+enum DirectQueryKind { singleFacetValue, limitQuery }

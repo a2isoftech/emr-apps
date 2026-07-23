@@ -1,0 +1,18 @@
+query SearchWeighbridgeConfigurations ($query: String, $yardId: String, $first: Int, $after: String, $last: Int, $before: String) {
+  searchWeighbridgeConfigurations(input: { query: $query, yardId: $yardId }, 
+    first: $first
+    after: $after
+    last: $last
+    before: $before) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      ...WeighbridgeConfigurationFragment   
+    }
+  }
+}

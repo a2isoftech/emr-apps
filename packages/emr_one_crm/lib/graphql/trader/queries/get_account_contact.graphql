@@ -1,0 +1,18 @@
+query GetAccountContacts($partyAccountNo: String!) {
+  accounts(where: { accountNumber: { eq: $partyAccountNo } }) {
+    edges {
+      node {
+        accountContacts {
+          accountContactType {
+            description
+          }
+          contact {
+            firstName
+            lastName
+            id
+          }
+        }
+      }
+    }
+  }
+}

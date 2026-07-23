@@ -1,0 +1,12 @@
+mutation DeleteAccountManager($input: DeleteAccountManagerInput!){
+  deleteAccountManager(deleteAccountManagerInput: $input){
+    ... on Account{
+      accountManagers{
+        name
+      }
+    }
+    ...on AccountManagerError{
+      message
+    }
+  }
+}

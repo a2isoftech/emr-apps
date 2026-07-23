@@ -1,0 +1,6 @@
+query GetWorkflowRuleFilterValues($WorkflowType: WorkflowType!){
+  workflowRuleFilterValues(workflowTypeName: $WorkflowType) {
+    key
+    value
+  }
+}

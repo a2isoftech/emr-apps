@@ -1,0 +1,7 @@
+mutation UpdateAccessController($input: UpdateAccessControllerInput!){
+  updateAccessController(input: $input){
+    name
+    id
+    active
+  }
+}

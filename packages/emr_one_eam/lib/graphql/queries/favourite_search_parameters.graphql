@@ -1,0 +1,6 @@
+query GetFavouriteSearchParameters{
+  favouriteSearchParameters{
+    name
+    parameters
+  }
+}

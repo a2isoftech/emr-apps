@@ -1,0 +1,3 @@
+mutation CreateEdgePublicAlbum($id: String!) {
+  createEdgePublicAlbum(id: $id)
+}

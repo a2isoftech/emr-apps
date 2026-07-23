@@ -1,0 +1,6 @@
+mutation scanConsignmentNote(
+  $request: ScanConsignmentNoteRequestInput!
+  $consignmentImage: Upload
+) {
+  scanConsignmentNote(request: $request, consignmentImage: $consignmentImage)
+}

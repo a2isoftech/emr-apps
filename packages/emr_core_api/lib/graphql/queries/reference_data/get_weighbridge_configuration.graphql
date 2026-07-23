@@ -1,0 +1,8 @@
+query GetWeighbridgeConfiguration($id: String!) {
+  weighbridgeConfiguration(id: $id) {
+    changeVector
+    entity {
+    ...WeighbridgeConfigurationFragment
+    }
+  }
+}

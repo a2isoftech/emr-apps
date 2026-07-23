@@ -1,0 +1,6 @@
+mutation updateMissingFromRollCall($input: [UpdateOrCreateMissingEmployeesInput!]!) {
+  updateMissingFromRollCall(rollCallEmployees: $input) {
+    message
+    success
+  }
+}

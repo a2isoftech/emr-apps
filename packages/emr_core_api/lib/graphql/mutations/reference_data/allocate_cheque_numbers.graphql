@@ -1,0 +1,15 @@
+mutation AllocateChequeNumbers ($input : AllocateChequeNumbersInput! ) {
+    allocateChequeNumbers(
+        input: $input
+    ) {
+        id
+        parentId
+        yardId
+        yardCode
+        bankAccountCode
+        startNumber
+        count
+        remaining
+        numberOfDigits
+    }
+}

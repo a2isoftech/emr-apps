@@ -1,0 +1,7 @@
+mutation UpdateMediaComment($ticketId:String!, $media:YardAppMediaInput!)
+{
+  updateMediaComment(ticketId: $ticketId,media: $media )
+  {
+    id
+  }
+}

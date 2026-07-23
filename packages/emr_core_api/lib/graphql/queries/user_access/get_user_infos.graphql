@@ -1,0 +1,14 @@
+query GetUserInfos{
+  userInfos
+  {
+    nodes{
+      id
+      name
+      defaultTerritory
+      defaultDepot
+      username
+      emailAddress
+      azureUserId
+    }
+  }
+}

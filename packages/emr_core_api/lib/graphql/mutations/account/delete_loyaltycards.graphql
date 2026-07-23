@@ -1,0 +1,14 @@
+mutation RemoveAccountLoyaltyCards(
+  $deleteAccountLoyaltyCardsInput: DeleteAccountLoyaltyCardsInput!
+) {
+  deleteAccountLoyaltyCards(
+    input: $deleteAccountLoyaltyCardsInput
+  ) {
+    ... on AccountLoyaltyCardsError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

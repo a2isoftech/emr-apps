@@ -1,0 +1,3 @@
+fragment CreateTagError on CreateTagError {
+  message
+}

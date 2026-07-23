@@ -1,0 +1,5 @@
+fragment TagCategory on TagCategory {
+  id
+  name
+  functional
+}

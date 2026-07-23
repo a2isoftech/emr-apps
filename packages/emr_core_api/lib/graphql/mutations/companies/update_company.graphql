@@ -1,0 +1,6 @@
+mutation UpdateCompany(
+  $input: UpdateCompanyInput!) {
+  updateCompany(input: $input) {
+    ...CompanyFragment
+  }
+}

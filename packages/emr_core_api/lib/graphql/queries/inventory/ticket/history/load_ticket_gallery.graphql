@@ -1,0 +1,22 @@
+query LoadTicketGallery($id: String!) {
+  loadTicketGalleryDocument(id: $id) {
+    changeVector
+    gallery:entity {
+      publicUrl
+      id
+      title
+      excludedImageUrls
+      tickets {
+        ...Trade2TicketFields
+        mediaAssets {
+          url
+          sasUrl
+          sasThumbnailUrl(width:128)
+          type
+        }
+      }
+      createdBy
+      createdDate
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# To regenerate run: dart run flutter_native_splash:create
+
+flutter_native_splash:
+  color: "#003B6E"
+  image: assets/logowhite.png
+  color_dark: "#003B6E"
+  image_dark: assets/logowhite.png
+
+  android_12:
+    image: assets/android12-logowhite.png
+    icon_background_color: "#003B6E"
+    image_dark: assets/android12-logowhite.png
+    icon_background_color_dark: "#003B6E"

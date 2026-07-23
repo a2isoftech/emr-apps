@@ -1,0 +1,6 @@
+fragment EncashmentValueFields on EncashmentValues{
+    encashValue
+    commissionValue
+    baseCommissionValue
+    roundingAdjustment
+}

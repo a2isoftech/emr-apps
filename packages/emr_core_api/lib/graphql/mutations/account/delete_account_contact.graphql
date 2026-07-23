@@ -1,0 +1,6 @@
+mutation DeleteAccountContact($accountId: String!, $contactId: UUID!){
+  deleteAccountContact(accountId: $accountId, contactId:$contactId){
+     ... AccountContactError
+    ... ContactWithKey
+  }
+}

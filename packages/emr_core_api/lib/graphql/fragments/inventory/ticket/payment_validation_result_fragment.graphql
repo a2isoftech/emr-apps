@@ -1,0 +1,21 @@
+fragment PaymentRuleResultFields on PaymentRuleResult{
+    status
+    errors
+    warnings
+    validationFlags{
+        isPriced
+        hasRequiredAgreements
+        hasRequiredIdentities
+        isValidPaymentMethod
+        isPhotoIdRequired
+        isPhotoIdRuleSatisfied
+        isDrivingLicenseRequired
+        isDrivingLicenseSatisfied
+        isUtilityBillRequired
+        isUtilityBillRuleSatisfied
+        isCELAgreementRequired
+        isCELAgreementRuleSatisfied
+        isSecoreAgreementRequired
+        isSecoreAgreementRuleSatisfied
+    }
+}

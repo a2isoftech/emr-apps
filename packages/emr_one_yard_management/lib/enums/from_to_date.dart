@@ -1,0 +1,1 @@
+enum FromToDate { fromDate, toDate }

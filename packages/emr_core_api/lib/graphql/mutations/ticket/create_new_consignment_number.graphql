@@ -1,0 +1,3 @@
+mutation createNewConsignmentNumber($partyName: String!) {
+  createNewConsignmentNumber(partyName: $partyName)
+}

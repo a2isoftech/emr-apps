@@ -1,0 +1,10 @@
+mutation ReplaceCard(
+  $input: ReplacePrepayCardInput!
+) {
+  replacePrepayCard(
+    input: $input
+  ) {
+    isSuccess
+    result
+  }
+}

@@ -1,0 +1,34 @@
+query ValidateTicketWithPaymentMethod(
+  $paymentMethod : PaymentMethod!
+  $ticketIds : [String!]!
+  $splitPaymentBreakups : [SplitPaymentBreakupInput!]
+  $advanceOverrides: [AdvanceOffsetInfoInput!]
+  $payingYardId : String!)
+{
+  validateTicketsWithPaymentMethod(
+    paymentMethod:$paymentMethod,
+    ticketIds: $ticketIds,
+    splitPaymentBreakups: $splitPaymentBreakups,
+    payingYardId: $payingYardId
+    advanceOverrides: $advanceOverrides)
+  {
+      key
+      value {
+        ... PaymentRuleResultFields
+      }
+  }
+
+  paymentDeductionsForTickets(
+    paymentMethod: $paymentMethod,
+    ticketIds: $ticketIds,
+    payingYardId: $payingYardId
+    splitPaymentBreakups: $splitPaymentBreakups
+    advanceOverrides: $advanceOverrides)
+  {
+    ... PaymentDeductionFields
+  }
+
+  ticketsById(input: { ticketIds: $ticketIds, payingYardId: $payingYardId }) {
+    ...TicketFields
+  }
+}

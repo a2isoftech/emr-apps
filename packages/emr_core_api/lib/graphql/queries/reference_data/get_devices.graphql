@@ -1,0 +1,30 @@
+query GetDevices (
+    $input: GetDevicesInput!
+    $before: String
+    $after: String
+    $first: Int
+    $last: Int
+    $order: [DevicesSortInput!]) {
+  devices(
+    input: $input
+    first: $first
+    after: $after
+    last: $last
+    before: $before
+    order: $order
+  ) {
+    totalCount
+    edges {
+      cursor
+      node {
+        ...DevicesFragment
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}

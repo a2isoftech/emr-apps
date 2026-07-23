@@ -1,0 +1,29 @@
+query GetBom($id: String!) {
+  billOfMaterials(id: $id) {
+    id
+    title
+    inputProducts {
+      productId
+      productCode
+      product {
+        description
+      }
+    }
+    outputProducts {
+      productId
+      productCode
+      product {
+        description
+      }
+    }
+    active
+    created {
+      at
+      userName
+    }
+    modified {
+      at
+      userName
+    }
+  }
+}

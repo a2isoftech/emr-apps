@@ -1,0 +1,17 @@
+query GetScheduledPayments($input:InvoiceFilterInput, $pageSize: Int!, $after: String)
+{
+   supplierStatements(
+    where: $input 
+    first: $pageSize
+    after: $after
+  )
+  {
+  totalCount
+  
+  nodes{
+    supplierInvoiceDueDate
+    amount
+    currency
+  }
+ }
+}

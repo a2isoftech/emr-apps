@@ -1,0 +1,9 @@
+query GetWorkflowConfiguration($WorkflowType: WorkflowType!){
+  workflowConfiguration(workflowType: $WorkflowType) {
+    id
+    levelTitle {
+      key
+      value
+    }
+  }
+}

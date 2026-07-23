@@ -1,0 +1,12 @@
+query SearchSuggestionCompanies(
+  $input: SearchCompanyInput) {
+  companies(
+    input: $input){
+    nodes {
+      id
+      code
+      shortName
+      fullName
+    }
+  }
+}

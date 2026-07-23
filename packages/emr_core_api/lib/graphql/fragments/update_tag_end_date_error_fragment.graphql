@@ -1,0 +1,3 @@
+fragment UpdateTagEndDateError on UpdateTagEndDateError {
+    message
+}

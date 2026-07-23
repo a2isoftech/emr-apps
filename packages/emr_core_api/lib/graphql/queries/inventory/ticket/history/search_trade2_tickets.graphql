@@ -1,0 +1,54 @@
+query SearchTrade2Tickets(
+  $input: SearchTrade2TicketsInput!
+  $first: Int
+  $last: Int
+  $before: String,
+  $after: String,
+  $order: [Trade2TicketSortInput!]
+) {
+  searchTrade2Tickets(first: $first, last: $last, before: $before, after: $after, input: $input, order: $order) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      key
+      depotNo
+      yardCode
+      ticketNumber
+      ticketType
+      partyAccountNo
+      partyName
+      ticketCategory
+      createdDate
+      createdDateEpoch
+      price
+      lines {
+        grossWeight {
+          uom
+          value
+          id
+        }
+        gradeCode
+        lineNumber
+        heapId
+        heapCode
+        rate {
+          uom
+          value
+          id
+        }
+        weightSerial
+      }
+      mediaAssets {
+        url
+      }
+      vehicleNo
+      trade2Key
+    }
+  }
+}

@@ -1,0 +1,70 @@
+fragment StocktakeApprovalFields on StocktakeApproval {
+  stocktakeId
+  active
+  stocktakeStatus
+  levelUsers {
+    firstName
+    lastName
+    emailAddress
+    jobTitle
+  }
+  created {
+    at
+    user {
+      name
+      emailAddress
+    }
+  }
+  completed
+  yardCode
+  levels {
+    key
+    value {
+      userEmails
+      status
+      notifiedOn
+      approvers {
+        key
+        value {
+          content
+          created {
+            at
+            user {
+              emailAddress
+              name
+            }
+          }
+        }
+      }
+      rejectors {
+        key
+        value {
+          content
+          created {
+            at
+            user {
+              name
+              emailAddress
+            }
+          }
+        }
+      }
+    }
+  }
+  currentLevel
+  id
+  created {
+    at
+    user {
+      name
+      emailAddress
+    }
+  }
+  modified {
+    at
+    user {
+      name
+      emailAddress
+    }
+  }
+}

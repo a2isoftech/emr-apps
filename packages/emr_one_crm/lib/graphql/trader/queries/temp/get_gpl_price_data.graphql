@@ -1,0 +1,95 @@
+query getGplPublicationDetails($contractHeaderId: Int!) {
+  nfe: gplPriceBreakdown (contractHeaderId: $contractHeaderId
+  where: {
+    gradeType: {
+      eq: "NONFER"
+    }    
+  } ) {
+      contractHeaderId
+      yardCode
+      gradeCode
+      basePrice {
+        uom
+        value
+      }
+      publicationYardDelta {
+        uom
+        value
+      }
+      partyDelta {
+        uom
+        value
+      }
+      partyYardDelta {
+        uom
+        value
+      }
+      collected {
+        delta {
+          uom
+          value
+        }
+        resultant {
+          uom
+          value
+        }
+      }
+      delivered {
+        delta {
+          uom
+          value
+        }
+        resultant {
+          uom
+          value
+        }
+      }
+    }
+  fe: gplPriceBreakdown (
+    contractHeaderId: $contractHeaderId
+    where: {
+      gradeType: {
+        neq: "NONFER"
+      }
+    }) {
+contractHeaderId
+      yardCode
+      gradeCode
+      basePrice {
+        uom
+        value
+      }
+      publicationYardDelta {
+        uom
+        value
+      }
+      partyDelta {
+        uom
+        value
+      }
+      partyYardDelta {
+        uom
+        value
+      }
+      collected {
+        delta {
+          uom
+          value
+        }
+        resultant {
+          uom
+          value
+        }
+      }
+      delivered {
+        delta {
+          uom
+          value
+        }
+        resultant {
+          uom
+          value
+        }
+      }
+    }
+}

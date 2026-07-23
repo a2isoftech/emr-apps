@@ -1,0 +1,5 @@
+fragment DirectQueryParameterFields on DirectQueryParameter {
+  name
+  parameterType
+  defaultValue
+}

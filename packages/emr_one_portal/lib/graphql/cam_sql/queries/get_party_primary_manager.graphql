@@ -1,0 +1,33 @@
+query GetPartyPrimaryManager{
+  account {
+      name
+      accountContacts {
+        accountContactTypeId
+        contact {
+          firstName
+          middleName
+          lastName
+          address {
+            countryId
+          }               
+        }
+      }
+      primaryAccountManager {
+        manager {          
+          userId
+          accountManagerTypeId
+          active
+          tradeManagerId
+        }
+        user {
+          name
+          emailAddress          
+        }
+      }  
+      address {
+        countryId
+      }    
+      defaultYardCode
+    }
+  
+}

@@ -1,0 +1,39 @@
+query gplPublicationData($partyAccountNo: String!, $publicationIds: [Int!], $territoryCode: String) {
+  gplPublicationData(
+    partyAccountNo: $partyAccountNo
+    publicationIds: $publicationIds
+    territoryCode: $territoryCode
+  ) {
+    id
+    name
+    issueDate
+    grades {
+      gradeCode
+      comment
+      gradeGroup
+      groupDesc
+      gradeType
+      basePrice {
+        uom
+        value
+        id
+      }
+      yardPrices {
+        depot {
+          depotNo
+          depotShortName
+          depotName
+        }
+        yard {
+          yardCode
+          yardName
+          yardShortName
+        }
+        finalPrice {
+          value
+          id
+        }
+      }
+    }
+  }
+}

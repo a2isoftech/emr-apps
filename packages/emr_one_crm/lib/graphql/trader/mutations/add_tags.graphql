@@ -1,0 +1,48 @@
+mutation AddTags($input: AddTagInput!) {
+  addTags(input: $input) {
+    id
+    contractHeaderId
+    manager
+    accountNo
+    internalNotes
+    externalNotes
+    deliveryNotes
+    paymentNotes
+    longDescription
+    listItems {
+      contractLineId
+    lineStart
+    lineEnd
+      deliveryType
+      haulageAdjustment
+      haulageCharge
+      haulageRateUoMValue
+      haulageChargeUoM
+      publicationId
+      productCode
+      productDescription
+      baseMaterialPriceUoMValue
+      baseMaterialPriceUoM
+      deltas {
+        yard
+        latestCommercialDeltaUoMValue
+        latestCommercialDeltaUoM
+        latestOperationalDeltaUoMValue
+        latestOperationalDeltaUoM
+      }
+      tags {
+        id
+        tagId
+        category
+        reason
+        active
+        startDate
+        endDate
+        rate
+        rateUoMValue
+        rateUoM
+        functional
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query GetTicketDiscrepantTypes
+{
+  ticketDiscrepantTypes
+  {
+       id
+       name
+       description
+       mediaRequired
+  }
+}

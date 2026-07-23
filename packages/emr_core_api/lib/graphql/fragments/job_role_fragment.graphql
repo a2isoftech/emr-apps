@@ -1,0 +1,19 @@
+fragment JobRoleFragment on JobRole
+{
+     active
+    description
+    id
+    name
+    systemRoleIds
+    territoryId
+    systemRoles {
+      id
+      name
+      description
+    }
+    territory {
+      id
+      name
+      code
+    }
+}

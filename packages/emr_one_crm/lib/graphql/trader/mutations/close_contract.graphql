@@ -1,0 +1,5 @@
+mutation CloseContract($input: CloseContractInput!) {
+  closeContract(input: $input) {
+    contractHeaderId
+  }
+}

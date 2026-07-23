@@ -1,0 +1,7 @@
+mutation UpsertTicketInspectionMedia($input :TicketInspectionMediaInput!)
+{
+  upsertTicketInspectionMedia( ticketMediaInput: $input)
+  {
+    id
+  }
+}

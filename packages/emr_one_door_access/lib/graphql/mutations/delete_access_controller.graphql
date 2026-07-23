@@ -1,0 +1,3 @@
+mutation DeleteAccessController($accessControllerId: String!){
+  deleteAccessController(accessControllerId: $accessControllerId)
+}

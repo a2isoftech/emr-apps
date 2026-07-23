@@ -1,0 +1,36 @@
+query GetUserInfo {
+  me {
+    ...UserFragment
+  }
+  userInfo {
+      defaultTerritory
+      defaultOrderBookTypeId
+      defaultDepot
+      userOrderBooks {
+        orderBookTypeId
+        orderBookName
+        gradeType
+      }
+      territories {
+        territoryCode
+        name
+        depots {
+          depotNo
+          shortName
+          gradeType
+          yardCode
+		  cmpCode
+        }
+      }
+      yards{
+        yardCode
+        name
+        shortName
+      }
+      crmManagedBuyers {
+        azureUserId
+        userName
+      }
+	  companyAccess
+    }
+}

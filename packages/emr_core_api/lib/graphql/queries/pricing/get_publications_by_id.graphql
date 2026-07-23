@@ -1,0 +1,16 @@
+query GetPublicationsById($publicationIds: [String!]) {
+  publications(publicationIds: $publicationIds) {
+    id
+    name
+    availableProducts {
+      id
+      code
+      description
+    }
+    availableYards {
+      id
+      name
+      yardCode
+    }
+  }
+}

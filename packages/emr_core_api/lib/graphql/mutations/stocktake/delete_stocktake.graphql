@@ -1,0 +1,10 @@
+mutation DeleteStocktake($input: String!) {
+  deleteStocktake(stocktakeId: $input) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

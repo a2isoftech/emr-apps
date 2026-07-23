@@ -1,0 +1,14 @@
+mutation AddCameraToAccessPoint($input: SaveAccessPointCameraInput!) {
+  addCameraToAccessPoint(input: $input) {
+    id
+    externalId
+    camera {
+      cameraName
+      ipAddress
+      rtspUrl
+      snapshotUrl
+      username
+      createdUtc
+    }
+  }
+}

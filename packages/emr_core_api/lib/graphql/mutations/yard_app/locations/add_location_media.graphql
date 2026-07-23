@@ -1,0 +1,5 @@
+mutation AddLocationMedia($locationMediaInput: InventoryLocationMediaInput!) {
+    addLocationMedia(locationMediaInput: $locationMediaInput) {
+        id
+    }
+}

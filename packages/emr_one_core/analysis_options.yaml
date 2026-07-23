@@ -1,0 +1,19 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.graphql.dart"
+    - "**/screens/widget_catalog/*.*" # The widget catalog is primarily 3rd party code.
+    - "**/cupertino_http/*.*" # Some files copied from the cupertino_http package, with a few modifications.
+    - "**/emr_background_service/work_manager/java_bindings.dart" # Ignore generated file.
+linter:
+  rules:
+    public_member_api_docs: false
+    cascade_invocations: false
+    flutter_style_todos: false
+    prefer_asserts_with_message: false
+    comment_references: false

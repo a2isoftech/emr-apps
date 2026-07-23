@@ -1,0 +1,3 @@
+query GetReferenceData($name: String!){
+  referenceData(name: $name)
+}

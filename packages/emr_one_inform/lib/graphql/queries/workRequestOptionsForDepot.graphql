@@ -1,0 +1,11 @@
+query WorkRequestOptionsForDepot($filter: DepotQueryFilterInput!) {
+    depots(filter: $filter) {
+        workRequestOptions {
+            serviceLevels {
+                id
+                name
+            }
+            requestTypes
+        }
+    }
+}

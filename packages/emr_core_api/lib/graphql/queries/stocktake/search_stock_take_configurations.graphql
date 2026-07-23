@@ -1,0 +1,23 @@
+query SearchStockTakeConfigurations($input: GetStockTakeConfigurationsInput!, $first: Int, $after: String, $last: Int, $before: String) {
+  stockTakeConfigurations(
+    input: $input
+    first: $first
+    after: $after
+    last: $last
+    before: $before
+  ) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    nodes {
+      key
+      value {
+        isDeltaSnapshotEnabled
+      }
+    }
+  }
+}

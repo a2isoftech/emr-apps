@@ -1,0 +1,22 @@
+mutation createSyncWeighbridgeTicketTask($ticketId:String!) {
+  createSyncWeighbridgeTicketTask(ticketId: $ticketId) {
+    result
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+query getTicketPrintTemplates($query: String) {
+  ticketPrintTemplates(input:  {
+     query: $query
+  })
+}

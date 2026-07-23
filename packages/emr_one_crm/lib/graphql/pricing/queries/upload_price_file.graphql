@@ -1,0 +1,5 @@
+mutation UploadPrices($file: Upload!) {
+  uploadPrices(priceFile: $file) {
+    success
+  }
+}

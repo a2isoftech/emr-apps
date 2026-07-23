@@ -1,0 +1,6 @@
+mutation createNewConsignmentNote(
+  $request: ConsignmentNoteCreateRequestInput!
+  $signatureImage: Upload
+) {
+  createNewConsignmentNote(request: $request, signatureImage: $signatureImage)
+}

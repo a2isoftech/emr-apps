@@ -1,0 +1,38 @@
+query AllProducts(
+  $query: String
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $productFamilies: [String!],
+  $order: [ProductSortInput!]
+)
+{
+  products(
+    query: $query
+    after: $after
+    before: $before
+    first: $first
+    last: $last 
+    productFamilies: $productFamilies,
+    order: $order
+  )
+   {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+      id
+      code
+      classification {
+        family
+      }
+      description
+      permittedLocationType
+    }
+  }
+}

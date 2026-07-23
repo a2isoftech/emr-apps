@@ -1,0 +1,6 @@
+query GetGuidePriceListGrades {
+  gradesForUser {
+    gradeCode
+    comment
+  }
+}

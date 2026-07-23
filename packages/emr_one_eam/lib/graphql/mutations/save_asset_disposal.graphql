@@ -1,0 +1,7 @@
+mutation saveAssetDisposal($input: DisposalRequestInput!) {
+  createDisposalRequest(input: $input)
+  {
+    successAssetIds
+    failedAssetIds
+  }
+}

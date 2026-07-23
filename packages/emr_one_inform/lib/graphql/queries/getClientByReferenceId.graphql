@@ -1,0 +1,19 @@
+query GetClientByReferenceId($refereceId: String!) {
+  clientByReferenceId(referenceId: $refereceId) {
+    id
+    title
+    isEditable
+    isD365
+    isActive
+    defaultWorkRequestType
+    isDigitalSignatureRequired
+    validateBySignature
+    validateByWorkOrder
+    validateFrom
+    isEmailNotificationRequired
+    sendEmailOnFailedQuestions
+    emailIds
+    assignFailedQuestionToTeam
+    assignFailedQuestionToTeamId
+  }
+}

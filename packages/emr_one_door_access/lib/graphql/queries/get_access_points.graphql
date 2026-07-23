@@ -1,0 +1,52 @@
+query GetAccessPoints($siteId: String, $accessControllerId: String, $accessPointId: String) {
+  accessPoints(siteId: $siteId, accessControllerId: $accessControllerId, accessPointId: $accessPointId) {
+    id
+    externalId
+    entity
+    accessControllerId
+    name
+    restricted
+    schedules {
+      token
+      name
+      description
+      scheduleDefinition
+      userFriendlyStrings
+    }
+    events {
+      rowId
+      cardNumber
+      accessControllerId
+      utcTime
+      topic0
+      topic1
+      topic2
+      accessPointId
+      accessPointName
+      userId
+      email
+    }
+    camera {
+      cameraName
+      ipAddress
+      rtspUrl
+      snapshotUrl
+      username
+      createdUtc
+    }
+    groups {
+      azureId
+      name
+      id
+      accessPoints{
+        key
+        value{
+          externalId
+          name          
+          description
+          schedules
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+mutation AddCompanyChequeSignatures($input: AddCompanyChequeSignaturesInput!) {
+    addCompanyChequeSignatures(input: $input) {
+        ...CompanyFragment
+    }
+}

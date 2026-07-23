@@ -1,0 +1,9 @@
+query SearchContracts($input: SearchContractsInput!) {
+  searchContracts(input: $input) {
+    nodes{
+      id
+      customerReference
+      internalReference
+    }
+  }
+}

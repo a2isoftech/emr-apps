@@ -1,0 +1,3 @@
+mutation DeleteCatMutation($vehicleId: Int!, $vehicleCatId: Int!) {
+  deleteCat(vehicleId: $vehicleId, vehicleCatId: $vehicleCatId)
+}

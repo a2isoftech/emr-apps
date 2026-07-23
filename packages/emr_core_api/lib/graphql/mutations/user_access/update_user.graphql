@@ -1,0 +1,32 @@
+mutation UpdateUser(
+  $id: String!
+  $active: Boolean!
+  $firstName: String!
+  $lastName: String!
+  $emailAddress: String!
+  $employeeNumber: String!
+  $jobTitle: String!
+  $territoryIds: [String!]!
+  $defaultYardId: String!
+  $jobRoleIds: [String!]!
+) {
+  updateUser(
+    input: {
+      id: $id
+      active: $active
+      firstName: $firstName
+      lastName: $lastName
+      emailAddress: $emailAddress
+      employeeNumber: $employeeNumber
+      jobTitle: $jobTitle
+      territoryIds: $territoryIds
+      defaultYardId: $defaultYardId
+      jobRoleIds: $jobRoleIds
+    }
+  ) {
+    ... on UpdateUserError {
+      message
+    }
+    ...UserFragment
+  }
+}

@@ -1,0 +1,17 @@
+mutation UpdateSystemRole($id: String!, $name: String!, $description: String!, $permissionNames: [String!]!, $active: Boolean!) {
+  updateSystemRole(
+    input: {
+      id: $id
+      name: $name
+      description: $description
+      permissionNames: $permissionNames
+      active: $active
+    }
+  ) {
+    data {
+      ...SystemRoleFragment
+    }
+    hasError
+    message
+  }
+}

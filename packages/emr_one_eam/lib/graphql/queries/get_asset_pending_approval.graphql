@@ -1,0 +1,22 @@
+query getPendingApprovals($cmpCode: String, $approvalType : String){
+  assetApprovals(cmpCode: $cmpCode,approvalType: $approvalType)
+  {
+    id
+    parentAssetApprovalId
+    assetId
+    depotNo
+    approvalType
+    transferDepotNo
+    effectiveDate
+    createdBy
+    created
+    requiresFunctionalLocation
+    assetId
+    assetName
+    assetCode
+    disposalStatus
+    status
+    reason
+    requestedBy
+  }
+}

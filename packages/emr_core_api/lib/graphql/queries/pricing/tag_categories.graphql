@@ -1,0 +1,7 @@
+query TagCategories($input: GetTagCategoriesInput!) {
+  tagCategories(input: $input) {
+    id
+    name
+    functional
+  }
+}

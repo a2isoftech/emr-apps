@@ -1,0 +1,6 @@
+query GetLanguages($query: String!) {
+  languages(input: { query: $query }) {
+    name
+    value
+  }
+}

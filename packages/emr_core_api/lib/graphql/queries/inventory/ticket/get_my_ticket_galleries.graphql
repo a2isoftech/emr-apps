@@ -1,0 +1,47 @@
+query getMyEdgeTicketGalleries(
+  $first: Int
+  $last: Int
+  $before: String,
+  $after: String,
+  $order: [EdgeTicketGallerySortInput!]
+  $searchString: String
+){
+  myEdgeTicketGalleries(first: $first, last: $last, before: $before, after: $after, order: $order, searchString: $searchString){
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes{
+      id
+      title
+      tickets{
+        id
+        ticketNumber
+        mediaAssets{
+          url
+        }
+        inspectionMedia{
+          url
+        }
+        lines{
+          mediaAssets{
+            url
+          }
+          deductions{
+            mediaAssets{
+              url
+            }
+          }
+          inspectionDetails{
+            inspectionMedia{
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

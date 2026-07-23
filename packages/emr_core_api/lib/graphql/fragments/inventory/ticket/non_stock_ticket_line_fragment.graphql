@@ -1,0 +1,17 @@
+fragment NonStockTicketLineFields on NonStockTicketLine {
+  lineNumber
+  description
+  weightSerial
+  deductions {
+    ...DeductionFields
+  }
+  mediaAssets {
+    ...MediaAssetFields
+  }
+  isActive
+  binNo
+  sealNo
+  consignmentNoteNo
+  scaleIdentifier
+  hasSeenZero
+}

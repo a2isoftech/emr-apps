@@ -1,0 +1,113 @@
+mutation ManualUpdateStockTake($input: StockTakeManualUpdateInput!) {
+  manualUpdateStockTake(stockTakeManualUpdateInput: $input) {
+    success
+    message
+    errorCode
+    data {
+      stocktakeLocations {
+        productId
+        product {
+          code
+          description
+          classification {
+            family
+            line
+            class
+          }
+        }
+        locationId
+        location {
+          code
+          description
+          active
+          inventoryLocationType
+          weight {
+            ...UomValueFragment
+          }
+          rate {
+            ...UomValueFragment
+          }
+          value
+        }
+        snapshot {
+          deltaWeight {
+            ...UomValueFragment
+          }
+          created {
+            at
+            user {
+              name
+            }
+          }
+          currentWeight {
+            ...UomValueFragment
+          }
+          currentCount
+          value
+          rate {
+            ...UomValueFragment
+          }
+          unpricedWeight {
+            ...UomValueFragment
+          }
+          unpricedDeltaWeight {
+            ...UomValueFragment
+          }
+        }
+        netWeightMt
+        weightVariance {
+          ...UomValueFragment
+        }
+        valueVariance
+        comments {
+          content
+          created {
+            at
+            userInfoId
+            userName
+          }
+        }
+        status
+        takenWeights {
+          id
+          title
+          isDeleted
+          grossWeight {
+            value
+            uom
+            mtValue
+            ...UomValueFragment
+          }
+          tareWeight {
+            value
+            uom
+            mtValue
+            ...UomValueFragment
+          }
+          created {
+            at
+            userName
+            userInfoId
+            user {
+              id
+              name
+            }
+          }
+          grossWeightSerialNumber
+          tareWeightSerialNumber
+          grossWeightScaleIdentifier
+          tareWeightScaleIdentifier
+          comments {
+            content
+            created {
+              at
+              userInfoId
+              userName
+            }
+          }
+          captureMethod
+        }
+      }
+    }
+  }
+}

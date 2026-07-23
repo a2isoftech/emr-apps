@@ -1,0 +1,5 @@
+mutation UndoDismantledVehicleParts($input: VehiclePartsActionInput!){
+    undoDismantledVehicleParts(input: $input){
+        ...VehicleFields
+    }
+}

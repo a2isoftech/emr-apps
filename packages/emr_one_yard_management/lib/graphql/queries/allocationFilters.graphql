@@ -1,0 +1,6 @@
+query allocationFilters(){
+    allocationFilters(){
+        id 
+        name 
+    }
+}

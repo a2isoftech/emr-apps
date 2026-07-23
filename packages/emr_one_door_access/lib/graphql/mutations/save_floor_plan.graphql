@@ -1,0 +1,3 @@
+mutation SaveFloorPlan($input: UpsertFloorPlanInput!) {
+  saveFloorPlan(input: $input)
+}

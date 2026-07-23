@@ -1,0 +1,5 @@
+mutation ExtendContract($input: ExtendContractInput!) {
+  extendContract(input: $input) {
+    contractHeaderId
+  }
+}

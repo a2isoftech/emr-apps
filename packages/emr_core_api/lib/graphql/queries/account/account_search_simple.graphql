@@ -1,0 +1,26 @@
+query AccountSearchSimple($after: String, $before: String, $first: Int, $last: Int,$input: AccountsSearchInput!, $order: [AccountSortInput!], $includeBusinessDetail: Boolean = true) {
+  searchAccounts(
+    after: $after
+    before: $before
+    first: $first
+    last: $last,
+   input: $input,
+   order: $order
+  ) {
+     pageInfo {
+      hasNextPage
+      endCursor
+    }  
+    nodes {
+      id
+      code
+      name
+      type
+      businessDetail @include(if: $includeBusinessDetail) {
+        paymentTerm {
+          financialPaymentMethod
+        }
+      }
+    }
+  }
+}

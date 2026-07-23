@@ -1,0 +1,30 @@
+query Locations(
+  $input: InventoryLocationsInput!
+  $first: Int
+  $order: [InventoryLocationSortInput!]
+) {
+  inventoryLocations(
+    input: $input
+    first: $first
+    after: null
+    last: null
+    before: null
+    order: $order
+  ) {
+    totalCount
+    nodes {
+      description
+      id
+      code
+      mediaAssets {
+        url
+        created {
+          at
+          user {
+            name
+          }
+        }
+      }
+    }
+  }
+}

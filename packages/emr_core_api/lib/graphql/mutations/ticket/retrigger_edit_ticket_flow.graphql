@@ -1,0 +1,22 @@
+mutation ReSyncTicket($ticketId: String!) {
+  reSyncTicket(ticketId: $ticketId){
+    result
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

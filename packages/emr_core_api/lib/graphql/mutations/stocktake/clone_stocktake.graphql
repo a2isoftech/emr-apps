@@ -1,0 +1,10 @@
+mutation CloneStocktake($input: CreateStocktakeInput!) {
+  cloneStocktake(stocktakeInput: $input) {
+    success
+    message
+    errorCode
+    data {
+      id
+    }
+  }
+}

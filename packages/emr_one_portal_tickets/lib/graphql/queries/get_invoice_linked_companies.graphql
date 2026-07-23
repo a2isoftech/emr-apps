@@ -1,0 +1,14 @@
+query getInvoiceLinkedCompanies($statementStatus: StatementStatusInput, $after: String){
+    supplierStatements(statementStatus: $statementStatus, after: $after){
+         pageInfo{
+            hasNextPage
+            hasPreviousPage
+            startCursor
+            endCursor
+         }
+         nodes{
+            companyName,
+            companyCode
+         }
+   }
+}

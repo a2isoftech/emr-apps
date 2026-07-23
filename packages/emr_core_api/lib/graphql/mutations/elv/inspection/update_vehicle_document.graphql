@@ -1,0 +1,26 @@
+mutation UpdateDoc(
+  $documentType: VehicleDocumentType!
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $imagePath: String!
+  $isVinUnreadable: Boolean
+) {
+  updateVehicleDocument(
+    input: {
+      documentType: $documentType
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      relativeUrl: $imagePath
+      isVinUnreadable: $isVinUnreadable
+    }
+  ) {
+    ... on VehicleDocuments {
+      __typename
+    }
+    ... on ElvInspectionError {
+      message
+    }
+  }
+}

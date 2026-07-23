@@ -1,0 +1,45 @@
+fragment UserFragment on User {
+  id
+  active
+  firstName
+  lastName
+  emailAddress
+  employeeNumber
+  jobTitle
+  territoryIds
+  defaultYardId
+  jobRoleIds
+  territories {
+    id
+    name
+    code
+  }
+  defaultYard {
+    id
+    shortName
+    yardCode
+  }
+  jobRoles
+  {
+    id
+    name
+    description
+  }
+  created
+  {
+    userInfoId
+    userName
+    at
+  }
+  modified
+  {
+    userInfoId
+    userName
+    at
+  }
+  externalIds {
+    key
+    value
+  }
+  permissions
+}

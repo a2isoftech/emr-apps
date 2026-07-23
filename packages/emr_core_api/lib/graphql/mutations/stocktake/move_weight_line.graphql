@@ -1,0 +1,10 @@
+mutation MoveWeightLine($input: MoveWeightLineInput!) {
+  moveWeightLineToAnotherLocation(input: $input) {
+    data {
+      ...StocktakeFields
+    }
+    success
+    message
+    errorCode
+  }
+}

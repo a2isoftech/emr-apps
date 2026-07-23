@@ -1,0 +1,5 @@
+mutation SaveLoadOut ($input: SaveLoadOutInput!) {
+  saveLoadOut(loadOutInput: $input){
+    id
+  }
+}

@@ -1,0 +1,5 @@
+mutation approvePayment($id: String!, $approved: Boolean!) {
+  approveOrRejectPaymentApproval(
+    input: { isApproved: $approved, paymentApprovalId: $id }
+  )
+}

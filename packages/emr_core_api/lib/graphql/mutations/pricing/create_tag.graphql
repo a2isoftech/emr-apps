@@ -1,0 +1,7 @@
+mutation CreateTags($inputs: [CreateTagInput!]!) {
+  createTags(inputs: $inputs) {
+    ... CreateTagError
+    ... Tag
+    ...CollectedTag
+  }
+}

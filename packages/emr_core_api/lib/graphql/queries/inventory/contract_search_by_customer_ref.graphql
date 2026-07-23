@@ -1,0 +1,7 @@
+query ContractSearchByCustomerRef($input: String!) {
+  searchContractsByCustomerReference(input: $input, first: 500) {
+    nodes {
+      customerReference
+    }
+  }
+}

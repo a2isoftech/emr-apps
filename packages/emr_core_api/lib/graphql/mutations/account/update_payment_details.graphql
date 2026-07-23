@@ -1,0 +1,9 @@
+mutation UpdatePaymentDetails($input: UpdatePaymentDetailsInput) {
+  updatePaymentDetails(input: $input) {
+    accountNumber
+    errors {
+      message
+      code
+    }
+  }
+}

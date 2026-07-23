@@ -1,0 +1,10 @@
+mutation CreateBom($input: CreateBomInput!) {
+  createBillOfMaterials(input: $input) {
+    hasError
+    errorCode
+    message
+    data {
+      id
+    }
+  }
+}

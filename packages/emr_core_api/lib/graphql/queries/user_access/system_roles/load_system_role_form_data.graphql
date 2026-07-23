@@ -1,0 +1,7 @@
+query LoadSystemRoleFormData($id: String!) {
+  systemRole(input:  {
+     id:$id
+  }) {
+    ...SystemRoleFragment
+  }
+}

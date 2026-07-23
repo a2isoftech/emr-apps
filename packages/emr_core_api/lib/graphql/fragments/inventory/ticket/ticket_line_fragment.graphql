@@ -1,0 +1,103 @@
+fragment TicketLineFields on TicketLine {
+  lineNumber
+  productId
+  locationId
+  weightSerial
+  deductions {
+    ...DeductionFields
+  }
+  mediaAssets {
+    ...MediaAssetFields
+  }
+  inspectionDetails {
+    inspectionMedia {
+      url
+      sasUrl
+      sasThumbnailUrl
+    }
+  }
+  financialCostImpacts {
+    typeId
+    value
+  }
+  grossWeight {
+    ...UomValueFields
+  }
+  netWeight {
+    ...UomValueFields
+  }
+  product {
+    code
+    active
+    description
+    id
+  }
+  location {
+    id
+    code
+    yardId
+    description
+    mediaAssets {
+      url
+      sasUrl
+    }
+  }
+  rate {
+    ...UomValueFields
+  }
+  totalCostImpact
+  contractId
+  extendedProperties
+  elvQuoteIds
+  isActive
+  price
+  provPrice
+  confPrice
+  priceOrigin
+  binNo
+  sealNo
+  consignmentNoteNo
+  totalCostDeduction
+  scaleIdentifier
+  archivedDate
+  manualGrossWeightReason
+  isGrossFromPreviousWeight
+  hasSeenZero
+  ewcCode
+  totalTareWeight {
+    ...UomValueFields
+  }
+  totalDirtDeduction {
+    ...UomValueFields
+  }
+  internalComments {
+    content
+    created {
+      userInfoId
+      userName
+      at
+    }
+  }
+  costs {
+    typeId
+    value
+    rate {
+      ...UomValueFields
+    }
+    costParty {
+      partyAccountNo
+      partyName
+    }
+  }
+  created {
+    userInfoId
+    userName
+    at
+  }
+  modified {
+    userInfoId
+    userName
+    at
+  }
+  grossWeightDateTime
+}

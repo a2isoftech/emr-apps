@@ -1,0 +1,18 @@
+query GetProducts(
+  $query: String
+) {
+  products(
+    query: $query
+    first: 50
+  ) {
+    nodes {
+      code
+      description
+      classification {
+        family
+        class
+        line
+      }
+    }
+  }
+}

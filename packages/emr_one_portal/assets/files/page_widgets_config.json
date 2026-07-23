@@ -1,0 +1,7 @@
+{
+    "HomePage": {
+      "NL": [],
+      "US": ["termsAndConditions", "proofOfIdentity"],
+      "UK": ["paymentDetails", "proofOfIdentity", "proofOfAddress", "scanTicket"]
+    }
+  }

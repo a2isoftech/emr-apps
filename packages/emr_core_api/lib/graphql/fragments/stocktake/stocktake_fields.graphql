@@ -1,0 +1,111 @@
+fragment StocktakeFields on Stocktake {
+  id
+  name
+  status
+  conductedBy
+  productFamily
+  currencyCode
+  isRoutineCheck
+  defaultUom
+  workflow {
+    currentLevel
+    stocktakeStatus
+  }
+  conductor {
+    firstName
+    lastName
+    id
+  }
+  yardCode
+  comments {
+    content
+    created {
+      at
+      userInfoId
+      userName
+    }
+  }
+  tags
+  active
+  stocktakeLocations {
+    locationId
+    location {
+      code
+      description
+    }
+    productId
+    product {
+      code
+      description
+      classification {
+        family
+        line
+        class
+      }
+    }
+    snapshot {
+      deltaWeight {
+        ...UomValueFragment
+      }
+      created {
+        at
+        user {
+          name
+        }
+      }
+      currentWeight {
+        ...UomValueFragment
+      }
+      currentCount
+      value
+      rate {
+        ...UomValueFragment
+      }
+      unpricedWeight {
+        ...UomValueFragment
+      }
+      unpricedDeltaWeight {
+        ...UomValueFragment
+      }
+    }
+    takenWeights {
+      id
+      title
+      grossWeight {
+        value
+        uom
+        mtValue
+      }
+      tareWeight {
+        value
+        uom
+        mtValue
+      }
+      isDeleted
+      created {
+        at
+        userName
+        userInfoId
+      }
+      captureMethod
+    }
+  }
+  created {
+    at
+    userInfoId
+    userName
+    user {
+      name
+      id
+    }
+  }
+  modified {
+    at
+    userInfoId
+    userName
+    user {
+      name
+      id
+    }
+  }
+}

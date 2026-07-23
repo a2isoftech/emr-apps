@@ -1,0 +1,481 @@
+"""
+The `@defer` directive may be provided for fragment spreads and inline fragments to inform the executor to delay the execution of the current fragment to indicate deprioritization of the current fragment. A query with `@defer` directive will cause the request to potentially return multiple responses, where non-deferred data is delivered in the initial response and data deferred is delivered in a subsequent response. `@include` and `@skip` take precedence over `@defer`.
+"""
+directive @defer(
+  """
+  If this argument label has a value other than null, it will be passed on to the result of this defer directive. This label is intended to give client applications a way to identify to which fragment a deferred result belongs to.
+  """
+  label: String
+
+  """
+  Deferred when true.
+  """
+  if: Boolean
+) on FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"""
+The `@stream` directive may be provided for a field of `List` type so that the backend can leverage technology such as asynchronous iterators to provide a partial list in the initial response, and additional list items in subsequent responses. `@include` and `@skip` take precedence over `@stream`.
+"""
+directive @stream(
+  """
+  If this argument label has a value other than null, it will be passed on to the result of this stream directive. This label is intended to give client applications a way to identify to which fragment a streamed result belongs to.
+  """
+  label: String
+
+  """
+  The initial elements that shall be send down to the consumer.
+  """
+  initialCount: Int! = 0
+
+  """
+  Streamed when true.
+  """
+  if: Boolean
+) on FIELD
+
+type Query {
+  punchDevices(
+    where: PunchDeviceDataFilterInput
+    order: [PunchDeviceDataSortInput!]
+  ): [PunchDeviceData!]!
+  deviceAreas(
+    where: YardAreasFilterInput
+    order: [YardAreasSortInput!]
+  ): [YardAreas!]!
+  areaZones(
+    where: AreaZoneFilterInput
+    order: [AreaZoneSortInput!]
+  ): [AreaZone!]!
+  fireRollCallLogs(input: GetFireRollCallLogsInput!): [FireRollCallLogs!]!
+  missingEmployees(
+    input: GetMissingEmployeesInput!
+  ): [GetMissingEmployeesOutput!]!
+  fireRegisterPunchEvents(
+    input: GetFireRegisterPunchEventsInput!
+  ): [PunchEvent!]!
+  failedPunches(badgeNumber: String!): [PunchEvent!]!
+  searchEmployee(pattern: String!): [GraphUser!]
+  visitorAndTempCards: [VisitorAndTempCards!]
+}
+
+type Mutation {
+  createPunchEvent(input: CreatePunchEventInput!): ApiResponse
+  registerDevice(input: PunchDeviceDataInput!): ApiResponse
+  removedFailedPunches(input: [Int!]!): ApiResponse!
+  createFireRollCall(fireRollCallLogs: FireRollCallLogsInput!): ApiResponse!
+  updateMissingFromRollCall(
+    rollCallEmployees: [UpdateOrCreateMissingEmployeesInput!]!
+  ): ApiResponse!
+  createVisitorTempCard(
+    visitorAndTempCards: VisitorAndTempCardsInput!
+  ): ApiResponse!
+  updateNote(id: Int!, note: String!): ApiResponse
+  updateBadge(input: EmployeeBadgeRequestInput!): ApiResponse
+  updateDefaultZone(input: EmployeeDefaultZoneRequestInput!): ApiResponse
+}
+
+input PunchDeviceDataFilterInput {
+  and: [PunchDeviceDataFilterInput!]
+  or: [PunchDeviceDataFilterInput!]
+  id: ComparableInt32OperationFilterInput
+  zone: StringOperationFilterInput
+  yardCode: StringOperationFilterInput
+  deviceId: StringOperationFilterInput
+  clockDevice: StringOperationFilterInput
+  adminEmail: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  musterPoint: StringOperationFilterInput
+  deviceAreas: ListFilterInputTypeOfDeviceAreaInputFilterInput
+}
+
+input PunchDeviceDataSortInput {
+  id: SortEnumType
+  zone: SortEnumType
+  yardCode: SortEnumType
+  deviceId: SortEnumType
+  clockDevice: SortEnumType
+  adminEmail: SortEnumType
+  active: SortEnumType
+  musterPoint: SortEnumType
+}
+
+input YardAreasFilterInput {
+  and: [YardAreasFilterInput!]
+  or: [YardAreasFilterInput!]
+  areaGuid: StringOperationFilterInput
+  areaName: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  areaZones: ListFilterInputTypeOfAreaZoneInputFilterInput
+  yardCode: StringOperationFilterInput
+}
+
+input YardAreasSortInput {
+  areaGuid: SortEnumType
+  areaName: SortEnumType
+  active: SortEnumType
+  yardCode: SortEnumType
+}
+
+input AreaZoneFilterInput {
+  and: [AreaZoneFilterInput!]
+  or: [AreaZoneFilterInput!]
+  id: ComparableInt32OperationFilterInput
+  zoneGuid: StringOperationFilterInput
+  zoneName: StringOperationFilterInput
+  areaGuid: StringOperationFilterInput
+  musterPoint: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+}
+
+input AreaZoneSortInput {
+  id: SortEnumType
+  zoneGuid: SortEnumType
+  zoneName: SortEnumType
+  areaGuid: SortEnumType
+  musterPoint: SortEnumType
+  active: SortEnumType
+}
+
+input ComparableInt32OperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int!]
+  nin: [Int!]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+input BooleanOperationFilterInput {
+  eq: Boolean
+  neq: Boolean
+}
+
+input ListFilterInputTypeOfDeviceAreaInputFilterInput {
+  all: DeviceAreasFilterInput
+  none: DeviceAreasFilterInput
+  some: DeviceAreasFilterInput
+  any: Boolean
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+input ListFilterInputTypeOfAreaZoneInputFilterInput {
+  all: AreaZonesFilterInput
+  none: AreaZonesFilterInput
+  some: AreaZonesFilterInput
+  any: Boolean
+}
+
+input DeviceAreasFilterInput {
+  and: [DeviceAreasFilterInput!]
+  or: [DeviceAreasFilterInput!]
+  areaGuid: StringOperationFilterInput
+  areaName: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+  areaZones: ListFilterInputTypeOfAreaZoneInputFilterInput
+}
+
+input AreaZonesFilterInput {
+  and: [AreaZonesFilterInput!]
+  or: [AreaZonesFilterInput!]
+  zoneGuid: StringOperationFilterInput
+  zoneName: StringOperationFilterInput
+  musterPoint: StringOperationFilterInput
+  active: BooleanOperationFilterInput
+}
+
+input GetFireRollCallLogsInput {
+  yardCode: String!
+  area: String
+  zone: String!
+  date: String!
+}
+
+type FireRollCallLogs {
+  id: Int!
+  loggedBy: String!
+  loggedOn: DateTime!
+  punchData: String!
+}
+
+type AreaZone {
+  id: Int!
+  zoneGuid: String!
+  zoneName: String!
+  areaGuid: String!
+  musterPoint: String!
+  active: Boolean!
+}
+
+type YardAreas {
+  areaGuid: String!
+  areaName: String!
+  active: Boolean!
+  areaZones: [AreaZones!]!
+  yardCode: String!
+}
+
+type PunchDeviceData {
+  id: Int!
+  zone: String
+  yardCode: String!
+  deviceId: String!
+  clockDevice: String!
+  adminEmail: String!
+  active: Boolean!
+  musterPoint: String
+  deviceAreas: [DeviceAreas!]!
+}
+
+type GetMissingEmployeesOutput {
+  id: Int!
+  punchId: Int
+  employeeName: String!
+  yardCode: String!
+  subjectType: Int!
+  missingOnDate: DateTime!
+  visitorHost: String
+  visitorPhoneNo: String
+}
+
+input GetMissingEmployeesInput {
+  yardCode: String!
+  missingOnDate: DateTime!
+}
+
+type PunchEvent {
+  id: Int!
+  subjectName: String!
+  badgeNo: String!
+  punchType: Int!
+  punchDevice: Int!
+  punchTime: DateTime!
+  subjectType: Int!
+  syncStatus: Int
+  isNotified: Boolean
+  retryCount: Int
+  lastRetriedOn: DateTime
+  errorMessage: String
+  hideAlert: Boolean
+  visitorHost: String
+  note: String
+  zoneGuid: String
+  visitorCmpName: String
+  visitorVehicleReg: String
+  visitorPhoneNo: String
+  dayforceLog: DayforceLog
+}
+
+input GetFireRegisterPunchEventsInput {
+  yardCode: String!
+  zone: String!
+  date: DateTime!
+  area: String!
+}
+
+type GraphUser {
+  id: String!
+  firstName: String!
+  email: String!
+  surname: String!
+  cardId: String
+  defaultYardCode: String
+  adInfo: EmployeeInfo
+}
+
+type VisitorAndTempCards {
+  id: Int!
+  name: String!
+  badgeNumber: String!
+  type: Int!
+  tempBadge: String
+  visitorHost: String
+  yard: String!
+  createdOn: DateTime!
+  isActive: Boolean!
+  isRemoved: Boolean!
+  deviceId: Int!
+  visitorCmpName: String
+  visitorVehicleReg: String
+  visitorPhoneNo: String
+}
+
+type ApiResponse {
+  success: Boolean!
+  message: String!
+}
+
+input CreatePunchEventInput {
+  punchDevice: Int!
+  badgeNo: String!
+  punchType: PunchType!
+  punchTime: DateTime!
+  subjectName: String!
+  subjectType: SubjectType!
+  visitorHost: String
+  zoneGuid: String
+  visitorCmpName: String
+  visitorVehicleReg: String
+  visitorPhoneNo: String
+}
+
+input PunchDeviceDataInput {
+  id: Int!
+  zone: String
+  yardCode: String!
+  deviceId: String!
+  clockDevice: String!
+  adminEmail: String!
+  active: Boolean!
+  musterPoint: String
+  deviceAreas: [DeviceAreasInput!]!
+}
+
+input FireRollCallLogsInput {
+  id: Int!
+  loggedBy: String!
+  loggedOn: DateTime!
+  punchData: String!
+}
+
+input UpdateOrCreateMissingEmployeesInput {
+  id: Int
+  subjectName: String!
+  punchId: Int
+  yardCode: String!
+  missingOnDate: DateTime!
+  isMissing: Boolean!
+}
+
+input VisitorAndTempCardsInput {
+  id: Int!
+  name: String!
+  badgeNumber: String!
+  type: Int!
+  tempBadge: String
+  visitorHost: String
+  yard: String!
+  createdOn: DateTime!
+  isActive: Boolean!
+  isRemoved: Boolean!
+  deviceId: Int!
+  visitorCmpName: String
+  visitorVehicleReg: String
+  visitorPhoneNo: String
+}
+
+input EmployeeBadgeRequestInput {
+  badge: BadgeInput!
+  employee: EmployeeUpdateRequestInput!
+  isDeleted: Boolean!
+}
+
+input EmployeeDefaultZoneRequestInput {
+  employee: EmployeeUpdateRequestInput!
+  defaultZoneGuid: String!
+}
+
+input EmployeeUpdateRequestInput {
+  name: String!
+  email: String!
+  badgeNumber: String!
+  adUserId: String!
+  createdOn: DateTime!
+  createdBy: String!
+  deviceId: Int!
+  updatedZoneGuid: String
+}
+
+input BadgeInput {
+  badgeNumber: String!
+  effectiveStart: DateTime!
+  effectiveEnd: DateTime!
+  lastModifiedTimestamp: DateTime!
+}
+
+input DeviceAreasInput {
+  areaGuid: String!
+  areaName: String!
+  active: Boolean!
+  areaZones: [AreaZonesInput!]!
+}
+
+enum SubjectType {
+  EMPLOYEE
+  VISITOR
+}
+
+enum PunchType {
+  PUNCH_IN
+  PUNCH_OUT
+  MEAL_START
+  MEAL_END
+  ENTER_SITE
+  LEAVE_SITE
+}
+
+type EmployeeInfo {
+  employeeNumber: String
+  locatedAt: String
+  chargedToCostCtr: String
+}
+
+type DayforceLog {
+  id: Int!
+  requestJson: String
+  responseJson: String
+  punchEventId: Int!
+  createdDate: DateTime!
+  requestType: Int!
+  idNavigation: PunchEvent!
+}
+
+"""
+The `DateTime` scalar represents an ISO-8601 compliant date time type.
+"""
+scalar DateTime @specifiedBy(url: "https://www.graphql-scalars.com/date-time")
+
+type DeviceAreas {
+  areaGuid: String!
+  areaName: String!
+  active: Boolean!
+  areaZones: [AreaZones!]!
+}
+
+type AreaZones {
+  zoneGuid: String!
+  zoneName: String!
+  musterPoint: String!
+  active: Boolean!
+}
+
+input AreaZonesInput {
+  zoneGuid: String!
+  zoneName: String!
+  musterPoint: String!
+  active: Boolean!
+}

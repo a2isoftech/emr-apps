@@ -1,0 +1,6 @@
+query GetAllPublications {
+  publications {
+    id
+    name
+  }
+}

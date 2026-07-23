@@ -1,0 +1,54 @@
+query SearchAssets(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: SearchAssetInput!
+  $order:[AssetSearchResultSortInput!]
+) {
+  searchAssets(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+    order:$order
+  ) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    nodes {
+      id
+      depotNo
+      code
+      make
+      model
+      serialNumber
+      name
+      status
+      assetType
+      transferToDepotNo
+      transferToDepotNoAssetApprovalId
+      disposalStatus
+      disposalApprovalId
+      approved
+    }
+  }
+}
+
+query SearchAssetsFacet($input: SearchAssetInput!) {
+  searchAssetsFacet(input: $input) {
+    key
+    value {
+      name
+      values {
+        range
+        count
+      }
+    }
+  }
+}

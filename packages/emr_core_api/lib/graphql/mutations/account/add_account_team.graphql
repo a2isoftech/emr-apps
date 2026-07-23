@@ -1,0 +1,13 @@
+mutation AddAccountTeam($input: AccountTeamInput!)
+{
+  addAccountTeam( input:  $input)
+  {
+    ...on AccountTeamError {
+      message
+    }
+
+    ... on Account {
+      id
+    }
+  }
+}

@@ -1,0 +1,31 @@
+query GetAllAccessControllers($siteId: String, $accessControllerId: String) {
+  allAccessControllers(
+    siteId: $siteId
+    accessControllerId: $accessControllerId
+  ) {
+    id
+    name
+    site
+    location {
+      latitude
+      longitude
+    }
+    uri
+    username
+    schedules {
+      token
+      name
+      description
+    }
+    accessPoints {
+      name
+      id
+      externalId
+      entity
+      restricted
+    }
+
+    externalId
+    externalName
+  }
+}

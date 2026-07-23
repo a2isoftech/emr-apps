@@ -1,0 +1,35 @@
+query GetStatements($input: SupplierStatementSummaryFilterInput,
+ $first: Int, $last: Int, $before: String, $after: String, $statementStatus: StatementStatusInput, $searchText : String, $order: [SupplierStatementSummarySortInput!])
+{
+   supplierStatements(
+    where: $input
+    first: $first
+    after: $after
+    statementStatus: $statementStatus,
+    searchText: $searchText,
+    order: $order,
+    last: $last, before: $before
+  )
+  {
+  totalCount
+  pageInfo{
+    hasNextPage
+    hasPreviousPage
+    startCursor
+    endCursor
+  }
+  nodes{
+    supplierInvoiceDueDate
+    supplierInvoiceDate
+    invoiceNo
+    amount
+    currency
+    purchaseOrderNumber
+    status
+    invoiceFile
+    supplierAccountNo
+    paidDate
+    companyName
+  }
+ }
+}

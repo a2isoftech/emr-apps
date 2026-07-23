@@ -1,0 +1,30 @@
+mutation UpdateAssetTemplate($input:UpdateAssetTemplateInput!){
+    updateAssetTemplate(input:$input)
+    {
+     id
+      name
+      codeFormat
+      syncTargets{
+        name
+      }
+      assetTemplateCounters{
+        id
+        groupId
+        key
+        name
+        dataType
+        incrementType
+      }
+      templateProperties{
+        id
+        name
+        dataType
+        isMandatory
+        active
+        sequence
+        viewerGroupIds
+        updaterGroupIds
+      }
+    }
+
+}

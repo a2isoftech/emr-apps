@@ -1,0 +1,22 @@
+mutation PrintAtmQrCode($paymentRecordId: String!) {
+  printAtmQrCode(paymentRecordId: $paymentRecordId) {
+    isSuccess
+    result
+    error {
+      errorCode
+      errorMessage
+      details {
+        key
+        value
+      }
+    }
+    warning {
+      code
+      message
+      details {
+        key
+        value
+      }
+    }
+  }
+}

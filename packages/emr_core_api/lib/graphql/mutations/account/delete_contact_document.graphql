@@ -1,0 +1,6 @@
+mutation DeleteContactDocument($input: DeleteContactDocumentInput!){
+  deleteContactDocument(input: $input){
+     ... AccountContactError
+    ... ContactWithKey
+  }
+}

@@ -1,0 +1,15 @@
+fragment TerritoryFragment on Territory {
+  id
+  active
+  name
+  uomId
+  defaultCompanyId
+  currencyCode
+  code
+  defaultCompany 
+  {   
+    id     
+    code
+    fullName           
+  }   
+}

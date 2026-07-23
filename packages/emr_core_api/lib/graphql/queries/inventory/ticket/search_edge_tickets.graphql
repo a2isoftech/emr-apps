@@ -1,0 +1,81 @@
+query SearchEdgeTickets(
+  $input: SearchTicketsInput!
+  $first: Int
+  $last: Int
+  $before: String,
+  $after: String,
+  $order: [SearchTicketsSortInput!]
+) {
+  searchTickets(first: $first, last: $last, before: $before, after: $after, input: $input, order: $order) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      id
+      yardCode
+      ticketNumber
+      ticketType
+      account{
+        accountNumber
+        name
+      }
+      ticketCategory
+      date
+      price
+      contractId
+      contract {
+        contractOrderBookTypeName
+        customerReference
+        internalReference
+      }
+      lines {
+        grossWeight {
+          uom
+          value
+          id
+        }
+        product{
+          code
+        }
+        lineNumber
+        locationId
+        location{
+          code
+        }
+        rate {
+          uom
+          value
+          id
+        }
+        weightSerial
+        mediaAssets {
+          url
+        }
+        inspectionDetails{
+          inspectionMedia{
+            url
+          }
+        }
+        deductions{
+          mediaAssets {
+            url
+          }
+        }
+      }
+      mediaAssets {
+        url
+      }
+      inspectionMedia{
+        url
+      }
+      transportDetails{
+        vehicleReg
+      }
+      lockedBy
+    }
+  }
+}

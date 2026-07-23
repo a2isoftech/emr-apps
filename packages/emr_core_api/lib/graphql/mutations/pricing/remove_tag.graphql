@@ -1,0 +1,7 @@
+mutation RemoveTag($input: RemoveTagInput!) {
+  removeTag(input: $input) {
+    ...RemoveTagSuccess
+    ...RemoveTagError
+    __typename
+  }
+}

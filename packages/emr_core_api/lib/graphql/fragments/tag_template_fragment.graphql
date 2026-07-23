@@ -1,0 +1,8 @@
+fragment TagTemplate on TagTemplate {
+  id
+  category
+  categoryId
+  reason
+  reasonId
+  functional
+}

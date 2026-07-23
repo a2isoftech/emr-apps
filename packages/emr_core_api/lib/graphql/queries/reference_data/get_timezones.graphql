@@ -1,0 +1,6 @@
+query GetTimeZones($query: String!) {
+  timezones(input: { query: $query }) {
+    timeZoneId
+    displayName
+  }
+}

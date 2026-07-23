@@ -1,0 +1,8 @@
+query GetSicCodes($first: Int!, $where: SicCodeFilterInput) {
+  sicCodes(first: $first, where: $where) {
+    nodes {
+      code
+      description
+    }
+  }
+}

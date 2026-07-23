@@ -1,0 +1,18 @@
+fragment PaymentApproval on PaymentApproval {
+  approvers
+  id
+  status
+  ticketIds
+  total
+  yardCode
+  yardPaymentRuleId
+  requestor
+  requestorEmail
+  paymentRecordId
+  created {
+    userInfoId
+    userName
+    at
+  }
+  active
+}

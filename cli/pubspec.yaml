@@ -1,0 +1,20 @@
+name: emrapps
+description: A CLI for EMR Apps.
+version: 0.0.4
+repository: https://dev.azure.com/emrtf01/EMR_Software/_git/emr_one?path=%2F&version=GBdevelop&_a=contents
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  args: ^2.4.2
+  path: ^1.9.0
+  yaml_edit: ^2.2.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  # test: ^1.24.0
+  very_good_analysis: ^6.0.0
+
+executables:
+  emrapps:

@@ -1,0 +1,15 @@
+mutation DeleteComment($commentInput: DeleteCommentInput!) {
+  deleteComment(commentInput: $commentInput) {
+    success
+    message
+    errorCode
+    data {
+      content
+      created {
+        userInfoId
+        userName
+        at
+      }
+    }
+  }
+}

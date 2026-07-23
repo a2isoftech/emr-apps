@@ -1,0 +1,21 @@
+query LoadSystemRoleSearchData($name: String, $active: Boolean, $before: String, $after: String, $first: Int, $last: Int, $order: [SystemRoleSortInput!]) {
+  systemRoles(
+    input:  { name: $name, active: $active },
+    first: $first, 
+    after: $after, 
+    last: $last, 
+    before: $before,
+    order: $order) {
+    totalCount
+    nodes {
+     ...SystemRolesFragment
+    },
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+  }
+}
+

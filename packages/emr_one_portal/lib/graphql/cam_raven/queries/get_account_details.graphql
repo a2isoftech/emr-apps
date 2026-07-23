@@ -1,0 +1,85 @@
+query GetAccountDetails {
+  account {
+    name
+    accountContacts {
+      value {
+        firstName
+        middleName
+        lastName
+        contactPreferences {
+          mobile {
+            value
+            enabled
+          }
+          email {
+            value
+            enabled
+          }
+          phone {
+            value
+            enabled
+          }
+          post {
+            value
+            enabled
+          }
+          fax {
+            value
+            enabled
+          }
+        }
+        proofOfAddress {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        proofOfIdentification {
+          media {
+            url
+          }
+          validFrom
+          validTo
+          type
+          subType
+        }
+        dateOfBirth
+        contactTypes
+        addressKey
+      }
+    }
+
+    accountAddresses {
+      key
+      address1
+      address2
+      address3
+      address4
+      address5
+      address6
+      postCode
+      countryCode
+    }
+
+    businessDetail {
+      vatNumber
+      paymentTerm {
+        financialPaymentMethod
+        paymentTermTypeId
+        paymentTermTypeName
+      }
+    }
+    bankAccounts {
+      accountNumber
+      sortCode
+      reference
+      bankName
+      accountHolderName
+      ibanCode
+      swiftCode
+    }
+  }
+}

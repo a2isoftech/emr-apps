@@ -1,0 +1,3 @@
+mutation DeleteSite($siteId: String!){
+  deleteSite(siteId: $siteId)
+}

@@ -1,0 +1,20 @@
+mutation DeleteStockTakeLocationMedia($input: StockLocationMediaInput!) {
+  deleteStockTakeLocationMedia(input: $input) {
+    success
+    data {
+      url
+      created {
+        at
+        userName
+        userInfoId
+      }
+      modified {
+        at
+        userName
+        userInfoId
+      }
+    }
+    message
+    errorCode
+  }
+}

@@ -1,0 +1,41 @@
+query SearchDeniedDoorAccessAttempts(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $input: SearchDoorAccessAttemptsInput!
+) {
+  searchDoorAccessAttempts(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    input: $input
+  ) {
+    totalCount 
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+     rowId
+     accessControllerId
+     userId
+     cardNumber
+     utcTime
+     topic0
+     topic1
+     topic2
+     accessPointName
+     accessPointRestricted
+     accessPointId
+     email
+     name
+     accessResponse
+     siteId
+     siteName
+    }
+  }
+}

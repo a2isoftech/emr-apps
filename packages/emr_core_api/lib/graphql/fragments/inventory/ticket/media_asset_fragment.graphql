@@ -1,0 +1,15 @@
+fragment MediaAssetFields on MediaAsset {
+  url
+  sasUrl
+  sasThumbnailUrl(width:128)
+  created {
+    at
+    userName
+    userInfoId
+  }
+  modified {
+    at
+    userName
+    userInfoId
+  }
+}

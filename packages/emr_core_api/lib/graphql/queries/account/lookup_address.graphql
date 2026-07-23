@@ -1,0 +1,12 @@
+query GetAddresses($countryId : CountryId!, $searchText:String!){
+  lookupAddress(country: $countryId, location: $searchText) {
+    id
+    address1
+    address2
+    address3
+    address4
+    address5
+    address6
+    postCode
+  }
+}

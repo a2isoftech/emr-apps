@@ -1,0 +1,8 @@
+query GetListValues($listName: String!, $parameter: String, $active: Boolean) {
+  listValues(listName: $listName, parameter: $parameter, active: $active) {
+    text
+    value
+    orderIndex
+    active
+  }
+}

@@ -1,0 +1,24 @@
+fragment PaymentRuleFragment on PaymentRules {
+    authorityReportable
+    authorityReportableProductIds
+    drivingLicenceRequired
+    drivingLicenceRequiredProductIds
+    id
+    cashCardRequired
+    cashCardRequiredProductIds  
+    copperSellersLicenseRequired
+    copperSellersLicenseRequiredProductIds
+    executedAffidavitDocumentRequiredProductIds
+    exemptedSellerStatusRequired
+    exemptedSellerStatusRequiredProductIds
+    preventCashPayment
+    preventCashPaymentProductIds
+    proofOfOwnershipRequired
+    proofOfOwnershipRequiredProductIds
+    vehicleDetailsRequired
+    vehicleDetailsRequiredProductIds
+    executedAffidavitDocumentRequired
+    allowedForAutoConfirm
+    allowedForAutoConfirmProductIds
+    yardCode
+}

@@ -1,0 +1,3 @@
+mutation DeleteFloorPlan($floorPlanId: String!){
+  deleteFloorPlan(floorPlanId: $floorPlanId)
+}

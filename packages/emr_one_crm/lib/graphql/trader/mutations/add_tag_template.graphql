@@ -1,0 +1,10 @@
+mutation AddTagTemplates($input: AddTagTemplateInput!) {
+  addTagTemplate(input: $input) {
+    active
+    reason
+    category
+    templateId
+    territory
+    id
+  }
+}

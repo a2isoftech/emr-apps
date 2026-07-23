@@ -1,0 +1,21 @@
+query searchWeighbridgeGroups($input: SearchWeighbridgeGroupsInput!, $first: Int, $after: String, $last: Int, $before: String) {
+  searchWeighbridgeGroups(
+    input: $input
+    first: $first
+    after: $after
+    last: $last
+    before: $before
+  ) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    nodes {
+      group
+      yardCode
+    }
+  }
+}

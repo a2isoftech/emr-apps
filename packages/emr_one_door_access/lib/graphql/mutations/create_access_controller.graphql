@@ -1,0 +1,3 @@
+mutation CreateAccessController($input: CreateAccessControllerInput!){
+  createAccessController(input: $input)
+}

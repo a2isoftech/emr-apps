@@ -1,0 +1,17 @@
+query GetTeams($startDate: DateTime, $endDate: DateTime, $teamName: String, $createdBy: String, $teamMember: String) {
+  teams(startDate: $startDate, endDate: $endDate, teamName: $teamName, createdBy: $createdBy, teamMember: $teamMember) {
+    uuid
+    name
+    teamMembers {
+      userName
+      userUuid
+    }
+    createdBy
+    createdByUuid
+    createdOn
+    modifiedBy
+    modifiedByUuid
+    modifiedOn
+    isActive
+  }
+}

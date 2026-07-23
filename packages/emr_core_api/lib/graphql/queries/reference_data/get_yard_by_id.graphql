@@ -1,0 +1,6 @@
+query GetYardById(
+    $yardId: String!) {
+    yard(id: $yardId) {
+       ...YardFragment
+  }
+}

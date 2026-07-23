@@ -1,0 +1,22 @@
+mutation DeleteNonConformingPart(
+  $elvQuotationId: String!
+  $vehicleKey: UUID!
+  $partKey: UUID!
+) {
+  deleteNonConformingPart(
+    input: {
+      elvQuotationVehicleInput: {
+        elvQuotationId: $elvQuotationId
+        vehicleKey: $vehicleKey
+      }
+      partKey: $partKey
+    }
+  ) {
+    ... on VehicleForInspectionResult {
+      __typename
+    }
+    ... on ElvInspectionError {
+      __typename
+    }
+  }
+}

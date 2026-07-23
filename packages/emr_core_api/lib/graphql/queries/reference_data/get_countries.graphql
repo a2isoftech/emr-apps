@@ -1,0 +1,5 @@
+query GetCountries($query: String!) {
+  countries(input: { query: $query }) {
+    name
+  }
+}

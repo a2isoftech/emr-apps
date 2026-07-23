@@ -1,0 +1,35 @@
+query GetAccountDocuments($accountId: String!) {
+  accountById(accountId: $accountId) {
+    id
+    accountContacts {
+      value {
+        proofOfAddress {
+          validFrom
+          validTo
+          type
+          subType
+          fileId
+          filePath
+          tradeDocumentId
+          sasUrl
+          media {
+            url
+          }
+        }
+        proofOfIdentification {
+          validFrom
+          validTo
+          type
+          subType
+          fileId
+          filePath
+          tradeDocumentId
+          sasUrl
+          media {
+            url
+          }
+        }
+      }
+    }
+  }
+}

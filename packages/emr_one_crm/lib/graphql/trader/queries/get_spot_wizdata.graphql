@@ -1,0 +1,13 @@
+query getSpotWizardData($after: String) {
+  userOrderBooks(first: 50, after: $after) {
+    nodes {
+      orderBookTypeId
+      orderBookName
+      gradeType
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

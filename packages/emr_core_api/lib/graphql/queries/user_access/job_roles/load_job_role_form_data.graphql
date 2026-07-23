@@ -1,0 +1,7 @@
+query LoadJobRoleFormData($id: String!) {
+  jobRole(
+    input: { id: $id }
+    ) {
+   ...JobRoleFragment
+  }
+}

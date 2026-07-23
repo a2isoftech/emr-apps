@@ -1,0 +1,7 @@
+mutation MoveTicketInspectionMedia($input :MoveTicketInspectionMediaInput!)
+{
+  moveTicketInspectionMedia(moveTicketMediaInput: $input)
+  {
+     id
+  }
+}

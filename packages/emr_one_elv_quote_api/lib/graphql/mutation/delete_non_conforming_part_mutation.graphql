@@ -1,0 +1,6 @@
+mutation DeleteNonConformingPartMutation(
+  $batchQuoteId: Int!
+  $partName: String!
+) {
+  deleteNonConformingPart(batchQuoteId: $batchQuoteId, partName: $partName)
+}

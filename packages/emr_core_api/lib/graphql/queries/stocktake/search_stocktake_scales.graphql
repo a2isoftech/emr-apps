@@ -1,0 +1,30 @@
+query SearchStocktakeScales(
+  $input: SearchWeighbridgeProfilesInput!
+  $first: Int!
+) {
+  searchWeighbridgeProfiles(input: $input, first: $first) {
+    nodes {
+      name
+      scales {
+        name
+        url
+        assetCode
+        scaleNumber
+        cameras {
+          name
+          imageUrl
+          videoUrl
+          userName
+          password
+        }
+      }
+      knownTares {
+        value {
+          uom
+          value
+        }
+        comments
+      }
+    }
+  }
+}

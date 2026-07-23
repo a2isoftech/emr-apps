@@ -1,0 +1,90 @@
+query GetTemplateToEdit($id: UUID!) {
+  templateToEdit(id: $id) {
+    id
+    validateFrom
+    isEmailNotificationRequired
+    sendEmailOnFailedQuestions
+    emailIds
+    assignFailedQuestionToTeam
+    assignFailedQuestionToTeamId
+    uuid
+    title
+    referenceId
+    clientId
+    isQuickTemplate
+    isDigitalSignatureRequired
+    validateBySignature
+    validateByWorkOrder
+    isPublished
+    template {
+      title
+      uuid
+      sections {
+        id
+        header
+        components {
+          id
+          url
+          isHTML
+          visibilityProvider {
+            id
+            type
+            values {
+              id
+              value
+            }
+            value
+            lengthGreaterThan
+            url
+            query
+            objectName
+          }
+          assetCounter {
+            name
+          }
+          mroDataProvider {
+            id
+            type
+            values {
+              id
+              value
+            }
+            value
+            lengthGreaterThan
+            url
+            query
+            objectName
+          }
+          showWarningLabel
+          faultTitle
+          title
+          isRequired
+          validators {
+            type
+            message
+            minValue
+            maxValue
+          }
+          message
+          messageType
+          isSRRequired
+          isMultiline
+          dropdownDataProvider {
+            id
+            type
+            values {
+              id
+              value
+            }
+            value
+            lengthGreaterThan
+            url
+            query
+            objectName
+          }
+          type
+        }
+      }
+    }
+  }
+}

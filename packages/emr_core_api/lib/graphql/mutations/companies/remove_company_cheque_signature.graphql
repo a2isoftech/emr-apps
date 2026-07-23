@@ -1,0 +1,5 @@
+mutation RemoveCompanyChequeSignature($input: RemoveCompanyChequeSignatureInput!) {
+    removeCompanyChequeSignature(input: $input) {
+        ...CompanyFragment
+    }
+}

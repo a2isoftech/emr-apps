@@ -1,0 +1,102 @@
+{
+    "$schema": "./template.schema.json",
+    "title": "This is an example form",
+    "components": [
+        {
+            "id": "first-name",
+            "type": "TextInput",
+            "title": "Enter your given name",
+            "defaultValueProvider": {
+                "id": "text-provider",
+                "dataValueId": "value-1"
+            },
+            "placeholderProvider": {
+                "id": "text-provider",
+                "dataValueId": "value-2"
+            },
+            "validators": [
+                {
+                    "type": "Name"
+                }
+            ]
+        },
+        {
+            "id": "last-name",
+            "type": "TextInput",
+            "title": "Enter your surname",
+            "defaultValueProvider": {
+                "id": "text-provider",
+                "dataValueId": "value-3"
+            },
+            "placeholderProvider": {
+                "id": "text-provider",
+                "dataValueId": "value-2"
+            },
+            "validators": [
+                {
+                    "type": "Name"
+                }
+            ]
+        },
+        {
+            "id": "yes-question",
+            "type": "YesNoQuestion",
+            "title": "Answer yes to this one?"
+        },
+        {
+            "id": "no-question",
+            "type": "YesNoQuestion",
+            "title": "Answer no to this one?"
+        },
+        {
+            "id": "na-question",
+            "type": "YesNoQuestion",
+            "title": "Answer N/A to this one?",
+            "isRequired": false
+        }
+    ],
+    "layout": [
+        {
+            "id": "top-section",
+            "fontColor": "black",
+            "backgroundColor": "white",
+            "header": "Personal info",
+            "components": [ "first-name", "last-name", "yes-question", "no-question", "na-question" ]
+        }
+    ],
+    "dataProviders": [
+        {
+            "id": "text-provider",
+            "type": "Values",
+            "values": [
+                {
+                    "id": "value-1",
+                    "value": "John"
+                },
+                {
+                    "id": "value-2",
+                    "value": "Name"
+                },
+                {
+                    "id": "value-3",
+                    "value": "Doe"
+                }
+            ]
+        },
+        {
+            "id": "api-provider",
+            "type": "APIRequest",
+            "url": "mock/endpoint",
+            "resultType": "array"
+        },
+        {
+            "id": "graphql-provider",
+            "type": "GraphQLQuery",
+            "url": "mock/graphql",
+            "query": "some query",
+            "objectName": "list",
+            "idKey": "id",
+            "valueKey": "name"
+        }
+    ]
+}

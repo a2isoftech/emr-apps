@@ -1,0 +1,8 @@
+query depots($searchTerm:String! ){
+    depots(searchTerm: $searchTerm) {
+    depotNumber
+    depotName
+    depotShortName
+    territoryCode
+    }
+}

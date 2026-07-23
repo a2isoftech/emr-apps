@@ -1,0 +1,6 @@
+query GetDevice (
+    $input: GetDeviceInput!){
+  device(input: $input ) {
+   ...DevicesFragment
+  }
+}

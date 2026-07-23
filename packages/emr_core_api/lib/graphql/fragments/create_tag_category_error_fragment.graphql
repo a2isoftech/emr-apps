@@ -1,0 +1,3 @@
+fragment CreateTagCategoryError on CreateTagCategoryError {
+  message
+}

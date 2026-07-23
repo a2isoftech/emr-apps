@@ -1,0 +1,7 @@
+mutation saveAssetTransfer($input: TransferRequestInput!) {
+  createTransferRequest(input: $input)
+  {
+    successAssetIds
+    failedAssetIds
+  }
+}

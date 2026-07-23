@@ -1,0 +1,3 @@
+query CheckReferenceId($referenceId: String!) {
+    formTemplateReferenceId(referenceId: $referenceId)
+}

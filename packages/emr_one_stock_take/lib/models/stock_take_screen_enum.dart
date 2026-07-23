@@ -1,0 +1,4 @@
+enum StockTakeScreenState {
+  create,
+  edit,
+}

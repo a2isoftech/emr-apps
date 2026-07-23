@@ -1,0 +1,10 @@
+query GetAccessPointNames($siteId: String, $accessControllerId: String, $accessPointId: String) {
+  accessPoints(siteId: $siteId, accessControllerId: $accessControllerId, accessPointId: $accessPointId) {
+    id
+    externalId
+    entity
+    accessControllerId
+    name
+    restricted 
+  }
+}

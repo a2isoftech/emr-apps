@@ -1,0 +1,6 @@
+query GetTeams($query:String){
+  teams(searchQuery: $query) {
+    id
+    name
+  }
+}

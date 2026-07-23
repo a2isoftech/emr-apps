@@ -1,0 +1,3 @@
+query invoiceFileDownload($invoiceNumber: String!, $purchaseOrderNumber : String!){
+  invoiceFileSASToken(invoiceNo: $invoiceNumber, purchaseOrderNo: $purchaseOrderNumber)
+}

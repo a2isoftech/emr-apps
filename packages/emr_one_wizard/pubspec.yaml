@@ -1,0 +1,29 @@
+name: emr_one_wizard
+description: The wizard module for EMR Apps.
+version: 3.0.0
+homepage: EMROne
+repository: https://dev.azure.com/emrtf01/EMR_Software/_git/emr_one?version=GBdevelop
+publish_to: "none"
+
+environment:
+  sdk: ^3.11.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.5
+  emr_one_core:
+    path: ../emr_one_core
+  emr_one_theme:
+    path: ../emr_one_theme
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  very_good_analysis: ^6.0.0
+
+flutter:

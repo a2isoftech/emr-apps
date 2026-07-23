@@ -1,0 +1,18 @@
+fragment SyncWeighbridgeTicketTaskFields on SyncWeighbridgeTicketTask {
+      completedDate
+      id
+      ticketId
+      weighbridgeId
+      machineName
+      ticketCompletedBy
+      ticketCompletedDate
+      isComplete
+      inTrade
+      status
+      eventLogs {
+            type
+            dateTime
+            message
+            details
+      }
+}

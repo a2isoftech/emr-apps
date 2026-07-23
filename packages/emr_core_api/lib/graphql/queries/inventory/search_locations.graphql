@@ -1,0 +1,15 @@
+query GetInventoryLocations(
+  $yardCode: String!
+  $productCode: String
+  $pattern: String!
+) {
+  searchInventoryLocations(first: 500, input: { 
+    yardCode: $yardCode, 
+    query: $pattern,
+    productCode: $productCode, 
+  }) {
+    nodes {
+      ...LocationFragment
+    }
+  }
+}

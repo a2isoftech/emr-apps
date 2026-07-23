@@ -1,0 +1,8 @@
+fragment PaymentRecordItemFields on PaymentRecordItem {
+  paymentMethod
+  totalAmount
+  totalFee
+  payableAfterCost
+  payableAmount
+  paymentMethodDetails
+}

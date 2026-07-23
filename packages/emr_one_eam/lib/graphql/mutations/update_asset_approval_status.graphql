@@ -1,0 +1,8 @@
+mutation updateAssetApprovalStatus($input : UpdateAssetApprovalInput!)
+{
+  updateAssetApprovalStatus(input: $input)
+  {
+    successAssetIds
+    failedAssetIds
+  }
+}

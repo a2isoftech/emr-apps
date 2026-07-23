@@ -1,0 +1,11 @@
+mutation DeletePartyBankAccount($bankAccountInput: DeleteBankAccountInput!) {
+  deletePartyBankAccounts(deleteBankAccountInput: $bankAccountInput)
+  {
+    ... on AccountBankAccountError {
+      message
+    }
+    ... on Account {
+      name
+    }
+  }
+}

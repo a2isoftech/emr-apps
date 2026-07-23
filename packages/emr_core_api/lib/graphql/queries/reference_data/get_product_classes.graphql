@@ -1,0 +1,7 @@
+query GetProductClasses(
+  $query: String
+) {
+  productClasses(
+    query: $query
+  )
+}

@@ -1,0 +1,72 @@
+query GetGuidePriceDetails(
+  $input: GetGuidePricesInput!
+  $first: Int
+  $last: Int
+  $before: String
+  $after: String
+) {
+  priceList(
+    input: $input
+    first: $first
+    last: $last
+    before: $before
+    after: $after
+  ) {
+    pageInfo {
+      hasNextPage
+      endCursor
+      hasPreviousPage
+      startCursor
+      __typename
+    }
+    totalCount
+    nodes {
+      id
+      contractHeaderId
+      contractLineId
+      internalNotes
+      paymentNotes
+      externalNotes
+      deliveryNotes
+      longDescription
+      publicationId
+      manager
+      accountNo
+      deliveryType
+      lineStart
+      lineEnd
+      haulageAdjustment
+      haulageCharge
+      haulageRateUoMValue
+      haulageChargeUoM
+      productCode
+      productType
+      productDescription
+      baseMaterialPriceUoMValue
+      baseMaterialPriceUoM
+      deltas {
+        yard
+        latestCommercialDeltaUoM
+        latestCommercialDeltaUoMValue
+        latestOperationalDeltaUoMValue
+        latestOperationalDeltaUoM
+      }
+      tags {
+        id
+        tagId
+        category
+        reason
+        active
+        startDate
+        endDate
+        rate
+        rateUoMValue
+        rateUoM
+        functional
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}

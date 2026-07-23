@@ -1,0 +1,9 @@
+query GetAccountReferenceData {
+  financialSupplierGroups: referenceData(name: "financialSupplierGroups")
+  financialCustomerGroups: referenceData(name: "financialCustomerGroups")
+  paymentTerms: referenceData(name: "paymentTerms")
+  financialPaymentMethod: referenceData(name: "FinancialPaymentMethods")
+  invoicePeriodicityDays: referenceData(name: "invoicePeriodicityDays")
+  namesToUseOn1099: referenceData(name: "namesToUseOn1099")
+  depots: referenceData(name: "depots")
+}

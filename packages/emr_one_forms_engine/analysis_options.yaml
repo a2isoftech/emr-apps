@@ -1,0 +1,17 @@
+include: package:flutter_lints/flutter.yaml
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.graphql.dart"
+
+linter:
+  rules:
+    public_member_api_docs: false
+    cascade_invocations: false
+    flutter_style_todos: false
+    prefer_asserts_with_message: false
+    comment_references: false

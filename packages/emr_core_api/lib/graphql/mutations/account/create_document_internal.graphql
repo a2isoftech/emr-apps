@@ -1,0 +1,9 @@
+mutation CreateDocumentInternal($accountNumber: String!, $input: CreateNewDocumentInput) {
+  createDocumentInternal(accountNumber: $accountNumber, input: $input) {
+    accountNumber
+    errors {
+      message
+      code
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mutation UnlockAccessPoint($input: UnlockAccessPointInput!){
+  unlockAccessPoint(input: $input)
+}

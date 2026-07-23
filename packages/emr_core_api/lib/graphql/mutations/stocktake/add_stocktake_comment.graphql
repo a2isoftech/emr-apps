@@ -1,0 +1,14 @@
+mutation AddStocktakeComment($id: String!, $comment: String!) {
+  addStocktakeComment(id: $id, comment: $comment) {    
+    success
+    message
+    errorCode
+    data {
+      content
+      created {
+        userName
+        at
+      }
+    }
+  }
+}

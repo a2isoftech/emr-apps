@@ -1,0 +1,22 @@
+mutation cancelPayment($paymentRecordId: String!) {
+  cancelPayment(paymentRecordId: $paymentRecordId){
+    result
+    isSuccess
+    error{
+      errorCode
+      errorMessage
+      details{
+        key
+        value
+      }
+    }
+    warning{
+      code
+      message
+      details{
+        key
+        value
+      }
+    }
+  }
+}

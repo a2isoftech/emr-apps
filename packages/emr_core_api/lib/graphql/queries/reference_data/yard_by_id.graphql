@@ -1,0 +1,9 @@
+query GetYardById($id: String!) {
+  yard(id: $id) {
+    id
+    name
+    yardCode
+    defaultPaymentMethod
+    ...PaymentMethodFields
+  }
+}

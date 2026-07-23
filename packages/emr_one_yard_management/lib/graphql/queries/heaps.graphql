@@ -1,0 +1,11 @@
+query heaps($depotNos:[String!]!,$searchTerm:String!){
+    heaps(depotNos:$depotNos,searchTerm:$searchTerm){
+        heapNo
+        depotNo
+        heapDesc
+        heapShortName
+        gradeCode
+        heapDisplayName
+        uomId
+    }
+}

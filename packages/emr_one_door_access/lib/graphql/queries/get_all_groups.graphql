@@ -1,0 +1,18 @@
+query GetAllGroups($groupIds: [String!]) {
+  allGroups(groupIds: $groupIds) {
+    azureId
+    name
+    users
+    accessPoints {
+      key
+      value {
+        externalId
+        name
+        description
+      }
+    }
+    lastUpdatedFromAzureAdOn
+    id
+    createdOn
+  }
+}

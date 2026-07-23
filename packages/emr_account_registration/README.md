@@ -1,0 +1,1 @@
+Reusable package for account registration to be used in multiple applications like portal, weighbridge, emr apps etc

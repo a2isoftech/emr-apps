@@ -1,0 +1,13 @@
+mutation SaveTicketGallery($gallery: TicketGalleryInput!, $changeVector: String!) {
+  saveTicketGallery(gallery: $gallery, changeVector: $changeVector) {
+    changeVector
+    gallery:entity {
+      id
+      title
+      excludedImageUrls
+      publicUrl      
+      createdBy
+      createdDate
+    }
+  }
+}

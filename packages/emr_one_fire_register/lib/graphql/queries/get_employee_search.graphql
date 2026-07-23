@@ -1,0 +1,13 @@
+query SearchEmployee(
+  $pattern: String!
+  ) {
+  searchEmployee(
+      pattern:$pattern 
+  ) {
+    id,
+    firstName,
+    surname,
+    cardId,
+    email
+  }
+}

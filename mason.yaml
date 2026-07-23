@@ -1,0 +1,5 @@
+bricks:
+  eomodule:
+    git:
+      url: "git@ssh.dev.azure.com:v3/emrtf01/EMR_Software/emr_one_bricks"
+      path: eomodule

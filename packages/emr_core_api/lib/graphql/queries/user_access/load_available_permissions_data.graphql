@@ -1,0 +1,6 @@
+query LoadAvailablePermissions {
+  availablePermissions {
+    permissionCode
+    permissionName
+  }
+}

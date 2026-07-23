@@ -1,0 +1,6 @@
+fragment CommoditySourceTypesFragment on CommoditySourceTypes 
+{
+    id
+    commoditySourceTypeName
+    commoditySourceTypeDescription
+}

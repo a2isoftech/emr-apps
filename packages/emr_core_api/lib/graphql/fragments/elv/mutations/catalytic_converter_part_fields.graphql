@@ -1,0 +1,16 @@
+fragment CatalyticConverterFields on CatalyticConverterConfig {
+  partKey
+  partInfo {
+    partType
+    partLocation
+  }
+  partPhotos {
+    url
+  }
+  techemetCatId
+  techemetCat {
+    sealNo
+    serial
+  }
+  classification
+}

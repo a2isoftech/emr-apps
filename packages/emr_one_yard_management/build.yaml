@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          scopes:
+            - lib/graphql/**
+          scalars:
+            Decimal:
+              type: double
+            Long:
+              type: int
+            DateTime:
+              type: DateTime

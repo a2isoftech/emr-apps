@@ -1,0 +1,250 @@
+query GetTicketDetailsById($id: String!) {
+  ticket(id: $id) {
+    account {
+      accountNumber
+      details {
+        contacts {
+          key
+          value {
+            proofOfAddress {
+              media {
+                sasUrl
+              }
+            }
+            proofOfIdentification {
+              media {
+                sasUrl
+              }
+            }
+            signature {
+              sasUrl
+            }
+          }
+        }
+      }
+      locationId
+      locationName
+      name
+    }
+    containerNumber
+    contract {
+      internalReference
+    }
+    comments {
+      content
+      created {
+        at
+        userInfoId
+        userName
+      }
+    }
+    costs {
+      typeId
+      costParty {
+        partyAccountNo
+        partyName
+      }
+      value
+      rate {
+        id
+        isRate
+        uom
+        value
+      }
+      costStatus
+      comments {
+        content
+        created {
+          at
+          userInfoId
+          userName
+        }
+      }
+      costType {
+        id
+        type
+      }
+    }
+    created {
+      at
+      userInfoId
+      userName
+    }
+    currency
+    date
+    deductions {
+      typeId
+      value
+    }
+    deletionDetails {
+      created {
+        at
+        userInfoId
+        userName
+      }
+      comments {
+        content
+        created {
+          at
+          userInfoId
+          userName
+        }
+      }
+    }
+    haulier {
+      accountNumber
+      name
+    }
+    id
+    inspectionMedia {
+      sasUrl
+    }
+    internalComments {
+      content
+      created {
+        at
+        userInfoId
+        userName
+      }
+    }
+    lines {
+      binNo
+      consignmentNoteNo
+      costs {
+        typeId
+        costParty {
+          partyAccountNo
+          partyName
+        }
+        value
+        rate {
+          id
+          isRate
+          uom
+          value
+        }
+        costStatus
+        comments {
+          content
+          created {
+            at
+            userInfoId
+            userName
+          }
+        }
+        costType {
+          id
+          type
+        }
+      }
+      created {
+        at
+        userInfoId
+        userName
+      }
+      deductions {
+        mediaAssets {
+          sasUrl
+        }
+        typeId
+        value
+        weight {
+          uom
+          value
+          id
+        }
+        weightSerial
+      }
+      grossWeight {
+        id
+        value
+        uom
+      }
+      grossWeightDateTime
+      hasSeenZero
+      inspectionDetails {
+        inspectionMedia {
+          sasUrl
+        }
+      }
+      internalComments {
+        content
+        created {
+          at
+          userInfoId
+          userName
+        }
+      }
+      isGrossFromPreviousWeight
+      lineNumber
+      locationId
+      location {
+        code
+        description
+        product {
+          code
+          description
+        }
+      }
+      manualGrossWeightReason
+      mediaAssets {
+        sasUrl
+      }
+      modified {
+        at
+        userInfoId
+        userName
+      }
+      netWeight {
+        id
+        value
+        uom
+      }
+      packingListReference
+      partyWasteStreamNumber
+      priceOrigin
+      rate {
+        id
+        value
+        uom
+      }
+      payableBeforeCostAndDeduction
+      payableAfterCostAndDeduction
+      sealNo
+      stockAsProduct {
+        code
+        description
+      }
+      weightSerial
+    }
+    mediaAssets {
+      url
+      sasUrl
+    }
+    modified {
+      at
+      userInfoId
+      userName
+    }
+    outwardTicketNo
+    serviceType
+    ticketCategory
+    ticketNumber
+    ticketStatus
+    ticketType
+    transportDetails {
+      deliveryNote
+      jobNumber
+      transportType
+      vehicleReg
+    }
+    weightValidation {
+      internalNet {
+        id
+        uom
+        value
+      }
+    }
+    yardCode
+  }
+}
