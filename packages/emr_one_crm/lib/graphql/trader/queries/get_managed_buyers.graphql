@@ -1,6 +1,0 @@
-query GetManagedBuyers {
-  managedBuyers {
-    username
-    azureId
-  }
-}

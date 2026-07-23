@@ -1,3 +1,0 @@
-enum SubHeaderToolTips {
-  includingPricedAndUnpriced,
-}

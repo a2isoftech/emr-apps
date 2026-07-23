@@ -1,24 +1,7 @@
-import 'package:emr_account_registration/services/account_registration_remote_config_service.dart';
-import 'package:emr_one_accounts/emr_one_accounts.dart';
-import 'package:emr_one_cashiersearch/emr_one_cashiersearch.dart';
 import 'package:emr_one_core/emr_one_core.dart';
-import 'package:emr_one_crm/emr_one_crm.dart';
-import 'package:emr_one_data_management/emr_one_data_management.dart';
-import 'package:emr_one_eam/eam.dart';
-import 'package:emr_one_elv_dismantling/elv_dismantling.dart';
-import 'package:emr_one_elv_inspection/elv_inspection.dart';
-import 'package:emr_one_elv_quotes/elv_quotes.dart';
-import 'package:emr_one_elv_t2/elv_t2.dart';
-import 'package:emr_one_fire_register/fire_register.dart';
-import 'package:emr_one_inform/inform.dart';
-import 'package:emr_one_inventory/emr_one_inventory.dart';
-import 'package:emr_one_prefs/prefs.dart';
-import 'package:emr_one_securitymgmt/securitymgmt.dart';
+import 'package:emr_one_door_access/routing/door_access_route_registry.dart';
 import 'package:emr_one_shell_native/firebase_options_dev.dart';
 import 'package:emr_one_shell_native/module_startup.dart';
-import 'package:emr_one_stock_take/emr_one_stock_take.dart';
-import 'package:emr_one_yard_app/emr_one_yard_app.dart';
-import 'package:emr_one_yard_logistics/emr_one_yard_logistics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:path_provider/path_provider.dart';
@@ -46,21 +29,7 @@ void main() async {
       'customAuth':
           'https://emrappsdevauthsvc.azurewebsites.net/api/GetFirebaseToken?code=VuoA27apKcS1b5LU_MFZ6RICmBcUbXYwNAWrcnt-D7nVAzFu-sMWuw==',
       'primaryGateway': 'https://emr-coreapi-dev.azurewebsites.net',
-      'tradeRUrl': 'https://emr-trader-dev.azurewebsites.net',
-      'finlay': 'https://yardmanagement-dev.emrgroup.com/api',
-      'psnopGraphQL': 'https://psnop-dev.azurewebsites.net/graphql/',
-      'yardManagement': 'https://yardmanagement-dev.emrgroup.com',
-      'fireRegister':
-          'https://emr-siteregister-api-dev.azurewebsites.net/graphql/',
-      'informBaseUrl': 'https://emr-forms-api-dev.azurewebsites.net',
-      'eamBaseUrl': 'https://emr-assetmanagement-api-dev.azurewebsites.net',
-      'piPrint':
-          'https://apim-vpn-test.azure-api.net/PiPrint/print?hostname=uksalwm0028',
-      'pdfPiPrint': 'https://emr-pdf-printer-dev.azurewebsites.net',
-      'quoteService': 'https://ukelv-quoteservice-dev.emrgroup.com',
-      'quoteServiceGraphql': 'https://elv-quoteservice-dev.azurewebsites.net',
-      'catService': 'https://ukelv-cat-api-dev.emrgroup.com',
-      'geolocationApi': 'https://geolocation-dev.emrgroup.com',
+      'doorAccessUrl': 'https://emr-door-access-api-dev.azurewebsites.net/graphql',
     },
     firebaseOptions: DefaultFirebaseOptions.currentPlatform,
     configureRouteRegistry: (
@@ -72,24 +41,8 @@ void main() async {
           routeRegistry,
           EORouteConverter(
             widgetBuilders: {
-              ...AccountRouteRegistry.widgetBuilders,
               ...CoreRoutes.widgetBuilders,
-              ...CashiersearchRouteRegistry.widgetBuilders,
-              ...CrmRouteRegistry.widgetBuilders,
-              ...DataManagementRouteRegistry.widgetBuilders,
-              ...EAMRouteRegistry.widgetBuilders,
-              ...ElvDismantlingRouteRegistry.widgetBuilders,
-              ...ElvInspectionRouteRegistry.widgetBuilders,
-              ...ElvQuotesRouteRegistry.widgetBuilders,
-              ...ElvT2RouteRegistry.widgetBuilders,
-              ...FireRegisterRouteRegistry.widgetBuilders,
-              ...InformRouteRegistry.widgetBuilders,
-              ...InventoryRouteRegistry.widgetBuilders,
-              ...PrefsRouteRegistry.widgetBuilders,
-              ...SecurityMgmtRouteRegistry.widgetBuilders,
-              ...StockTakeRouteRegistry.widgetBuilders,
-              ...YardAppRouteRegistry.widgetBuilders,
-              ...YardLogisticsRouteRegistry.widgetBuilders,
+              ...DoorAccessRouteRegistry.widgetBuilders,
             },
           ),
           routingJson,
@@ -100,6 +53,4 @@ void main() async {
     },
     platformStartup: FlutterNativeSplash.remove,
   ).start();
-
-  AccountRegistrationRemoteConfigService.reloadSettingsAndStandingData({});
 }

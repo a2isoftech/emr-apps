@@ -1,6 +1,0 @@
-query yards($searchTerm:String!){
-    yards(searchTerm:$searchTerm){
-        yardCode
-        yardName
-    }
-}

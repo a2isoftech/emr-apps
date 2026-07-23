@@ -1,5 +1,0 @@
-query CanStartJob($workOrderId:String!){
-  canStartJob(workOrderId: $workOrderId){
-    value
-  }
-}

@@ -1,8 +1,0 @@
-mutation UpdatePunchNote($id:Int!,$note:String!)
-{
-   updateNote(id:$id,note:$note)
-   {
-    success,
-    message
-   }
-}

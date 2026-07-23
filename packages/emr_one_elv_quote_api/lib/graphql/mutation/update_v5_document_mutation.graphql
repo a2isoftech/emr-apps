@@ -1,7 +1,0 @@
-mutation UpdateV5DocumentMutation(
-  $input: DocumentUploadRequestInput!
-) {
-  updateV5Document(
-    input: $input
-  )
-}

@@ -1,3 +1,0 @@
-mutation DeleteSearchParameters($name: String!){
-  deleteSearchParameters(name: $name)
-}

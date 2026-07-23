@@ -1,3 +1,0 @@
-mutation UpdateBatteryStatusMutation($quoteId: Int!, $hasBattery: Boolean!) {
-  updateBatteryStatus(quoteId: $quoteId, hasBattery: $hasBattery)
-}

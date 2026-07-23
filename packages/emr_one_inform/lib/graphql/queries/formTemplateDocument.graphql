@@ -1,5 +1,0 @@
-query FormTemplateDocument($id: UUID!) {
-    formTemplate(id: $id) {
-        document
-    }
-}

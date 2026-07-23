@@ -1,8 +1,0 @@
-mutation ImportAsset($input: ImportAssetInput!) {
-  importAsset(input: $input) {
-    errors
-    infos
-    successes
-    warnings
-  }
-}

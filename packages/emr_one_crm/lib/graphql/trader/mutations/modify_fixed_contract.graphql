@@ -1,5 +1,0 @@
-mutation ModifyFixedContract($input: CreateFixedContractInput!) {
-  modifyFixedContract(input: $input) {
-    contractRef
-  }
-}

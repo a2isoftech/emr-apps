@@ -1,8 +1,0 @@
-query GetFireRollCallLogs($input: GetFireRollCallLogsInput!) {
-  fireRollCallLogs(input: $input){
-    id
-    loggedBy
-    loggedOn
-    punchData
-  }
-}

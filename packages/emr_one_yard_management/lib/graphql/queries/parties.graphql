@@ -1,6 +1,0 @@
-query parties($searchTerm:String!){
-    parties(searchTerm:$searchTerm){
-        partyAccountNo
-        partyName
-    }
-}

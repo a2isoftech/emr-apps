@@ -1,5 +1,0 @@
-mutation SaveCompanyPreferences($companyPreference: CreateEditCompanyPreferenceInput!) {
-  saveCompanyPreferences(companyPreference: $companyPreference) {
-    message
-  }
-}

@@ -1,8 +1,0 @@
-query Yards($code: String!) {
-      territory(code: $code) {
-        yards {
-          yardCode
-          name
-        }
-      }
-    }

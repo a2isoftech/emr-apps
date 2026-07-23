@@ -1,6 +1,0 @@
-query PartySearchTradeRBuyers($buyerId: String!) {
-  buyerParties(input: { buyerId: $buyerId}) {
-    party_account_no
-    party_name
-  }
-}

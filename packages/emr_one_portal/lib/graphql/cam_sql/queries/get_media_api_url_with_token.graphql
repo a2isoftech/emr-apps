@@ -1,3 +1,0 @@
-query GetMediaApiSasToken($fname:String!){
-  mediaApiUrlWithToken(fileName: $fname) 
-}

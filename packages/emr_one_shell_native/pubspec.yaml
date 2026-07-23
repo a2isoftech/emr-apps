@@ -31,47 +31,13 @@ resolution: workspace
 dependencies:
   app_links: ^6.4.0
   cupertino_icons: ^1.0.2
-  emr_account_registration:
-    path: ../emr_account_registration
   emr_flutter_theme:
     hosted: https://dartpackages.emrgroup.com
     version: ^2.0.0
-  emr_one_accounts:
-    path: ../emr_one_accounts
-  emr_one_cashiersearch:
-    path: ../emr_one_cashiersearch
   emr_one_core:
     path: ../emr_one_core
-  emr_one_crm:
-    path: ../emr_one_crm
-  emr_one_data_management:
-    path: ../emr_one_data_management
-  emr_one_eam:
-    path: ../emr_one_eam
-  emr_one_elv_dismantling:
-    path: ../emr_one_elv_dismantling
-  emr_one_elv_inspection:
-    path: ../emr_one_elv_inspection
-  emr_one_elv_quotes:
-    path: ../emr_one_elv_quotes
-  emr_one_elv_t2:
-    path: ../emr_one_elv_t2
-  emr_one_fire_register:
-    path: ../emr_one_fire_register
-  emr_one_inform:
-    path: ../emr_one_inform
-  emr_one_inventory:
-    path: ../emr_one_inventory
-  emr_one_prefs:
-    path: ../emr_one_prefs
-  emr_one_securitymgmt:
-    path: ../emr_one_securitymgmt
-  emr_one_stock_take:
-    path: ../emr_one_stock_take
-  emr_one_yard_app:
-    path: ../emr_one_yard_app
-  emr_one_yard_logistics:
-    path: ../emr_one_yard_logistics
+  emr_one_door_access:
+    path: ../emr_one_door_access
   firebase_analytics: ^11.3.3
   firebase_auth: ^5.3.1
   firebase_core: ^3.6.0
@@ -89,8 +55,6 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.13
-  emr_one_builders:
-    path: ../emr_one_builders
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^5.0.0
   flutter_test:

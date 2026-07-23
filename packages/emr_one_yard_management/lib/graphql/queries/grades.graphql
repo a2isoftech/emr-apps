@@ -1,3 +1,0 @@
-query grades($searchTerm:String!){
-    grades(searchTerm:$searchTerm)
-}

@@ -1,5 +1,0 @@
-query CompanyDetails($companyId : String!){
-   company(companyId: $companyId ){
-    fullName
-   }
-}

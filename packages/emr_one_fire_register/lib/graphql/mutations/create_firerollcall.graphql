@@ -1,6 +1,0 @@
-mutation CreateFireRollCall($input: FireRollCallLogsInput!) {
-  createFireRollCall(fireRollCallLogs: $input) {
-    success,
-    message
-  }
-}

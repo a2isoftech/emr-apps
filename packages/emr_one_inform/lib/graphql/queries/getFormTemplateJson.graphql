@@ -1,5 +1,0 @@
-query GetFormTemplateJson($id: UUID!) {
-      formTemplateJson(id: $id) {
-        document
-      }
-    }

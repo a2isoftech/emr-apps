@@ -1,5 +1,0 @@
-query GetScheduleDescriptions($filter: ScheduleFilterInput!) {
-  schedules(filter: $filter) {
-    description
-  }
-}

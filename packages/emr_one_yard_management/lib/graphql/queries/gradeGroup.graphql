@@ -1,3 +1,0 @@
-query gradeGroup($searchTerm:String!){
-    gradeGroup(searchTerm:$searchTerm)
-}

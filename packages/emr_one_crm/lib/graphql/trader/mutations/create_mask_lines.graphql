@@ -1,5 +1,0 @@
-mutation CreateMaskLines($input: CreateMaskLinesInput!) {
-  createMaskLines(input: $input){
-    contractLineId,
-  }
-}

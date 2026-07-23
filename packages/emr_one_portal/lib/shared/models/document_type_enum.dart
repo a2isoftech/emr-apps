@@ -1,4 +1,0 @@
-enum DocumentTypeEnum {
-  invoice,
-  creditNote
-}

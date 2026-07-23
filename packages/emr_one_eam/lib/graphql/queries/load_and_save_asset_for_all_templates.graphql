@@ -1,8 +1,0 @@
-query loadAndSaveAssetsOnAllTemplates(){
-    loadAndSaveAssetsOnAllTemplates(){
-    errors
-    infos
-    successes
-    warnings
-    }
-}

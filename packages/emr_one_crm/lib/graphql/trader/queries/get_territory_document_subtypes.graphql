@@ -1,8 +1,0 @@
-query GetTerritoryDocumentSubTypes($territoryId: TerritoryId) {
-  territoryDocumentSubType(where: { territoryId: { eq: $territoryId } }) {
-    documentSubType {
-      id
-      description
-    }
-  }
-}

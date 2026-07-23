@@ -1,5 +1,0 @@
-query GetTemplateJson($template: CreateEditFormTemplateInput!) {
-    templateJson(template: $template) {
-    value
-  }
-}

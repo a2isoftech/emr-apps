@@ -1,5 +1,0 @@
-query getWorkOrderMedia($cmpCode: String!, $refId: String!) {
-    mediaItemsForWorkOrder(companyCode: $cmpCode, workOrderId: $refId) {
-    id mediaType mediaPath thumbnailPath isUploaded createdBy createdDate uploadDate
-    }
-}

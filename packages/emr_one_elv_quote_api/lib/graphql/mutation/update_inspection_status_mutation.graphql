@@ -1,3 +1,0 @@
-mutation UpdateInspectionToInProgressMutation($quoteId: Int!) {
-  updateInspectionToInProgress(quoteId: $quoteId)
-}

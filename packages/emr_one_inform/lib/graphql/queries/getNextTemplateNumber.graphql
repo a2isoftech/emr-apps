@@ -1,5 +1,0 @@
-query GetNextTemplateNumber {
-    nextTemplateNumber {
-        data
-    }
-}

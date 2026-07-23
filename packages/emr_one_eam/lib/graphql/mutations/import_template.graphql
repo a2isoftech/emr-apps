@@ -1,8 +1,0 @@
-mutation ImportAssetTemplate($input: ImportAssetTemplateInput!) {
-  importAssetTemplate(input: $input) {
-    errors
-    infos
-    successes
-    warnings
-  }
-}

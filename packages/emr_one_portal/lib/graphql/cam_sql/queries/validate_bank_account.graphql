@@ -1,6 +1,0 @@
-query ValidateBankAccount($sortCode:String!, $accountNumber:String!, $country:CountryId!){
-  validatedBankAccount(sortCode: $sortCode, accountNumber: $accountNumber, country: $country){
-    isCorrect
-    bank
-  }
-}

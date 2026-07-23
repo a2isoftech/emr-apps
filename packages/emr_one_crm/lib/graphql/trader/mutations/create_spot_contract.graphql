@@ -1,5 +1,0 @@
-mutation CreateSpotContract($input: CreateSpotContractInput!) {
-  createSpotContract(input: $input) {
-    contractRef
-  }
-}

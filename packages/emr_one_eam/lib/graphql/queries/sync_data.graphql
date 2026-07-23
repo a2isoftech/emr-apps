@@ -1,3 +1,0 @@
-query syncdata($tableName:String!){
-    syncData(tableName:$tableName)
-}

@@ -1,9 +1,0 @@
-query GetAccountCompanies{
-  account {   
-    validForCompanies:companies {
-      id
-      companyCode
-      fullName
-    }
-  }
-}

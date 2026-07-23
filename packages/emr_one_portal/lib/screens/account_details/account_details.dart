@@ -1,9 +1,0 @@
-export 'account.dart';
-export 'account_details_controller.dart';
-export 'account_details_model.dart';
-export 'account_details_screen.dart';
-export 'bank_details.dart';
-export 'change_request_summary.dart';
-export 'change_request_view_model.dart';
-export 'edit_details.dart';
-export 'read_only_details.dart';

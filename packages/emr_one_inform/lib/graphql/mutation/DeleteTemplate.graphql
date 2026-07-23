@@ -1,8 +1,0 @@
-mutation DeleteTemplate($deleteTemplateRequest: DeleteTemplateRequestInput!) {
-  deleteTemplate(deleteTemplateRequest: $deleteTemplateRequest) {
-    message
-    errorDetails
-    errorLevel
-    errorCode
-  }
-}

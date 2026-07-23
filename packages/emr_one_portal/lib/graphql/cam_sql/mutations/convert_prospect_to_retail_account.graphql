@@ -1,9 +1,0 @@
-mutation ConvertProspectToRetailAccount{
-    convertProspectToRetailAccount{
-      accountNumber
-      errors {
-        message
-        code
-      }
-    }
-  }

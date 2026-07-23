@@ -1,8 +1,0 @@
-query templateProperties
-{
-  assetTemplateProperty{
-    name
-    dataType
-    value
-  }
-}

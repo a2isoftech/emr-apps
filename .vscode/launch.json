@@ -1,0 +1,177 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "emr one native (dev)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--flavor=dev"]
+    },
+    {
+      "name": "emr one native (dev - release mode)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--flavor=dev"],
+      "flutterMode": "release"
+    },
+    {
+      "name": "emr one native (beta)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_beta.dart",
+      "args": ["--flavor=beta"]
+    },
+    {
+      "name": "emr one native (prerelease)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prerelease.dart",
+      "args": ["--flavor=prerelease"]
+    },
+    {
+      "name": "emr one native (prod)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor=prod"]
+    },
+    {
+      "name": "emr one web (dev)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--web-port", "4200"]
+    },
+    {
+      "name": "emr one web (dev - release mode)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--web-port", "4200"],
+      "flutterMode": "release"
+    },
+    {
+      "name": "emr one web (apple-test)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_apple_test.dart",
+      "args": ["--web-port", "4200"]
+    },
+    {
+      "name": "emr one web (apple-live)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_apple.dart",
+      "args": ["--web-port", "4200"]
+    },
+    {
+      "name": "emr one web (local)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_local.dart",
+      "args": ["--web-port", "8000"]
+    },
+    {
+      "name": "emr one web (alpha)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_alpha.dart"
+    },
+    {
+      "name": "emr one web (beta)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_beta.dart"
+    },
+    {
+      "name": "emr one web (prerelease)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prerelease.dart",
+      "args": ["--web-port", "8000"]
+    },
+    {
+      "name": "emr one web (prod)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "emr one builder (web)",
+      "cwd": "packages/emr_one_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": ".dart_tool/build/entrypoint/build.dart",
+      "args": ["build"]
+    },
+    {
+      "name": "emr one builder (native)",
+      "cwd": "packages/emr_one_shell_native",
+      "request": "launch",
+      "type": "dart",
+      "program": ".dart_tool/build/entrypoint/build.dart",
+      "args": ["build"]
+    },
+    {
+      "name": "Portal web (dev)",
+      "cwd": "packages/portal_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["-d", "chrome", "--web-port", "4200"],
+      "toolArgs": [
+        "--dart-define",
+        "EMAIL_LOGIN_CALLBACK_URL=http://localhost:4200",
+        "--dart-define",
+        "APP_TITLE=EMR Self-Serve Portal (Dev)"
+      ]
+    },
+    {
+      "name": "Portal web (beta)",
+      "cwd": "packages/portal_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_beta.dart",
+      "args": ["-d", "chrome", "--web-port", "4200"],
+      "toolArgs": [
+        "--dart-define",
+        "EMAIL_LOGIN_CALLBACK_URL=http://localhost:4200",
+        "--dart-define",
+        "APP_TITLE=EMR Self-Serve Portal (Beta)"
+      ]
+    },
+    {
+      "name": "Portal web (prod)",
+      "cwd": "packages/portal_shell_web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["-d", "chrome", "--web-port", "3000"],
+      "toolArgs": [
+        "--dart-define",
+        "EMAIL_LOGIN_CALLBACK_URL=http://localhost:3000",
+        "--dart-define",
+        "APP_TITLE=EMR Self-Serve Portal"
+      ]
+    }
+  ]
+}

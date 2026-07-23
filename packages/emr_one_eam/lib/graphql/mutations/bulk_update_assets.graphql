@@ -1,8 +1,0 @@
-mutation BulkUpdateAssets($input: BulkUpdateAssetInput!) {
-  bulkUpdateAsset(input: $input) {
-    errors
-    infos
-    successes
-    warnings
-  }
-}

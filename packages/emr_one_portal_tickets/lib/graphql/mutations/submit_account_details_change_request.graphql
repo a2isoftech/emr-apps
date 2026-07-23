@@ -1,3 +1,0 @@
-   mutation SubmitAccountDetailsChangeRequest($accountChangeRequest : AccountChangeRequestInput!){
-    result : submitAccountDetailsChangeRequest(accountChangeRequest: $accountChangeRequest)
-  }

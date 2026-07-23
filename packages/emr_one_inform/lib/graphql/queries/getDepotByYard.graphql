@@ -1,7 +1,0 @@
-query GetDepotByYard($filter: DepotQueryFilterInput!) {
-    depots(filter: $filter) {
-        depotNo
-        name
-        yardCode
-    }
-}

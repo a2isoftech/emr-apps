@@ -1,8 +1,0 @@
-query Users($filter: String!) {
-    users(filter: $filter) {
-        id
-        firstName
-        surname
-        email
-    }
-}

@@ -1,1 +1,0 @@
-void ensureBinaryMessengerInitialized(Object token) {}

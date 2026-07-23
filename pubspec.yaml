@@ -8,46 +8,14 @@ dev_dependencies:
   melos: ^7.5.1
 
 workspace:
-  - packages/emr_account_registration
   - packages/emr_core_api
-  - packages/emr_one_accounts
-  - packages/emr_one_builders
-  - packages/emr_one_can_scale
-  - packages/emr_one_cashiersearch
   - packages/emr_one_core
-  - packages/emr_one_crm
-  - packages/emr_one_data_management
   - packages/emr_one_door_access
-  - packages/emr_one_eam
-  - packages/emr_one_elv_core
-  - packages/emr_one_elv_dismantling
-  - packages/emr_one_elv_inspection
-  - packages/emr_one_elv_quote_api
-  - packages/emr_one_elv_quotes
-  - packages/emr_one_elv_t2
-  - packages/emr_one_fire_register
-  - packages/emr_one_forms_engine
-  - packages/emr_one_inform
-  - packages/emr_one_inventory
   - packages/emr_one_localisations
-  - packages/emr_one_piweigh
-  - packages/emr_one_portal
-  - packages/emr_one_portal_tickets
-  - packages/emr_one_prefs
-  - packages/emr_one_securitymgmt
   - packages/emr_one_shell_native
   - packages/emr_one_shell_web
-  - packages/emr_one_stock_take
   - packages/emr_one_theme
-  - packages/emr_one_tickets
-  - packages/emr_one_transport
-  - packages/emr_one_wizard
-  - packages/emr_one_yard_app
-  - packages/emr_one_yard_logistics
-  - packages/emr_one_yard_management
   - packages/emr_sharedtypes
-  - packages/portal_shell_web
-  - packages/psnop
 
 flutter:
   uses-material-design: true

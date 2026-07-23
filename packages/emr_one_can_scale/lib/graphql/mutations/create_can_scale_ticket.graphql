@@ -1,5 +1,0 @@
-mutation CreateCanScaleTicket($createdBy: String!) {
-  createCanScaleTicket(input: { createdBy:$createdBy }) {
-    id
-  }
-}

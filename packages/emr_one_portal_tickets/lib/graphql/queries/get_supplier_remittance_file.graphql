@@ -1,3 +1,0 @@
-query supplierRemittance($paidDate: DateTime!){
-  supplierRemittance(createDate: $paidDate)
-}
