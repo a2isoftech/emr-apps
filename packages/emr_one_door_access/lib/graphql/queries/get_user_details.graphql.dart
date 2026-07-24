@@ -7,14 +7,13 @@ class Variables$Query$GetUserDetails {
     int? first,
     int? last,
     List<String>? userIds,
-  }) =>
-      Variables$Query$GetUserDetails._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        if (userIds != null) r'userIds': userIds,
-      });
+  }) => Variables$Query$GetUserDetails._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    if (userIds != null) r'userIds': userIds,
+  });
 
   Variables$Query$GetUserDetails._(this._$data);
 
@@ -38,8 +37,9 @@ class Variables$Query$GetUserDetails {
     }
     if (data.containsKey('userIds')) {
       final l$userIds = data['userIds'];
-      result$data['userIds'] =
-          (l$userIds as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['userIds'] = (l$userIds as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     return Variables$Query$GetUserDetails._(result$data);
   }
@@ -82,10 +82,7 @@ class Variables$Query$GetUserDetails {
   }
 
   CopyWith$Variables$Query$GetUserDetails<Variables$Query$GetUserDetails>
-      get copyWith => CopyWith$Variables$Query$GetUserDetails(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Query$GetUserDetails(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -164,8 +161,8 @@ class Variables$Query$GetUserDetails {
       _$data.containsKey('last') ? l$last : const {},
       _$data.containsKey('userIds')
           ? l$userIds == null
-              ? null
-              : Object.hashAll(l$userIds.map((v) => v))
+                ? null
+                : Object.hashAll(l$userIds.map((v) => v))
           : const {},
     ]);
   }
@@ -191,10 +188,7 @@ abstract class CopyWith$Variables$Query$GetUserDetails<TRes> {
 
 class _CopyWithImpl$Variables$Query$GetUserDetails<TRes>
     implements CopyWith$Variables$Query$GetUserDetails<TRes> {
-  _CopyWithImpl$Variables$Query$GetUserDetails(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$GetUserDetails(this._instance, this._then);
 
   final Variables$Query$GetUserDetails _instance;
 
@@ -208,15 +202,16 @@ class _CopyWithImpl$Variables$Query$GetUserDetails<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? userIds = _undefined,
-  }) =>
-      _then(Variables$Query$GetUserDetails._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (userIds != _undefined) 'userIds': (userIds as List<String>?),
-      }));
+  }) => _then(
+    Variables$Query$GetUserDetails._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (userIds != _undefined) 'userIds': (userIds as List<String>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetUserDetails<TRes>
@@ -231,15 +226,11 @@ class _CopyWithStubImpl$Variables$Query$GetUserDetails<TRes>
     int? first,
     int? last,
     List<String>? userIds,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetUserDetails {
-  Query$GetUserDetails({
-    this.users,
-    this.$__typename = 'Query',
-  });
+  Query$GetUserDetails({this.users, this.$__typename = 'Query'});
 
   factory Query$GetUserDetails.fromJson(Map<String, dynamic> json) {
     final l$users = json['users'];
@@ -248,7 +239,8 @@ class Query$GetUserDetails {
       users: l$users == null
           ? null
           : Query$GetUserDetails$users.fromJson(
-              (l$users as Map<String, dynamic>)),
+              (l$users as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -270,10 +262,7 @@ class Query$GetUserDetails {
   int get hashCode {
     final l$users = users;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$users,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$users, l$$__typename]);
   }
 
   @override
@@ -300,10 +289,7 @@ class Query$GetUserDetails {
 
 extension UtilityExtension$Query$GetUserDetails on Query$GetUserDetails {
   CopyWith$Query$GetUserDetails<Query$GetUserDetails> get copyWith =>
-      CopyWith$Query$GetUserDetails(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetUserDetails(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails<TRes> {
@@ -315,19 +301,13 @@ abstract class CopyWith$Query$GetUserDetails<TRes> {
   factory CopyWith$Query$GetUserDetails.stub(TRes res) =
       _CopyWithStubImpl$Query$GetUserDetails;
 
-  TRes call({
-    Query$GetUserDetails$users? users,
-    String? $__typename,
-  });
+  TRes call({Query$GetUserDetails$users? users, String? $__typename});
   CopyWith$Query$GetUserDetails$users<TRes> get users;
 }
 
 class _CopyWithImpl$Query$GetUserDetails<TRes>
     implements CopyWith$Query$GetUserDetails<TRes> {
-  _CopyWithImpl$Query$GetUserDetails(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetUserDetails(this._instance, this._then);
 
   final Query$GetUserDetails _instance;
 
@@ -335,25 +315,26 @@ class _CopyWithImpl$Query$GetUserDetails<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? users = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails(
-        users: users == _undefined
-            ? _instance.users
-            : (users as Query$GetUserDetails$users?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? users = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$GetUserDetails(
+          users: users == _undefined
+              ? _instance.users
+              : (users as Query$GetUserDetails$users?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Query$GetUserDetails$users<TRes> get users {
     final local$users = _instance.users;
     return local$users == null
         ? CopyWith$Query$GetUserDetails$users.stub(_then(_instance))
         : CopyWith$Query$GetUserDetails$users(
-            local$users, (e) => call(users: e));
+            local$users,
+            (e) => call(users: e),
+          );
   }
 }
 
@@ -363,340 +344,351 @@ class _CopyWithStubImpl$Query$GetUserDetails<TRes>
 
   TRes _res;
 
-  call({
-    Query$GetUserDetails$users? users,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$GetUserDetails$users? users, String? $__typename}) => _res;
 
   CopyWith$Query$GetUserDetails$users<TRes> get users =>
       CopyWith$Query$GetUserDetails$users.stub(_res);
 }
 
-const documentNodeQueryGetUserDetails = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetUserDetails'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'userIds')),
-        type: ListTypeNode(
+const documentNodeQueryGetUserDetails = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetUserDetails'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
           type: NamedTypeNode(
             name: NameNode(value: 'String'),
-            isNonNull: true,
+            isNonNull: false,
           ),
-          isNonNull: false,
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'users'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'userIds')),
+          type: ListTypeNode(
+            type: NamedTypeNode(
+              name: NameNode(value: 'String'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'userIds'),
-            value: VariableNode(name: NameNode(value: 'userIds')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'users'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'userIds'),
+                value: VariableNode(name: NameNode(value: 'userIds')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'azureId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'userName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'cardNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'externalId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'events'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'rowId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: 'cardNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'azureId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'name'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'userName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'cardNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'externalId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'events'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'rowId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'cardNumber'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'accessControllerId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'utcTime'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'topic0'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'topic1'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'topic2'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'accessPointId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'accessPointName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'accessPointRestricted'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'userId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'email'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'groups'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'azureId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: 'accessControllerId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'utcTime'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'topic0'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'topic1'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'topic2'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'accessPointId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'accessPointName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'accessPointRestricted'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'userId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'email'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'groups'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'azureId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -705,18 +697,11 @@ const documentNodeQueryGetUserDetails = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetUserDetails$users {
   Query$GetUserDetails$users({
@@ -734,10 +719,14 @@ class Query$GetUserDetails$users {
     return Query$GetUserDetails$users(
       totalCount: (l$totalCount as int),
       pageInfo: Query$GetUserDetails$users$pageInfo.fromJson(
-          (l$pageInfo as Map<String, dynamic>)),
+        (l$pageInfo as Map<String, dynamic>),
+      ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) => Query$GetUserDetails$users$nodes.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetUserDetails$users$nodes.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -825,10 +814,7 @@ class Query$GetUserDetails$users {
 extension UtilityExtension$Query$GetUserDetails$users
     on Query$GetUserDetails$users {
   CopyWith$Query$GetUserDetails$users<Query$GetUserDetails$users>
-      get copyWith => CopyWith$Query$GetUserDetails$users(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetUserDetails$users(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails$users<TRes> {
@@ -848,19 +834,20 @@ abstract class CopyWith$Query$GetUserDetails$users<TRes> {
   });
   CopyWith$Query$GetUserDetails$users$pageInfo<TRes> get pageInfo;
   TRes nodes(
-      Iterable<Query$GetUserDetails$users$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$GetUserDetails$users$nodes<
-                      Query$GetUserDetails$users$nodes>>?)
-          _fn);
+    Iterable<Query$GetUserDetails$users$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes<
+          Query$GetUserDetails$users$nodes
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetUserDetails$users<TRes>
     implements CopyWith$Query$GetUserDetails$users<TRes> {
-  _CopyWithImpl$Query$GetUserDetails$users(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetUserDetails$users(this._instance, this._then);
 
   final Query$GetUserDetails$users _instance;
 
@@ -873,40 +860,47 @@ class _CopyWithImpl$Query$GetUserDetails$users<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails$users(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo as Query$GetUserDetails$users$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<Query$GetUserDetails$users$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetUserDetails$users(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo as Query$GetUserDetails$users$pageInfo),
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes as List<Query$GetUserDetails$users$nodes>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetUserDetails$users$pageInfo<TRes> get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$GetUserDetails$users$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$GetUserDetails$users$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$GetUserDetails$users$nodes<
-                          Query$GetUserDetails$users$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes
-              ?.map((e) => CopyWith$Query$GetUserDetails$users$nodes(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetUserDetails$users$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes<
+          Query$GetUserDetails$users$nodes
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) => CopyWith$Query$GetUserDetails$users$nodes(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetUserDetails$users<TRes>
@@ -920,8 +914,7 @@ class _CopyWithStubImpl$Query$GetUserDetails$users<TRes>
     Query$GetUserDetails$users$pageInfo? pageInfo,
     List<Query$GetUserDetails$users$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetUserDetails$users$pageInfo<TRes> get pageInfo =>
       CopyWith$Query$GetUserDetails$users$pageInfo.stub(_res);
@@ -939,7 +932,8 @@ class Query$GetUserDetails$users$pageInfo {
   });
 
   factory Query$GetUserDetails$users$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$hasNextPage = json['hasNextPage'];
     final l$hasPreviousPage = json['hasPreviousPage'];
     final l$startCursor = json['startCursor'];
@@ -1036,11 +1030,9 @@ class Query$GetUserDetails$users$pageInfo {
 extension UtilityExtension$Query$GetUserDetails$users$pageInfo
     on Query$GetUserDetails$users$pageInfo {
   CopyWith$Query$GetUserDetails$users$pageInfo<
-          Query$GetUserDetails$users$pageInfo>
-      get copyWith => CopyWith$Query$GetUserDetails$users$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$GetUserDetails$users$pageInfo
+  >
+  get copyWith => CopyWith$Query$GetUserDetails$users$pageInfo(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails$users$pageInfo<TRes> {
@@ -1063,10 +1055,7 @@ abstract class CopyWith$Query$GetUserDetails$users$pageInfo<TRes> {
 
 class _CopyWithImpl$Query$GetUserDetails$users$pageInfo<TRes>
     implements CopyWith$Query$GetUserDetails$users$pageInfo<TRes> {
-  _CopyWithImpl$Query$GetUserDetails$users$pageInfo(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetUserDetails$users$pageInfo(this._instance, this._then);
 
   final Query$GetUserDetails$users$pageInfo _instance;
 
@@ -1080,25 +1069,25 @@ class _CopyWithImpl$Query$GetUserDetails$users$pageInfo<TRes>
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails$users$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetUserDetails$users$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetUserDetails$users$pageInfo<TRes>
@@ -1113,8 +1102,7 @@ class _CopyWithStubImpl$Query$GetUserDetails$users$pageInfo<TRes>
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetUserDetails$users$nodes {
@@ -1148,12 +1136,18 @@ class Query$GetUserDetails$users$nodes {
       id: (l$id as String),
       externalId: (l$externalId as String?),
       events: (l$events as List<dynamic>?)
-          ?.map((e) => Query$GetUserDetails$users$nodes$events.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetUserDetails$users$nodes$events.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       groups: (l$groups as List<dynamic>?)
-          ?.map((e) => Query$GetUserDetails$users$nodes$groups.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetUserDetails$users$nodes$groups.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1307,10 +1301,7 @@ class Query$GetUserDetails$users$nodes {
 extension UtilityExtension$Query$GetUserDetails$users$nodes
     on Query$GetUserDetails$users$nodes {
   CopyWith$Query$GetUserDetails$users$nodes<Query$GetUserDetails$users$nodes>
-      get copyWith => CopyWith$Query$GetUserDetails$users$nodes(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetUserDetails$users$nodes(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails$users$nodes<TRes> {
@@ -1334,25 +1325,30 @@ abstract class CopyWith$Query$GetUserDetails$users$nodes<TRes> {
     String? $__typename,
   });
   TRes events(
-      Iterable<Query$GetUserDetails$users$nodes$events>? Function(
-              Iterable<
-                  CopyWith$Query$GetUserDetails$users$nodes$events<
-                      Query$GetUserDetails$users$nodes$events>>?)
-          _fn);
+    Iterable<Query$GetUserDetails$users$nodes$events>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes$events<
+          Query$GetUserDetails$users$nodes$events
+        >
+      >?,
+    )
+    _fn,
+  );
   TRes groups(
-      Iterable<Query$GetUserDetails$users$nodes$groups>? Function(
-              Iterable<
-                  CopyWith$Query$GetUserDetails$users$nodes$groups<
-                      Query$GetUserDetails$users$nodes$groups>>?)
-          _fn);
+    Iterable<Query$GetUserDetails$users$nodes$groups>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes$groups<
+          Query$GetUserDetails$users$nodes$groups
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetUserDetails$users$nodes<TRes>
     implements CopyWith$Query$GetUserDetails$users$nodes<TRes> {
-  _CopyWithImpl$Query$GetUserDetails$users$nodes(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetUserDetails$users$nodes(this._instance, this._then);
 
   final Query$GetUserDetails$users$nodes _instance;
 
@@ -1370,59 +1366,67 @@ class _CopyWithImpl$Query$GetUserDetails$users$nodes<TRes>
     Object? events = _undefined,
     Object? groups = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails$users$nodes(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        userName: userName == _undefined || userName == null
-            ? _instance.userName
-            : (userName as String),
-        cardNumber: cardNumber == _undefined || cardNumber == null
-            ? _instance.cardNumber
-            : (cardNumber as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        externalId: externalId == _undefined
-            ? _instance.externalId
-            : (externalId as String?),
-        events: events == _undefined
-            ? _instance.events
-            : (events as List<Query$GetUserDetails$users$nodes$events>?),
-        groups: groups == _undefined
-            ? _instance.groups
-            : (groups as List<Query$GetUserDetails$users$nodes$groups>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetUserDetails$users$nodes(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      userName: userName == _undefined || userName == null
+          ? _instance.userName
+          : (userName as String),
+      cardNumber: cardNumber == _undefined || cardNumber == null
+          ? _instance.cardNumber
+          : (cardNumber as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      externalId: externalId == _undefined
+          ? _instance.externalId
+          : (externalId as String?),
+      events: events == _undefined
+          ? _instance.events
+          : (events as List<Query$GetUserDetails$users$nodes$events>?),
+      groups: groups == _undefined
+          ? _instance.groups
+          : (groups as List<Query$GetUserDetails$users$nodes$groups>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes events(
-          Iterable<Query$GetUserDetails$users$nodes$events>? Function(
-                  Iterable<
-                      CopyWith$Query$GetUserDetails$users$nodes$events<
-                          Query$GetUserDetails$users$nodes$events>>?)
-              _fn) =>
-      call(
-          events: _fn(_instance.events
-              ?.map((e) => CopyWith$Query$GetUserDetails$users$nodes$events(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetUserDetails$users$nodes$events>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes$events<
+          Query$GetUserDetails$users$nodes$events
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    events: _fn(
+      _instance.events?.map(
+        (e) => CopyWith$Query$GetUserDetails$users$nodes$events(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 
   TRes groups(
-          Iterable<Query$GetUserDetails$users$nodes$groups>? Function(
-                  Iterable<
-                      CopyWith$Query$GetUserDetails$users$nodes$groups<
-                          Query$GetUserDetails$users$nodes$groups>>?)
-              _fn) =>
-      call(
-          groups: _fn(_instance.groups
-              ?.map((e) => CopyWith$Query$GetUserDetails$users$nodes$groups(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetUserDetails$users$nodes$groups>? Function(
+      Iterable<
+        CopyWith$Query$GetUserDetails$users$nodes$groups<
+          Query$GetUserDetails$users$nodes$groups
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    groups: _fn(
+      _instance.groups?.map(
+        (e) => CopyWith$Query$GetUserDetails$users$nodes$groups(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetUserDetails$users$nodes<TRes>
@@ -1441,8 +1445,7 @@ class _CopyWithStubImpl$Query$GetUserDetails$users$nodes<TRes>
     List<Query$GetUserDetails$users$nodes$events>? events,
     List<Query$GetUserDetails$users$nodes$groups>? groups,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   events(_fn) => _res;
 
@@ -1467,7 +1470,8 @@ class Query$GetUserDetails$users$nodes$events {
   });
 
   factory Query$GetUserDetails$users$nodes$events.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$rowId = json['rowId'];
     final l$cardNumber = json['cardNumber'];
     final l$accessControllerId = json['accessControllerId'];
@@ -1668,11 +1672,10 @@ class Query$GetUserDetails$users$nodes$events {
 extension UtilityExtension$Query$GetUserDetails$users$nodes$events
     on Query$GetUserDetails$users$nodes$events {
   CopyWith$Query$GetUserDetails$users$nodes$events<
-          Query$GetUserDetails$users$nodes$events>
-      get copyWith => CopyWith$Query$GetUserDetails$users$nodes$events(
-            this,
-            (i) => i,
-          );
+    Query$GetUserDetails$users$nodes$events
+  >
+  get copyWith =>
+      CopyWith$Query$GetUserDetails$users$nodes$events(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails$users$nodes$events<TRes> {
@@ -1728,39 +1731,40 @@ class _CopyWithImpl$Query$GetUserDetails$users$nodes$events<TRes>
     Object? userId = _undefined,
     Object? email = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails$users$nodes$events(
-        rowId: rowId == _undefined || rowId == null
-            ? _instance.rowId
-            : (rowId as int),
-        cardNumber: cardNumber == _undefined
-            ? _instance.cardNumber
-            : (cardNumber as String?),
-        accessControllerId:
-            accessControllerId == _undefined || accessControllerId == null
-                ? _instance.accessControllerId
-                : (accessControllerId as String),
-        utcTime: utcTime == _undefined || utcTime == null
-            ? _instance.utcTime
-            : (utcTime as DateTime),
-        topic0: topic0 == _undefined ? _instance.topic0 : (topic0 as String?),
-        topic1: topic1 == _undefined ? _instance.topic1 : (topic1 as String?),
-        topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
-        accessPointId: accessPointId == _undefined
-            ? _instance.accessPointId
-            : (accessPointId as String?),
-        accessPointName: accessPointName == _undefined
-            ? _instance.accessPointName
-            : (accessPointName as String?),
-        accessPointRestricted: accessPointRestricted == _undefined
-            ? _instance.accessPointRestricted
-            : (accessPointRestricted as bool?),
-        userId: userId == _undefined ? _instance.userId : (userId as String?),
-        email: email == _undefined ? _instance.email : (email as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetUserDetails$users$nodes$events(
+      rowId: rowId == _undefined || rowId == null
+          ? _instance.rowId
+          : (rowId as int),
+      cardNumber: cardNumber == _undefined
+          ? _instance.cardNumber
+          : (cardNumber as String?),
+      accessControllerId:
+          accessControllerId == _undefined || accessControllerId == null
+          ? _instance.accessControllerId
+          : (accessControllerId as String),
+      utcTime: utcTime == _undefined || utcTime == null
+          ? _instance.utcTime
+          : (utcTime as DateTime),
+      topic0: topic0 == _undefined ? _instance.topic0 : (topic0 as String?),
+      topic1: topic1 == _undefined ? _instance.topic1 : (topic1 as String?),
+      topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
+      accessPointId: accessPointId == _undefined
+          ? _instance.accessPointId
+          : (accessPointId as String?),
+      accessPointName: accessPointName == _undefined
+          ? _instance.accessPointName
+          : (accessPointName as String?),
+      accessPointRestricted: accessPointRestricted == _undefined
+          ? _instance.accessPointRestricted
+          : (accessPointRestricted as bool?),
+      userId: userId == _undefined ? _instance.userId : (userId as String?),
+      email: email == _undefined ? _instance.email : (email as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetUserDetails$users$nodes$events<TRes>
@@ -1783,8 +1787,7 @@ class _CopyWithStubImpl$Query$GetUserDetails$users$nodes$events<TRes>
     String? userId,
     String? email,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetUserDetails$users$nodes$groups {
@@ -1796,7 +1799,8 @@ class Query$GetUserDetails$users$nodes$groups {
   });
 
   factory Query$GetUserDetails$users$nodes$groups.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$azureId = json['azureId'];
     final l$name = json['name'];
     final l$id = json['id'];
@@ -1836,12 +1840,7 @@ class Query$GetUserDetails$users$nodes$groups {
     final l$name = name;
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$azureId,
-      l$name,
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$azureId, l$name, l$id, l$$__typename]);
   }
 
   @override
@@ -1880,11 +1879,10 @@ class Query$GetUserDetails$users$nodes$groups {
 extension UtilityExtension$Query$GetUserDetails$users$nodes$groups
     on Query$GetUserDetails$users$nodes$groups {
   CopyWith$Query$GetUserDetails$users$nodes$groups<
-          Query$GetUserDetails$users$nodes$groups>
-      get copyWith => CopyWith$Query$GetUserDetails$users$nodes$groups(
-            this,
-            (i) => i,
-          );
+    Query$GetUserDetails$users$nodes$groups
+  >
+  get copyWith =>
+      CopyWith$Query$GetUserDetails$users$nodes$groups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetUserDetails$users$nodes$groups<TRes> {
@@ -1896,12 +1894,7 @@ abstract class CopyWith$Query$GetUserDetails$users$nodes$groups<TRes> {
   factory CopyWith$Query$GetUserDetails$users$nodes$groups.stub(TRes res) =
       _CopyWithStubImpl$Query$GetUserDetails$users$nodes$groups;
 
-  TRes call({
-    String? azureId,
-    String? name,
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? azureId, String? name, String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Query$GetUserDetails$users$nodes$groups<TRes>
@@ -1922,18 +1915,18 @@ class _CopyWithImpl$Query$GetUserDetails$users$nodes$groups<TRes>
     Object? name = _undefined,
     Object? id = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetUserDetails$users$nodes$groups(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetUserDetails$users$nodes$groups(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetUserDetails$users$nodes$groups<TRes>
@@ -1942,11 +1935,6 @@ class _CopyWithStubImpl$Query$GetUserDetails$users$nodes$groups<TRes>
 
   TRes _res;
 
-  call({
-    String? azureId,
-    String? name,
-    String? id,
-    String? $__typename,
-  }) =>
+  call({String? azureId, String? name, String? id, String? $__typename}) =>
       _res;
 }

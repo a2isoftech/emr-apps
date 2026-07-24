@@ -30,6 +30,7 @@ void main() async {
           'https://emrappsdevauthsvc.azurewebsites.net/api/GetFirebaseToken?code=VuoA27apKcS1b5LU_MFZ6RICmBcUbXYwNAWrcnt-D7nVAzFu-sMWuw==',
       'primaryGateway': 'https://emr-coreapi-dev.azurewebsites.net',
       'doorAccessUrl': 'https://emr-door-access-api-dev.azurewebsites.net/graphql',
+      'cameraStreamBaseUrl': 'http://localhost:8889',
     },
     firebaseOptions: DefaultFirebaseOptions.currentPlatform,
     configureRouteRegistry: (

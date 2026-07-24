@@ -2,14 +2,13 @@ import 'package:gql/ast.dart';
 
 class Variables$Mutation$PullNewGroupFromAD {
   factory Variables$Mutation$PullNewGroupFromAD({required String groupId}) =>
-      Variables$Mutation$PullNewGroupFromAD._({
-        r'groupId': groupId,
-      });
+      Variables$Mutation$PullNewGroupFromAD._({r'groupId': groupId});
 
   Variables$Mutation$PullNewGroupFromAD._(this._$data);
 
   factory Variables$Mutation$PullNewGroupFromAD.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$groupId = data['groupId'];
     result$data['groupId'] = (l$groupId as String);
@@ -28,11 +27,10 @@ class Variables$Mutation$PullNewGroupFromAD {
   }
 
   CopyWith$Variables$Mutation$PullNewGroupFromAD<
-          Variables$Mutation$PullNewGroupFromAD>
-      get copyWith => CopyWith$Variables$Mutation$PullNewGroupFromAD(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$PullNewGroupFromAD
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$PullNewGroupFromAD(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -83,12 +81,13 @@ class _CopyWithImpl$Variables$Mutation$PullNewGroupFromAD<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? groupId = _undefined}) =>
-      _then(Variables$Mutation$PullNewGroupFromAD._({
-        ..._instance._$data,
-        if (groupId != _undefined && groupId != null)
-          'groupId': (groupId as String),
-      }));
+  TRes call({Object? groupId = _undefined}) => _then(
+    Variables$Mutation$PullNewGroupFromAD._({
+      ..._instance._$data,
+      if (groupId != _undefined && groupId != null)
+        'groupId': (groupId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$PullNewGroupFromAD<TRes>
@@ -132,10 +131,7 @@ class Mutation$PullNewGroupFromAD {
   int get hashCode {
     final l$pullNewGroupFromAD = pullNewGroupFromAD;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$pullNewGroupFromAD,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$pullNewGroupFromAD, l$$__typename]);
   }
 
   @override
@@ -164,10 +160,7 @@ class Mutation$PullNewGroupFromAD {
 extension UtilityExtension$Mutation$PullNewGroupFromAD
     on Mutation$PullNewGroupFromAD {
   CopyWith$Mutation$PullNewGroupFromAD<Mutation$PullNewGroupFromAD>
-      get copyWith => CopyWith$Mutation$PullNewGroupFromAD(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$PullNewGroupFromAD(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$PullNewGroupFromAD<TRes> {
@@ -179,18 +172,12 @@ abstract class CopyWith$Mutation$PullNewGroupFromAD<TRes> {
   factory CopyWith$Mutation$PullNewGroupFromAD.stub(TRes res) =
       _CopyWithStubImpl$Mutation$PullNewGroupFromAD;
 
-  TRes call({
-    bool? pullNewGroupFromAD,
-    String? $__typename,
-  });
+  TRes call({bool? pullNewGroupFromAD, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$PullNewGroupFromAD<TRes>
     implements CopyWith$Mutation$PullNewGroupFromAD<TRes> {
-  _CopyWithImpl$Mutation$PullNewGroupFromAD(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$PullNewGroupFromAD(this._instance, this._then);
 
   final Mutation$PullNewGroupFromAD _instance;
 
@@ -201,16 +188,17 @@ class _CopyWithImpl$Mutation$PullNewGroupFromAD<TRes>
   TRes call({
     Object? pullNewGroupFromAD = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$PullNewGroupFromAD(
-        pullNewGroupFromAD:
-            pullNewGroupFromAD == _undefined || pullNewGroupFromAD == null
-                ? _instance.pullNewGroupFromAD
-                : (pullNewGroupFromAD as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$PullNewGroupFromAD(
+      pullNewGroupFromAD:
+          pullNewGroupFromAD == _undefined || pullNewGroupFromAD == null
+          ? _instance.pullNewGroupFromAD
+          : (pullNewGroupFromAD as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$PullNewGroupFromAD<TRes>
@@ -219,49 +207,46 @@ class _CopyWithStubImpl$Mutation$PullNewGroupFromAD<TRes>
 
   TRes _res;
 
-  call({
-    bool? pullNewGroupFromAD,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? pullNewGroupFromAD, String? $__typename}) => _res;
 }
 
-const documentNodeMutationPullNewGroupFromAD = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'PullNewGroupFromAD'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'groupId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationPullNewGroupFromAD = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'PullNewGroupFromAD'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'groupId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'pullNewGroupFromAD'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'groupId'),
-            value: VariableNode(name: NameNode(value: 'groupId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'pullNewGroupFromAD'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'groupId'),
+                value: VariableNode(name: NameNode(value: 'groupId')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

@@ -6,6 +6,7 @@ import 'package:emr_one_door_access/emr_one_door_access.dart';
 import 'package:emr_one_door_access/screens/floor_plans/widgets/_alert_panel.dart';
 import 'package:emr_one_door_access/screens/floor_plans/widgets/_assign_access_point_dialog.dart';
 import 'package:emr_one_door_access/screens/floor_plans/widgets/_hotspot_list.dart';
+import 'package:emr_one_door_access/screens/floor_plans/widgets/_live_stream_dialog.dart';
 import 'package:emr_one_door_access/screens/floor_plans/widgets/_unlock_access_point_dialog.dart';
 import 'package:emr_one_door_access/widgets/base_page.dart';
 import 'package:flutter/material.dart';
@@ -154,6 +155,7 @@ class _FloorPlanEditorState extends State<FloorPlanEditor> {
                   controller: controller,
                   floorPlan: snapshot.data,
                   siteId: widget.siteId,
+                  appConfig: widget.appConfig,
                   formKey: widget.formKey,
                   pollingSeconds: _pollingSeconds,
                   updatePolling: _updatePolling,
@@ -179,6 +181,7 @@ class _EditorView extends StatelessWidget {
     required this.controller,
     required this.floorPlan,
     required this.siteId,
+    required this.appConfig,
     required this.formKey,
     required this.pollingSeconds,
     required this.updatePolling,
@@ -193,6 +196,7 @@ class _EditorView extends StatelessWidget {
   final FloorPlanController controller;
   final String siteId;
   final FloorPlan? floorPlan;
+  final AppConfig appConfig;
   final GlobalKey<FormState> formKey;
   final int pollingSeconds;
   final bool pollForAlerts;
@@ -363,7 +367,7 @@ class _EditorView extends StatelessWidget {
         builder: (_) =>
             AssignAccessPointDialog(controller: controller, hotspot: hotspot),
       );
-    } else if (hotspot.status != HotspotStatus.restricted) {
+    } else {
       _showHotspotMenu(context, controller, hotspot, constraints);
     }
   }
@@ -374,6 +378,19 @@ class _EditorView extends StatelessWidget {
     Hotspot hotspot,
     BoxConstraints constraints,
   ) {
+    final hasCamera = controller.cameraFor(hotspot) != null;
+    final items = <PopupMenuEntry<String>>[
+      if (hotspot.status != HotspotStatus.restricted)
+        const PopupMenuItem<String>(value: 'unlock', child: Text('Unlock')),
+      if (hasCamera)
+        const PopupMenuItem<String>(
+          value: 'startLiveStream',
+          child: Text('Start Live Stream'),
+        ),
+    ];
+
+    if (items.isEmpty) return;
+
     // Calculate the screen position of the hotspot
     final hotspotScreenX = hotspot.x * constraints.maxWidth;
     final hotspotScreenY = hotspot.y * constraints.maxHeight;
@@ -401,15 +418,23 @@ class _EditorView extends StatelessWidget {
     showMenu<String>(
       context: context,
       position: position,
-      items: [
-        const PopupMenuItem<String>(value: 'unlock', child: Text('Unlock')),
-      ],
+      items: items,
     ).then((value) {
-      if (value == 'unlock' && context.mounted) {
+      if (!context.mounted) return;
+      if (value == 'unlock') {
         showDialog<void>(
           context: context,
           builder: (_) =>
               UnlockAccessPointDialog(controller: controller, hotspot: hotspot),
+        );
+      } else if (value == 'startLiveStream') {
+        showDialog<void>(
+          context: context,
+          builder: (_) => LiveStreamDialog(
+            controller: controller,
+            hotspot: hotspot,
+            appConfig: appConfig,
+          ),
         );
       }
     });

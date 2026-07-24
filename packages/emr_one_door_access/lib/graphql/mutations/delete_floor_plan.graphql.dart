@@ -2,14 +2,13 @@ import 'package:gql/ast.dart';
 
 class Variables$Mutation$DeleteFloorPlan {
   factory Variables$Mutation$DeleteFloorPlan({required String floorPlanId}) =>
-      Variables$Mutation$DeleteFloorPlan._({
-        r'floorPlanId': floorPlanId,
-      });
+      Variables$Mutation$DeleteFloorPlan._({r'floorPlanId': floorPlanId});
 
   Variables$Mutation$DeleteFloorPlan._(this._$data);
 
   factory Variables$Mutation$DeleteFloorPlan.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$floorPlanId = data['floorPlanId'];
     result$data['floorPlanId'] = (l$floorPlanId as String);
@@ -28,11 +27,9 @@ class Variables$Mutation$DeleteFloorPlan {
   }
 
   CopyWith$Variables$Mutation$DeleteFloorPlan<
-          Variables$Mutation$DeleteFloorPlan>
-      get copyWith => CopyWith$Variables$Mutation$DeleteFloorPlan(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$DeleteFloorPlan
+  >
+  get copyWith => CopyWith$Variables$Mutation$DeleteFloorPlan(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -72,10 +69,7 @@ abstract class CopyWith$Variables$Mutation$DeleteFloorPlan<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$DeleteFloorPlan<TRes>
     implements CopyWith$Variables$Mutation$DeleteFloorPlan<TRes> {
-  _CopyWithImpl$Variables$Mutation$DeleteFloorPlan(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$DeleteFloorPlan(this._instance, this._then);
 
   final Variables$Mutation$DeleteFloorPlan _instance;
 
@@ -83,12 +77,13 @@ class _CopyWithImpl$Variables$Mutation$DeleteFloorPlan<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? floorPlanId = _undefined}) =>
-      _then(Variables$Mutation$DeleteFloorPlan._({
-        ..._instance._$data,
-        if (floorPlanId != _undefined && floorPlanId != null)
-          'floorPlanId': (floorPlanId as String),
-      }));
+  TRes call({Object? floorPlanId = _undefined}) => _then(
+    Variables$Mutation$DeleteFloorPlan._({
+      ..._instance._$data,
+      if (floorPlanId != _undefined && floorPlanId != null)
+        'floorPlanId': (floorPlanId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$DeleteFloorPlan<TRes>
@@ -132,10 +127,7 @@ class Mutation$DeleteFloorPlan {
   int get hashCode {
     final l$deleteFloorPlan = deleteFloorPlan;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$deleteFloorPlan,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$deleteFloorPlan, l$$__typename]);
   }
 
   @override
@@ -164,10 +156,7 @@ class Mutation$DeleteFloorPlan {
 extension UtilityExtension$Mutation$DeleteFloorPlan
     on Mutation$DeleteFloorPlan {
   CopyWith$Mutation$DeleteFloorPlan<Mutation$DeleteFloorPlan> get copyWith =>
-      CopyWith$Mutation$DeleteFloorPlan(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$DeleteFloorPlan(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$DeleteFloorPlan<TRes> {
@@ -179,18 +168,12 @@ abstract class CopyWith$Mutation$DeleteFloorPlan<TRes> {
   factory CopyWith$Mutation$DeleteFloorPlan.stub(TRes res) =
       _CopyWithStubImpl$Mutation$DeleteFloorPlan;
 
-  TRes call({
-    bool? deleteFloorPlan,
-    String? $__typename,
-  });
+  TRes call({bool? deleteFloorPlan, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$DeleteFloorPlan<TRes>
     implements CopyWith$Mutation$DeleteFloorPlan<TRes> {
-  _CopyWithImpl$Mutation$DeleteFloorPlan(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$DeleteFloorPlan(this._instance, this._then);
 
   final Mutation$DeleteFloorPlan _instance;
 
@@ -201,16 +184,16 @@ class _CopyWithImpl$Mutation$DeleteFloorPlan<TRes>
   TRes call({
     Object? deleteFloorPlan = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$DeleteFloorPlan(
-        deleteFloorPlan:
-            deleteFloorPlan == _undefined || deleteFloorPlan == null
-                ? _instance.deleteFloorPlan
-                : (deleteFloorPlan as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$DeleteFloorPlan(
+      deleteFloorPlan: deleteFloorPlan == _undefined || deleteFloorPlan == null
+          ? _instance.deleteFloorPlan
+          : (deleteFloorPlan as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$DeleteFloorPlan<TRes>
@@ -219,49 +202,46 @@ class _CopyWithStubImpl$Mutation$DeleteFloorPlan<TRes>
 
   TRes _res;
 
-  call({
-    bool? deleteFloorPlan,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? deleteFloorPlan, String? $__typename}) => _res;
 }
 
-const documentNodeMutationDeleteFloorPlan = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'DeleteFloorPlan'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'floorPlanId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationDeleteFloorPlan = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'DeleteFloorPlan'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'floorPlanId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'deleteFloorPlan'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'floorPlanId'),
-            value: VariableNode(name: NameNode(value: 'floorPlanId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'deleteFloorPlan'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'floorPlanId'),
+                value: VariableNode(name: NameNode(value: 'floorPlanId')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

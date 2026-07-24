@@ -1,18 +1,18 @@
 import 'package:gql/ast.dart';
 
 class Query$GetAllUsers {
-  Query$GetAllUsers({
-    required this.allUsers,
-    this.$__typename = 'Query',
-  });
+  Query$GetAllUsers({required this.allUsers, this.$__typename = 'Query'});
 
   factory Query$GetAllUsers.fromJson(Map<String, dynamic> json) {
     final l$allUsers = json['allUsers'];
     final l$$__typename = json['__typename'];
     return Query$GetAllUsers(
       allUsers: (l$allUsers as List<dynamic>)
-          .map((e) =>
-              Query$GetAllUsers$allUsers.fromJson((e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetAllUsers$allUsers.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -72,10 +72,7 @@ class Query$GetAllUsers {
 
 extension UtilityExtension$Query$GetAllUsers on Query$GetAllUsers {
   CopyWith$Query$GetAllUsers<Query$GetAllUsers> get copyWith =>
-      CopyWith$Query$GetAllUsers(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetAllUsers(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllUsers<TRes> {
@@ -87,24 +84,18 @@ abstract class CopyWith$Query$GetAllUsers<TRes> {
   factory CopyWith$Query$GetAllUsers.stub(TRes res) =
       _CopyWithStubImpl$Query$GetAllUsers;
 
-  TRes call({
-    List<Query$GetAllUsers$allUsers>? allUsers,
-    String? $__typename,
-  });
+  TRes call({List<Query$GetAllUsers$allUsers>? allUsers, String? $__typename});
   TRes allUsers(
-      Iterable<Query$GetAllUsers$allUsers> Function(
-              Iterable<
-                  CopyWith$Query$GetAllUsers$allUsers<
-                      Query$GetAllUsers$allUsers>>)
-          _fn);
+    Iterable<Query$GetAllUsers$allUsers> Function(
+      Iterable<CopyWith$Query$GetAllUsers$allUsers<Query$GetAllUsers$allUsers>>,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAllUsers<TRes>
     implements CopyWith$Query$GetAllUsers<TRes> {
-  _CopyWithImpl$Query$GetAllUsers(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllUsers(this._instance, this._then);
 
   final Query$GetAllUsers _instance;
 
@@ -115,28 +106,29 @@ class _CopyWithImpl$Query$GetAllUsers<TRes>
   TRes call({
     Object? allUsers = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllUsers(
-        allUsers: allUsers == _undefined || allUsers == null
-            ? _instance.allUsers
-            : (allUsers as List<Query$GetAllUsers$allUsers>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllUsers(
+      allUsers: allUsers == _undefined || allUsers == null
+          ? _instance.allUsers
+          : (allUsers as List<Query$GetAllUsers$allUsers>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes allUsers(
-          Iterable<Query$GetAllUsers$allUsers> Function(
-                  Iterable<
-                      CopyWith$Query$GetAllUsers$allUsers<
-                          Query$GetAllUsers$allUsers>>)
-              _fn) =>
-      call(
-          allUsers: _fn(
-              _instance.allUsers.map((e) => CopyWith$Query$GetAllUsers$allUsers(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetAllUsers$allUsers> Function(
+      Iterable<CopyWith$Query$GetAllUsers$allUsers<Query$GetAllUsers$allUsers>>,
+    )
+    _fn,
+  ) => call(
+    allUsers: _fn(
+      _instance.allUsers.map(
+        (e) => CopyWith$Query$GetAllUsers$allUsers(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllUsers<TRes>
@@ -145,91 +137,103 @@ class _CopyWithStubImpl$Query$GetAllUsers<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$GetAllUsers$allUsers>? allUsers,
-    String? $__typename,
-  }) =>
+  call({List<Query$GetAllUsers$allUsers>? allUsers, String? $__typename}) =>
       _res;
 
   allUsers(_fn) => _res;
 }
 
-const documentNodeQueryGetAllUsers = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetAllUsers'),
-    variableDefinitions: [],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'allUsers'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+const documentNodeQueryGetAllUsers = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetAllUsers'),
+      variableDefinitions: [],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'azureId'),
+            name: NameNode(value: 'allUsers'),
             alias: null,
             arguments: [],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'userName'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'cardNumber'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'groups'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'externalId'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'azureId'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'userName'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'cardNumber'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'groups'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'externalId'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -238,18 +242,11 @@ const documentNodeQueryGetAllUsers = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetAllUsers$allUsers {
   Query$GetAllUsers$allUsers({
@@ -279,8 +276,11 @@ class Query$GetAllUsers$allUsers {
       cardNumber: (l$cardNumber as String),
       id: (l$id as String),
       groups: (l$groups as List<dynamic>?)
-          ?.map((e) => Query$GetAllUsers$allUsers$groups.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetAllUsers$allUsers$groups.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       externalId: (l$externalId as String?),
       $__typename: (l$$__typename as String),
@@ -413,10 +413,7 @@ class Query$GetAllUsers$allUsers {
 extension UtilityExtension$Query$GetAllUsers$allUsers
     on Query$GetAllUsers$allUsers {
   CopyWith$Query$GetAllUsers$allUsers<Query$GetAllUsers$allUsers>
-      get copyWith => CopyWith$Query$GetAllUsers$allUsers(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAllUsers$allUsers(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllUsers$allUsers<TRes> {
@@ -439,19 +436,20 @@ abstract class CopyWith$Query$GetAllUsers$allUsers<TRes> {
     String? $__typename,
   });
   TRes groups(
-      Iterable<Query$GetAllUsers$allUsers$groups>? Function(
-              Iterable<
-                  CopyWith$Query$GetAllUsers$allUsers$groups<
-                      Query$GetAllUsers$allUsers$groups>>?)
-          _fn);
+    Iterable<Query$GetAllUsers$allUsers$groups>? Function(
+      Iterable<
+        CopyWith$Query$GetAllUsers$allUsers$groups<
+          Query$GetAllUsers$allUsers$groups
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAllUsers$allUsers<TRes>
     implements CopyWith$Query$GetAllUsers$allUsers<TRes> {
-  _CopyWithImpl$Query$GetAllUsers$allUsers(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllUsers$allUsers(this._instance, this._then);
 
   final Query$GetAllUsers$allUsers _instance;
 
@@ -468,43 +466,47 @@ class _CopyWithImpl$Query$GetAllUsers$allUsers<TRes>
     Object? groups = _undefined,
     Object? externalId = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllUsers$allUsers(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        userName: userName == _undefined || userName == null
-            ? _instance.userName
-            : (userName as String),
-        cardNumber: cardNumber == _undefined || cardNumber == null
-            ? _instance.cardNumber
-            : (cardNumber as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        groups: groups == _undefined
-            ? _instance.groups
-            : (groups as List<Query$GetAllUsers$allUsers$groups>?),
-        externalId: externalId == _undefined
-            ? _instance.externalId
-            : (externalId as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllUsers$allUsers(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      userName: userName == _undefined || userName == null
+          ? _instance.userName
+          : (userName as String),
+      cardNumber: cardNumber == _undefined || cardNumber == null
+          ? _instance.cardNumber
+          : (cardNumber as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      groups: groups == _undefined
+          ? _instance.groups
+          : (groups as List<Query$GetAllUsers$allUsers$groups>?),
+      externalId: externalId == _undefined
+          ? _instance.externalId
+          : (externalId as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes groups(
-          Iterable<Query$GetAllUsers$allUsers$groups>? Function(
-                  Iterable<
-                      CopyWith$Query$GetAllUsers$allUsers$groups<
-                          Query$GetAllUsers$allUsers$groups>>?)
-              _fn) =>
-      call(
-          groups: _fn(_instance.groups
-              ?.map((e) => CopyWith$Query$GetAllUsers$allUsers$groups(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetAllUsers$allUsers$groups>? Function(
+      Iterable<
+        CopyWith$Query$GetAllUsers$allUsers$groups<
+          Query$GetAllUsers$allUsers$groups
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    groups: _fn(
+      _instance.groups?.map(
+        (e) => CopyWith$Query$GetAllUsers$allUsers$groups(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllUsers$allUsers<TRes>
@@ -522,8 +524,7 @@ class _CopyWithStubImpl$Query$GetAllUsers$allUsers<TRes>
     List<Query$GetAllUsers$allUsers$groups>? groups,
     String? externalId,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   groups(_fn) => _res;
 }
@@ -535,7 +536,8 @@ class Query$GetAllUsers$allUsers$groups {
   });
 
   factory Query$GetAllUsers$allUsers$groups.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$$__typename = json['__typename'];
     return Query$GetAllUsers$allUsers$groups(
@@ -561,10 +563,7 @@ class Query$GetAllUsers$allUsers$groups {
   int get hashCode {
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$$__typename]);
   }
 
   @override
@@ -593,10 +592,7 @@ class Query$GetAllUsers$allUsers$groups {
 extension UtilityExtension$Query$GetAllUsers$allUsers$groups
     on Query$GetAllUsers$allUsers$groups {
   CopyWith$Query$GetAllUsers$allUsers$groups<Query$GetAllUsers$allUsers$groups>
-      get copyWith => CopyWith$Query$GetAllUsers$allUsers$groups(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAllUsers$allUsers$groups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllUsers$allUsers$groups<TRes> {
@@ -608,18 +604,12 @@ abstract class CopyWith$Query$GetAllUsers$allUsers$groups<TRes> {
   factory CopyWith$Query$GetAllUsers$allUsers$groups.stub(TRes res) =
       _CopyWithStubImpl$Query$GetAllUsers$allUsers$groups;
 
-  TRes call({
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Query$GetAllUsers$allUsers$groups<TRes>
     implements CopyWith$Query$GetAllUsers$allUsers$groups<TRes> {
-  _CopyWithImpl$Query$GetAllUsers$allUsers$groups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllUsers$allUsers$groups(this._instance, this._then);
 
   final Query$GetAllUsers$allUsers$groups _instance;
 
@@ -627,16 +617,15 @@ class _CopyWithImpl$Query$GetAllUsers$allUsers$groups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllUsers$allUsers$groups(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$GetAllUsers$allUsers$groups(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$GetAllUsers$allUsers$groups<TRes>
@@ -645,9 +634,5 @@ class _CopyWithStubImpl$Query$GetAllUsers$allUsers$groups<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? $__typename}) => _res;
 }

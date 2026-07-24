@@ -12,6 +12,8 @@ export 'restore_site.graphql.dart';
 export 'restrict_access_point.graphql.dart';
 export 'save_floor_plan.graphql.dart';
 export 'set_camera_to_access_point.graphql.dart';
+export 'start_camera_stream.graphql.dart';
+export 'stop_camera_stream.graphql.dart';
 export 'sync_access_credential.graphql.dart';
 export 'sync_access_points.graphql.dart';
 export 'unlock_access_point.graphql.dart';

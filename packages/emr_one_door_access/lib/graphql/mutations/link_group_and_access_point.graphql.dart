@@ -2,20 +2,20 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$LinkGroupAndAccessPoint {
-  factory Variables$Mutation$LinkGroupAndAccessPoint(
-          {required Input$CreateGroupAndAccessPointLinkInput input}) =>
-      Variables$Mutation$LinkGroupAndAccessPoint._({
-        r'input': input,
-      });
+  factory Variables$Mutation$LinkGroupAndAccessPoint({
+    required Input$CreateGroupAndAccessPointLinkInput input,
+  }) => Variables$Mutation$LinkGroupAndAccessPoint._({r'input': input});
 
   Variables$Mutation$LinkGroupAndAccessPoint._(this._$data);
 
   factory Variables$Mutation$LinkGroupAndAccessPoint.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
     result$data['input'] = Input$CreateGroupAndAccessPointLinkInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$LinkGroupAndAccessPoint._(result$data);
   }
 
@@ -32,11 +32,10 @@ class Variables$Mutation$LinkGroupAndAccessPoint {
   }
 
   CopyWith$Variables$Mutation$LinkGroupAndAccessPoint<
-          Variables$Mutation$LinkGroupAndAccessPoint>
-      get copyWith => CopyWith$Variables$Mutation$LinkGroupAndAccessPoint(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$LinkGroupAndAccessPoint
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$LinkGroupAndAccessPoint(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -87,12 +86,13 @@ class _CopyWithImpl$Variables$Mutation$LinkGroupAndAccessPoint<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$LinkGroupAndAccessPoint._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$CreateGroupAndAccessPointLinkInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$LinkGroupAndAccessPoint._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$CreateGroupAndAccessPointLinkInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$LinkGroupAndAccessPoint<TRes>
@@ -136,10 +136,7 @@ class Mutation$LinkGroupAndAccessPoint {
   int get hashCode {
     final l$linkGroupAndAccessPoint = linkGroupAndAccessPoint;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$linkGroupAndAccessPoint,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$linkGroupAndAccessPoint, l$$__typename]);
   }
 
   @override
@@ -168,10 +165,7 @@ class Mutation$LinkGroupAndAccessPoint {
 extension UtilityExtension$Mutation$LinkGroupAndAccessPoint
     on Mutation$LinkGroupAndAccessPoint {
   CopyWith$Mutation$LinkGroupAndAccessPoint<Mutation$LinkGroupAndAccessPoint>
-      get copyWith => CopyWith$Mutation$LinkGroupAndAccessPoint(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$LinkGroupAndAccessPoint(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$LinkGroupAndAccessPoint<TRes> {
@@ -183,18 +177,12 @@ abstract class CopyWith$Mutation$LinkGroupAndAccessPoint<TRes> {
   factory CopyWith$Mutation$LinkGroupAndAccessPoint.stub(TRes res) =
       _CopyWithStubImpl$Mutation$LinkGroupAndAccessPoint;
 
-  TRes call({
-    bool? linkGroupAndAccessPoint,
-    String? $__typename,
-  });
+  TRes call({bool? linkGroupAndAccessPoint, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$LinkGroupAndAccessPoint<TRes>
     implements CopyWith$Mutation$LinkGroupAndAccessPoint<TRes> {
-  _CopyWithImpl$Mutation$LinkGroupAndAccessPoint(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$LinkGroupAndAccessPoint(this._instance, this._then);
 
   final Mutation$LinkGroupAndAccessPoint _instance;
 
@@ -205,16 +193,18 @@ class _CopyWithImpl$Mutation$LinkGroupAndAccessPoint<TRes>
   TRes call({
     Object? linkGroupAndAccessPoint = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$LinkGroupAndAccessPoint(
-        linkGroupAndAccessPoint: linkGroupAndAccessPoint == _undefined ||
-                linkGroupAndAccessPoint == null
-            ? _instance.linkGroupAndAccessPoint
-            : (linkGroupAndAccessPoint as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$LinkGroupAndAccessPoint(
+      linkGroupAndAccessPoint:
+          linkGroupAndAccessPoint == _undefined ||
+              linkGroupAndAccessPoint == null
+          ? _instance.linkGroupAndAccessPoint
+          : (linkGroupAndAccessPoint as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$LinkGroupAndAccessPoint<TRes>
@@ -223,49 +213,49 @@ class _CopyWithStubImpl$Mutation$LinkGroupAndAccessPoint<TRes>
 
   TRes _res;
 
-  call({
-    bool? linkGroupAndAccessPoint,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? linkGroupAndAccessPoint, String? $__typename}) => _res;
 }
 
-const documentNodeMutationLinkGroupAndAccessPoint = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'LinkGroupAndAccessPoint'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'CreateGroupAndAccessPointLinkInput'),
-          isNonNull: true,
+const documentNodeMutationLinkGroupAndAccessPoint = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'LinkGroupAndAccessPoint'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'CreateGroupAndAccessPointLinkInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'linkGroupAndAccessPoint'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'linkGroupAndAccessPoint'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

@@ -458,4 +458,59 @@ class FloorPlanController extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Camera? cameraFor(Hotspot hotspot) {
+    return accessPoints
+        .firstWhereOrNull((x) => x.id == hotspot.accessPointId)
+        ?.camera;
+  }
+
+  Future<
+    (
+      bool success,
+      String error,
+      Mutation$StartCameraStream$startCameraStream? result,
+    )
+  >
+  startLiveStream(Hotspot hotspot) async {
+    final accessPoint = accessPoints.firstWhereOrNull(
+      (x) => x.id == hotspot.accessPointId,
+    );
+    if (accessPoint == null) {
+      return (false, 'Access point not assigned to hotspot', null);
+    }
+
+    try {
+      final result = await doorAccessService.accessPointsService
+          .startCameraStream(accessPoint.id);
+
+      return result.isRunning
+          ? (true, '', result)
+          : (
+              false,
+              result.message ?? 'Live stream could not be started',
+              result,
+            );
+    } catch (e) {
+      return (false, 'Live stream could not be started: $e', null);
+    }
+  }
+
+  Future<(bool success, String error)> stopLiveStream(Hotspot hotspot) async {
+    final accessPoint = accessPoints.firstWhereOrNull(
+      (x) => x.id == hotspot.accessPointId,
+    );
+    if (accessPoint == null) {
+      return (false, 'Access point not assigned to hotspot');
+    }
+
+    try {
+      await doorAccessService.accessPointsService.stopCameraStream(
+        accessPoint.id,
+      );
+      return (true, '');
+    } catch (e) {
+      return (false, 'Live stream could not be stopped: $e');
+    }
+  }
 }

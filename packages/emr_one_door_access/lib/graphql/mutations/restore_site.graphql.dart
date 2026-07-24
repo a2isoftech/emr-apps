@@ -2,9 +2,7 @@ import 'package:gql/ast.dart';
 
 class Variables$Mutation$RestoreSite {
   factory Variables$Mutation$RestoreSite({required String siteId}) =>
-      Variables$Mutation$RestoreSite._({
-        r'siteId': siteId,
-      });
+      Variables$Mutation$RestoreSite._({r'siteId': siteId});
 
   Variables$Mutation$RestoreSite._(this._$data);
 
@@ -27,10 +25,7 @@ class Variables$Mutation$RestoreSite {
   }
 
   CopyWith$Variables$Mutation$RestoreSite<Variables$Mutation$RestoreSite>
-      get copyWith => CopyWith$Variables$Mutation$RestoreSite(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$RestoreSite(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -70,10 +65,7 @@ abstract class CopyWith$Variables$Mutation$RestoreSite<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$RestoreSite<TRes>
     implements CopyWith$Variables$Mutation$RestoreSite<TRes> {
-  _CopyWithImpl$Variables$Mutation$RestoreSite(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$RestoreSite(this._instance, this._then);
 
   final Variables$Mutation$RestoreSite _instance;
 
@@ -81,12 +73,12 @@ class _CopyWithImpl$Variables$Mutation$RestoreSite<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? siteId = _undefined}) =>
-      _then(Variables$Mutation$RestoreSite._({
-        ..._instance._$data,
-        if (siteId != _undefined && siteId != null)
-          'siteId': (siteId as String),
-      }));
+  TRes call({Object? siteId = _undefined}) => _then(
+    Variables$Mutation$RestoreSite._({
+      ..._instance._$data,
+      if (siteId != _undefined && siteId != null) 'siteId': (siteId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$RestoreSite<TRes>
@@ -130,10 +122,7 @@ class Mutation$RestoreSite {
   int get hashCode {
     final l$restoreSite = restoreSite;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$restoreSite,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$restoreSite, l$$__typename]);
   }
 
   @override
@@ -160,10 +149,7 @@ class Mutation$RestoreSite {
 
 extension UtilityExtension$Mutation$RestoreSite on Mutation$RestoreSite {
   CopyWith$Mutation$RestoreSite<Mutation$RestoreSite> get copyWith =>
-      CopyWith$Mutation$RestoreSite(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$RestoreSite(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$RestoreSite<TRes> {
@@ -175,18 +161,12 @@ abstract class CopyWith$Mutation$RestoreSite<TRes> {
   factory CopyWith$Mutation$RestoreSite.stub(TRes res) =
       _CopyWithStubImpl$Mutation$RestoreSite;
 
-  TRes call({
-    bool? restoreSite,
-    String? $__typename,
-  });
+  TRes call({bool? restoreSite, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$RestoreSite<TRes>
     implements CopyWith$Mutation$RestoreSite<TRes> {
-  _CopyWithImpl$Mutation$RestoreSite(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$RestoreSite(this._instance, this._then);
 
   final Mutation$RestoreSite _instance;
 
@@ -197,15 +177,16 @@ class _CopyWithImpl$Mutation$RestoreSite<TRes>
   TRes call({
     Object? restoreSite = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$RestoreSite(
-        restoreSite: restoreSite == _undefined || restoreSite == null
-            ? _instance.restoreSite
-            : (restoreSite as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$RestoreSite(
+      restoreSite: restoreSite == _undefined || restoreSite == null
+          ? _instance.restoreSite
+          : (restoreSite as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$RestoreSite<TRes>
@@ -214,49 +195,46 @@ class _CopyWithStubImpl$Mutation$RestoreSite<TRes>
 
   TRes _res;
 
-  call({
-    bool? restoreSite,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? restoreSite, String? $__typename}) => _res;
 }
 
-const documentNodeMutationRestoreSite = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'RestoreSite'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'siteId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationRestoreSite = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'RestoreSite'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'siteId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'restoreSite'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'siteId'),
-            value: VariableNode(name: NameNode(value: 'siteId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'restoreSite'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'siteId'),
+                value: VariableNode(name: NameNode(value: 'siteId')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

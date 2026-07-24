@@ -1,16 +1,17 @@
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$RestoreAccessController {
-  factory Variables$Mutation$RestoreAccessController(
-          {required String accessControllerId}) =>
-      Variables$Mutation$RestoreAccessController._({
-        r'accessControllerId': accessControllerId,
-      });
+  factory Variables$Mutation$RestoreAccessController({
+    required String accessControllerId,
+  }) => Variables$Mutation$RestoreAccessController._({
+    r'accessControllerId': accessControllerId,
+  });
 
   Variables$Mutation$RestoreAccessController._(this._$data);
 
   factory Variables$Mutation$RestoreAccessController.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$accessControllerId = data['accessControllerId'];
     result$data['accessControllerId'] = (l$accessControllerId as String);
@@ -29,11 +30,10 @@ class Variables$Mutation$RestoreAccessController {
   }
 
   CopyWith$Variables$Mutation$RestoreAccessController<
-          Variables$Mutation$RestoreAccessController>
-      get copyWith => CopyWith$Variables$Mutation$RestoreAccessController(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$RestoreAccessController
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$RestoreAccessController(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -84,12 +84,13 @@ class _CopyWithImpl$Variables$Mutation$RestoreAccessController<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? accessControllerId = _undefined}) =>
-      _then(Variables$Mutation$RestoreAccessController._({
-        ..._instance._$data,
-        if (accessControllerId != _undefined && accessControllerId != null)
-          'accessControllerId': (accessControllerId as String),
-      }));
+  TRes call({Object? accessControllerId = _undefined}) => _then(
+    Variables$Mutation$RestoreAccessController._({
+      ..._instance._$data,
+      if (accessControllerId != _undefined && accessControllerId != null)
+        'accessControllerId': (accessControllerId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$RestoreAccessController<TRes>
@@ -133,10 +134,7 @@ class Mutation$RestoreAccessController {
   int get hashCode {
     final l$restoreAccessController = restoreAccessController;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$restoreAccessController,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$restoreAccessController, l$$__typename]);
   }
 
   @override
@@ -165,10 +163,7 @@ class Mutation$RestoreAccessController {
 extension UtilityExtension$Mutation$RestoreAccessController
     on Mutation$RestoreAccessController {
   CopyWith$Mutation$RestoreAccessController<Mutation$RestoreAccessController>
-      get copyWith => CopyWith$Mutation$RestoreAccessController(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$RestoreAccessController(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$RestoreAccessController<TRes> {
@@ -180,18 +175,12 @@ abstract class CopyWith$Mutation$RestoreAccessController<TRes> {
   factory CopyWith$Mutation$RestoreAccessController.stub(TRes res) =
       _CopyWithStubImpl$Mutation$RestoreAccessController;
 
-  TRes call({
-    bool? restoreAccessController,
-    String? $__typename,
-  });
+  TRes call({bool? restoreAccessController, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$RestoreAccessController<TRes>
     implements CopyWith$Mutation$RestoreAccessController<TRes> {
-  _CopyWithImpl$Mutation$RestoreAccessController(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$RestoreAccessController(this._instance, this._then);
 
   final Mutation$RestoreAccessController _instance;
 
@@ -202,16 +191,18 @@ class _CopyWithImpl$Mutation$RestoreAccessController<TRes>
   TRes call({
     Object? restoreAccessController = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$RestoreAccessController(
-        restoreAccessController: restoreAccessController == _undefined ||
-                restoreAccessController == null
-            ? _instance.restoreAccessController
-            : (restoreAccessController as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$RestoreAccessController(
+      restoreAccessController:
+          restoreAccessController == _undefined ||
+              restoreAccessController == null
+          ? _instance.restoreAccessController
+          : (restoreAccessController as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$RestoreAccessController<TRes>
@@ -220,49 +211,48 @@ class _CopyWithStubImpl$Mutation$RestoreAccessController<TRes>
 
   TRes _res;
 
-  call({
-    bool? restoreAccessController,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? restoreAccessController, String? $__typename}) => _res;
 }
 
-const documentNodeMutationRestoreAccessController = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'RestoreAccessController'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'accessControllerId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationRestoreAccessController = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'RestoreAccessController'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'accessControllerId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'restoreAccessController'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'accessControllerId'),
-            value: VariableNode(name: NameNode(value: 'accessControllerId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'restoreAccessController'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'accessControllerId'),
+                value: VariableNode(
+                  name: NameNode(value: 'accessControllerId'),
+                ),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

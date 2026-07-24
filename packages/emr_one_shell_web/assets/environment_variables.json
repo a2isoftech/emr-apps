@@ -2,7 +2,8 @@
   "eo_endpoints__emailVerificationCallbackUrl": "https://portal-dev.emrgroup.com/emaillink",
   "eo_endpoints__afrApiUrl": "https://emr-coreapi-dev.azurewebsites.net",
   "eo_endpoints__coreApiUrl": "https://emr-coreapi-dev.azurewebsites.net/graphql",  
-  "eo_endpoints__doorAccessUrl": "https://emr-door-access-api-dev.azurewebsites.net/graphql",  
+  "eo_endpoints__doorAccessUrl": "https://emr-door-access-api-dev.azurewebsites.net/graphql",
+  "eo_endpoints__cameraStreamBaseUrl": "http://localhost:8889",
   "errorCodes": {},
   "titles": {
     "Please Select": "",

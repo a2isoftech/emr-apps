@@ -8,19 +8,19 @@ class Variables$Query$SearchDeniedDoorAccessAttempts {
     int? first,
     int? last,
     required Input$SearchDoorAccessAttemptsInput input,
-  }) =>
-      Variables$Query$SearchDeniedDoorAccessAttempts._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        r'input': input,
-      });
+  }) => Variables$Query$SearchDeniedDoorAccessAttempts._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    r'input': input,
+  });
 
   Variables$Query$SearchDeniedDoorAccessAttempts._(this._$data);
 
   factory Variables$Query$SearchDeniedDoorAccessAttempts.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('after')) {
       final l$after = data['after'];
@@ -40,7 +40,8 @@ class Variables$Query$SearchDeniedDoorAccessAttempts {
     }
     final l$input = data['input'];
     result$data['input'] = Input$SearchDoorAccessAttemptsInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Query$SearchDeniedDoorAccessAttempts._(result$data);
   }
 
@@ -81,11 +82,10 @@ class Variables$Query$SearchDeniedDoorAccessAttempts {
   }
 
   CopyWith$Variables$Query$SearchDeniedDoorAccessAttempts<
-          Variables$Query$SearchDeniedDoorAccessAttempts>
-      get copyWith => CopyWith$Variables$Query$SearchDeniedDoorAccessAttempts(
-            this,
-            (i) => i,
-          );
+    Variables$Query$SearchDeniedDoorAccessAttempts
+  >
+  get copyWith =>
+      CopyWith$Variables$Query$SearchDeniedDoorAccessAttempts(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -160,8 +160,8 @@ abstract class CopyWith$Variables$Query$SearchDeniedDoorAccessAttempts<TRes> {
   ) = _CopyWithImpl$Variables$Query$SearchDeniedDoorAccessAttempts;
 
   factory CopyWith$Variables$Query$SearchDeniedDoorAccessAttempts.stub(
-          TRes res) =
-      _CopyWithStubImpl$Variables$Query$SearchDeniedDoorAccessAttempts;
+    TRes res,
+  ) = _CopyWithStubImpl$Variables$Query$SearchDeniedDoorAccessAttempts;
 
   TRes call({
     String? after,
@@ -191,16 +191,17 @@ class _CopyWithImpl$Variables$Query$SearchDeniedDoorAccessAttempts<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? input = _undefined,
-  }) =>
-      _then(Variables$Query$SearchDeniedDoorAccessAttempts._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (input != _undefined && input != null)
-          'input': (input as Input$SearchDoorAccessAttemptsInput),
-      }));
+  }) => _then(
+    Variables$Query$SearchDeniedDoorAccessAttempts._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (input != _undefined && input != null)
+        'input': (input as Input$SearchDoorAccessAttemptsInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$SearchDeniedDoorAccessAttempts<TRes>
@@ -215,8 +216,7 @@ class _CopyWithStubImpl$Variables$Query$SearchDeniedDoorAccessAttempts<TRes>
     int? first,
     int? last,
     Input$SearchDoorAccessAttemptsInput? input,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$SearchDeniedDoorAccessAttempts {
@@ -226,28 +226,30 @@ class Query$SearchDeniedDoorAccessAttempts {
   });
 
   factory Query$SearchDeniedDoorAccessAttempts.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$searchDoorAccessAttempts = json['searchDoorAccessAttempts'];
     final l$$__typename = json['__typename'];
     return Query$SearchDeniedDoorAccessAttempts(
       searchDoorAccessAttempts: l$searchDoorAccessAttempts == null
           ? null
-          : Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts
-              .fromJson((l$searchDoorAccessAttempts as Map<String, dynamic>)),
+          : Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts.fromJson(
+              (l$searchDoorAccessAttempts as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
 
   final Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts?
-      searchDoorAccessAttempts;
+  searchDoorAccessAttempts;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
     final l$searchDoorAccessAttempts = searchDoorAccessAttempts;
-    _resultData['searchDoorAccessAttempts'] =
-        l$searchDoorAccessAttempts?.toJson();
+    _resultData['searchDoorAccessAttempts'] = l$searchDoorAccessAttempts
+        ?.toJson();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -257,10 +259,7 @@ class Query$SearchDeniedDoorAccessAttempts {
   int get hashCode {
     final l$searchDoorAccessAttempts = searchDoorAccessAttempts;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$searchDoorAccessAttempts,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$searchDoorAccessAttempts, l$$__typename]);
   }
 
   @override
@@ -289,11 +288,9 @@ class Query$SearchDeniedDoorAccessAttempts {
 extension UtilityExtension$Query$SearchDeniedDoorAccessAttempts
     on Query$SearchDeniedDoorAccessAttempts {
   CopyWith$Query$SearchDeniedDoorAccessAttempts<
-          Query$SearchDeniedDoorAccessAttempts>
-      get copyWith => CopyWith$Query$SearchDeniedDoorAccessAttempts(
-            this,
-            (i) => i,
-          );
+    Query$SearchDeniedDoorAccessAttempts
+  >
+  get copyWith => CopyWith$Query$SearchDeniedDoorAccessAttempts(this, (i) => i);
 }
 
 abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts<TRes> {
@@ -307,11 +304,11 @@ abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts<TRes> {
 
   TRes call({
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts?
-        searchDoorAccessAttempts,
+    searchDoorAccessAttempts,
     String? $__typename,
   });
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<TRes>
-      get searchDoorAccessAttempts;
+  get searchDoorAccessAttempts;
 }
 
 class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts<TRes>
@@ -330,26 +327,29 @@ class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts<TRes>
   TRes call({
     Object? searchDoorAccessAttempts = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchDeniedDoorAccessAttempts(
-        searchDoorAccessAttempts: searchDoorAccessAttempts == _undefined
-            ? _instance.searchDoorAccessAttempts
-            : (searchDoorAccessAttempts
+  }) => _then(
+    Query$SearchDeniedDoorAccessAttempts(
+      searchDoorAccessAttempts: searchDoorAccessAttempts == _undefined
+          ? _instance.searchDoorAccessAttempts
+          : (searchDoorAccessAttempts
                 as Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<TRes>
-      get searchDoorAccessAttempts {
+  get searchDoorAccessAttempts {
     final local$searchDoorAccessAttempts = _instance.searchDoorAccessAttempts;
     return local$searchDoorAccessAttempts == null
-        ? CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts
-            .stub(_then(_instance))
+        ? CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts.stub(
+            _then(_instance),
+          )
         : CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
             local$searchDoorAccessAttempts,
-            (e) => call(searchDoorAccessAttempts: e));
+            (e) => call(searchDoorAccessAttempts: e),
+          );
   }
 }
 
@@ -361,274 +361,284 @@ class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts<TRes>
 
   call({
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts?
-        searchDoorAccessAttempts,
+    searchDoorAccessAttempts,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<TRes>
-      get searchDoorAccessAttempts =>
-          CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts
-              .stub(_res);
+  get searchDoorAccessAttempts =>
+      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts.stub(
+        _res,
+      );
 }
 
-const documentNodeQuerySearchDeniedDoorAccessAttempts =
-    DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'SearchDeniedDoorAccessAttempts'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'SearchDoorAccessAttemptsInput'),
-          isNonNull: true,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'searchDoorAccessAttempts'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+const documentNodeQuerySearchDeniedDoorAccessAttempts = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'SearchDeniedDoorAccessAttempts'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'SearchDoorAccessAttemptsInput'),
+            isNonNull: true,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'searchDoorAccessAttempts'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'rowId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessControllerId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'userId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'cardNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'utcTime'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'topic0'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'topic1'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'topic2'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPointName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPointRestricted'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPointId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'email'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessResponse'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'siteId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'siteName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'rowId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessControllerId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'userId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'cardNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'utcTime'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'topic0'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'topic1'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'topic2'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPointName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPointRestricted'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPointId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'email'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'name'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessResponse'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'siteId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'siteName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -637,18 +647,11 @@ const documentNodeQuerySearchDeniedDoorAccessAttempts =
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
   Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts({
@@ -659,7 +662,8 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
   });
 
   factory Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$totalCount = json['totalCount'];
     final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
@@ -667,12 +671,16 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
     return Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
       totalCount: (l$totalCount as int),
       pageInfo:
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
-              .fromJson((l$pageInfo as Map<String, dynamic>)),
+          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo.fromJson(
+            (l$pageInfo as Map<String, dynamic>),
+          ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) =>
-              Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes.fromJson(
+                  (e as Map<String, dynamic>),
+                ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -681,11 +689,12 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
   final int totalCount;
 
   final Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
-      pageInfo;
+  pageInfo;
 
   final List<
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>?
-      nodes;
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+  >?
+  nodes;
 
   final String $__typename;
 
@@ -764,49 +773,62 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
 extension UtilityExtension$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts
     on Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts {
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts>
-      get copyWith =>
-          CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
-            this,
-            (i) => i,
-          );
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts
+  >
+  get copyWith =>
+      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts instance,
     TRes Function(Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts)
-        then,
+    then,
   ) = _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts;
 
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts;
 
   TRes call({
     int? totalCount,
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo?
-        pageInfo,
+    pageInfo,
     List<Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>?
-        nodes,
+    nodes,
     String? $__typename,
   });
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-      TRes> get pageInfo;
+    TRes
+  >
+  get pageInfo;
   TRes nodes(
-      Iterable<Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-                      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>>?)
-          _fn);
+    Iterable<
+      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+    >?
+    Function(
+      Iterable<
+        CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
+          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
     this._instance,
     this._then,
@@ -815,7 +837,9 @@ class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempt
   final Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts _instance;
 
   final TRes Function(
-      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts) _then;
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -824,70 +848,92 @@ class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempt
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo
+  }) => _then(
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo
                 as Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<
-                Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes
+                as List<
+                  Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-      TRes> get pageInfo {
+    TRes
+  >
+  get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-                          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes?.map((e) =>
-              CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<
+      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+    >?
+    Function(
+      Iterable<
+        CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
+          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) =>
+            CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
+              e,
+              (i) => i,
+            ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
   call({
     int? totalCount,
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo?
-        pageInfo,
+    pageInfo,
     List<Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>?
-        nodes,
+    nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-          TRes>
-      get pageInfo =>
-          CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
-              .stub(_res);
+    TRes
+  >
+  get pageInfo =>
+      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo.stub(
+        _res,
+      );
 
   nodes(_fn) => _res;
 }
@@ -902,7 +948,8 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo {
   });
 
   factory Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$hasNextPage = json['hasNextPage'];
     final l$hasPreviousPage = json['hasPreviousPage'];
     final l$startCursor = json['startCursor'];
@@ -1000,27 +1047,30 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo {
 extension UtilityExtension$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
     on Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo {
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo>
-      get copyWith =>
-          CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
+  >
+  get copyWith =>
+      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
-        instance,
+    instance,
     TRes Function(
-            Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo)
-        then,
+      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo,
+    )
+    then,
   ) = _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo;
 
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo;
 
   TRes call({
     bool? hasNextPage,
@@ -1032,21 +1082,24 @@ abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAtt
 }
 
 class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
     this._instance,
     this._then,
   );
 
   final Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo)
-      _then;
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1056,35 +1109,37 @@ class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempt
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$pageInfo(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1094,8 +1149,7 @@ class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAtt
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes {
@@ -1120,7 +1174,8 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes {
   });
 
   factory Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$rowId = json['rowId'];
     final l$accessControllerId = json['accessControllerId'];
     final l$userId = json['userId'];
@@ -1374,27 +1429,30 @@ class Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes {
 extension UtilityExtension$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
     on Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes {
   CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes>
-      get copyWith =>
-          CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
-            this,
-            (i) => i,
-          );
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
+  >
+  get copyWith =>
+      CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
     Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
-        instance,
+    instance,
     TRes Function(
-            Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes)
-        then,
+      Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes,
+    )
+    then,
   ) = _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes;
 
   factory CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes;
 
   TRes call({
     int? rowId,
@@ -1418,21 +1476,24 @@ abstract class CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAtt
 }
 
 class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
     this._instance,
     this._then,
   );
 
   final Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes)
-      _then;
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1454,55 +1515,60 @@ class _CopyWithImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempt
     Object? siteId = _undefined,
     Object? siteName = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
-        rowId: rowId == _undefined || rowId == null
-            ? _instance.rowId
-            : (rowId as int),
-        accessControllerId:
-            accessControllerId == _undefined || accessControllerId == null
-                ? _instance.accessControllerId
-                : (accessControllerId as String),
-        userId: userId == _undefined ? _instance.userId : (userId as String?),
-        cardNumber: cardNumber == _undefined
-            ? _instance.cardNumber
-            : (cardNumber as String?),
-        utcTime: utcTime == _undefined || utcTime == null
-            ? _instance.utcTime
-            : (utcTime as DateTime),
-        topic0: topic0 == _undefined ? _instance.topic0 : (topic0 as String?),
-        topic1: topic1 == _undefined ? _instance.topic1 : (topic1 as String?),
-        topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
-        accessPointName: accessPointName == _undefined
-            ? _instance.accessPointName
-            : (accessPointName as String?),
-        accessPointRestricted: accessPointRestricted == _undefined
-            ? _instance.accessPointRestricted
-            : (accessPointRestricted as bool?),
-        accessPointId: accessPointId == _undefined
-            ? _instance.accessPointId
-            : (accessPointId as String?),
-        email: email == _undefined ? _instance.email : (email as String?),
-        name: name == _undefined ? _instance.name : (name as String?),
-        accessResponse: accessResponse == _undefined
-            ? _instance.accessResponse
-            : (accessResponse as String?),
-        siteId: siteId == _undefined ? _instance.siteId : (siteId as String?),
-        siteName:
-            siteName == _undefined ? _instance.siteName : (siteName as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
+      rowId: rowId == _undefined || rowId == null
+          ? _instance.rowId
+          : (rowId as int),
+      accessControllerId:
+          accessControllerId == _undefined || accessControllerId == null
+          ? _instance.accessControllerId
+          : (accessControllerId as String),
+      userId: userId == _undefined ? _instance.userId : (userId as String?),
+      cardNumber: cardNumber == _undefined
+          ? _instance.cardNumber
+          : (cardNumber as String?),
+      utcTime: utcTime == _undefined || utcTime == null
+          ? _instance.utcTime
+          : (utcTime as DateTime),
+      topic0: topic0 == _undefined ? _instance.topic0 : (topic0 as String?),
+      topic1: topic1 == _undefined ? _instance.topic1 : (topic1 as String?),
+      topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
+      accessPointName: accessPointName == _undefined
+          ? _instance.accessPointName
+          : (accessPointName as String?),
+      accessPointRestricted: accessPointRestricted == _undefined
+          ? _instance.accessPointRestricted
+          : (accessPointRestricted as bool?),
+      accessPointId: accessPointId == _undefined
+          ? _instance.accessPointId
+          : (accessPointId as String?),
+      email: email == _undefined ? _instance.email : (email as String?),
+      name: name == _undefined ? _instance.name : (name as String?),
+      accessResponse: accessResponse == _undefined
+          ? _instance.accessResponse
+          : (accessResponse as String?),
+      siteId: siteId == _undefined ? _instance.siteId : (siteId as String?),
+      siteName: siteName == _undefined
+          ? _instance.siteName
+          : (siteName as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAttempts$nodes(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1524,6 +1590,5 @@ class _CopyWithStubImpl$Query$SearchDeniedDoorAccessAttempts$searchDoorAccessAtt
     String? siteId,
     String? siteName,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

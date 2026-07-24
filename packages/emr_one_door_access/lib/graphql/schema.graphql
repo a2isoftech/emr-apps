@@ -90,6 +90,7 @@ type AccessPointCamera {
   snapshotUrl: String!
   username: String
   password: String
+  streamPath: String
   createdUtc: DateTime!
 }
 
@@ -327,9 +328,16 @@ type Mutation {
   broadcast(
     title: String!
     message: String!
-    notificationType: NotificationSeverityEnum!
+    notificationType: NotificationTypeEnum!
+    notificationSeverity: NotificationSeverityEnum!
   ): Boolean! @authorize(policy: "Function:BroadcastNotification")
   addCameraToAccessPoint(input: SaveAccessPointCameraInput!): AccessPoint!
+    @authorize(policy: "Function:PermitAccessPoint")
+  startCameraStream(
+    accessPointId: String!
+    durationMinutes: Int
+  ): StreamStatusResponse! @authorize(policy: "Function:PermitAccessPoint")
+  stopCameraStream(accessPointId: String!): StreamStatusResponse!
     @authorize(policy: "Function:PermitAccessPoint")
   removeDoorControllerData(accessControllerId: String!): Boolean!
     @authorize(policy: "Function:DeleteAccessController")
@@ -337,6 +345,7 @@ type Mutation {
   sendEmail(request: EmailMessageInput!): Boolean! @authorize
   auditInImmudb: Boolean! @authorize
   performCredentialComparisons: Boolean! @authorize
+  sendTestNotification(notification: NotificationInput): Boolean! @authorize
 }
 
 "Information about pagination in a connection."
@@ -531,6 +540,8 @@ type Query {
     doorExternalId: String!
   ): DoorAndPriorityState @authorize(policy: "Function:GetAccessControllers")
   sasUrl(fileName: String!): String!
+  cameraStreamStatus(accessPointId: String!): StreamStatusResponse!
+    @authorize(policy: "Function:PermitAccessPoint")
 }
 
 type Schedule {
@@ -737,6 +748,15 @@ type SitesEdge {
   cursor: String!
   "The item at the end of the edge."
   node: Site!
+}
+
+type StreamStatusResponse {
+  accessPointId: String!
+  isRunning: Boolean!
+  startedAtUtc: DateTime
+  durationMinutes: Int
+  timeRemaining: TimeSpan
+  message: String
 }
 
 type User {
@@ -1221,6 +1241,17 @@ input LongOperationFilterInput {
   nlte: Long
 }
 
+input NotificationInput {
+  id: String!
+  type: NotificationTypeEnum!
+  siteId: String!
+  siteName: String!
+  title: String!
+  message: String!
+  severity: NotificationSeverityEnum!
+  utcCreated: DateTime!
+}
+
 input NullableOfSnapshotReasonEnumOperationFilterInput {
   eq: SnapshotReasonEnum
   neq: SnapshotReasonEnum
@@ -1235,6 +1266,7 @@ input SaveAccessPointCameraInput {
   snapshotUrl: String!
   username: String
   password: String
+  streamPath: String
 }
 
 input ScheduleFilterInput {
@@ -1477,9 +1509,17 @@ enum NotificationSeverityEnum {
   SUCCESS
 }
 
+enum NotificationTypeEnum {
+  FAILED_ACCESS_ATTEMPTS
+  MULTIPLE_DENIED_CARD_ATTEMPTS
+  ACCESS_POINT_SNAPSHOT
+}
+
 enum SnapshotReasonEnum {
   ACCESS_DENIED
   RESTRICTED_ACCESS_POINT
+  DOOR_FORCED_OPEN
+  DOOR_OPEN_TOO_LONG
   UNKNOWN
 }
 

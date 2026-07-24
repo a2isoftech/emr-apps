@@ -8,19 +8,19 @@ class Variables$Query$GetAccessCredentials {
     int? first,
     int? last,
     required Input$SearchAccessCredentialsInput input,
-  }) =>
-      Variables$Query$GetAccessCredentials._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        r'input': input,
-      });
+  }) => Variables$Query$GetAccessCredentials._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    r'input': input,
+  });
 
   Variables$Query$GetAccessCredentials._(this._$data);
 
   factory Variables$Query$GetAccessCredentials.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('after')) {
       final l$after = data['after'];
@@ -40,7 +40,8 @@ class Variables$Query$GetAccessCredentials {
     }
     final l$input = data['input'];
     result$data['input'] = Input$SearchAccessCredentialsInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Query$GetAccessCredentials._(result$data);
   }
 
@@ -81,11 +82,9 @@ class Variables$Query$GetAccessCredentials {
   }
 
   CopyWith$Variables$Query$GetAccessCredentials<
-          Variables$Query$GetAccessCredentials>
-      get copyWith => CopyWith$Variables$Query$GetAccessCredentials(
-            this,
-            (i) => i,
-          );
+    Variables$Query$GetAccessCredentials
+  >
+  get copyWith => CopyWith$Variables$Query$GetAccessCredentials(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -190,16 +189,17 @@ class _CopyWithImpl$Variables$Query$GetAccessCredentials<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? input = _undefined,
-  }) =>
-      _then(Variables$Query$GetAccessCredentials._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (input != _undefined && input != null)
-          'input': (input as Input$SearchAccessCredentialsInput),
-      }));
+  }) => _then(
+    Variables$Query$GetAccessCredentials._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (input != _undefined && input != null)
+        'input': (input as Input$SearchAccessCredentialsInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetAccessCredentials<TRes>
@@ -214,8 +214,7 @@ class _CopyWithStubImpl$Variables$Query$GetAccessCredentials<TRes>
     int? first,
     int? last,
     Input$SearchAccessCredentialsInput? input,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessCredentials {
@@ -231,21 +230,22 @@ class Query$GetAccessCredentials {
       searchAccessCredentials: l$searchAccessCredentials == null
           ? null
           : Query$GetAccessCredentials$searchAccessCredentials.fromJson(
-              (l$searchAccessCredentials as Map<String, dynamic>)),
+              (l$searchAccessCredentials as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
 
   final Query$GetAccessCredentials$searchAccessCredentials?
-      searchAccessCredentials;
+  searchAccessCredentials;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
     final l$searchAccessCredentials = searchAccessCredentials;
-    _resultData['searchAccessCredentials'] =
-        l$searchAccessCredentials?.toJson();
+    _resultData['searchAccessCredentials'] = l$searchAccessCredentials
+        ?.toJson();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -255,10 +255,7 @@ class Query$GetAccessCredentials {
   int get hashCode {
     final l$searchAccessCredentials = searchAccessCredentials;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$searchAccessCredentials,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$searchAccessCredentials, l$$__typename]);
   }
 
   @override
@@ -287,10 +284,7 @@ class Query$GetAccessCredentials {
 extension UtilityExtension$Query$GetAccessCredentials
     on Query$GetAccessCredentials {
   CopyWith$Query$GetAccessCredentials<Query$GetAccessCredentials>
-      get copyWith => CopyWith$Query$GetAccessCredentials(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAccessCredentials(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAccessCredentials<TRes> {
@@ -307,15 +301,12 @@ abstract class CopyWith$Query$GetAccessCredentials<TRes> {
     String? $__typename,
   });
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials<TRes>
-      get searchAccessCredentials;
+  get searchAccessCredentials;
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials<TRes>
     implements CopyWith$Query$GetAccessCredentials<TRes> {
-  _CopyWithImpl$Query$GetAccessCredentials(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAccessCredentials(this._instance, this._then);
 
   final Query$GetAccessCredentials _instance;
 
@@ -326,26 +317,29 @@ class _CopyWithImpl$Query$GetAccessCredentials<TRes>
   TRes call({
     Object? searchAccessCredentials = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials(
-        searchAccessCredentials: searchAccessCredentials == _undefined
-            ? _instance.searchAccessCredentials
-            : (searchAccessCredentials
+  }) => _then(
+    Query$GetAccessCredentials(
+      searchAccessCredentials: searchAccessCredentials == _undefined
+          ? _instance.searchAccessCredentials
+          : (searchAccessCredentials
                 as Query$GetAccessCredentials$searchAccessCredentials?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials<TRes>
-      get searchAccessCredentials {
+  get searchAccessCredentials {
     final local$searchAccessCredentials = _instance.searchAccessCredentials;
     return local$searchAccessCredentials == null
         ? CopyWith$Query$GetAccessCredentials$searchAccessCredentials.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$GetAccessCredentials$searchAccessCredentials(
             local$searchAccessCredentials,
-            (e) => call(searchAccessCredentials: e));
+            (e) => call(searchAccessCredentials: e),
+          );
   }
 }
 
@@ -358,401 +352,418 @@ class _CopyWithStubImpl$Query$GetAccessCredentials<TRes>
   call({
     Query$GetAccessCredentials$searchAccessCredentials? searchAccessCredentials,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials<TRes>
-      get searchAccessCredentials =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials.stub(
-              _res);
+  get searchAccessCredentials =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials.stub(_res);
 }
 
-const documentNodeQueryGetAccessCredentials = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetAccessCredentials'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'SearchAccessCredentialsInput'),
-          isNonNull: true,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'searchAccessCredentials'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+const documentNodeQueryGetAccessCredentials = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetAccessCredentials'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'SearchAccessCredentialsInput'),
+            isNonNull: true,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'pageInfo'),
+            name: NameNode(value: 'searchAccessCredentials'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'totalCount'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'externalId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'deletedOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'deletedInDoorControllerOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdInDoorControllerOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'active'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPointId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'modifiedOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'modifiedBy'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPoints'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'externalId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'deletedOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'deletedInDoorControllerOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdInDoorControllerOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'active'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPointId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'modifiedOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'modifiedBy'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPoints'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'restricted'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessControllers'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'users'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'active'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'userName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'azureId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'cardNumber'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'externalId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'groups'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'azureId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'active'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: 'restricted'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessControllers'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'users'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'active'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'userName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'azureId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'cardNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'externalId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'groups'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'azureId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'active'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -761,18 +772,11 @@ const documentNodeQueryGetAccessCredentials = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetAccessCredentials$searchAccessCredentials {
   Query$GetAccessCredentials$searchAccessCredentials({
@@ -783,7 +787,8 @@ class Query$GetAccessCredentials$searchAccessCredentials {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$pageInfo = json['pageInfo'];
     final l$totalCount = json['totalCount'];
     final l$nodes = json['nodes'];
@@ -791,12 +796,16 @@ class Query$GetAccessCredentials$searchAccessCredentials {
     return Query$GetAccessCredentials$searchAccessCredentials(
       pageInfo:
           Query$GetAccessCredentials$searchAccessCredentials$pageInfo.fromJson(
-              (l$pageInfo as Map<String, dynamic>)),
+            (l$pageInfo as Map<String, dynamic>),
+          ),
       totalCount: (l$totalCount as int),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) =>
-              Query$GetAccessCredentials$searchAccessCredentials$nodes.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Query$GetAccessCredentials$searchAccessCredentials$nodes.fromJson(
+                  (e as Map<String, dynamic>),
+                ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -884,24 +893,25 @@ class Query$GetAccessCredentials$searchAccessCredentials {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials
     on Query$GetAccessCredentials$searchAccessCredentials {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials<
-          Query$GetAccessCredentials$searchAccessCredentials>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials
+  >
+  get copyWith => CopyWith$Query$GetAccessCredentials$searchAccessCredentials(
+    this,
+    (i) => i,
+  );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials(
     Query$GetAccessCredentials$searchAccessCredentials instance,
     TRes Function(Query$GetAccessCredentials$searchAccessCredentials) then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials;
 
   TRes call({
     Query$GetAccessCredentials$searchAccessCredentials$pageInfo? pageInfo,
@@ -910,13 +920,18 @@ abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials<
     String? $__typename,
   });
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<TRes>
-      get pageInfo;
+  get pageInfo;
   TRes nodes(
-      Iterable<Query$GetAccessCredentials$searchAccessCredentials$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-                      Query$GetAccessCredentials$searchAccessCredentials$nodes>>?)
-          _fn);
+    Iterable<Query$GetAccessCredentials$searchAccessCredentials$nodes>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
+          Query$GetAccessCredentials$searchAccessCredentials$nodes
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials<TRes>
@@ -938,50 +953,65 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials<TRes>
     Object? totalCount = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials$searchAccessCredentials(
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials(
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo
                 as Query$GetAccessCredentials$searchAccessCredentials$pageInfo),
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<
-                Query$GetAccessCredentials$searchAccessCredentials$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes
+                as List<
+                  Query$GetAccessCredentials$searchAccessCredentials$nodes
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<TRes>
-      get pageInfo {
+  get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$GetAccessCredentials$searchAccessCredentials$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-                          Query$GetAccessCredentials$searchAccessCredentials$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes?.map((e) =>
-              CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Query$GetAccessCredentials$searchAccessCredentials$nodes>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
+          Query$GetAccessCredentials$searchAccessCredentials$nodes
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) =>
+            CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes(
+              e,
+              (i) => i,
+            ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials<TRes>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials<TRes> {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -990,13 +1020,13 @@ class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials<TRes>
     int? totalCount,
     List<Query$GetAccessCredentials$searchAccessCredentials$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<TRes>
-      get pageInfo =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo
-              .stub(_res);
+  get pageInfo =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo.stub(
+        _res,
+      );
 
   nodes(_fn) => _res;
 }
@@ -1011,7 +1041,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$pageInfo {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$hasNextPage = json['hasNextPage'];
     final l$hasPreviousPage = json['hasPreviousPage'];
     final l$startCursor = json['startCursor'];
@@ -1108,25 +1139,27 @@ class Query$GetAccessCredentials$searchAccessCredentials$pageInfo {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$pageInfo
     on Query$GetAccessCredentials$searchAccessCredentials$pageInfo {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-          Query$GetAccessCredentials$searchAccessCredentials$pageInfo>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$pageInfo
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
     Query$GetAccessCredentials$searchAccessCredentials$pageInfo instance,
     TRes Function(Query$GetAccessCredentials$searchAccessCredentials$pageInfo)
-        then,
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo;
 
   TRes call({
     bool? hasNextPage,
@@ -1138,10 +1171,12 @@ abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageI
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
     this._instance,
     this._then,
@@ -1150,7 +1185,9 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
   final Query$GetAccessCredentials$searchAccessCredentials$pageInfo _instance;
 
   final TRes Function(
-      Query$GetAccessCredentials$searchAccessCredentials$pageInfo) _then;
+    Query$GetAccessCredentials$searchAccessCredentials$pageInfo,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1160,34 +1197,37 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$pageInfo(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1197,8 +1237,7 @@ class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$pageI
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessCredentials$searchAccessCredentials$nodes {
@@ -1221,7 +1260,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$nodes.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$externalId = json['externalId'];
     final l$deletedOn = json['deletedOn'];
@@ -1240,8 +1280,9 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
     return Query$GetAccessCredentials$searchAccessCredentials$nodes(
       id: (l$id as String),
       externalId: (l$externalId as String?),
-      deletedOn:
-          l$deletedOn == null ? null : DateTime.parse((l$deletedOn as String)),
+      deletedOn: l$deletedOn == null
+          ? null
+          : DateTime.parse((l$deletedOn as String)),
       deletedInDoorControllerOn: l$deletedInDoorControllerOn == null
           ? null
           : DateTime.parse((l$deletedInDoorControllerOn as String)),
@@ -1256,15 +1297,21 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
           : DateTime.parse((l$modifiedOn as String)),
       modifiedBy: (l$modifiedBy as String?),
       accessPoints:
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
-              .fromJson((l$accessPoints as Map<String, dynamic>)),
+          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints.fromJson(
+            (l$accessPoints as Map<String, dynamic>),
+          ),
       accessControllers:
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
-              .fromJson((l$accessControllers as Map<String, dynamic>)),
-      users: Query$GetAccessCredentials$searchAccessCredentials$nodes$users
-          .fromJson((l$users as Map<String, dynamic>)),
-      groups: Query$GetAccessCredentials$searchAccessCredentials$nodes$groups
-          .fromJson((l$groups as Map<String, dynamic>)),
+          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers.fromJson(
+            (l$accessControllers as Map<String, dynamic>),
+          ),
+      users:
+          Query$GetAccessCredentials$searchAccessCredentials$nodes$users.fromJson(
+            (l$users as Map<String, dynamic>),
+          ),
+      groups:
+          Query$GetAccessCredentials$searchAccessCredentials$nodes$groups.fromJson(
+            (l$groups as Map<String, dynamic>),
+          ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1290,10 +1337,10 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
   final String? modifiedBy;
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
-      accessPoints;
+  accessPoints;
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
-      accessControllers;
+  accessControllers;
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$users users;
 
@@ -1310,11 +1357,11 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
     final l$deletedOn = deletedOn;
     _resultData['deletedOn'] = l$deletedOn?.toIso8601String();
     final l$deletedInDoorControllerOn = deletedInDoorControllerOn;
-    _resultData['deletedInDoorControllerOn'] =
-        l$deletedInDoorControllerOn?.toIso8601String();
+    _resultData['deletedInDoorControllerOn'] = l$deletedInDoorControllerOn
+        ?.toIso8601String();
     final l$createdInDoorControllerOn = createdInDoorControllerOn;
-    _resultData['createdInDoorControllerOn'] =
-        l$createdInDoorControllerOn?.toIso8601String();
+    _resultData['createdInDoorControllerOn'] = l$createdInDoorControllerOn
+        ?.toIso8601String();
     final l$createdOn = createdOn;
     _resultData['createdOn'] = l$createdOn.toIso8601String();
     final l$active = active;
@@ -1465,25 +1512,27 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$nodes
     on Query$GetAccessCredentials$searchAccessCredentials$nodes {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-          Query$GetAccessCredentials$searchAccessCredentials$nodes>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$nodes
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes(
     Query$GetAccessCredentials$searchAccessCredentials$nodes instance,
     TRes Function(Query$GetAccessCredentials$searchAccessCredentials$nodes)
-        then,
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes;
 
   TRes call({
     String? id,
@@ -1497,28 +1546,34 @@ abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes
     DateTime? modifiedOn,
     String? modifiedBy,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints?
-        accessPoints,
+    accessPoints,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers?
-        accessControllers,
+    accessControllers,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$users? users,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$groups? groups,
     String? $__typename,
   });
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-      TRes> get accessPoints;
+    TRes
+  >
+  get accessPoints;
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-      TRes> get accessControllers;
+    TRes
+  >
+  get accessControllers;
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<TRes>
-      get users;
+  get users;
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<TRes>
-      get groups;
+  get groups;
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes(
     this._instance,
     this._then,
@@ -1527,7 +1582,7 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes<
   final Query$GetAccessCredentials$searchAccessCredentials$nodes _instance;
 
   final TRes Function(Query$GetAccessCredentials$searchAccessCredentials$nodes)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1547,94 +1602,110 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes<
     Object? users = _undefined,
     Object? groups = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials$searchAccessCredentials$nodes(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        externalId: externalId == _undefined
-            ? _instance.externalId
-            : (externalId as String?),
-        deletedOn: deletedOn == _undefined
-            ? _instance.deletedOn
-            : (deletedOn as DateTime?),
-        deletedInDoorControllerOn: deletedInDoorControllerOn == _undefined
-            ? _instance.deletedInDoorControllerOn
-            : (deletedInDoorControllerOn as DateTime?),
-        createdInDoorControllerOn: createdInDoorControllerOn == _undefined
-            ? _instance.createdInDoorControllerOn
-            : (createdInDoorControllerOn as DateTime?),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        accessPointId: accessPointId == _undefined || accessPointId == null
-            ? _instance.accessPointId
-            : (accessPointId as String),
-        modifiedOn: modifiedOn == _undefined
-            ? _instance.modifiedOn
-            : (modifiedOn as DateTime?),
-        modifiedBy: modifiedBy == _undefined
-            ? _instance.modifiedBy
-            : (modifiedBy as String?),
-        accessPoints: accessPoints == _undefined || accessPoints == null
-            ? _instance.accessPoints
-            : (accessPoints
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$nodes(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      externalId: externalId == _undefined
+          ? _instance.externalId
+          : (externalId as String?),
+      deletedOn: deletedOn == _undefined
+          ? _instance.deletedOn
+          : (deletedOn as DateTime?),
+      deletedInDoorControllerOn: deletedInDoorControllerOn == _undefined
+          ? _instance.deletedInDoorControllerOn
+          : (deletedInDoorControllerOn as DateTime?),
+      createdInDoorControllerOn: createdInDoorControllerOn == _undefined
+          ? _instance.createdInDoorControllerOn
+          : (createdInDoorControllerOn as DateTime?),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      accessPointId: accessPointId == _undefined || accessPointId == null
+          ? _instance.accessPointId
+          : (accessPointId as String),
+      modifiedOn: modifiedOn == _undefined
+          ? _instance.modifiedOn
+          : (modifiedOn as DateTime?),
+      modifiedBy: modifiedBy == _undefined
+          ? _instance.modifiedBy
+          : (modifiedBy as String?),
+      accessPoints: accessPoints == _undefined || accessPoints == null
+          ? _instance.accessPoints
+          : (accessPoints
                 as Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints),
-        accessControllers: accessControllers == _undefined ||
-                accessControllers == null
-            ? _instance.accessControllers
-            : (accessControllers
+      accessControllers:
+          accessControllers == _undefined || accessControllers == null
+          ? _instance.accessControllers
+          : (accessControllers
                 as Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers),
-        users: users == _undefined || users == null
-            ? _instance.users
-            : (users
+      users: users == _undefined || users == null
+          ? _instance.users
+          : (users
                 as Query$GetAccessCredentials$searchAccessCredentials$nodes$users),
-        groups: groups == _undefined || groups == null
-            ? _instance.groups
-            : (groups
+      groups: groups == _undefined || groups == null
+          ? _instance.groups
+          : (groups
                 as Query$GetAccessCredentials$searchAccessCredentials$nodes$groups),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-      TRes> get accessPoints {
+    TRes
+  >
+  get accessPoints {
     final local$accessPoints = _instance.accessPoints;
     return CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
-        local$accessPoints, (e) => call(accessPoints: e));
+      local$accessPoints,
+      (e) => call(accessPoints: e),
+    );
   }
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-      TRes> get accessControllers {
+    TRes
+  >
+  get accessControllers {
     final local$accessControllers = _instance.accessControllers;
     return CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
-        local$accessControllers, (e) => call(accessControllers: e));
+      local$accessControllers,
+      (e) => call(accessControllers: e),
+    );
   }
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<TRes>
-      get users {
+  get users {
     final local$users = _instance.users;
     return CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
-        local$users, (e) => call(users: e));
+      local$users,
+      (e) => call(users: e),
+    );
   }
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<TRes>
-      get groups {
+  get groups {
     final local$groups = _instance.groups;
     return CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
-        local$groups, (e) => call(groups: e));
+      local$groups,
+      (e) => call(groups: e),
+    );
   }
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1650,36 +1721,41 @@ class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes
     DateTime? modifiedOn,
     String? modifiedBy,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints?
-        accessPoints,
+    accessPoints,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers?
-        accessControllers,
+    accessControllers,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$users? users,
     Query$GetAccessCredentials$searchAccessCredentials$nodes$groups? groups,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-          TRes>
-      get accessPoints =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
-              .stub(_res);
+    TRes
+  >
+  get accessPoints =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints.stub(
+        _res,
+      );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-          TRes>
-      get accessControllers =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
-              .stub(_res);
+    TRes
+  >
+  get accessControllers =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers.stub(
+        _res,
+      );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<TRes>
-      get users =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users
-              .stub(_res);
+  get users =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users.stub(
+        _res,
+      );
 
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<TRes>
-      get groups =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups
-              .stub(_res);
+  get groups =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups.stub(
+        _res,
+      );
 }
 
 class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints {
@@ -1691,7 +1767,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$restricted = json['restricted'];
@@ -1731,12 +1808,7 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints {
     final l$name = name;
     final l$restricted = restricted;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$restricted,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$restricted, l$$__typename]);
   }
 
   @override
@@ -1776,52 +1848,53 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
     on Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
-        instance,
+    instance,
     TRes Function(
-            Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints)
-        then,
+      Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints,
+    )
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints;
 
-  TRes call({
-    String? id,
-    String? name,
-    bool? restricted,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, bool? restricted, String? $__typename});
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
     this._instance,
     this._then,
   );
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints)
-      _then;
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1830,38 +1903,36 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$acc
     Object? name = _undefined,
     Object? restricted = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        restricted: restricted == _undefined || restricted == null
-            ? _instance.restricted
-            : (restricted as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      restricted: restricted == _undefined || restricted == null
+          ? _instance.restricted
+          : (restricted as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessPoints(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    bool? restricted,
-    String? $__typename,
-  }) =>
+  call({String? id, String? name, bool? restricted, String? $__typename}) =>
       _res;
 }
 
@@ -1873,7 +1944,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
@@ -1906,11 +1978,7 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
     final l$id = id;
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$$__typename]);
   }
 
   @override
@@ -1945,51 +2013,53 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
     on Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
     Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
-        instance,
+    instance,
     TRes Function(
-            Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers)
-        then,
+      Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers,
+    )
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers;
 
-  TRes call({
-    String? id,
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
     this._instance,
     this._then,
   );
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers)
-      _then;
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1997,35 +2067,33 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$acc
     Object? id = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$accessControllers(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? name, String? $__typename}) => _res;
 }
 
 class Query$GetAccessCredentials$searchAccessCredentials$nodes$users {
@@ -2041,7 +2109,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$users {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$nodes$users.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$active = json['active'];
@@ -2178,26 +2247,29 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$users {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$nodes$users
     on Query$GetAccessCredentials$searchAccessCredentials$nodes$users {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$users>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$users
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
     Query$GetAccessCredentials$searchAccessCredentials$nodes$users instance,
     TRes Function(
-            Query$GetAccessCredentials$searchAccessCredentials$nodes$users)
-        then,
+      Query$GetAccessCredentials$searchAccessCredentials$nodes$users,
+    )
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users;
 
   TRes call({
     String? id,
@@ -2212,20 +2284,24 @@ abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
     this._instance,
     this._then,
   );
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$users
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$GetAccessCredentials$searchAccessCredentials$nodes$users) _then;
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$users,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -2238,39 +2314,42 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$use
     Object? cardNumber = _undefined,
     Object? externalId = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        userName: userName == _undefined || userName == null
-            ? _instance.userName
-            : (userName as String),
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        cardNumber: cardNumber == _undefined || cardNumber == null
-            ? _instance.cardNumber
-            : (cardNumber as String),
-        externalId: externalId == _undefined
-            ? _instance.externalId
-            : (externalId as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      userName: userName == _undefined || userName == null
+          ? _instance.userName
+          : (userName as String),
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      cardNumber: cardNumber == _undefined || cardNumber == null
+          ? _instance.cardNumber
+          : (cardNumber as String),
+      externalId: externalId == _undefined
+          ? _instance.externalId
+          : (externalId as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$users<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$users(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2283,8 +2362,7 @@ class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes
     String? cardNumber,
     String? externalId,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessCredentials$searchAccessCredentials$nodes$groups {
@@ -2297,7 +2375,8 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$groups {
   });
 
   factory Query$GetAccessCredentials$searchAccessCredentials$nodes$groups.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$azureId = json['azureId'];
     final l$active = json['active'];
     final l$name = json['name'];
@@ -2344,13 +2423,7 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$groups {
     final l$name = name;
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$azureId,
-      l$active,
-      l$name,
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$azureId, l$active, l$name, l$id, l$$__typename]);
   }
 
   @override
@@ -2395,26 +2468,29 @@ class Query$GetAccessCredentials$searchAccessCredentials$nodes$groups {
 extension UtilityExtension$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups
     on Query$GetAccessCredentials$searchAccessCredentials$nodes$groups {
   CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-          Query$GetAccessCredentials$searchAccessCredentials$nodes$groups>
-      get copyWith =>
-          CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$groups
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
     Query$GetAccessCredentials$searchAccessCredentials$nodes$groups instance,
     TRes Function(
-            Query$GetAccessCredentials$searchAccessCredentials$nodes$groups)
-        then,
+      Query$GetAccessCredentials$searchAccessCredentials$nodes$groups,
+    )
+    then,
   ) = _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups;
 
   factory CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups;
 
   TRes call({
     String? azureId,
@@ -2426,20 +2502,24 @@ abstract class CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes
 }
 
 class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
     this._instance,
     this._then,
   );
 
   final Query$GetAccessCredentials$searchAccessCredentials$nodes$groups
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$GetAccessCredentials$searchAccessCredentials$nodes$groups) _then;
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$groups,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -2449,30 +2529,33 @@ class _CopyWithImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$gro
     Object? name = _undefined,
     Object? id = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes$groups(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2482,6 +2565,5 @@ class _CopyWithStubImpl$Query$GetAccessCredentials$searchAccessCredentials$nodes
     String? name,
     String? id,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

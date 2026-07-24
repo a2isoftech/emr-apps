@@ -2,20 +2,20 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$CreateSchedule {
-  factory Variables$Mutation$CreateSchedule(
-          {required Input$CreateScheduleInput input}) =>
-      Variables$Mutation$CreateSchedule._({
-        r'input': input,
-      });
+  factory Variables$Mutation$CreateSchedule({
+    required Input$CreateScheduleInput input,
+  }) => Variables$Mutation$CreateSchedule._({r'input': input});
 
   Variables$Mutation$CreateSchedule._(this._$data);
 
   factory Variables$Mutation$CreateSchedule.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
-    result$data['input'] =
-        Input$CreateScheduleInput.fromJson((l$input as Map<String, dynamic>));
+    result$data['input'] = Input$CreateScheduleInput.fromJson(
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$CreateSchedule._(result$data);
   }
 
@@ -32,10 +32,7 @@ class Variables$Mutation$CreateSchedule {
   }
 
   CopyWith$Variables$Mutation$CreateSchedule<Variables$Mutation$CreateSchedule>
-      get copyWith => CopyWith$Variables$Mutation$CreateSchedule(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$CreateSchedule(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -75,10 +72,7 @@ abstract class CopyWith$Variables$Mutation$CreateSchedule<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$CreateSchedule<TRes>
     implements CopyWith$Variables$Mutation$CreateSchedule<TRes> {
-  _CopyWithImpl$Variables$Mutation$CreateSchedule(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$CreateSchedule(this._instance, this._then);
 
   final Variables$Mutation$CreateSchedule _instance;
 
@@ -86,12 +80,13 @@ class _CopyWithImpl$Variables$Mutation$CreateSchedule<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$CreateSchedule._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$CreateScheduleInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$CreateSchedule._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$CreateScheduleInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$CreateSchedule<TRes>
@@ -135,10 +130,7 @@ class Mutation$CreateSchedule {
   int get hashCode {
     final l$createSchedule = createSchedule;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$createSchedule,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$createSchedule, l$$__typename]);
   }
 
   @override
@@ -165,10 +157,7 @@ class Mutation$CreateSchedule {
 
 extension UtilityExtension$Mutation$CreateSchedule on Mutation$CreateSchedule {
   CopyWith$Mutation$CreateSchedule<Mutation$CreateSchedule> get copyWith =>
-      CopyWith$Mutation$CreateSchedule(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$CreateSchedule(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$CreateSchedule<TRes> {
@@ -180,18 +169,12 @@ abstract class CopyWith$Mutation$CreateSchedule<TRes> {
   factory CopyWith$Mutation$CreateSchedule.stub(TRes res) =
       _CopyWithStubImpl$Mutation$CreateSchedule;
 
-  TRes call({
-    bool? createSchedule,
-    String? $__typename,
-  });
+  TRes call({bool? createSchedule, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$CreateSchedule<TRes>
     implements CopyWith$Mutation$CreateSchedule<TRes> {
-  _CopyWithImpl$Mutation$CreateSchedule(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$CreateSchedule(this._instance, this._then);
 
   final Mutation$CreateSchedule _instance;
 
@@ -202,15 +185,16 @@ class _CopyWithImpl$Mutation$CreateSchedule<TRes>
   TRes call({
     Object? createSchedule = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$CreateSchedule(
-        createSchedule: createSchedule == _undefined || createSchedule == null
-            ? _instance.createSchedule
-            : (createSchedule as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$CreateSchedule(
+      createSchedule: createSchedule == _undefined || createSchedule == null
+          ? _instance.createSchedule
+          : (createSchedule as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$CreateSchedule<TRes>
@@ -219,49 +203,49 @@ class _CopyWithStubImpl$Mutation$CreateSchedule<TRes>
 
   TRes _res;
 
-  call({
-    bool? createSchedule,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? createSchedule, String? $__typename}) => _res;
 }
 
-const documentNodeMutationCreateSchedule = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'CreateSchedule'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'CreateScheduleInput'),
-          isNonNull: true,
+const documentNodeMutationCreateSchedule = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'CreateSchedule'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'CreateScheduleInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'createSchedule'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'createSchedule'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

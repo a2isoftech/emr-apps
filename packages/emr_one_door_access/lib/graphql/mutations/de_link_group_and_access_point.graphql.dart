@@ -2,20 +2,20 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$DeLinkGroupAndAccessPoint {
-  factory Variables$Mutation$DeLinkGroupAndAccessPoint(
-          {required Input$DelinkGroupAndAccessPointInput input}) =>
-      Variables$Mutation$DeLinkGroupAndAccessPoint._({
-        r'input': input,
-      });
+  factory Variables$Mutation$DeLinkGroupAndAccessPoint({
+    required Input$DelinkGroupAndAccessPointInput input,
+  }) => Variables$Mutation$DeLinkGroupAndAccessPoint._({r'input': input});
 
   Variables$Mutation$DeLinkGroupAndAccessPoint._(this._$data);
 
   factory Variables$Mutation$DeLinkGroupAndAccessPoint.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
     result$data['input'] = Input$DelinkGroupAndAccessPointInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$DeLinkGroupAndAccessPoint._(result$data);
   }
 
@@ -32,11 +32,10 @@ class Variables$Mutation$DeLinkGroupAndAccessPoint {
   }
 
   CopyWith$Variables$Mutation$DeLinkGroupAndAccessPoint<
-          Variables$Mutation$DeLinkGroupAndAccessPoint>
-      get copyWith => CopyWith$Variables$Mutation$DeLinkGroupAndAccessPoint(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$DeLinkGroupAndAccessPoint
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$DeLinkGroupAndAccessPoint(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -87,12 +86,13 @@ class _CopyWithImpl$Variables$Mutation$DeLinkGroupAndAccessPoint<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$DeLinkGroupAndAccessPoint._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$DelinkGroupAndAccessPointInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$DeLinkGroupAndAccessPoint._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$DelinkGroupAndAccessPointInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$DeLinkGroupAndAccessPoint<TRes>
@@ -111,7 +111,8 @@ class Mutation$DeLinkGroupAndAccessPoint {
   });
 
   factory Mutation$DeLinkGroupAndAccessPoint.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$deLinkGroupAndAccessPoint = json['deLinkGroupAndAccessPoint'];
     final l$$__typename = json['__typename'];
     return Mutation$DeLinkGroupAndAccessPoint(
@@ -137,10 +138,7 @@ class Mutation$DeLinkGroupAndAccessPoint {
   int get hashCode {
     final l$deLinkGroupAndAccessPoint = deLinkGroupAndAccessPoint;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$deLinkGroupAndAccessPoint,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$deLinkGroupAndAccessPoint, l$$__typename]);
   }
 
   @override
@@ -169,11 +167,9 @@ class Mutation$DeLinkGroupAndAccessPoint {
 extension UtilityExtension$Mutation$DeLinkGroupAndAccessPoint
     on Mutation$DeLinkGroupAndAccessPoint {
   CopyWith$Mutation$DeLinkGroupAndAccessPoint<
-          Mutation$DeLinkGroupAndAccessPoint>
-      get copyWith => CopyWith$Mutation$DeLinkGroupAndAccessPoint(
-            this,
-            (i) => i,
-          );
+    Mutation$DeLinkGroupAndAccessPoint
+  >
+  get copyWith => CopyWith$Mutation$DeLinkGroupAndAccessPoint(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$DeLinkGroupAndAccessPoint<TRes> {
@@ -185,18 +181,12 @@ abstract class CopyWith$Mutation$DeLinkGroupAndAccessPoint<TRes> {
   factory CopyWith$Mutation$DeLinkGroupAndAccessPoint.stub(TRes res) =
       _CopyWithStubImpl$Mutation$DeLinkGroupAndAccessPoint;
 
-  TRes call({
-    bool? deLinkGroupAndAccessPoint,
-    String? $__typename,
-  });
+  TRes call({bool? deLinkGroupAndAccessPoint, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$DeLinkGroupAndAccessPoint<TRes>
     implements CopyWith$Mutation$DeLinkGroupAndAccessPoint<TRes> {
-  _CopyWithImpl$Mutation$DeLinkGroupAndAccessPoint(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$DeLinkGroupAndAccessPoint(this._instance, this._then);
 
   final Mutation$DeLinkGroupAndAccessPoint _instance;
 
@@ -207,16 +197,18 @@ class _CopyWithImpl$Mutation$DeLinkGroupAndAccessPoint<TRes>
   TRes call({
     Object? deLinkGroupAndAccessPoint = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$DeLinkGroupAndAccessPoint(
-        deLinkGroupAndAccessPoint: deLinkGroupAndAccessPoint == _undefined ||
-                deLinkGroupAndAccessPoint == null
-            ? _instance.deLinkGroupAndAccessPoint
-            : (deLinkGroupAndAccessPoint as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$DeLinkGroupAndAccessPoint(
+      deLinkGroupAndAccessPoint:
+          deLinkGroupAndAccessPoint == _undefined ||
+              deLinkGroupAndAccessPoint == null
+          ? _instance.deLinkGroupAndAccessPoint
+          : (deLinkGroupAndAccessPoint as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$DeLinkGroupAndAccessPoint<TRes>
@@ -225,50 +217,49 @@ class _CopyWithStubImpl$Mutation$DeLinkGroupAndAccessPoint<TRes>
 
   TRes _res;
 
-  call({
-    bool? deLinkGroupAndAccessPoint,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? deLinkGroupAndAccessPoint, String? $__typename}) => _res;
 }
 
-const documentNodeMutationDeLinkGroupAndAccessPoint =
-    DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'DeLinkGroupAndAccessPoint'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'DelinkGroupAndAccessPointInput'),
-          isNonNull: true,
+const documentNodeMutationDeLinkGroupAndAccessPoint = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'DeLinkGroupAndAccessPoint'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'DelinkGroupAndAccessPointInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'deLinkGroupAndAccessPoint'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'deLinkGroupAndAccessPoint'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

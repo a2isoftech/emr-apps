@@ -7,6 +7,7 @@ class Camera {
     required this.username,
     required this.password,
     required this.createdUtc,
+    this.streamPath,
   });
   String cameraName;
   String ipAddress;
@@ -15,4 +16,5 @@ class Camera {
   String username;
   String password;
   DateTime createdUtc;
+  String? streamPath;
 }

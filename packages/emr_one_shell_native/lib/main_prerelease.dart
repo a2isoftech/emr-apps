@@ -31,6 +31,8 @@ void main() async {
       'primaryGateway': 'https://emr-coreapi-live-prerelease.azurewebsites.net',
       // TODO: set the door access API URL for this environment.
       'doorAccessUrl': '',
+      // TODO: set the camera live-stream (WHEP/MediaMTX) base URL for this environment.
+      'cameraStreamBaseUrl': '',
     },
     firebaseOptions: DefaultFirebaseOptions.currentPlatform,
     configureRouteRegistry:

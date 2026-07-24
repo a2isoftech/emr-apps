@@ -1,16 +1,17 @@
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$SyncCredential {
-  factory Variables$Mutation$SyncCredential(
-          {required String accessCredentialId}) =>
-      Variables$Mutation$SyncCredential._({
-        r'accessCredentialId': accessCredentialId,
-      });
+  factory Variables$Mutation$SyncCredential({
+    required String accessCredentialId,
+  }) => Variables$Mutation$SyncCredential._({
+    r'accessCredentialId': accessCredentialId,
+  });
 
   Variables$Mutation$SyncCredential._(this._$data);
 
   factory Variables$Mutation$SyncCredential.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$accessCredentialId = data['accessCredentialId'];
     result$data['accessCredentialId'] = (l$accessCredentialId as String);
@@ -29,10 +30,7 @@ class Variables$Mutation$SyncCredential {
   }
 
   CopyWith$Variables$Mutation$SyncCredential<Variables$Mutation$SyncCredential>
-      get copyWith => CopyWith$Variables$Mutation$SyncCredential(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$SyncCredential(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -72,10 +70,7 @@ abstract class CopyWith$Variables$Mutation$SyncCredential<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$SyncCredential<TRes>
     implements CopyWith$Variables$Mutation$SyncCredential<TRes> {
-  _CopyWithImpl$Variables$Mutation$SyncCredential(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$SyncCredential(this._instance, this._then);
 
   final Variables$Mutation$SyncCredential _instance;
 
@@ -83,12 +78,13 @@ class _CopyWithImpl$Variables$Mutation$SyncCredential<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? accessCredentialId = _undefined}) =>
-      _then(Variables$Mutation$SyncCredential._({
-        ..._instance._$data,
-        if (accessCredentialId != _undefined && accessCredentialId != null)
-          'accessCredentialId': (accessCredentialId as String),
-      }));
+  TRes call({Object? accessCredentialId = _undefined}) => _then(
+    Variables$Mutation$SyncCredential._({
+      ..._instance._$data,
+      if (accessCredentialId != _undefined && accessCredentialId != null)
+        'accessCredentialId': (accessCredentialId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$SyncCredential<TRes>
@@ -132,10 +128,7 @@ class Mutation$SyncCredential {
   int get hashCode {
     final l$syncCredential = syncCredential;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$syncCredential,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$syncCredential, l$$__typename]);
   }
 
   @override
@@ -162,10 +155,7 @@ class Mutation$SyncCredential {
 
 extension UtilityExtension$Mutation$SyncCredential on Mutation$SyncCredential {
   CopyWith$Mutation$SyncCredential<Mutation$SyncCredential> get copyWith =>
-      CopyWith$Mutation$SyncCredential(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$SyncCredential(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$SyncCredential<TRes> {
@@ -177,18 +167,12 @@ abstract class CopyWith$Mutation$SyncCredential<TRes> {
   factory CopyWith$Mutation$SyncCredential.stub(TRes res) =
       _CopyWithStubImpl$Mutation$SyncCredential;
 
-  TRes call({
-    bool? syncCredential,
-    String? $__typename,
-  });
+  TRes call({bool? syncCredential, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$SyncCredential<TRes>
     implements CopyWith$Mutation$SyncCredential<TRes> {
-  _CopyWithImpl$Mutation$SyncCredential(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$SyncCredential(this._instance, this._then);
 
   final Mutation$SyncCredential _instance;
 
@@ -199,15 +183,16 @@ class _CopyWithImpl$Mutation$SyncCredential<TRes>
   TRes call({
     Object? syncCredential = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$SyncCredential(
-        syncCredential: syncCredential == _undefined || syncCredential == null
-            ? _instance.syncCredential
-            : (syncCredential as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$SyncCredential(
+      syncCredential: syncCredential == _undefined || syncCredential == null
+          ? _instance.syncCredential
+          : (syncCredential as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$SyncCredential<TRes>
@@ -216,49 +201,48 @@ class _CopyWithStubImpl$Mutation$SyncCredential<TRes>
 
   TRes _res;
 
-  call({
-    bool? syncCredential,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? syncCredential, String? $__typename}) => _res;
 }
 
-const documentNodeMutationSyncCredential = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'SyncCredential'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'accessCredentialId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationSyncCredential = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'SyncCredential'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'accessCredentialId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'syncCredential'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'accessCredentialId'),
-            value: VariableNode(name: NameNode(value: 'accessCredentialId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'syncCredential'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'accessCredentialId'),
+                value: VariableNode(
+                  name: NameNode(value: 'accessCredentialId'),
+                ),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

@@ -6,13 +6,12 @@ class Variables$Query$GetSites {
     String? before,
     int? first,
     int? last,
-  }) =>
-      Variables$Query$GetSites._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-      });
+  }) => Variables$Query$GetSites._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+  });
 
   Variables$Query$GetSites._(this._$data);
 
@@ -69,10 +68,7 @@ class Variables$Query$GetSites {
   }
 
   CopyWith$Variables$Query$GetSites<Variables$Query$GetSites> get copyWith =>
-      CopyWith$Variables$Query$GetSites(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$GetSites(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -142,20 +138,12 @@ abstract class CopyWith$Variables$Query$GetSites<TRes> {
   factory CopyWith$Variables$Query$GetSites.stub(TRes res) =
       _CopyWithStubImpl$Variables$Query$GetSites;
 
-  TRes call({
-    String? after,
-    String? before,
-    int? first,
-    int? last,
-  });
+  TRes call({String? after, String? before, int? first, int? last});
 }
 
 class _CopyWithImpl$Variables$Query$GetSites<TRes>
     implements CopyWith$Variables$Query$GetSites<TRes> {
-  _CopyWithImpl$Variables$Query$GetSites(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$GetSites(this._instance, this._then);
 
   final Variables$Query$GetSites _instance;
 
@@ -168,14 +156,15 @@ class _CopyWithImpl$Variables$Query$GetSites<TRes>
     Object? before = _undefined,
     Object? first = _undefined,
     Object? last = _undefined,
-  }) =>
-      _then(Variables$Query$GetSites._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-      }));
+  }) => _then(
+    Variables$Query$GetSites._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetSites<TRes>
@@ -184,20 +173,11 @@ class _CopyWithStubImpl$Variables$Query$GetSites<TRes>
 
   TRes _res;
 
-  call({
-    String? after,
-    String? before,
-    int? first,
-    int? last,
-  }) =>
-      _res;
+  call({String? after, String? before, int? first, int? last}) => _res;
 }
 
 class Query$GetSites {
-  Query$GetSites({
-    this.sites,
-    this.$__typename = 'Query',
-  });
+  Query$GetSites({this.sites, this.$__typename = 'Query'});
 
   factory Query$GetSites.fromJson(Map<String, dynamic> json) {
     final l$sites = json['sites'];
@@ -227,10 +207,7 @@ class Query$GetSites {
   int get hashCode {
     final l$sites = sites;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$sites,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$sites, l$$__typename]);
   }
 
   @override
@@ -257,10 +234,7 @@ class Query$GetSites {
 
 extension UtilityExtension$Query$GetSites on Query$GetSites {
   CopyWith$Query$GetSites<Query$GetSites> get copyWith =>
-      CopyWith$Query$GetSites(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetSites(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetSites<TRes> {
@@ -272,19 +246,13 @@ abstract class CopyWith$Query$GetSites<TRes> {
   factory CopyWith$Query$GetSites.stub(TRes res) =
       _CopyWithStubImpl$Query$GetSites;
 
-  TRes call({
-    Query$GetSites$sites? sites,
-    String? $__typename,
-  });
+  TRes call({Query$GetSites$sites? sites, String? $__typename});
   CopyWith$Query$GetSites$sites<TRes> get sites;
 }
 
 class _CopyWithImpl$Query$GetSites<TRes>
     implements CopyWith$Query$GetSites<TRes> {
-  _CopyWithImpl$Query$GetSites(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetSites(this._instance, this._then);
 
   final Query$GetSites _instance;
 
@@ -292,18 +260,17 @@ class _CopyWithImpl$Query$GetSites<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? sites = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetSites(
-        sites: sites == _undefined
-            ? _instance.sites
-            : (sites as Query$GetSites$sites?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? sites = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$GetSites(
+          sites: sites == _undefined
+              ? _instance.sites
+              : (sites as Query$GetSites$sites?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Query$GetSites$sites<TRes> get sites {
     final local$sites = _instance.sites;
@@ -319,203 +286,210 @@ class _CopyWithStubImpl$Query$GetSites<TRes>
 
   TRes _res;
 
-  call({
-    Query$GetSites$sites? sites,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$GetSites$sites? sites, String? $__typename}) => _res;
 
   CopyWith$Query$GetSites$sites<TRes> get sites =>
       CopyWith$Query$GetSites$sites.stub(_res);
 }
 
-const documentNodeQueryGetSites = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetSites'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'sites'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+const documentNodeQueryGetSites = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetSites'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'sites'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'yardCode'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdBy'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'modifiedOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'modifiedBy'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'active'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'yardCode'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'name'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdBy'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'modifiedOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'modifiedBy'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'active'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -524,18 +498,11 @@ const documentNodeQueryGetSites = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetSites$sites {
   Query$GetSites$sites({
@@ -553,10 +520,14 @@ class Query$GetSites$sites {
     return Query$GetSites$sites(
       totalCount: (l$totalCount as int),
       pageInfo: Query$GetSites$sites$pageInfo.fromJson(
-          (l$pageInfo as Map<String, dynamic>)),
+        (l$pageInfo as Map<String, dynamic>),
+      ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) =>
-              Query$GetSites$sites$nodes.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetSites$sites$nodes.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -642,10 +613,7 @@ class Query$GetSites$sites {
 
 extension UtilityExtension$Query$GetSites$sites on Query$GetSites$sites {
   CopyWith$Query$GetSites$sites<Query$GetSites$sites> get copyWith =>
-      CopyWith$Query$GetSites$sites(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetSites$sites(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetSites$sites<TRes> {
@@ -665,19 +633,18 @@ abstract class CopyWith$Query$GetSites$sites<TRes> {
   });
   CopyWith$Query$GetSites$sites$pageInfo<TRes> get pageInfo;
   TRes nodes(
-      Iterable<Query$GetSites$sites$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$GetSites$sites$nodes<
-                      Query$GetSites$sites$nodes>>?)
-          _fn);
+    Iterable<Query$GetSites$sites$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetSites$sites$nodes<Query$GetSites$sites$nodes>
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetSites$sites<TRes>
     implements CopyWith$Query$GetSites$sites<TRes> {
-  _CopyWithImpl$Query$GetSites$sites(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetSites$sites(this._instance, this._then);
 
   final Query$GetSites$sites _instance;
 
@@ -690,40 +657,45 @@ class _CopyWithImpl$Query$GetSites$sites<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetSites$sites(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo as Query$GetSites$sites$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<Query$GetSites$sites$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetSites$sites(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo as Query$GetSites$sites$pageInfo),
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes as List<Query$GetSites$sites$nodes>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetSites$sites$pageInfo<TRes> get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$GetSites$sites$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$GetSites$sites$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$GetSites$sites$nodes<
-                          Query$GetSites$sites$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(
-              _instance.nodes?.map((e) => CopyWith$Query$GetSites$sites$nodes(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetSites$sites$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetSites$sites$nodes<Query$GetSites$sites$nodes>
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) => CopyWith$Query$GetSites$sites$nodes(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetSites$sites<TRes>
@@ -737,8 +709,7 @@ class _CopyWithStubImpl$Query$GetSites$sites<TRes>
     Query$GetSites$sites$pageInfo? pageInfo,
     List<Query$GetSites$sites$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetSites$sites$pageInfo<TRes> get pageInfo =>
       CopyWith$Query$GetSites$sites$pageInfo.stub(_res);
@@ -852,10 +823,7 @@ class Query$GetSites$sites$pageInfo {
 extension UtilityExtension$Query$GetSites$sites$pageInfo
     on Query$GetSites$sites$pageInfo {
   CopyWith$Query$GetSites$sites$pageInfo<Query$GetSites$sites$pageInfo>
-      get copyWith => CopyWith$Query$GetSites$sites$pageInfo(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetSites$sites$pageInfo(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetSites$sites$pageInfo<TRes> {
@@ -878,10 +846,7 @@ abstract class CopyWith$Query$GetSites$sites$pageInfo<TRes> {
 
 class _CopyWithImpl$Query$GetSites$sites$pageInfo<TRes>
     implements CopyWith$Query$GetSites$sites$pageInfo<TRes> {
-  _CopyWithImpl$Query$GetSites$sites$pageInfo(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetSites$sites$pageInfo(this._instance, this._then);
 
   final Query$GetSites$sites$pageInfo _instance;
 
@@ -895,25 +860,25 @@ class _CopyWithImpl$Query$GetSites$sites$pageInfo<TRes>
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetSites$sites$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetSites$sites$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetSites$sites$pageInfo<TRes>
@@ -928,8 +893,7 @@ class _CopyWithStubImpl$Query$GetSites$sites$pageInfo<TRes>
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetSites$sites$nodes {
@@ -1096,10 +1060,7 @@ class Query$GetSites$sites$nodes {
 extension UtilityExtension$Query$GetSites$sites$nodes
     on Query$GetSites$sites$nodes {
   CopyWith$Query$GetSites$sites$nodes<Query$GetSites$sites$nodes>
-      get copyWith => CopyWith$Query$GetSites$sites$nodes(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetSites$sites$nodes(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetSites$sites$nodes<TRes> {
@@ -1126,10 +1087,7 @@ abstract class CopyWith$Query$GetSites$sites$nodes<TRes> {
 
 class _CopyWithImpl$Query$GetSites$sites$nodes<TRes>
     implements CopyWith$Query$GetSites$sites$nodes<TRes> {
-  _CopyWithImpl$Query$GetSites$sites$nodes(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetSites$sites$nodes(this._instance, this._then);
 
   final Query$GetSites$sites$nodes _instance;
 
@@ -1147,34 +1105,35 @@ class _CopyWithImpl$Query$GetSites$sites$nodes<TRes>
     Object? active = _undefined,
     Object? id = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetSites$sites$nodes(
-        yardCode: yardCode == _undefined || yardCode == null
-            ? _instance.yardCode
-            : (yardCode as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        createdBy: createdBy == _undefined || createdBy == null
-            ? _instance.createdBy
-            : (createdBy as String),
-        modifiedOn: modifiedOn == _undefined
-            ? _instance.modifiedOn
-            : (modifiedOn as DateTime?),
-        modifiedBy: modifiedBy == _undefined
-            ? _instance.modifiedBy
-            : (modifiedBy as String?),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetSites$sites$nodes(
+      yardCode: yardCode == _undefined || yardCode == null
+          ? _instance.yardCode
+          : (yardCode as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      createdBy: createdBy == _undefined || createdBy == null
+          ? _instance.createdBy
+          : (createdBy as String),
+      modifiedOn: modifiedOn == _undefined
+          ? _instance.modifiedOn
+          : (modifiedOn as DateTime?),
+      modifiedBy: modifiedBy == _undefined
+          ? _instance.modifiedBy
+          : (modifiedBy as String?),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetSites$sites$nodes<TRes>
@@ -1193,6 +1152,5 @@ class _CopyWithStubImpl$Query$GetSites$sites$nodes<TRes>
     bool? active,
     String? id,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

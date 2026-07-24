@@ -10,3 +10,4 @@ export 'signal_r_service.dart';
 export 'sites_service.dart';
 export 'static_data.dart';
 export 'users_service.dart';
+export 'whep_client.dart';

@@ -2,20 +2,20 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$UnlockAccessPoint {
-  factory Variables$Mutation$UnlockAccessPoint(
-          {required Input$UnlockAccessPointInput input}) =>
-      Variables$Mutation$UnlockAccessPoint._({
-        r'input': input,
-      });
+  factory Variables$Mutation$UnlockAccessPoint({
+    required Input$UnlockAccessPointInput input,
+  }) => Variables$Mutation$UnlockAccessPoint._({r'input': input});
 
   Variables$Mutation$UnlockAccessPoint._(this._$data);
 
   factory Variables$Mutation$UnlockAccessPoint.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
     result$data['input'] = Input$UnlockAccessPointInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$UnlockAccessPoint._(result$data);
   }
 
@@ -32,11 +32,9 @@ class Variables$Mutation$UnlockAccessPoint {
   }
 
   CopyWith$Variables$Mutation$UnlockAccessPoint<
-          Variables$Mutation$UnlockAccessPoint>
-      get copyWith => CopyWith$Variables$Mutation$UnlockAccessPoint(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$UnlockAccessPoint
+  >
+  get copyWith => CopyWith$Variables$Mutation$UnlockAccessPoint(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -87,12 +85,13 @@ class _CopyWithImpl$Variables$Mutation$UnlockAccessPoint<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$UnlockAccessPoint._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$UnlockAccessPointInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$UnlockAccessPoint._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$UnlockAccessPointInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$UnlockAccessPoint<TRes>
@@ -136,10 +135,7 @@ class Mutation$UnlockAccessPoint {
   int get hashCode {
     final l$unlockAccessPoint = unlockAccessPoint;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$unlockAccessPoint,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$unlockAccessPoint, l$$__typename]);
   }
 
   @override
@@ -168,10 +164,7 @@ class Mutation$UnlockAccessPoint {
 extension UtilityExtension$Mutation$UnlockAccessPoint
     on Mutation$UnlockAccessPoint {
   CopyWith$Mutation$UnlockAccessPoint<Mutation$UnlockAccessPoint>
-      get copyWith => CopyWith$Mutation$UnlockAccessPoint(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$UnlockAccessPoint(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UnlockAccessPoint<TRes> {
@@ -183,18 +176,12 @@ abstract class CopyWith$Mutation$UnlockAccessPoint<TRes> {
   factory CopyWith$Mutation$UnlockAccessPoint.stub(TRes res) =
       _CopyWithStubImpl$Mutation$UnlockAccessPoint;
 
-  TRes call({
-    bool? unlockAccessPoint,
-    String? $__typename,
-  });
+  TRes call({bool? unlockAccessPoint, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$UnlockAccessPoint<TRes>
     implements CopyWith$Mutation$UnlockAccessPoint<TRes> {
-  _CopyWithImpl$Mutation$UnlockAccessPoint(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$UnlockAccessPoint(this._instance, this._then);
 
   final Mutation$UnlockAccessPoint _instance;
 
@@ -205,16 +192,17 @@ class _CopyWithImpl$Mutation$UnlockAccessPoint<TRes>
   TRes call({
     Object? unlockAccessPoint = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UnlockAccessPoint(
-        unlockAccessPoint:
-            unlockAccessPoint == _undefined || unlockAccessPoint == null
-                ? _instance.unlockAccessPoint
-                : (unlockAccessPoint as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$UnlockAccessPoint(
+      unlockAccessPoint:
+          unlockAccessPoint == _undefined || unlockAccessPoint == null
+          ? _instance.unlockAccessPoint
+          : (unlockAccessPoint as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$UnlockAccessPoint<TRes>
@@ -223,49 +211,49 @@ class _CopyWithStubImpl$Mutation$UnlockAccessPoint<TRes>
 
   TRes _res;
 
-  call({
-    bool? unlockAccessPoint,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? unlockAccessPoint, String? $__typename}) => _res;
 }
 
-const documentNodeMutationUnlockAccessPoint = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'UnlockAccessPoint'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'UnlockAccessPointInput'),
-          isNonNull: true,
+const documentNodeMutationUnlockAccessPoint = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'UnlockAccessPoint'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'UnlockAccessPointInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'unlockAccessPoint'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'unlockAccessPoint'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

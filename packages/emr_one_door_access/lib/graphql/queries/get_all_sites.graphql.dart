@@ -1,18 +1,18 @@
 import 'package:gql/ast.dart';
 
 class Query$GetAllSites {
-  Query$GetAllSites({
-    required this.allSites,
-    this.$__typename = 'Query',
-  });
+  Query$GetAllSites({required this.allSites, this.$__typename = 'Query'});
 
   factory Query$GetAllSites.fromJson(Map<String, dynamic> json) {
     final l$allSites = json['allSites'];
     final l$$__typename = json['__typename'];
     return Query$GetAllSites(
       allSites: (l$allSites as List<dynamic>)
-          .map((e) =>
-              Query$GetAllSites$allSites.fromJson((e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetAllSites$allSites.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -72,10 +72,7 @@ class Query$GetAllSites {
 
 extension UtilityExtension$Query$GetAllSites on Query$GetAllSites {
   CopyWith$Query$GetAllSites<Query$GetAllSites> get copyWith =>
-      CopyWith$Query$GetAllSites(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetAllSites(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllSites<TRes> {
@@ -87,24 +84,18 @@ abstract class CopyWith$Query$GetAllSites<TRes> {
   factory CopyWith$Query$GetAllSites.stub(TRes res) =
       _CopyWithStubImpl$Query$GetAllSites;
 
-  TRes call({
-    List<Query$GetAllSites$allSites>? allSites,
-    String? $__typename,
-  });
+  TRes call({List<Query$GetAllSites$allSites>? allSites, String? $__typename});
   TRes allSites(
-      Iterable<Query$GetAllSites$allSites> Function(
-              Iterable<
-                  CopyWith$Query$GetAllSites$allSites<
-                      Query$GetAllSites$allSites>>)
-          _fn);
+    Iterable<Query$GetAllSites$allSites> Function(
+      Iterable<CopyWith$Query$GetAllSites$allSites<Query$GetAllSites$allSites>>,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAllSites<TRes>
     implements CopyWith$Query$GetAllSites<TRes> {
-  _CopyWithImpl$Query$GetAllSites(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllSites(this._instance, this._then);
 
   final Query$GetAllSites _instance;
 
@@ -115,28 +106,29 @@ class _CopyWithImpl$Query$GetAllSites<TRes>
   TRes call({
     Object? allSites = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllSites(
-        allSites: allSites == _undefined || allSites == null
-            ? _instance.allSites
-            : (allSites as List<Query$GetAllSites$allSites>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllSites(
+      allSites: allSites == _undefined || allSites == null
+          ? _instance.allSites
+          : (allSites as List<Query$GetAllSites$allSites>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes allSites(
-          Iterable<Query$GetAllSites$allSites> Function(
-                  Iterable<
-                      CopyWith$Query$GetAllSites$allSites<
-                          Query$GetAllSites$allSites>>)
-              _fn) =>
-      call(
-          allSites: _fn(
-              _instance.allSites.map((e) => CopyWith$Query$GetAllSites$allSites(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetAllSites$allSites> Function(
+      Iterable<CopyWith$Query$GetAllSites$allSites<Query$GetAllSites$allSites>>,
+    )
+    _fn,
+  ) => call(
+    allSites: _fn(
+      _instance.allSites.map(
+        (e) => CopyWith$Query$GetAllSites$allSites(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllSites<TRes>
@@ -145,83 +137,93 @@ class _CopyWithStubImpl$Query$GetAllSites<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$GetAllSites$allSites>? allSites,
-    String? $__typename,
-  }) =>
+  call({List<Query$GetAllSites$allSites>? allSites, String? $__typename}) =>
       _res;
 
   allSites(_fn) => _res;
 }
 
-const documentNodeQueryGetAllSites = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetAllSites'),
-    variableDefinitions: [],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'allSites'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+const documentNodeQueryGetAllSites = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetAllSites'),
+      variableDefinitions: [],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'yardCode'),
+            name: NameNode(value: 'allSites'),
             alias: null,
             arguments: [],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'createdOn'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'createdBy'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'modifiedOn'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'modifiedBy'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'active'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'yardCode'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'createdOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'createdBy'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'modifiedOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'modifiedBy'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'active'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -230,18 +232,11 @@ const documentNodeQueryGetAllSites = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetAllSites$allSites {
   Query$GetAllSites$allSites({
@@ -407,10 +402,7 @@ class Query$GetAllSites$allSites {
 extension UtilityExtension$Query$GetAllSites$allSites
     on Query$GetAllSites$allSites {
   CopyWith$Query$GetAllSites$allSites<Query$GetAllSites$allSites>
-      get copyWith => CopyWith$Query$GetAllSites$allSites(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAllSites$allSites(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllSites$allSites<TRes> {
@@ -437,10 +429,7 @@ abstract class CopyWith$Query$GetAllSites$allSites<TRes> {
 
 class _CopyWithImpl$Query$GetAllSites$allSites<TRes>
     implements CopyWith$Query$GetAllSites$allSites<TRes> {
-  _CopyWithImpl$Query$GetAllSites$allSites(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllSites$allSites(this._instance, this._then);
 
   final Query$GetAllSites$allSites _instance;
 
@@ -458,34 +447,35 @@ class _CopyWithImpl$Query$GetAllSites$allSites<TRes>
     Object? id = _undefined,
     Object? active = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllSites$allSites(
-        yardCode: yardCode == _undefined || yardCode == null
-            ? _instance.yardCode
-            : (yardCode as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        createdBy: createdBy == _undefined || createdBy == null
-            ? _instance.createdBy
-            : (createdBy as String),
-        modifiedOn: modifiedOn == _undefined
-            ? _instance.modifiedOn
-            : (modifiedOn as DateTime?),
-        modifiedBy: modifiedBy == _undefined
-            ? _instance.modifiedBy
-            : (modifiedBy as String?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllSites$allSites(
+      yardCode: yardCode == _undefined || yardCode == null
+          ? _instance.yardCode
+          : (yardCode as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      createdBy: createdBy == _undefined || createdBy == null
+          ? _instance.createdBy
+          : (createdBy as String),
+      modifiedOn: modifiedOn == _undefined
+          ? _instance.modifiedOn
+          : (modifiedOn as DateTime?),
+      modifiedBy: modifiedBy == _undefined
+          ? _instance.modifiedBy
+          : (modifiedBy as String?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllSites$allSites<TRes>
@@ -504,6 +494,5 @@ class _CopyWithStubImpl$Query$GetAllSites$allSites<TRes>
     String? id,
     bool? active,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

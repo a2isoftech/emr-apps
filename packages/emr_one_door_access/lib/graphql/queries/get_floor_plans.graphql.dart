@@ -2,9 +2,7 @@ import 'package:gql/ast.dart';
 
 class Variables$Query$GetFloorPlans {
   factory Variables$Query$GetFloorPlans({required String siteId}) =>
-      Variables$Query$GetFloorPlans._({
-        r'siteId': siteId,
-      });
+      Variables$Query$GetFloorPlans._({r'siteId': siteId});
 
   Variables$Query$GetFloorPlans._(this._$data);
 
@@ -27,10 +25,7 @@ class Variables$Query$GetFloorPlans {
   }
 
   CopyWith$Variables$Query$GetFloorPlans<Variables$Query$GetFloorPlans>
-      get copyWith => CopyWith$Variables$Query$GetFloorPlans(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Query$GetFloorPlans(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -70,10 +65,7 @@ abstract class CopyWith$Variables$Query$GetFloorPlans<TRes> {
 
 class _CopyWithImpl$Variables$Query$GetFloorPlans<TRes>
     implements CopyWith$Variables$Query$GetFloorPlans<TRes> {
-  _CopyWithImpl$Variables$Query$GetFloorPlans(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$GetFloorPlans(this._instance, this._then);
 
   final Variables$Query$GetFloorPlans _instance;
 
@@ -81,12 +73,12 @@ class _CopyWithImpl$Variables$Query$GetFloorPlans<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? siteId = _undefined}) =>
-      _then(Variables$Query$GetFloorPlans._({
-        ..._instance._$data,
-        if (siteId != _undefined && siteId != null)
-          'siteId': (siteId as String),
-      }));
+  TRes call({Object? siteId = _undefined}) => _then(
+    Variables$Query$GetFloorPlans._({
+      ..._instance._$data,
+      if (siteId != _undefined && siteId != null) 'siteId': (siteId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetFloorPlans<TRes>
@@ -99,18 +91,18 @@ class _CopyWithStubImpl$Variables$Query$GetFloorPlans<TRes>
 }
 
 class Query$GetFloorPlans {
-  Query$GetFloorPlans({
-    required this.floorPlans,
-    this.$__typename = 'Query',
-  });
+  Query$GetFloorPlans({required this.floorPlans, this.$__typename = 'Query'});
 
   factory Query$GetFloorPlans.fromJson(Map<String, dynamic> json) {
     final l$floorPlans = json['floorPlans'];
     final l$$__typename = json['__typename'];
     return Query$GetFloorPlans(
       floorPlans: (l$floorPlans as List<dynamic>)
-          .map((e) => Query$GetFloorPlans$floorPlans.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetFloorPlans$floorPlans.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -170,10 +162,7 @@ class Query$GetFloorPlans {
 
 extension UtilityExtension$Query$GetFloorPlans on Query$GetFloorPlans {
   CopyWith$Query$GetFloorPlans<Query$GetFloorPlans> get copyWith =>
-      CopyWith$Query$GetFloorPlans(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetFloorPlans(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetFloorPlans<TRes> {
@@ -190,19 +179,18 @@ abstract class CopyWith$Query$GetFloorPlans<TRes> {
     String? $__typename,
   });
   TRes floorPlans(
-      Iterable<Query$GetFloorPlans$floorPlans> Function(
-              Iterable<
-                  CopyWith$Query$GetFloorPlans$floorPlans<
-                      Query$GetFloorPlans$floorPlans>>)
-          _fn);
+    Iterable<Query$GetFloorPlans$floorPlans> Function(
+      Iterable<
+        CopyWith$Query$GetFloorPlans$floorPlans<Query$GetFloorPlans$floorPlans>
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetFloorPlans<TRes>
     implements CopyWith$Query$GetFloorPlans<TRes> {
-  _CopyWithImpl$Query$GetFloorPlans(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetFloorPlans(this._instance, this._then);
 
   final Query$GetFloorPlans _instance;
 
@@ -213,28 +201,31 @@ class _CopyWithImpl$Query$GetFloorPlans<TRes>
   TRes call({
     Object? floorPlans = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetFloorPlans(
-        floorPlans: floorPlans == _undefined || floorPlans == null
-            ? _instance.floorPlans
-            : (floorPlans as List<Query$GetFloorPlans$floorPlans>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetFloorPlans(
+      floorPlans: floorPlans == _undefined || floorPlans == null
+          ? _instance.floorPlans
+          : (floorPlans as List<Query$GetFloorPlans$floorPlans>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes floorPlans(
-          Iterable<Query$GetFloorPlans$floorPlans> Function(
-                  Iterable<
-                      CopyWith$Query$GetFloorPlans$floorPlans<
-                          Query$GetFloorPlans$floorPlans>>)
-              _fn) =>
-      call(
-          floorPlans: _fn(_instance.floorPlans
-              .map((e) => CopyWith$Query$GetFloorPlans$floorPlans(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetFloorPlans$floorPlans> Function(
+      Iterable<
+        CopyWith$Query$GetFloorPlans$floorPlans<Query$GetFloorPlans$floorPlans>
+      >,
+    )
+    _fn,
+  ) => call(
+    floorPlans: _fn(
+      _instance.floorPlans.map(
+        (e) => CopyWith$Query$GetFloorPlans$floorPlans(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetFloorPlans<TRes>
@@ -246,138 +237,149 @@ class _CopyWithStubImpl$Query$GetFloorPlans<TRes>
   call({
     List<Query$GetFloorPlans$floorPlans>? floorPlans,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   floorPlans(_fn) => _res;
 }
 
-const documentNodeQueryGetFloorPlans = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetFloorPlans'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'siteId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeQueryGetFloorPlans = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetFloorPlans'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'siteId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'floorPlans'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'siteId'),
-            value: VariableNode(name: NameNode(value: 'siteId')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'siteId'),
+            name: NameNode(value: 'floorPlans'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'siteId'),
+                value: VariableNode(name: NameNode(value: 'siteId')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'imageUrl'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'createdOn'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'hotspots'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'x'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'y'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'status'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPointId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'orderIndex'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'siteId'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'imageUrl'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'createdOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'hotspots'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'name'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'x'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'y'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'status'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPointId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'orderIndex'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -386,18 +388,11 @@ const documentNodeQueryGetFloorPlans = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetFloorPlans$floorPlans {
   Query$GetFloorPlans$floorPlans({
@@ -425,8 +420,11 @@ class Query$GetFloorPlans$floorPlans {
       id: (l$id as String),
       createdOn: DateTime.parse((l$createdOn as String)),
       hotspots: (l$hotspots as List<dynamic>)
-          .map((e) => Query$GetFloorPlans$floorPlans$hotspots.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetFloorPlans$floorPlans$hotspots.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -543,10 +541,7 @@ class Query$GetFloorPlans$floorPlans {
 extension UtilityExtension$Query$GetFloorPlans$floorPlans
     on Query$GetFloorPlans$floorPlans {
   CopyWith$Query$GetFloorPlans$floorPlans<Query$GetFloorPlans$floorPlans>
-      get copyWith => CopyWith$Query$GetFloorPlans$floorPlans(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetFloorPlans$floorPlans(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetFloorPlans$floorPlans<TRes> {
@@ -568,19 +563,20 @@ abstract class CopyWith$Query$GetFloorPlans$floorPlans<TRes> {
     String? $__typename,
   });
   TRes hotspots(
-      Iterable<Query$GetFloorPlans$floorPlans$hotspots> Function(
-              Iterable<
-                  CopyWith$Query$GetFloorPlans$floorPlans$hotspots<
-                      Query$GetFloorPlans$floorPlans$hotspots>>)
-          _fn);
+    Iterable<Query$GetFloorPlans$floorPlans$hotspots> Function(
+      Iterable<
+        CopyWith$Query$GetFloorPlans$floorPlans$hotspots<
+          Query$GetFloorPlans$floorPlans$hotspots
+        >
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetFloorPlans$floorPlans<TRes>
     implements CopyWith$Query$GetFloorPlans$floorPlans<TRes> {
-  _CopyWithImpl$Query$GetFloorPlans$floorPlans(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetFloorPlans$floorPlans(this._instance, this._then);
 
   final Query$GetFloorPlans$floorPlans _instance;
 
@@ -596,41 +592,46 @@ class _CopyWithImpl$Query$GetFloorPlans$floorPlans<TRes>
     Object? createdOn = _undefined,
     Object? hotspots = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetFloorPlans$floorPlans(
-        siteId: siteId == _undefined || siteId == null
-            ? _instance.siteId
-            : (siteId as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        imageUrl: imageUrl == _undefined || imageUrl == null
-            ? _instance.imageUrl
-            : (imageUrl as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        hotspots: hotspots == _undefined || hotspots == null
-            ? _instance.hotspots
-            : (hotspots as List<Query$GetFloorPlans$floorPlans$hotspots>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetFloorPlans$floorPlans(
+      siteId: siteId == _undefined || siteId == null
+          ? _instance.siteId
+          : (siteId as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      imageUrl: imageUrl == _undefined || imageUrl == null
+          ? _instance.imageUrl
+          : (imageUrl as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      hotspots: hotspots == _undefined || hotspots == null
+          ? _instance.hotspots
+          : (hotspots as List<Query$GetFloorPlans$floorPlans$hotspots>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes hotspots(
-          Iterable<Query$GetFloorPlans$floorPlans$hotspots> Function(
-                  Iterable<
-                      CopyWith$Query$GetFloorPlans$floorPlans$hotspots<
-                          Query$GetFloorPlans$floorPlans$hotspots>>)
-              _fn) =>
-      call(
-          hotspots: _fn(_instance.hotspots
-              .map((e) => CopyWith$Query$GetFloorPlans$floorPlans$hotspots(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetFloorPlans$floorPlans$hotspots> Function(
+      Iterable<
+        CopyWith$Query$GetFloorPlans$floorPlans$hotspots<
+          Query$GetFloorPlans$floorPlans$hotspots
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    hotspots: _fn(
+      _instance.hotspots.map(
+        (e) => CopyWith$Query$GetFloorPlans$floorPlans$hotspots(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetFloorPlans$floorPlans<TRes>
@@ -647,8 +648,7 @@ class _CopyWithStubImpl$Query$GetFloorPlans$floorPlans<TRes>
     DateTime? createdOn,
     List<Query$GetFloorPlans$floorPlans$hotspots>? hotspots,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   hotspots(_fn) => _res;
 }
@@ -666,7 +666,8 @@ class Query$GetFloorPlans$floorPlans$hotspots {
   });
 
   factory Query$GetFloorPlans$floorPlans$hotspots.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$x = json['x'];
@@ -802,11 +803,10 @@ class Query$GetFloorPlans$floorPlans$hotspots {
 extension UtilityExtension$Query$GetFloorPlans$floorPlans$hotspots
     on Query$GetFloorPlans$floorPlans$hotspots {
   CopyWith$Query$GetFloorPlans$floorPlans$hotspots<
-          Query$GetFloorPlans$floorPlans$hotspots>
-      get copyWith => CopyWith$Query$GetFloorPlans$floorPlans$hotspots(
-            this,
-            (i) => i,
-          );
+    Query$GetFloorPlans$floorPlans$hotspots
+  >
+  get copyWith =>
+      CopyWith$Query$GetFloorPlans$floorPlans$hotspots(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetFloorPlans$floorPlans$hotspots<TRes> {
@@ -852,27 +852,28 @@ class _CopyWithImpl$Query$GetFloorPlans$floorPlans$hotspots<TRes>
     Object? accessPointId = _undefined,
     Object? orderIndex = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetFloorPlans$floorPlans$hotspots(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        x: x == _undefined || x == null ? _instance.x : (x as double),
-        y: y == _undefined || y == null ? _instance.y : (y as double),
-        status: status == _undefined || status == null
-            ? _instance.status
-            : (status as String),
-        accessPointId: accessPointId == _undefined || accessPointId == null
-            ? _instance.accessPointId
-            : (accessPointId as String),
-        orderIndex: orderIndex == _undefined || orderIndex == null
-            ? _instance.orderIndex
-            : (orderIndex as int),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetFloorPlans$floorPlans$hotspots(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      x: x == _undefined || x == null ? _instance.x : (x as double),
+      y: y == _undefined || y == null ? _instance.y : (y as double),
+      status: status == _undefined || status == null
+          ? _instance.status
+          : (status as String),
+      accessPointId: accessPointId == _undefined || accessPointId == null
+          ? _instance.accessPointId
+          : (accessPointId as String),
+      orderIndex: orderIndex == _undefined || orderIndex == null
+          ? _instance.orderIndex
+          : (orderIndex as int),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetFloorPlans$floorPlans$hotspots<TRes>
@@ -890,6 +891,5 @@ class _CopyWithStubImpl$Query$GetFloorPlans$floorPlans$hotspots<TRes>
     String? accessPointId,
     int? orderIndex,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

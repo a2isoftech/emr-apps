@@ -7,14 +7,13 @@ class Variables$Query$GetGroups {
     int? first,
     int? last,
     List<String>? groupIds,
-  }) =>
-      Variables$Query$GetGroups._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        if (groupIds != null) r'groupIds': groupIds,
-      });
+  }) => Variables$Query$GetGroups._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    if (groupIds != null) r'groupIds': groupIds,
+  });
 
   Variables$Query$GetGroups._(this._$data);
 
@@ -38,8 +37,9 @@ class Variables$Query$GetGroups {
     }
     if (data.containsKey('groupIds')) {
       final l$groupIds = data['groupIds'];
-      result$data['groupIds'] =
-          (l$groupIds as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['groupIds'] = (l$groupIds as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     return Variables$Query$GetGroups._(result$data);
   }
@@ -82,10 +82,7 @@ class Variables$Query$GetGroups {
   }
 
   CopyWith$Variables$Query$GetGroups<Variables$Query$GetGroups> get copyWith =>
-      CopyWith$Variables$Query$GetGroups(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$GetGroups(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -165,8 +162,8 @@ class Variables$Query$GetGroups {
       _$data.containsKey('last') ? l$last : const {},
       _$data.containsKey('groupIds')
           ? l$groupIds == null
-              ? null
-              : Object.hashAll(l$groupIds.map((v) => v))
+                ? null
+                : Object.hashAll(l$groupIds.map((v) => v))
           : const {},
     ]);
   }
@@ -192,10 +189,7 @@ abstract class CopyWith$Variables$Query$GetGroups<TRes> {
 
 class _CopyWithImpl$Variables$Query$GetGroups<TRes>
     implements CopyWith$Variables$Query$GetGroups<TRes> {
-  _CopyWithImpl$Variables$Query$GetGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$GetGroups(this._instance, this._then);
 
   final Variables$Query$GetGroups _instance;
 
@@ -209,15 +203,16 @@ class _CopyWithImpl$Variables$Query$GetGroups<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? groupIds = _undefined,
-  }) =>
-      _then(Variables$Query$GetGroups._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (groupIds != _undefined) 'groupIds': (groupIds as List<String>?),
-      }));
+  }) => _then(
+    Variables$Query$GetGroups._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (groupIds != _undefined) 'groupIds': (groupIds as List<String>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetGroups<TRes>
@@ -232,15 +227,11 @@ class _CopyWithStubImpl$Variables$Query$GetGroups<TRes>
     int? first,
     int? last,
     List<String>? groupIds,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetGroups {
-  Query$GetGroups({
-    this.groups,
-    this.$__typename = 'Query',
-  });
+  Query$GetGroups({this.groups, this.$__typename = 'Query'});
 
   factory Query$GetGroups.fromJson(Map<String, dynamic> json) {
     final l$groups = json['groups'];
@@ -270,10 +261,7 @@ class Query$GetGroups {
   int get hashCode {
     final l$groups = groups;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$groups,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$groups, l$$__typename]);
   }
 
   @override
@@ -300,10 +288,7 @@ class Query$GetGroups {
 
 extension UtilityExtension$Query$GetGroups on Query$GetGroups {
   CopyWith$Query$GetGroups<Query$GetGroups> get copyWith =>
-      CopyWith$Query$GetGroups(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetGroups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups<TRes> {
@@ -315,19 +300,13 @@ abstract class CopyWith$Query$GetGroups<TRes> {
   factory CopyWith$Query$GetGroups.stub(TRes res) =
       _CopyWithStubImpl$Query$GetGroups;
 
-  TRes call({
-    Query$GetGroups$groups? groups,
-    String? $__typename,
-  });
+  TRes call({Query$GetGroups$groups? groups, String? $__typename});
   CopyWith$Query$GetGroups$groups<TRes> get groups;
 }
 
 class _CopyWithImpl$Query$GetGroups<TRes>
     implements CopyWith$Query$GetGroups<TRes> {
-  _CopyWithImpl$Query$GetGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetGroups(this._instance, this._then);
 
   final Query$GetGroups _instance;
 
@@ -335,18 +314,17 @@ class _CopyWithImpl$Query$GetGroups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? groups = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups(
-        groups: groups == _undefined
-            ? _instance.groups
-            : (groups as Query$GetGroups$groups?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? groups = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$GetGroups(
+          groups: groups == _undefined
+              ? _instance.groups
+              : (groups as Query$GetGroups$groups?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Query$GetGroups$groups<TRes> get groups {
     final local$groups = _instance.groups;
@@ -362,197 +340,153 @@ class _CopyWithStubImpl$Query$GetGroups<TRes>
 
   TRes _res;
 
-  call({
-    Query$GetGroups$groups? groups,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$GetGroups$groups? groups, String? $__typename}) => _res;
 
   CopyWith$Query$GetGroups$groups<TRes> get groups =>
       CopyWith$Query$GetGroups$groups.stub(_res);
 }
 
-const documentNodeQueryGetGroups = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetGroups'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'groupIds')),
-        type: ListTypeNode(
+const documentNodeQueryGetGroups = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetGroups'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
           type: NamedTypeNode(
             name: NameNode(value: 'String'),
-            isNonNull: true,
+            isNonNull: false,
           ),
-          isNonNull: false,
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'groups'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'groupIds')),
+          type: ListTypeNode(
+            type: NamedTypeNode(
+              name: NameNode(value: 'String'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'groupIds'),
-            value: VariableNode(name: NameNode(value: 'groupIds')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'groups'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'groupIds'),
+                value: VariableNode(name: NameNode(value: 'groupIds')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'azureId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'users'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPoints'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'key'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'value'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
                       FieldNode(
-                        name: NameNode(value: 'externalId'),
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'azureId'),
                         alias: null,
                         arguments: [],
                         directives: [],
@@ -566,7 +500,90 @@ const documentNodeQueryGetGroups = DocumentNode(definitions: [
                         selectionSet: null,
                       ),
                       FieldNode(
-                        name: NameNode(value: 'description'),
+                        name: NameNode(value: 'users'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPoints'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'key'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'value'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'externalId'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'name'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'description'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lastUpdatedFromAzureAdOn'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdOn'),
                         alias: null,
                         arguments: [],
                         directives: [],
@@ -579,46 +596,18 @@ const documentNodeQueryGetGroups = DocumentNode(definitions: [
                         directives: [],
                         selectionSet: null,
                       ),
-                    ]),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'lastUpdatedFromAzureAdOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdOn'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -627,18 +616,11 @@ const documentNodeQueryGetGroups = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetGroups$groups {
   Query$GetGroups$groups({
@@ -656,10 +638,14 @@ class Query$GetGroups$groups {
     return Query$GetGroups$groups(
       totalCount: (l$totalCount as int),
       pageInfo: Query$GetGroups$groups$pageInfo.fromJson(
-          (l$pageInfo as Map<String, dynamic>)),
+        (l$pageInfo as Map<String, dynamic>),
+      ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) => Query$GetGroups$groups$nodes.fromJson(
-              (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetGroups$groups$nodes.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -745,10 +731,7 @@ class Query$GetGroups$groups {
 
 extension UtilityExtension$Query$GetGroups$groups on Query$GetGroups$groups {
   CopyWith$Query$GetGroups$groups<Query$GetGroups$groups> get copyWith =>
-      CopyWith$Query$GetGroups$groups(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetGroups$groups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups$groups<TRes> {
@@ -768,19 +751,18 @@ abstract class CopyWith$Query$GetGroups$groups<TRes> {
   });
   CopyWith$Query$GetGroups$groups$pageInfo<TRes> get pageInfo;
   TRes nodes(
-      Iterable<Query$GetGroups$groups$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$GetGroups$groups$nodes<
-                      Query$GetGroups$groups$nodes>>?)
-          _fn);
+    Iterable<Query$GetGroups$groups$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetGroups$groups$nodes<Query$GetGroups$groups$nodes>
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetGroups$groups<TRes>
     implements CopyWith$Query$GetGroups$groups<TRes> {
-  _CopyWithImpl$Query$GetGroups$groups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetGroups$groups(this._instance, this._then);
 
   final Query$GetGroups$groups _instance;
 
@@ -793,40 +775,45 @@ class _CopyWithImpl$Query$GetGroups$groups<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups$groups(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo as Query$GetGroups$groups$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<Query$GetGroups$groups$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetGroups$groups(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo as Query$GetGroups$groups$pageInfo),
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes as List<Query$GetGroups$groups$nodes>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetGroups$groups$pageInfo<TRes> get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$GetGroups$groups$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$GetGroups$groups$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$GetGroups$groups$nodes<
-                          Query$GetGroups$groups$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(
-              _instance.nodes?.map((e) => CopyWith$Query$GetGroups$groups$nodes(
-                    e,
-                    (i) => i,
-                  )))?.toList());
+    Iterable<Query$GetGroups$groups$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetGroups$groups$nodes<Query$GetGroups$groups$nodes>
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) => CopyWith$Query$GetGroups$groups$nodes(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetGroups$groups<TRes>
@@ -840,8 +827,7 @@ class _CopyWithStubImpl$Query$GetGroups$groups<TRes>
     Query$GetGroups$groups$pageInfo? pageInfo,
     List<Query$GetGroups$groups$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetGroups$groups$pageInfo<TRes> get pageInfo =>
       CopyWith$Query$GetGroups$groups$pageInfo.stub(_res);
@@ -955,10 +941,7 @@ class Query$GetGroups$groups$pageInfo {
 extension UtilityExtension$Query$GetGroups$groups$pageInfo
     on Query$GetGroups$groups$pageInfo {
   CopyWith$Query$GetGroups$groups$pageInfo<Query$GetGroups$groups$pageInfo>
-      get copyWith => CopyWith$Query$GetGroups$groups$pageInfo(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetGroups$groups$pageInfo(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups$groups$pageInfo<TRes> {
@@ -981,10 +964,7 @@ abstract class CopyWith$Query$GetGroups$groups$pageInfo<TRes> {
 
 class _CopyWithImpl$Query$GetGroups$groups$pageInfo<TRes>
     implements CopyWith$Query$GetGroups$groups$pageInfo<TRes> {
-  _CopyWithImpl$Query$GetGroups$groups$pageInfo(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetGroups$groups$pageInfo(this._instance, this._then);
 
   final Query$GetGroups$groups$pageInfo _instance;
 
@@ -998,25 +978,25 @@ class _CopyWithImpl$Query$GetGroups$groups$pageInfo<TRes>
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups$groups$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetGroups$groups$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetGroups$groups$pageInfo<TRes>
@@ -1031,8 +1011,7 @@ class _CopyWithStubImpl$Query$GetGroups$groups$pageInfo<TRes>
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetGroups$groups$nodes {
@@ -1061,8 +1040,11 @@ class Query$GetGroups$groups$nodes {
       name: (l$name as String),
       users: (l$users as List<dynamic>).map((e) => (e as String)).toList(),
       accessPoints: (l$accessPoints as List<dynamic>)
-          .map((e) => Query$GetGroups$groups$nodes$accessPoints.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetGroups$groups$nodes$accessPoints.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       lastUpdatedFromAzureAdOn: l$lastUpdatedFromAzureAdOn == null
           ? null
@@ -1098,11 +1080,12 @@ class Query$GetGroups$groups$nodes {
     final l$users = users;
     _resultData['users'] = l$users.map((e) => e).toList();
     final l$accessPoints = accessPoints;
-    _resultData['accessPoints'] =
-        l$accessPoints.map((e) => e.toJson()).toList();
+    _resultData['accessPoints'] = l$accessPoints
+        .map((e) => e.toJson())
+        .toList();
     final l$lastUpdatedFromAzureAdOn = lastUpdatedFromAzureAdOn;
-    _resultData['lastUpdatedFromAzureAdOn'] =
-        l$lastUpdatedFromAzureAdOn?.toIso8601String();
+    _resultData['lastUpdatedFromAzureAdOn'] = l$lastUpdatedFromAzureAdOn
+        ?.toIso8601String();
     final l$id = id;
     _resultData['id'] = l$id;
     final l$createdOn = createdOn;
@@ -1204,10 +1187,7 @@ class Query$GetGroups$groups$nodes {
 extension UtilityExtension$Query$GetGroups$groups$nodes
     on Query$GetGroups$groups$nodes {
   CopyWith$Query$GetGroups$groups$nodes<Query$GetGroups$groups$nodes>
-      get copyWith => CopyWith$Query$GetGroups$groups$nodes(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetGroups$groups$nodes(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups$groups$nodes<TRes> {
@@ -1230,19 +1210,20 @@ abstract class CopyWith$Query$GetGroups$groups$nodes<TRes> {
     String? $__typename,
   });
   TRes accessPoints(
-      Iterable<Query$GetGroups$groups$nodes$accessPoints> Function(
-              Iterable<
-                  CopyWith$Query$GetGroups$groups$nodes$accessPoints<
-                      Query$GetGroups$groups$nodes$accessPoints>>)
-          _fn);
+    Iterable<Query$GetGroups$groups$nodes$accessPoints> Function(
+      Iterable<
+        CopyWith$Query$GetGroups$groups$nodes$accessPoints<
+          Query$GetGroups$groups$nodes$accessPoints
+        >
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetGroups$groups$nodes<TRes>
     implements CopyWith$Query$GetGroups$groups$nodes<TRes> {
-  _CopyWithImpl$Query$GetGroups$groups$nodes(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetGroups$groups$nodes(this._instance, this._then);
 
   final Query$GetGroups$groups$nodes _instance;
 
@@ -1259,43 +1240,47 @@ class _CopyWithImpl$Query$GetGroups$groups$nodes<TRes>
     Object? id = _undefined,
     Object? createdOn = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups$groups$nodes(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        users: users == _undefined || users == null
-            ? _instance.users
-            : (users as List<String>),
-        accessPoints: accessPoints == _undefined || accessPoints == null
-            ? _instance.accessPoints
-            : (accessPoints as List<Query$GetGroups$groups$nodes$accessPoints>),
-        lastUpdatedFromAzureAdOn: lastUpdatedFromAzureAdOn == _undefined
-            ? _instance.lastUpdatedFromAzureAdOn
-            : (lastUpdatedFromAzureAdOn as DateTime?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetGroups$groups$nodes(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      users: users == _undefined || users == null
+          ? _instance.users
+          : (users as List<String>),
+      accessPoints: accessPoints == _undefined || accessPoints == null
+          ? _instance.accessPoints
+          : (accessPoints as List<Query$GetGroups$groups$nodes$accessPoints>),
+      lastUpdatedFromAzureAdOn: lastUpdatedFromAzureAdOn == _undefined
+          ? _instance.lastUpdatedFromAzureAdOn
+          : (lastUpdatedFromAzureAdOn as DateTime?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes accessPoints(
-          Iterable<Query$GetGroups$groups$nodes$accessPoints> Function(
-                  Iterable<
-                      CopyWith$Query$GetGroups$groups$nodes$accessPoints<
-                          Query$GetGroups$groups$nodes$accessPoints>>)
-              _fn) =>
-      call(
-          accessPoints: _fn(_instance.accessPoints
-              .map((e) => CopyWith$Query$GetGroups$groups$nodes$accessPoints(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetGroups$groups$nodes$accessPoints> Function(
+      Iterable<
+        CopyWith$Query$GetGroups$groups$nodes$accessPoints<
+          Query$GetGroups$groups$nodes$accessPoints
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    accessPoints: _fn(
+      _instance.accessPoints.map(
+        (e) => CopyWith$Query$GetGroups$groups$nodes$accessPoints(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetGroups$groups$nodes<TRes>
@@ -1313,8 +1298,7 @@ class _CopyWithStubImpl$Query$GetGroups$groups$nodes<TRes>
     String? id,
     DateTime? createdOn,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   accessPoints(_fn) => _res;
 }
@@ -1327,14 +1311,16 @@ class Query$GetGroups$groups$nodes$accessPoints {
   });
 
   factory Query$GetGroups$groups$nodes$accessPoints.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$key = json['key'];
     final l$value = json['value'];
     final l$$__typename = json['__typename'];
     return Query$GetGroups$groups$nodes$accessPoints(
       key: (l$key as String),
       value: Query$GetGroups$groups$nodes$accessPoints$value.fromJson(
-          (l$value as Map<String, dynamic>)),
+        (l$value as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1361,11 +1347,7 @@ class Query$GetGroups$groups$nodes$accessPoints {
     final l$key = key;
     final l$value = value;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$key,
-      l$value,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$key, l$value, l$$__typename]);
   }
 
   @override
@@ -1399,11 +1381,10 @@ class Query$GetGroups$groups$nodes$accessPoints {
 extension UtilityExtension$Query$GetGroups$groups$nodes$accessPoints
     on Query$GetGroups$groups$nodes$accessPoints {
   CopyWith$Query$GetGroups$groups$nodes$accessPoints<
-          Query$GetGroups$groups$nodes$accessPoints>
-      get copyWith => CopyWith$Query$GetGroups$groups$nodes$accessPoints(
-            this,
-            (i) => i,
-          );
+    Query$GetGroups$groups$nodes$accessPoints
+  >
+  get copyWith =>
+      CopyWith$Query$GetGroups$groups$nodes$accessPoints(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups$groups$nodes$accessPoints<TRes> {
@@ -1440,21 +1421,24 @@ class _CopyWithImpl$Query$GetGroups$groups$nodes$accessPoints<TRes>
     Object? key = _undefined,
     Object? value = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups$groups$nodes$accessPoints(
-        key: key == _undefined || key == null ? _instance.key : (key as String),
-        value: value == _undefined || value == null
-            ? _instance.value
-            : (value as Query$GetGroups$groups$nodes$accessPoints$value),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetGroups$groups$nodes$accessPoints(
+      key: key == _undefined || key == null ? _instance.key : (key as String),
+      value: value == _undefined || value == null
+          ? _instance.value
+          : (value as Query$GetGroups$groups$nodes$accessPoints$value),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetGroups$groups$nodes$accessPoints$value<TRes> get value {
     final local$value = _instance.value;
     return CopyWith$Query$GetGroups$groups$nodes$accessPoints$value(
-        local$value, (e) => call(value: e));
+      local$value,
+      (e) => call(value: e),
+    );
   }
 }
 
@@ -1468,8 +1452,7 @@ class _CopyWithStubImpl$Query$GetGroups$groups$nodes$accessPoints<TRes>
     String? key,
     Query$GetGroups$groups$nodes$accessPoints$value? value,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetGroups$groups$nodes$accessPoints$value<TRes> get value =>
       CopyWith$Query$GetGroups$groups$nodes$accessPoints$value.stub(_res);
@@ -1484,7 +1467,8 @@ class Query$GetGroups$groups$nodes$accessPoints$value {
   });
 
   factory Query$GetGroups$groups$nodes$accessPoints$value.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$externalId = json['externalId'];
     final l$name = json['name'];
     final l$description = json['description'];
@@ -1524,12 +1508,7 @@ class Query$GetGroups$groups$nodes$accessPoints$value {
     final l$name = name;
     final l$description = description;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$externalId,
-      l$name,
-      l$description,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$externalId, l$name, l$description, l$$__typename]);
   }
 
   @override
@@ -1568,11 +1547,10 @@ class Query$GetGroups$groups$nodes$accessPoints$value {
 extension UtilityExtension$Query$GetGroups$groups$nodes$accessPoints$value
     on Query$GetGroups$groups$nodes$accessPoints$value {
   CopyWith$Query$GetGroups$groups$nodes$accessPoints$value<
-          Query$GetGroups$groups$nodes$accessPoints$value>
-      get copyWith => CopyWith$Query$GetGroups$groups$nodes$accessPoints$value(
-            this,
-            (i) => i,
-          );
+    Query$GetGroups$groups$nodes$accessPoints$value
+  >
+  get copyWith =>
+      CopyWith$Query$GetGroups$groups$nodes$accessPoints$value(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetGroups$groups$nodes$accessPoints$value<TRes> {
@@ -1582,8 +1560,8 @@ abstract class CopyWith$Query$GetGroups$groups$nodes$accessPoints$value<TRes> {
   ) = _CopyWithImpl$Query$GetGroups$groups$nodes$accessPoints$value;
 
   factory CopyWith$Query$GetGroups$groups$nodes$accessPoints$value.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetGroups$groups$nodes$accessPoints$value;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetGroups$groups$nodes$accessPoints$value;
 
   TRes call({
     String? externalId,
@@ -1611,21 +1589,22 @@ class _CopyWithImpl$Query$GetGroups$groups$nodes$accessPoints$value<TRes>
     Object? name = _undefined,
     Object? description = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetGroups$groups$nodes$accessPoints$value(
-        externalId: externalId == _undefined || externalId == null
-            ? _instance.externalId
-            : (externalId as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        description: description == _undefined || description == null
-            ? _instance.description
-            : (description as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetGroups$groups$nodes$accessPoints$value(
+      externalId: externalId == _undefined || externalId == null
+          ? _instance.externalId
+          : (externalId as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      description: description == _undefined || description == null
+          ? _instance.description
+          : (description as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetGroups$groups$nodes$accessPoints$value<TRes>
@@ -1639,6 +1618,5 @@ class _CopyWithStubImpl$Query$GetGroups$groups$nodes$accessPoints$value<TRes>
     String? name,
     String? description,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

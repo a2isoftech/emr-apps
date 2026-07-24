@@ -1,16 +1,17 @@
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$DeleteAccessController {
-  factory Variables$Mutation$DeleteAccessController(
-          {required String accessControllerId}) =>
-      Variables$Mutation$DeleteAccessController._({
-        r'accessControllerId': accessControllerId,
-      });
+  factory Variables$Mutation$DeleteAccessController({
+    required String accessControllerId,
+  }) => Variables$Mutation$DeleteAccessController._({
+    r'accessControllerId': accessControllerId,
+  });
 
   Variables$Mutation$DeleteAccessController._(this._$data);
 
   factory Variables$Mutation$DeleteAccessController.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$accessControllerId = data['accessControllerId'];
     result$data['accessControllerId'] = (l$accessControllerId as String);
@@ -29,11 +30,10 @@ class Variables$Mutation$DeleteAccessController {
   }
 
   CopyWith$Variables$Mutation$DeleteAccessController<
-          Variables$Mutation$DeleteAccessController>
-      get copyWith => CopyWith$Variables$Mutation$DeleteAccessController(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$DeleteAccessController
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$DeleteAccessController(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -84,12 +84,13 @@ class _CopyWithImpl$Variables$Mutation$DeleteAccessController<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? accessControllerId = _undefined}) =>
-      _then(Variables$Mutation$DeleteAccessController._({
-        ..._instance._$data,
-        if (accessControllerId != _undefined && accessControllerId != null)
-          'accessControllerId': (accessControllerId as String),
-      }));
+  TRes call({Object? accessControllerId = _undefined}) => _then(
+    Variables$Mutation$DeleteAccessController._({
+      ..._instance._$data,
+      if (accessControllerId != _undefined && accessControllerId != null)
+        'accessControllerId': (accessControllerId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$DeleteAccessController<TRes>
@@ -133,10 +134,7 @@ class Mutation$DeleteAccessController {
   int get hashCode {
     final l$deleteAccessController = deleteAccessController;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$deleteAccessController,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$deleteAccessController, l$$__typename]);
   }
 
   @override
@@ -165,10 +163,7 @@ class Mutation$DeleteAccessController {
 extension UtilityExtension$Mutation$DeleteAccessController
     on Mutation$DeleteAccessController {
   CopyWith$Mutation$DeleteAccessController<Mutation$DeleteAccessController>
-      get copyWith => CopyWith$Mutation$DeleteAccessController(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$DeleteAccessController(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$DeleteAccessController<TRes> {
@@ -180,18 +175,12 @@ abstract class CopyWith$Mutation$DeleteAccessController<TRes> {
   factory CopyWith$Mutation$DeleteAccessController.stub(TRes res) =
       _CopyWithStubImpl$Mutation$DeleteAccessController;
 
-  TRes call({
-    bool? deleteAccessController,
-    String? $__typename,
-  });
+  TRes call({bool? deleteAccessController, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$DeleteAccessController<TRes>
     implements CopyWith$Mutation$DeleteAccessController<TRes> {
-  _CopyWithImpl$Mutation$DeleteAccessController(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$DeleteAccessController(this._instance, this._then);
 
   final Mutation$DeleteAccessController _instance;
 
@@ -202,16 +191,17 @@ class _CopyWithImpl$Mutation$DeleteAccessController<TRes>
   TRes call({
     Object? deleteAccessController = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$DeleteAccessController(
-        deleteAccessController: deleteAccessController == _undefined ||
-                deleteAccessController == null
-            ? _instance.deleteAccessController
-            : (deleteAccessController as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$DeleteAccessController(
+      deleteAccessController:
+          deleteAccessController == _undefined || deleteAccessController == null
+          ? _instance.deleteAccessController
+          : (deleteAccessController as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$DeleteAccessController<TRes>
@@ -220,49 +210,48 @@ class _CopyWithStubImpl$Mutation$DeleteAccessController<TRes>
 
   TRes _res;
 
-  call({
-    bool? deleteAccessController,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? deleteAccessController, String? $__typename}) => _res;
 }
 
-const documentNodeMutationDeleteAccessController = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'DeleteAccessController'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'accessControllerId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationDeleteAccessController = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'DeleteAccessController'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'accessControllerId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'deleteAccessController'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'accessControllerId'),
-            value: VariableNode(name: NameNode(value: 'accessControllerId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'deleteAccessController'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'accessControllerId'),
+                value: VariableNode(
+                  name: NameNode(value: 'accessControllerId'),
+                ),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

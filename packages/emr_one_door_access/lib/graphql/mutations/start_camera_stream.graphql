@@ -1,0 +1,12 @@
+mutation StartCameraStream($accessPointId: String!, $durationMinutes: Int!) {
+  startCameraStream(
+    accessPointId: $accessPointId
+    durationMinutes: $durationMinutes
+  ) {
+    accessPointId
+    isRunning
+    durationMinutes
+    timeRemaining
+    message
+  }
+}

@@ -2,9 +2,7 @@ import 'package:gql/ast.dart';
 
 class Variables$Query$SearchAdGroups {
   factory Variables$Query$SearchAdGroups({required String searchQuery}) =>
-      Variables$Query$SearchAdGroups._({
-        r'searchQuery': searchQuery,
-      });
+      Variables$Query$SearchAdGroups._({r'searchQuery': searchQuery});
 
   Variables$Query$SearchAdGroups._(this._$data);
 
@@ -27,10 +25,7 @@ class Variables$Query$SearchAdGroups {
   }
 
   CopyWith$Variables$Query$SearchAdGroups<Variables$Query$SearchAdGroups>
-      get copyWith => CopyWith$Variables$Query$SearchAdGroups(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Query$SearchAdGroups(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -70,10 +65,7 @@ abstract class CopyWith$Variables$Query$SearchAdGroups<TRes> {
 
 class _CopyWithImpl$Variables$Query$SearchAdGroups<TRes>
     implements CopyWith$Variables$Query$SearchAdGroups<TRes> {
-  _CopyWithImpl$Variables$Query$SearchAdGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$SearchAdGroups(this._instance, this._then);
 
   final Variables$Query$SearchAdGroups _instance;
 
@@ -81,12 +73,13 @@ class _CopyWithImpl$Variables$Query$SearchAdGroups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? searchQuery = _undefined}) =>
-      _then(Variables$Query$SearchAdGroups._({
-        ..._instance._$data,
-        if (searchQuery != _undefined && searchQuery != null)
-          'searchQuery': (searchQuery as String),
-      }));
+  TRes call({Object? searchQuery = _undefined}) => _then(
+    Variables$Query$SearchAdGroups._({
+      ..._instance._$data,
+      if (searchQuery != _undefined && searchQuery != null)
+        'searchQuery': (searchQuery as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$SearchAdGroups<TRes>
@@ -99,18 +92,18 @@ class _CopyWithStubImpl$Variables$Query$SearchAdGroups<TRes>
 }
 
 class Query$SearchAdGroups {
-  Query$SearchAdGroups({
-    required this.adGroups,
-    this.$__typename = 'Query',
-  });
+  Query$SearchAdGroups({required this.adGroups, this.$__typename = 'Query'});
 
   factory Query$SearchAdGroups.fromJson(Map<String, dynamic> json) {
     final l$adGroups = json['adGroups'];
     final l$$__typename = json['__typename'];
     return Query$SearchAdGroups(
       adGroups: (l$adGroups as List<dynamic>)
-          .map((e) => Query$SearchAdGroups$adGroups.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$SearchAdGroups$adGroups.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -170,10 +163,7 @@ class Query$SearchAdGroups {
 
 extension UtilityExtension$Query$SearchAdGroups on Query$SearchAdGroups {
   CopyWith$Query$SearchAdGroups<Query$SearchAdGroups> get copyWith =>
-      CopyWith$Query$SearchAdGroups(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$SearchAdGroups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$SearchAdGroups<TRes> {
@@ -190,19 +180,18 @@ abstract class CopyWith$Query$SearchAdGroups<TRes> {
     String? $__typename,
   });
   TRes adGroups(
-      Iterable<Query$SearchAdGroups$adGroups> Function(
-              Iterable<
-                  CopyWith$Query$SearchAdGroups$adGroups<
-                      Query$SearchAdGroups$adGroups>>)
-          _fn);
+    Iterable<Query$SearchAdGroups$adGroups> Function(
+      Iterable<
+        CopyWith$Query$SearchAdGroups$adGroups<Query$SearchAdGroups$adGroups>
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$SearchAdGroups<TRes>
     implements CopyWith$Query$SearchAdGroups<TRes> {
-  _CopyWithImpl$Query$SearchAdGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$SearchAdGroups(this._instance, this._then);
 
   final Query$SearchAdGroups _instance;
 
@@ -213,28 +202,31 @@ class _CopyWithImpl$Query$SearchAdGroups<TRes>
   TRes call({
     Object? adGroups = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchAdGroups(
-        adGroups: adGroups == _undefined || adGroups == null
-            ? _instance.adGroups
-            : (adGroups as List<Query$SearchAdGroups$adGroups>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchAdGroups(
+      adGroups: adGroups == _undefined || adGroups == null
+          ? _instance.adGroups
+          : (adGroups as List<Query$SearchAdGroups$adGroups>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes adGroups(
-          Iterable<Query$SearchAdGroups$adGroups> Function(
-                  Iterable<
-                      CopyWith$Query$SearchAdGroups$adGroups<
-                          Query$SearchAdGroups$adGroups>>)
-              _fn) =>
-      call(
-          adGroups: _fn(_instance.adGroups
-              .map((e) => CopyWith$Query$SearchAdGroups$adGroups(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$SearchAdGroups$adGroups> Function(
+      Iterable<
+        CopyWith$Query$SearchAdGroups$adGroups<Query$SearchAdGroups$adGroups>
+      >,
+    )
+    _fn,
+  ) => call(
+    adGroups: _fn(
+      _instance.adGroups.map(
+        (e) => CopyWith$Query$SearchAdGroups$adGroups(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchAdGroups<TRes>
@@ -243,63 +235,70 @@ class _CopyWithStubImpl$Query$SearchAdGroups<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$SearchAdGroups$adGroups>? adGroups,
-    String? $__typename,
-  }) =>
+  call({List<Query$SearchAdGroups$adGroups>? adGroups, String? $__typename}) =>
       _res;
 
   adGroups(_fn) => _res;
 }
 
-const documentNodeQuerySearchAdGroups = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'SearchAdGroups'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'searchQuery')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeQuerySearchAdGroups = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'SearchAdGroups'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'searchQuery')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'adGroups'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'searchQuery'),
-            value: VariableNode(name: NameNode(value: 'searchQuery')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'name'),
+            name: NameNode(value: 'adGroups'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'searchQuery'),
+                value: VariableNode(name: NameNode(value: 'searchQuery')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'azureId'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'azureId'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -308,18 +307,11 @@ const documentNodeQuerySearchAdGroups = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$SearchAdGroups$adGroups {
   Query$SearchAdGroups$adGroups({
@@ -369,12 +361,7 @@ class Query$SearchAdGroups$adGroups {
     final l$azureId = azureId;
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$name,
-      l$azureId,
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$name, l$azureId, l$id, l$$__typename]);
   }
 
   @override
@@ -413,10 +400,7 @@ class Query$SearchAdGroups$adGroups {
 extension UtilityExtension$Query$SearchAdGroups$adGroups
     on Query$SearchAdGroups$adGroups {
   CopyWith$Query$SearchAdGroups$adGroups<Query$SearchAdGroups$adGroups>
-      get copyWith => CopyWith$Query$SearchAdGroups$adGroups(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$SearchAdGroups$adGroups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$SearchAdGroups$adGroups<TRes> {
@@ -428,20 +412,12 @@ abstract class CopyWith$Query$SearchAdGroups$adGroups<TRes> {
   factory CopyWith$Query$SearchAdGroups$adGroups.stub(TRes res) =
       _CopyWithStubImpl$Query$SearchAdGroups$adGroups;
 
-  TRes call({
-    String? name,
-    String? azureId,
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? name, String? azureId, String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Query$SearchAdGroups$adGroups<TRes>
     implements CopyWith$Query$SearchAdGroups$adGroups<TRes> {
-  _CopyWithImpl$Query$SearchAdGroups$adGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$SearchAdGroups$adGroups(this._instance, this._then);
 
   final Query$SearchAdGroups$adGroups _instance;
 
@@ -454,18 +430,18 @@ class _CopyWithImpl$Query$SearchAdGroups$adGroups<TRes>
     Object? azureId = _undefined,
     Object? id = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchAdGroups$adGroups(
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchAdGroups$adGroups(
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchAdGroups$adGroups<TRes>
@@ -474,11 +450,6 @@ class _CopyWithStubImpl$Query$SearchAdGroups$adGroups<TRes>
 
   TRes _res;
 
-  call({
-    String? name,
-    String? azureId,
-    String? id,
-    String? $__typename,
-  }) =>
+  call({String? name, String? azureId, String? id, String? $__typename}) =>
       _res;
 }

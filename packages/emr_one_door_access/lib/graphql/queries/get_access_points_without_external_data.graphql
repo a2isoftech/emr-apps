@@ -17,6 +17,7 @@ query GetAccessPointsWithoutExternalData($siteId: String, $accessControllerId: S
       rtspUrl
       snapshotUrl
       username
+      streamPath
       createdUtc
     }
   }

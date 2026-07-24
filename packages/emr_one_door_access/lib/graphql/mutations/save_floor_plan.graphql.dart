@@ -2,19 +2,18 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$SaveFloorPlan {
-  factory Variables$Mutation$SaveFloorPlan(
-          {required Input$UpsertFloorPlanInput input}) =>
-      Variables$Mutation$SaveFloorPlan._({
-        r'input': input,
-      });
+  factory Variables$Mutation$SaveFloorPlan({
+    required Input$UpsertFloorPlanInput input,
+  }) => Variables$Mutation$SaveFloorPlan._({r'input': input});
 
   Variables$Mutation$SaveFloorPlan._(this._$data);
 
   factory Variables$Mutation$SaveFloorPlan.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
-    result$data['input'] =
-        Input$UpsertFloorPlanInput.fromJson((l$input as Map<String, dynamic>));
+    result$data['input'] = Input$UpsertFloorPlanInput.fromJson(
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$SaveFloorPlan._(result$data);
   }
 
@@ -31,10 +30,7 @@ class Variables$Mutation$SaveFloorPlan {
   }
 
   CopyWith$Variables$Mutation$SaveFloorPlan<Variables$Mutation$SaveFloorPlan>
-      get copyWith => CopyWith$Variables$Mutation$SaveFloorPlan(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$SaveFloorPlan(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -74,10 +70,7 @@ abstract class CopyWith$Variables$Mutation$SaveFloorPlan<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$SaveFloorPlan<TRes>
     implements CopyWith$Variables$Mutation$SaveFloorPlan<TRes> {
-  _CopyWithImpl$Variables$Mutation$SaveFloorPlan(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$SaveFloorPlan(this._instance, this._then);
 
   final Variables$Mutation$SaveFloorPlan _instance;
 
@@ -85,12 +78,13 @@ class _CopyWithImpl$Variables$Mutation$SaveFloorPlan<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$SaveFloorPlan._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$UpsertFloorPlanInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$SaveFloorPlan._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$UpsertFloorPlanInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$SaveFloorPlan<TRes>
@@ -134,10 +128,7 @@ class Mutation$SaveFloorPlan {
   int get hashCode {
     final l$saveFloorPlan = saveFloorPlan;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$saveFloorPlan,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$saveFloorPlan, l$$__typename]);
   }
 
   @override
@@ -164,10 +155,7 @@ class Mutation$SaveFloorPlan {
 
 extension UtilityExtension$Mutation$SaveFloorPlan on Mutation$SaveFloorPlan {
   CopyWith$Mutation$SaveFloorPlan<Mutation$SaveFloorPlan> get copyWith =>
-      CopyWith$Mutation$SaveFloorPlan(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$SaveFloorPlan(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$SaveFloorPlan<TRes> {
@@ -179,18 +167,12 @@ abstract class CopyWith$Mutation$SaveFloorPlan<TRes> {
   factory CopyWith$Mutation$SaveFloorPlan.stub(TRes res) =
       _CopyWithStubImpl$Mutation$SaveFloorPlan;
 
-  TRes call({
-    bool? saveFloorPlan,
-    String? $__typename,
-  });
+  TRes call({bool? saveFloorPlan, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$SaveFloorPlan<TRes>
     implements CopyWith$Mutation$SaveFloorPlan<TRes> {
-  _CopyWithImpl$Mutation$SaveFloorPlan(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$SaveFloorPlan(this._instance, this._then);
 
   final Mutation$SaveFloorPlan _instance;
 
@@ -201,15 +183,16 @@ class _CopyWithImpl$Mutation$SaveFloorPlan<TRes>
   TRes call({
     Object? saveFloorPlan = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$SaveFloorPlan(
-        saveFloorPlan: saveFloorPlan == _undefined || saveFloorPlan == null
-            ? _instance.saveFloorPlan
-            : (saveFloorPlan as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$SaveFloorPlan(
+      saveFloorPlan: saveFloorPlan == _undefined || saveFloorPlan == null
+          ? _instance.saveFloorPlan
+          : (saveFloorPlan as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$SaveFloorPlan<TRes>
@@ -218,49 +201,49 @@ class _CopyWithStubImpl$Mutation$SaveFloorPlan<TRes>
 
   TRes _res;
 
-  call({
-    bool? saveFloorPlan,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? saveFloorPlan, String? $__typename}) => _res;
 }
 
-const documentNodeMutationSaveFloorPlan = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'SaveFloorPlan'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'UpsertFloorPlanInput'),
-          isNonNull: true,
+const documentNodeMutationSaveFloorPlan = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'SaveFloorPlan'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'UpsertFloorPlanInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'saveFloorPlan'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'saveFloorPlan'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

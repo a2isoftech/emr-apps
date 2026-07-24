@@ -2,19 +2,18 @@ import '../schema.graphql.dart';
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$UpsertSite {
-  factory Variables$Mutation$UpsertSite(
-          {required Input$UpsertSiteInput input}) =>
-      Variables$Mutation$UpsertSite._({
-        r'input': input,
-      });
+  factory Variables$Mutation$UpsertSite({
+    required Input$UpsertSiteInput input,
+  }) => Variables$Mutation$UpsertSite._({r'input': input});
 
   Variables$Mutation$UpsertSite._(this._$data);
 
   factory Variables$Mutation$UpsertSite.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$input = data['input'];
-    result$data['input'] =
-        Input$UpsertSiteInput.fromJson((l$input as Map<String, dynamic>));
+    result$data['input'] = Input$UpsertSiteInput.fromJson(
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Mutation$UpsertSite._(result$data);
   }
 
@@ -30,10 +29,7 @@ class Variables$Mutation$UpsertSite {
   }
 
   CopyWith$Variables$Mutation$UpsertSite<Variables$Mutation$UpsertSite>
-      get copyWith => CopyWith$Variables$Mutation$UpsertSite(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$UpsertSite(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -73,10 +69,7 @@ abstract class CopyWith$Variables$Mutation$UpsertSite<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$UpsertSite<TRes>
     implements CopyWith$Variables$Mutation$UpsertSite<TRes> {
-  _CopyWithImpl$Variables$Mutation$UpsertSite(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$UpsertSite(this._instance, this._then);
 
   final Variables$Mutation$UpsertSite _instance;
 
@@ -84,12 +77,13 @@ class _CopyWithImpl$Variables$Mutation$UpsertSite<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? input = _undefined}) =>
-      _then(Variables$Mutation$UpsertSite._({
-        ..._instance._$data,
-        if (input != _undefined && input != null)
-          'input': (input as Input$UpsertSiteInput),
-      }));
+  TRes call({Object? input = _undefined}) => _then(
+    Variables$Mutation$UpsertSite._({
+      ..._instance._$data,
+      if (input != _undefined && input != null)
+        'input': (input as Input$UpsertSiteInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$UpsertSite<TRes>
@@ -112,7 +106,8 @@ class Mutation$UpsertSite {
     final l$$__typename = json['__typename'];
     return Mutation$UpsertSite(
       upsertSite: Mutation$UpsertSite$upsertSite.fromJson(
-          (l$upsertSite as Map<String, dynamic>)),
+        (l$upsertSite as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -134,10 +129,7 @@ class Mutation$UpsertSite {
   int get hashCode {
     final l$upsertSite = upsertSite;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$upsertSite,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$upsertSite, l$$__typename]);
   }
 
   @override
@@ -164,10 +156,7 @@ class Mutation$UpsertSite {
 
 extension UtilityExtension$Mutation$UpsertSite on Mutation$UpsertSite {
   CopyWith$Mutation$UpsertSite<Mutation$UpsertSite> get copyWith =>
-      CopyWith$Mutation$UpsertSite(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$UpsertSite(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UpsertSite<TRes> {
@@ -179,19 +168,13 @@ abstract class CopyWith$Mutation$UpsertSite<TRes> {
   factory CopyWith$Mutation$UpsertSite.stub(TRes res) =
       _CopyWithStubImpl$Mutation$UpsertSite;
 
-  TRes call({
-    Mutation$UpsertSite$upsertSite? upsertSite,
-    String? $__typename,
-  });
+  TRes call({Mutation$UpsertSite$upsertSite? upsertSite, String? $__typename});
   CopyWith$Mutation$UpsertSite$upsertSite<TRes> get upsertSite;
 }
 
 class _CopyWithImpl$Mutation$UpsertSite<TRes>
     implements CopyWith$Mutation$UpsertSite<TRes> {
-  _CopyWithImpl$Mutation$UpsertSite(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$UpsertSite(this._instance, this._then);
 
   final Mutation$UpsertSite _instance;
 
@@ -202,20 +185,23 @@ class _CopyWithImpl$Mutation$UpsertSite<TRes>
   TRes call({
     Object? upsertSite = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UpsertSite(
-        upsertSite: upsertSite == _undefined || upsertSite == null
-            ? _instance.upsertSite
-            : (upsertSite as Mutation$UpsertSite$upsertSite),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$UpsertSite(
+      upsertSite: upsertSite == _undefined || upsertSite == null
+          ? _instance.upsertSite
+          : (upsertSite as Mutation$UpsertSite$upsertSite),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Mutation$UpsertSite$upsertSite<TRes> get upsertSite {
     final local$upsertSite = _instance.upsertSite;
     return CopyWith$Mutation$UpsertSite$upsertSite(
-        local$upsertSite, (e) => call(upsertSite: e));
+      local$upsertSite,
+      (e) => call(upsertSite: e),
+    );
   }
 }
 
@@ -225,85 +211,95 @@ class _CopyWithStubImpl$Mutation$UpsertSite<TRes>
 
   TRes _res;
 
-  call({
-    Mutation$UpsertSite$upsertSite? upsertSite,
-    String? $__typename,
-  }) =>
+  call({Mutation$UpsertSite$upsertSite? upsertSite, String? $__typename}) =>
       _res;
 
   CopyWith$Mutation$UpsertSite$upsertSite<TRes> get upsertSite =>
       CopyWith$Mutation$UpsertSite$upsertSite.stub(_res);
 }
 
-const documentNodeMutationUpsertSite = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'UpsertSite'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'UpsertSiteInput'),
-          isNonNull: true,
+const documentNodeMutationUpsertSite = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'UpsertSite'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'UpsertSiteInput'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'upsertSite'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'createdOn'),
+            name: NameNode(value: 'upsertSite'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'createdBy'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'modifiedOn'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'yardCode'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'createdOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'createdBy'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'modifiedOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'yardCode'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -312,18 +308,11 @@ const documentNodeMutationUpsertSite = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Mutation$UpsertSite$upsertSite {
   Mutation$UpsertSite$upsertSite({
@@ -461,10 +450,7 @@ class Mutation$UpsertSite$upsertSite {
 extension UtilityExtension$Mutation$UpsertSite$upsertSite
     on Mutation$UpsertSite$upsertSite {
   CopyWith$Mutation$UpsertSite$upsertSite<Mutation$UpsertSite$upsertSite>
-      get copyWith => CopyWith$Mutation$UpsertSite$upsertSite(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$UpsertSite$upsertSite(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UpsertSite$upsertSite<TRes> {
@@ -489,10 +475,7 @@ abstract class CopyWith$Mutation$UpsertSite$upsertSite<TRes> {
 
 class _CopyWithImpl$Mutation$UpsertSite$upsertSite<TRes>
     implements CopyWith$Mutation$UpsertSite$upsertSite<TRes> {
-  _CopyWithImpl$Mutation$UpsertSite$upsertSite(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$UpsertSite$upsertSite(this._instance, this._then);
 
   final Mutation$UpsertSite$upsertSite _instance;
 
@@ -508,28 +491,29 @@ class _CopyWithImpl$Mutation$UpsertSite$upsertSite<TRes>
     Object? yardCode = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UpsertSite$upsertSite(
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        createdBy: createdBy == _undefined || createdBy == null
-            ? _instance.createdBy
-            : (createdBy as String),
-        modifiedOn: modifiedOn == _undefined
-            ? _instance.modifiedOn
-            : (modifiedOn as DateTime?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        yardCode: yardCode == _undefined || yardCode == null
-            ? _instance.yardCode
-            : (yardCode as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$UpsertSite$upsertSite(
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      createdBy: createdBy == _undefined || createdBy == null
+          ? _instance.createdBy
+          : (createdBy as String),
+      modifiedOn: modifiedOn == _undefined
+          ? _instance.modifiedOn
+          : (modifiedOn as DateTime?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      yardCode: yardCode == _undefined || yardCode == null
+          ? _instance.yardCode
+          : (yardCode as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$UpsertSite$upsertSite<TRes>
@@ -546,6 +530,5 @@ class _CopyWithStubImpl$Mutation$UpsertSite$upsertSite<TRes>
     String? yardCode,
     String? name,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

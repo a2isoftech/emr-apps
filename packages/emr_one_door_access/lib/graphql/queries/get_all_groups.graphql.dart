@@ -12,8 +12,9 @@ class Variables$Query$GetAllGroups {
     final result$data = <String, dynamic>{};
     if (data.containsKey('groupIds')) {
       final l$groupIds = data['groupIds'];
-      result$data['groupIds'] =
-          (l$groupIds as List<dynamic>?)?.map((e) => (e as String)).toList();
+      result$data['groupIds'] = (l$groupIds as List<dynamic>?)
+          ?.map((e) => (e as String))
+          .toList();
     }
     return Variables$Query$GetAllGroups._(result$data);
   }
@@ -32,10 +33,7 @@ class Variables$Query$GetAllGroups {
   }
 
   CopyWith$Variables$Query$GetAllGroups<Variables$Query$GetAllGroups>
-      get copyWith => CopyWith$Variables$Query$GetAllGroups(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Query$GetAllGroups(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -75,9 +73,9 @@ class Variables$Query$GetAllGroups {
     return Object.hashAll([
       _$data.containsKey('groupIds')
           ? l$groupIds == null
-              ? null
-              : Object.hashAll(l$groupIds.map((v) => v))
-          : const {}
+                ? null
+                : Object.hashAll(l$groupIds.map((v) => v))
+          : const {},
     ]);
   }
 }
@@ -96,10 +94,7 @@ abstract class CopyWith$Variables$Query$GetAllGroups<TRes> {
 
 class _CopyWithImpl$Variables$Query$GetAllGroups<TRes>
     implements CopyWith$Variables$Query$GetAllGroups<TRes> {
-  _CopyWithImpl$Variables$Query$GetAllGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$GetAllGroups(this._instance, this._then);
 
   final Variables$Query$GetAllGroups _instance;
 
@@ -107,11 +102,12 @@ class _CopyWithImpl$Variables$Query$GetAllGroups<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? groupIds = _undefined}) =>
-      _then(Variables$Query$GetAllGroups._({
-        ..._instance._$data,
-        if (groupIds != _undefined) 'groupIds': (groupIds as List<String>?),
-      }));
+  TRes call({Object? groupIds = _undefined}) => _then(
+    Variables$Query$GetAllGroups._({
+      ..._instance._$data,
+      if (groupIds != _undefined) 'groupIds': (groupIds as List<String>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetAllGroups<TRes>
@@ -124,18 +120,18 @@ class _CopyWithStubImpl$Variables$Query$GetAllGroups<TRes>
 }
 
 class Query$GetAllGroups {
-  Query$GetAllGroups({
-    required this.allGroups,
-    this.$__typename = 'Query',
-  });
+  Query$GetAllGroups({required this.allGroups, this.$__typename = 'Query'});
 
   factory Query$GetAllGroups.fromJson(Map<String, dynamic> json) {
     final l$allGroups = json['allGroups'];
     final l$$__typename = json['__typename'];
     return Query$GetAllGroups(
       allGroups: (l$allGroups as List<dynamic>)
-          .map((e) => Query$GetAllGroups$allGroups.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetAllGroups$allGroups.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -195,10 +191,7 @@ class Query$GetAllGroups {
 
 extension UtilityExtension$Query$GetAllGroups on Query$GetAllGroups {
   CopyWith$Query$GetAllGroups<Query$GetAllGroups> get copyWith =>
-      CopyWith$Query$GetAllGroups(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$GetAllGroups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllGroups<TRes> {
@@ -215,19 +208,18 @@ abstract class CopyWith$Query$GetAllGroups<TRes> {
     String? $__typename,
   });
   TRes allGroups(
-      Iterable<Query$GetAllGroups$allGroups> Function(
-              Iterable<
-                  CopyWith$Query$GetAllGroups$allGroups<
-                      Query$GetAllGroups$allGroups>>)
-          _fn);
+    Iterable<Query$GetAllGroups$allGroups> Function(
+      Iterable<
+        CopyWith$Query$GetAllGroups$allGroups<Query$GetAllGroups$allGroups>
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAllGroups<TRes>
     implements CopyWith$Query$GetAllGroups<TRes> {
-  _CopyWithImpl$Query$GetAllGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllGroups(this._instance, this._then);
 
   final Query$GetAllGroups _instance;
 
@@ -238,28 +230,31 @@ class _CopyWithImpl$Query$GetAllGroups<TRes>
   TRes call({
     Object? allGroups = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllGroups(
-        allGroups: allGroups == _undefined || allGroups == null
-            ? _instance.allGroups
-            : (allGroups as List<Query$GetAllGroups$allGroups>),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllGroups(
+      allGroups: allGroups == _undefined || allGroups == null
+          ? _instance.allGroups
+          : (allGroups as List<Query$GetAllGroups$allGroups>),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes allGroups(
-          Iterable<Query$GetAllGroups$allGroups> Function(
-                  Iterable<
-                      CopyWith$Query$GetAllGroups$allGroups<
-                          Query$GetAllGroups$allGroups>>)
-              _fn) =>
-      call(
-          allGroups: _fn(_instance.allGroups
-              .map((e) => CopyWith$Query$GetAllGroups$allGroups(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetAllGroups$allGroups> Function(
+      Iterable<
+        CopyWith$Query$GetAllGroups$allGroups<Query$GetAllGroups$allGroups>
+      >,
+    )
+    _fn,
+  ) => call(
+    allGroups: _fn(
+      _instance.allGroups.map(
+        (e) => CopyWith$Query$GetAllGroups$allGroups(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllGroups<TRes>
@@ -268,145 +263,159 @@ class _CopyWithStubImpl$Query$GetAllGroups<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$GetAllGroups$allGroups>? allGroups,
-    String? $__typename,
-  }) =>
+  call({List<Query$GetAllGroups$allGroups>? allGroups, String? $__typename}) =>
       _res;
 
   allGroups(_fn) => _res;
 }
 
-const documentNodeQueryGetAllGroups = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetAllGroups'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'groupIds')),
-        type: ListTypeNode(
-          type: NamedTypeNode(
-            name: NameNode(value: 'String'),
-            isNonNull: true,
+const documentNodeQueryGetAllGroups = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetAllGroups'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'groupIds')),
+          type: ListTypeNode(
+            type: NamedTypeNode(
+              name: NameNode(value: 'String'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
           ),
-          isNonNull: false,
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'allGroups'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'groupIds'),
-            value: VariableNode(name: NameNode(value: 'groupIds')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'azureId'),
+            name: NameNode(value: 'allGroups'),
             alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'name'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'users'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'accessPoints'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'key'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'groupIds'),
+                value: VariableNode(name: NameNode(value: 'groupIds')),
               ),
-              FieldNode(
-                name: NameNode(value: 'value'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'externalId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'description'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'lastUpdatedFromAzureAdOn'),
-            alias: null,
-            arguments: [],
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'createdOn'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'azureId'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'name'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'users'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'accessPoints'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'key'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'value'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'externalId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'description'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'lastUpdatedFromAzureAdOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'createdOn'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -415,18 +424,11 @@ const documentNodeQueryGetAllGroups = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetAllGroups$allGroups {
   Query$GetAllGroups$allGroups({
@@ -454,8 +456,11 @@ class Query$GetAllGroups$allGroups {
       name: (l$name as String),
       users: (l$users as List<dynamic>).map((e) => (e as String)).toList(),
       accessPoints: (l$accessPoints as List<dynamic>)
-          .map((e) => Query$GetAllGroups$allGroups$accessPoints.fromJson(
-              (e as Map<String, dynamic>)))
+          .map(
+            (e) => Query$GetAllGroups$allGroups$accessPoints.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       lastUpdatedFromAzureAdOn: l$lastUpdatedFromAzureAdOn == null
           ? null
@@ -491,11 +496,12 @@ class Query$GetAllGroups$allGroups {
     final l$users = users;
     _resultData['users'] = l$users.map((e) => e).toList();
     final l$accessPoints = accessPoints;
-    _resultData['accessPoints'] =
-        l$accessPoints.map((e) => e.toJson()).toList();
+    _resultData['accessPoints'] = l$accessPoints
+        .map((e) => e.toJson())
+        .toList();
     final l$lastUpdatedFromAzureAdOn = lastUpdatedFromAzureAdOn;
-    _resultData['lastUpdatedFromAzureAdOn'] =
-        l$lastUpdatedFromAzureAdOn?.toIso8601String();
+    _resultData['lastUpdatedFromAzureAdOn'] = l$lastUpdatedFromAzureAdOn
+        ?.toIso8601String();
     final l$id = id;
     _resultData['id'] = l$id;
     final l$createdOn = createdOn;
@@ -597,10 +603,7 @@ class Query$GetAllGroups$allGroups {
 extension UtilityExtension$Query$GetAllGroups$allGroups
     on Query$GetAllGroups$allGroups {
   CopyWith$Query$GetAllGroups$allGroups<Query$GetAllGroups$allGroups>
-      get copyWith => CopyWith$Query$GetAllGroups$allGroups(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAllGroups$allGroups(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllGroups$allGroups<TRes> {
@@ -623,19 +626,20 @@ abstract class CopyWith$Query$GetAllGroups$allGroups<TRes> {
     String? $__typename,
   });
   TRes accessPoints(
-      Iterable<Query$GetAllGroups$allGroups$accessPoints> Function(
-              Iterable<
-                  CopyWith$Query$GetAllGroups$allGroups$accessPoints<
-                      Query$GetAllGroups$allGroups$accessPoints>>)
-          _fn);
+    Iterable<Query$GetAllGroups$allGroups$accessPoints> Function(
+      Iterable<
+        CopyWith$Query$GetAllGroups$allGroups$accessPoints<
+          Query$GetAllGroups$allGroups$accessPoints
+        >
+      >,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAllGroups$allGroups<TRes>
     implements CopyWith$Query$GetAllGroups$allGroups<TRes> {
-  _CopyWithImpl$Query$GetAllGroups$allGroups(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAllGroups$allGroups(this._instance, this._then);
 
   final Query$GetAllGroups$allGroups _instance;
 
@@ -652,43 +656,47 @@ class _CopyWithImpl$Query$GetAllGroups$allGroups<TRes>
     Object? id = _undefined,
     Object? createdOn = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllGroups$allGroups(
-        azureId:
-            azureId == _undefined ? _instance.azureId : (azureId as String?),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        users: users == _undefined || users == null
-            ? _instance.users
-            : (users as List<String>),
-        accessPoints: accessPoints == _undefined || accessPoints == null
-            ? _instance.accessPoints
-            : (accessPoints as List<Query$GetAllGroups$allGroups$accessPoints>),
-        lastUpdatedFromAzureAdOn: lastUpdatedFromAzureAdOn == _undefined
-            ? _instance.lastUpdatedFromAzureAdOn
-            : (lastUpdatedFromAzureAdOn as DateTime?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        createdOn: createdOn == _undefined || createdOn == null
-            ? _instance.createdOn
-            : (createdOn as DateTime),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllGroups$allGroups(
+      azureId: azureId == _undefined ? _instance.azureId : (azureId as String?),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      users: users == _undefined || users == null
+          ? _instance.users
+          : (users as List<String>),
+      accessPoints: accessPoints == _undefined || accessPoints == null
+          ? _instance.accessPoints
+          : (accessPoints as List<Query$GetAllGroups$allGroups$accessPoints>),
+      lastUpdatedFromAzureAdOn: lastUpdatedFromAzureAdOn == _undefined
+          ? _instance.lastUpdatedFromAzureAdOn
+          : (lastUpdatedFromAzureAdOn as DateTime?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      createdOn: createdOn == _undefined || createdOn == null
+          ? _instance.createdOn
+          : (createdOn as DateTime),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   TRes accessPoints(
-          Iterable<Query$GetAllGroups$allGroups$accessPoints> Function(
-                  Iterable<
-                      CopyWith$Query$GetAllGroups$allGroups$accessPoints<
-                          Query$GetAllGroups$allGroups$accessPoints>>)
-              _fn) =>
-      call(
-          accessPoints: _fn(_instance.accessPoints
-              .map((e) => CopyWith$Query$GetAllGroups$allGroups$accessPoints(
-                    e,
-                    (i) => i,
-                  ))).toList());
+    Iterable<Query$GetAllGroups$allGroups$accessPoints> Function(
+      Iterable<
+        CopyWith$Query$GetAllGroups$allGroups$accessPoints<
+          Query$GetAllGroups$allGroups$accessPoints
+        >
+      >,
+    )
+    _fn,
+  ) => call(
+    accessPoints: _fn(
+      _instance.accessPoints.map(
+        (e) => CopyWith$Query$GetAllGroups$allGroups$accessPoints(e, (i) => i),
+      ),
+    ).toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllGroups$allGroups<TRes>
@@ -706,8 +714,7 @@ class _CopyWithStubImpl$Query$GetAllGroups$allGroups<TRes>
     String? id,
     DateTime? createdOn,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   accessPoints(_fn) => _res;
 }
@@ -720,14 +727,16 @@ class Query$GetAllGroups$allGroups$accessPoints {
   });
 
   factory Query$GetAllGroups$allGroups$accessPoints.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$key = json['key'];
     final l$value = json['value'];
     final l$$__typename = json['__typename'];
     return Query$GetAllGroups$allGroups$accessPoints(
       key: (l$key as String),
       value: Query$GetAllGroups$allGroups$accessPoints$value.fromJson(
-          (l$value as Map<String, dynamic>)),
+        (l$value as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -754,11 +763,7 @@ class Query$GetAllGroups$allGroups$accessPoints {
     final l$key = key;
     final l$value = value;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$key,
-      l$value,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$key, l$value, l$$__typename]);
   }
 
   @override
@@ -792,11 +797,10 @@ class Query$GetAllGroups$allGroups$accessPoints {
 extension UtilityExtension$Query$GetAllGroups$allGroups$accessPoints
     on Query$GetAllGroups$allGroups$accessPoints {
   CopyWith$Query$GetAllGroups$allGroups$accessPoints<
-          Query$GetAllGroups$allGroups$accessPoints>
-      get copyWith => CopyWith$Query$GetAllGroups$allGroups$accessPoints(
-            this,
-            (i) => i,
-          );
+    Query$GetAllGroups$allGroups$accessPoints
+  >
+  get copyWith =>
+      CopyWith$Query$GetAllGroups$allGroups$accessPoints(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllGroups$allGroups$accessPoints<TRes> {
@@ -833,21 +837,24 @@ class _CopyWithImpl$Query$GetAllGroups$allGroups$accessPoints<TRes>
     Object? key = _undefined,
     Object? value = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllGroups$allGroups$accessPoints(
-        key: key == _undefined || key == null ? _instance.key : (key as String),
-        value: value == _undefined || value == null
-            ? _instance.value
-            : (value as Query$GetAllGroups$allGroups$accessPoints$value),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllGroups$allGroups$accessPoints(
+      key: key == _undefined || key == null ? _instance.key : (key as String),
+      value: value == _undefined || value == null
+          ? _instance.value
+          : (value as Query$GetAllGroups$allGroups$accessPoints$value),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAllGroups$allGroups$accessPoints$value<TRes> get value {
     final local$value = _instance.value;
     return CopyWith$Query$GetAllGroups$allGroups$accessPoints$value(
-        local$value, (e) => call(value: e));
+      local$value,
+      (e) => call(value: e),
+    );
   }
 }
 
@@ -861,8 +868,7 @@ class _CopyWithStubImpl$Query$GetAllGroups$allGroups$accessPoints<TRes>
     String? key,
     Query$GetAllGroups$allGroups$accessPoints$value? value,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAllGroups$allGroups$accessPoints$value<TRes> get value =>
       CopyWith$Query$GetAllGroups$allGroups$accessPoints$value.stub(_res);
@@ -877,7 +883,8 @@ class Query$GetAllGroups$allGroups$accessPoints$value {
   });
 
   factory Query$GetAllGroups$allGroups$accessPoints$value.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$externalId = json['externalId'];
     final l$name = json['name'];
     final l$description = json['description'];
@@ -917,12 +924,7 @@ class Query$GetAllGroups$allGroups$accessPoints$value {
     final l$name = name;
     final l$description = description;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$externalId,
-      l$name,
-      l$description,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$externalId, l$name, l$description, l$$__typename]);
   }
 
   @override
@@ -961,11 +963,10 @@ class Query$GetAllGroups$allGroups$accessPoints$value {
 extension UtilityExtension$Query$GetAllGroups$allGroups$accessPoints$value
     on Query$GetAllGroups$allGroups$accessPoints$value {
   CopyWith$Query$GetAllGroups$allGroups$accessPoints$value<
-          Query$GetAllGroups$allGroups$accessPoints$value>
-      get copyWith => CopyWith$Query$GetAllGroups$allGroups$accessPoints$value(
-            this,
-            (i) => i,
-          );
+    Query$GetAllGroups$allGroups$accessPoints$value
+  >
+  get copyWith =>
+      CopyWith$Query$GetAllGroups$allGroups$accessPoints$value(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAllGroups$allGroups$accessPoints$value<TRes> {
@@ -975,8 +976,8 @@ abstract class CopyWith$Query$GetAllGroups$allGroups$accessPoints$value<TRes> {
   ) = _CopyWithImpl$Query$GetAllGroups$allGroups$accessPoints$value;
 
   factory CopyWith$Query$GetAllGroups$allGroups$accessPoints$value.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAllGroups$allGroups$accessPoints$value;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAllGroups$allGroups$accessPoints$value;
 
   TRes call({
     String? externalId,
@@ -1004,21 +1005,22 @@ class _CopyWithImpl$Query$GetAllGroups$allGroups$accessPoints$value<TRes>
     Object? name = _undefined,
     Object? description = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAllGroups$allGroups$accessPoints$value(
-        externalId: externalId == _undefined || externalId == null
-            ? _instance.externalId
-            : (externalId as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        description: description == _undefined || description == null
-            ? _instance.description
-            : (description as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAllGroups$allGroups$accessPoints$value(
+      externalId: externalId == _undefined || externalId == null
+          ? _instance.externalId
+          : (externalId as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      description: description == _undefined || description == null
+          ? _instance.description
+          : (description as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAllGroups$allGroups$accessPoints$value<TRes>
@@ -1032,6 +1034,5 @@ class _CopyWithStubImpl$Query$GetAllGroups$allGroups$accessPoints$value<TRes>
     String? name,
     String? description,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

@@ -16858,6 +16858,250 @@ class _CopyWithStubImpl$Input$LongOperationFilterInput<TRes>
   }) => _res;
 }
 
+class Input$NotificationInput {
+  factory Input$NotificationInput({
+    required String id,
+    required Enum$NotificationTypeEnum type,
+    required String siteId,
+    required String siteName,
+    required String title,
+    required String message,
+    required Enum$NotificationSeverityEnum severity,
+    required DateTime utcCreated,
+  }) => Input$NotificationInput._({
+    r'id': id,
+    r'type': type,
+    r'siteId': siteId,
+    r'siteName': siteName,
+    r'title': title,
+    r'message': message,
+    r'severity': severity,
+    r'utcCreated': utcCreated,
+  });
+
+  Input$NotificationInput._(this._$data);
+
+  factory Input$NotificationInput.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    final l$id = data['id'];
+    result$data['id'] = (l$id as String);
+    final l$type = data['type'];
+    result$data['type'] = fromJson$Enum$NotificationTypeEnum(
+      (l$type as String),
+    );
+    final l$siteId = data['siteId'];
+    result$data['siteId'] = (l$siteId as String);
+    final l$siteName = data['siteName'];
+    result$data['siteName'] = (l$siteName as String);
+    final l$title = data['title'];
+    result$data['title'] = (l$title as String);
+    final l$message = data['message'];
+    result$data['message'] = (l$message as String);
+    final l$severity = data['severity'];
+    result$data['severity'] = fromJson$Enum$NotificationSeverityEnum(
+      (l$severity as String),
+    );
+    final l$utcCreated = data['utcCreated'];
+    result$data['utcCreated'] = DateTime.parse((l$utcCreated as String));
+    return Input$NotificationInput._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String get id => (_$data['id'] as String);
+
+  Enum$NotificationTypeEnum get type =>
+      (_$data['type'] as Enum$NotificationTypeEnum);
+
+  String get siteId => (_$data['siteId'] as String);
+
+  String get siteName => (_$data['siteName'] as String);
+
+  String get title => (_$data['title'] as String);
+
+  String get message => (_$data['message'] as String);
+
+  Enum$NotificationSeverityEnum get severity =>
+      (_$data['severity'] as Enum$NotificationSeverityEnum);
+
+  DateTime get utcCreated => (_$data['utcCreated'] as DateTime);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    final l$id = id;
+    result$data['id'] = l$id;
+    final l$type = type;
+    result$data['type'] = toJson$Enum$NotificationTypeEnum(l$type);
+    final l$siteId = siteId;
+    result$data['siteId'] = l$siteId;
+    final l$siteName = siteName;
+    result$data['siteName'] = l$siteName;
+    final l$title = title;
+    result$data['title'] = l$title;
+    final l$message = message;
+    result$data['message'] = l$message;
+    final l$severity = severity;
+    result$data['severity'] = toJson$Enum$NotificationSeverityEnum(l$severity);
+    final l$utcCreated = utcCreated;
+    result$data['utcCreated'] = l$utcCreated.toIso8601String();
+    return result$data;
+  }
+
+  CopyWith$Input$NotificationInput<Input$NotificationInput> get copyWith =>
+      CopyWith$Input$NotificationInput(this, (i) => i);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$NotificationInput || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$id = id;
+    final lOther$id = other.id;
+    if (l$id != lOther$id) {
+      return false;
+    }
+    final l$type = type;
+    final lOther$type = other.type;
+    if (l$type != lOther$type) {
+      return false;
+    }
+    final l$siteId = siteId;
+    final lOther$siteId = other.siteId;
+    if (l$siteId != lOther$siteId) {
+      return false;
+    }
+    final l$siteName = siteName;
+    final lOther$siteName = other.siteName;
+    if (l$siteName != lOther$siteName) {
+      return false;
+    }
+    final l$title = title;
+    final lOther$title = other.title;
+    if (l$title != lOther$title) {
+      return false;
+    }
+    final l$message = message;
+    final lOther$message = other.message;
+    if (l$message != lOther$message) {
+      return false;
+    }
+    final l$severity = severity;
+    final lOther$severity = other.severity;
+    if (l$severity != lOther$severity) {
+      return false;
+    }
+    final l$utcCreated = utcCreated;
+    final lOther$utcCreated = other.utcCreated;
+    if (l$utcCreated != lOther$utcCreated) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$id = id;
+    final l$type = type;
+    final l$siteId = siteId;
+    final l$siteName = siteName;
+    final l$title = title;
+    final l$message = message;
+    final l$severity = severity;
+    final l$utcCreated = utcCreated;
+    return Object.hashAll([
+      l$id,
+      l$type,
+      l$siteId,
+      l$siteName,
+      l$title,
+      l$message,
+      l$severity,
+      l$utcCreated,
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$NotificationInput<TRes> {
+  factory CopyWith$Input$NotificationInput(
+    Input$NotificationInput instance,
+    TRes Function(Input$NotificationInput) then,
+  ) = _CopyWithImpl$Input$NotificationInput;
+
+  factory CopyWith$Input$NotificationInput.stub(TRes res) =
+      _CopyWithStubImpl$Input$NotificationInput;
+
+  TRes call({
+    String? id,
+    Enum$NotificationTypeEnum? type,
+    String? siteId,
+    String? siteName,
+    String? title,
+    String? message,
+    Enum$NotificationSeverityEnum? severity,
+    DateTime? utcCreated,
+  });
+}
+
+class _CopyWithImpl$Input$NotificationInput<TRes>
+    implements CopyWith$Input$NotificationInput<TRes> {
+  _CopyWithImpl$Input$NotificationInput(this._instance, this._then);
+
+  final Input$NotificationInput _instance;
+
+  final TRes Function(Input$NotificationInput) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? id = _undefined,
+    Object? type = _undefined,
+    Object? siteId = _undefined,
+    Object? siteName = _undefined,
+    Object? title = _undefined,
+    Object? message = _undefined,
+    Object? severity = _undefined,
+    Object? utcCreated = _undefined,
+  }) => _then(
+    Input$NotificationInput._({
+      ..._instance._$data,
+      if (id != _undefined && id != null) 'id': (id as String),
+      if (type != _undefined && type != null)
+        'type': (type as Enum$NotificationTypeEnum),
+      if (siteId != _undefined && siteId != null) 'siteId': (siteId as String),
+      if (siteName != _undefined && siteName != null)
+        'siteName': (siteName as String),
+      if (title != _undefined && title != null) 'title': (title as String),
+      if (message != _undefined && message != null)
+        'message': (message as String),
+      if (severity != _undefined && severity != null)
+        'severity': (severity as Enum$NotificationSeverityEnum),
+      if (utcCreated != _undefined && utcCreated != null)
+        'utcCreated': (utcCreated as DateTime),
+    }),
+  );
+}
+
+class _CopyWithStubImpl$Input$NotificationInput<TRes>
+    implements CopyWith$Input$NotificationInput<TRes> {
+  _CopyWithStubImpl$Input$NotificationInput(this._res);
+
+  TRes _res;
+
+  call({
+    String? id,
+    Enum$NotificationTypeEnum? type,
+    String? siteId,
+    String? siteName,
+    String? title,
+    String? message,
+    Enum$NotificationSeverityEnum? severity,
+    DateTime? utcCreated,
+  }) => _res;
+}
+
 class Input$NullableOfSnapshotReasonEnumOperationFilterInput {
   factory Input$NullableOfSnapshotReasonEnumOperationFilterInput({
     Enum$SnapshotReasonEnum? eq,
@@ -17132,6 +17376,7 @@ class Input$SaveAccessPointCameraInput {
     required String snapshotUrl,
     String? username,
     String? password,
+    String? streamPath,
   }) => Input$SaveAccessPointCameraInput._({
     r'accessPointId': accessPointId,
     r'cameraName': cameraName,
@@ -17139,6 +17384,7 @@ class Input$SaveAccessPointCameraInput {
     r'snapshotUrl': snapshotUrl,
     if (username != null) r'username': username,
     if (password != null) r'password': password,
+    if (streamPath != null) r'streamPath': streamPath,
   });
 
   Input$SaveAccessPointCameraInput._(this._$data);
@@ -17161,6 +17407,10 @@ class Input$SaveAccessPointCameraInput {
       final l$password = data['password'];
       result$data['password'] = (l$password as String?);
     }
+    if (data.containsKey('streamPath')) {
+      final l$streamPath = data['streamPath'];
+      result$data['streamPath'] = (l$streamPath as String?);
+    }
     return Input$SaveAccessPointCameraInput._(result$data);
   }
 
@@ -17177,6 +17427,8 @@ class Input$SaveAccessPointCameraInput {
   String? get username => (_$data['username'] as String?);
 
   String? get password => (_$data['password'] as String?);
+
+  String? get streamPath => (_$data['streamPath'] as String?);
 
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
@@ -17195,6 +17447,10 @@ class Input$SaveAccessPointCameraInput {
     if (_$data.containsKey('password')) {
       final l$password = password;
       result$data['password'] = l$password;
+    }
+    if (_$data.containsKey('streamPath')) {
+      final l$streamPath = streamPath;
+      result$data['streamPath'] = l$streamPath;
     }
     return result$data;
   }
@@ -17249,6 +17505,15 @@ class Input$SaveAccessPointCameraInput {
     if (l$password != lOther$password) {
       return false;
     }
+    final l$streamPath = streamPath;
+    final lOther$streamPath = other.streamPath;
+    if (_$data.containsKey('streamPath') !=
+        other._$data.containsKey('streamPath')) {
+      return false;
+    }
+    if (l$streamPath != lOther$streamPath) {
+      return false;
+    }
     return true;
   }
 
@@ -17260,6 +17525,7 @@ class Input$SaveAccessPointCameraInput {
     final l$snapshotUrl = snapshotUrl;
     final l$username = username;
     final l$password = password;
+    final l$streamPath = streamPath;
     return Object.hashAll([
       l$accessPointId,
       l$cameraName,
@@ -17267,6 +17533,7 @@ class Input$SaveAccessPointCameraInput {
       l$snapshotUrl,
       _$data.containsKey('username') ? l$username : const {},
       _$data.containsKey('password') ? l$password : const {},
+      _$data.containsKey('streamPath') ? l$streamPath : const {},
     ]);
   }
 }
@@ -17287,6 +17554,7 @@ abstract class CopyWith$Input$SaveAccessPointCameraInput<TRes> {
     String? snapshotUrl,
     String? username,
     String? password,
+    String? streamPath,
   });
 }
 
@@ -17307,6 +17575,7 @@ class _CopyWithImpl$Input$SaveAccessPointCameraInput<TRes>
     Object? snapshotUrl = _undefined,
     Object? username = _undefined,
     Object? password = _undefined,
+    Object? streamPath = _undefined,
   }) => _then(
     Input$SaveAccessPointCameraInput._({
       ..._instance._$data,
@@ -17320,6 +17589,7 @@ class _CopyWithImpl$Input$SaveAccessPointCameraInput<TRes>
         'snapshotUrl': (snapshotUrl as String),
       if (username != _undefined) 'username': (username as String?),
       if (password != _undefined) 'password': (password as String?),
+      if (streamPath != _undefined) 'streamPath': (streamPath as String?),
     }),
   );
 }
@@ -17337,6 +17607,7 @@ class _CopyWithStubImpl$Input$SaveAccessPointCameraInput<TRes>
     String? snapshotUrl,
     String? username,
     String? password,
+    String? streamPath,
   }) => _res;
 }
 
@@ -25358,9 +25629,49 @@ Enum$NotificationSeverityEnum fromJson$Enum$NotificationSeverityEnum(
   }
 }
 
+enum Enum$NotificationTypeEnum {
+  FAILED_ACCESS_ATTEMPTS,
+  MULTIPLE_DENIED_CARD_ATTEMPTS,
+  ACCESS_POINT_SNAPSHOT,
+  $unknown;
+
+  factory Enum$NotificationTypeEnum.fromJson(String value) =>
+      fromJson$Enum$NotificationTypeEnum(value);
+
+  String toJson() => toJson$Enum$NotificationTypeEnum(this);
+}
+
+String toJson$Enum$NotificationTypeEnum(Enum$NotificationTypeEnum e) {
+  switch (e) {
+    case Enum$NotificationTypeEnum.FAILED_ACCESS_ATTEMPTS:
+      return r'FAILED_ACCESS_ATTEMPTS';
+    case Enum$NotificationTypeEnum.MULTIPLE_DENIED_CARD_ATTEMPTS:
+      return r'MULTIPLE_DENIED_CARD_ATTEMPTS';
+    case Enum$NotificationTypeEnum.ACCESS_POINT_SNAPSHOT:
+      return r'ACCESS_POINT_SNAPSHOT';
+    case Enum$NotificationTypeEnum.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$NotificationTypeEnum fromJson$Enum$NotificationTypeEnum(String value) {
+  switch (value) {
+    case r'FAILED_ACCESS_ATTEMPTS':
+      return Enum$NotificationTypeEnum.FAILED_ACCESS_ATTEMPTS;
+    case r'MULTIPLE_DENIED_CARD_ATTEMPTS':
+      return Enum$NotificationTypeEnum.MULTIPLE_DENIED_CARD_ATTEMPTS;
+    case r'ACCESS_POINT_SNAPSHOT':
+      return Enum$NotificationTypeEnum.ACCESS_POINT_SNAPSHOT;
+    default:
+      return Enum$NotificationTypeEnum.$unknown;
+  }
+}
+
 enum Enum$SnapshotReasonEnum {
   ACCESS_DENIED,
   RESTRICTED_ACCESS_POINT,
+  DOOR_FORCED_OPEN,
+  DOOR_OPEN_TOO_LONG,
   UNKNOWN,
   $unknown;
 
@@ -25376,6 +25687,10 @@ String toJson$Enum$SnapshotReasonEnum(Enum$SnapshotReasonEnum e) {
       return r'ACCESS_DENIED';
     case Enum$SnapshotReasonEnum.RESTRICTED_ACCESS_POINT:
       return r'RESTRICTED_ACCESS_POINT';
+    case Enum$SnapshotReasonEnum.DOOR_FORCED_OPEN:
+      return r'DOOR_FORCED_OPEN';
+    case Enum$SnapshotReasonEnum.DOOR_OPEN_TOO_LONG:
+      return r'DOOR_OPEN_TOO_LONG';
     case Enum$SnapshotReasonEnum.UNKNOWN:
       return r'UNKNOWN';
     case Enum$SnapshotReasonEnum.$unknown:
@@ -25389,6 +25704,10 @@ Enum$SnapshotReasonEnum fromJson$Enum$SnapshotReasonEnum(String value) {
       return Enum$SnapshotReasonEnum.ACCESS_DENIED;
     case r'RESTRICTED_ACCESS_POINT':
       return Enum$SnapshotReasonEnum.RESTRICTED_ACCESS_POINT;
+    case r'DOOR_FORCED_OPEN':
+      return Enum$SnapshotReasonEnum.DOOR_FORCED_OPEN;
+    case r'DOOR_OPEN_TOO_LONG':
+      return Enum$SnapshotReasonEnum.DOOR_OPEN_TOO_LONG;
     case r'UNKNOWN':
       return Enum$SnapshotReasonEnum.UNKNOWN;
     default:

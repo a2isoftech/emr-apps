@@ -5,6 +5,15 @@ query GetAccessPointNames($siteId: String, $accessControllerId: String, $accessP
     entity
     accessControllerId
     name
-    restricted 
+    restricted
+    camera {
+      cameraName
+      ipAddress
+      rtspUrl
+      snapshotUrl
+      username
+      streamPath
+      createdUtc
+    }
   }
 }

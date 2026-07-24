@@ -7,19 +7,19 @@ class Variables$Query$GetAccessControllers {
     int? first,
     int? last,
     String? siteId,
-  }) =>
-      Variables$Query$GetAccessControllers._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        if (siteId != null) r'siteId': siteId,
-      });
+  }) => Variables$Query$GetAccessControllers._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    if (siteId != null) r'siteId': siteId,
+  });
 
   Variables$Query$GetAccessControllers._(this._$data);
 
   factory Variables$Query$GetAccessControllers.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('after')) {
       final l$after = data['after'];
@@ -82,11 +82,9 @@ class Variables$Query$GetAccessControllers {
   }
 
   CopyWith$Variables$Query$GetAccessControllers<
-          Variables$Query$GetAccessControllers>
-      get copyWith => CopyWith$Variables$Query$GetAccessControllers(
-            this,
-            (i) => i,
-          );
+    Variables$Query$GetAccessControllers
+  >
+  get copyWith => CopyWith$Variables$Query$GetAccessControllers(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -194,15 +192,16 @@ class _CopyWithImpl$Variables$Query$GetAccessControllers<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? siteId = _undefined,
-  }) =>
-      _then(Variables$Query$GetAccessControllers._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (siteId != _undefined) 'siteId': (siteId as String?),
-      }));
+  }) => _then(
+    Variables$Query$GetAccessControllers._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (siteId != _undefined) 'siteId': (siteId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$GetAccessControllers<TRes>
@@ -217,8 +216,7 @@ class _CopyWithStubImpl$Variables$Query$GetAccessControllers<TRes>
     int? first,
     int? last,
     String? siteId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessControllers {
@@ -234,7 +232,8 @@ class Query$GetAccessControllers {
       accessControllers: l$accessControllers == null
           ? null
           : Query$GetAccessControllers$accessControllers.fromJson(
-              (l$accessControllers as Map<String, dynamic>)),
+              (l$accessControllers as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -256,10 +255,7 @@ class Query$GetAccessControllers {
   int get hashCode {
     final l$accessControllers = accessControllers;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$accessControllers,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$accessControllers, l$$__typename]);
   }
 
   @override
@@ -288,10 +284,7 @@ class Query$GetAccessControllers {
 extension UtilityExtension$Query$GetAccessControllers
     on Query$GetAccessControllers {
   CopyWith$Query$GetAccessControllers<Query$GetAccessControllers>
-      get copyWith => CopyWith$Query$GetAccessControllers(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$GetAccessControllers(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAccessControllers<TRes> {
@@ -308,15 +301,12 @@ abstract class CopyWith$Query$GetAccessControllers<TRes> {
     String? $__typename,
   });
   CopyWith$Query$GetAccessControllers$accessControllers<TRes>
-      get accessControllers;
+  get accessControllers;
 }
 
 class _CopyWithImpl$Query$GetAccessControllers<TRes>
     implements CopyWith$Query$GetAccessControllers<TRes> {
-  _CopyWithImpl$Query$GetAccessControllers(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$GetAccessControllers(this._instance, this._then);
 
   final Query$GetAccessControllers _instance;
 
@@ -327,25 +317,29 @@ class _CopyWithImpl$Query$GetAccessControllers<TRes>
   TRes call({
     Object? accessControllers = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers(
-        accessControllers: accessControllers == _undefined
-            ? _instance.accessControllers
-            : (accessControllers
+  }) => _then(
+    Query$GetAccessControllers(
+      accessControllers: accessControllers == _undefined
+          ? _instance.accessControllers
+          : (accessControllers
                 as Query$GetAccessControllers$accessControllers?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessControllers$accessControllers<TRes>
-      get accessControllers {
+  get accessControllers {
     final local$accessControllers = _instance.accessControllers;
     return local$accessControllers == null
         ? CopyWith$Query$GetAccessControllers$accessControllers.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$GetAccessControllers$accessControllers(
-            local$accessControllers, (e) => call(accessControllers: e));
+            local$accessControllers,
+            (e) => call(accessControllers: e),
+          );
   }
 }
 
@@ -358,329 +352,345 @@ class _CopyWithStubImpl$Query$GetAccessControllers<TRes>
   call({
     Query$GetAccessControllers$accessControllers? accessControllers,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessControllers$accessControllers<TRes>
-      get accessControllers =>
-          CopyWith$Query$GetAccessControllers$accessControllers.stub(_res);
+  get accessControllers =>
+      CopyWith$Query$GetAccessControllers$accessControllers.stub(_res);
 }
 
-const documentNodeQueryGetAccessControllers = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'GetAccessControllers'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'siteId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'accessControllers'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+const documentNodeQueryGetAccessControllers = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'GetAccessControllers'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'siteId')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'siteId'),
-            value: VariableNode(name: NameNode(value: 'siteId')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'accessControllers'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'siteId'),
+                value: VariableNode(name: NameNode(value: 'siteId')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'site'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'location'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'latitude'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: 'longitude'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'name'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'site'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'location'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'latitude'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'longitude'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'uri'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'username'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'schedules'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'token'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'description'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessPoints'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'externalId'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'entity'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'restricted'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'active'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'externalId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'externalName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'uri'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'username'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'schedules'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'token'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'description'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessPoints'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'externalId'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'entity'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'restricted'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'active'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'externalId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'externalName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -689,18 +699,11 @@ const documentNodeQueryGetAccessControllers = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$GetAccessControllers$accessControllers {
   Query$GetAccessControllers$accessControllers({
@@ -711,7 +714,8 @@ class Query$GetAccessControllers$accessControllers {
   });
 
   factory Query$GetAccessControllers$accessControllers.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$totalCount = json['totalCount'];
     final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
@@ -719,11 +723,14 @@ class Query$GetAccessControllers$accessControllers {
     return Query$GetAccessControllers$accessControllers(
       totalCount: (l$totalCount as int),
       pageInfo: Query$GetAccessControllers$accessControllers$pageInfo.fromJson(
-          (l$pageInfo as Map<String, dynamic>)),
+        (l$pageInfo as Map<String, dynamic>),
+      ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) =>
-              Query$GetAccessControllers$accessControllers$nodes.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => Query$GetAccessControllers$accessControllers$nodes.fromJson(
+              (e as Map<String, dynamic>),
+            ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -811,11 +818,10 @@ class Query$GetAccessControllers$accessControllers {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers
     on Query$GetAccessControllers$accessControllers {
   CopyWith$Query$GetAccessControllers$accessControllers<
-          Query$GetAccessControllers$accessControllers>
-      get copyWith => CopyWith$Query$GetAccessControllers$accessControllers(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessControllers$accessControllers(this, (i) => i);
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers<TRes> {
@@ -834,13 +840,17 @@ abstract class CopyWith$Query$GetAccessControllers$accessControllers<TRes> {
     String? $__typename,
   });
   CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<TRes>
-      get pageInfo;
+  get pageInfo;
   TRes nodes(
-      Iterable<Query$GetAccessControllers$accessControllers$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$GetAccessControllers$accessControllers$nodes<
-                      Query$GetAccessControllers$accessControllers$nodes>>?)
-          _fn);
+    Iterable<Query$GetAccessControllers$accessControllers$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes<
+          Query$GetAccessControllers$accessControllers$nodes
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAccessControllers$accessControllers<TRes>
@@ -861,43 +871,52 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo
-                as Query$GetAccessControllers$accessControllers$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes
+  }) => _then(
+    Query$GetAccessControllers$accessControllers(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo as Query$GetAccessControllers$accessControllers$pageInfo),
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes
                 as List<Query$GetAccessControllers$accessControllers$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<TRes>
-      get pageInfo {
+  get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$GetAccessControllers$accessControllers$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$GetAccessControllers$accessControllers$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$GetAccessControllers$accessControllers$nodes<
-                          Query$GetAccessControllers$accessControllers$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes?.map((e) =>
-              CopyWith$Query$GetAccessControllers$accessControllers$nodes(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Query$GetAccessControllers$accessControllers$nodes>? Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes<
+          Query$GetAccessControllers$accessControllers$nodes
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) => CopyWith$Query$GetAccessControllers$accessControllers$nodes(
+          e,
+          (i) => i,
+        ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers<TRes>
@@ -911,13 +930,11 @@ class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers<TRes>
     Query$GetAccessControllers$accessControllers$pageInfo? pageInfo,
     List<Query$GetAccessControllers$accessControllers$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<TRes>
-      get pageInfo =>
-          CopyWith$Query$GetAccessControllers$accessControllers$pageInfo.stub(
-              _res);
+  get pageInfo =>
+      CopyWith$Query$GetAccessControllers$accessControllers$pageInfo.stub(_res);
 
   nodes(_fn) => _res;
 }
@@ -932,7 +949,8 @@ class Query$GetAccessControllers$accessControllers$pageInfo {
   });
 
   factory Query$GetAccessControllers$accessControllers$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$hasNextPage = json['hasNextPage'];
     final l$hasPreviousPage = json['hasPreviousPage'];
     final l$startCursor = json['startCursor'];
@@ -1029,24 +1047,26 @@ class Query$GetAccessControllers$accessControllers$pageInfo {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers$pageInfo
     on Query$GetAccessControllers$accessControllers$pageInfo {
   CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<
-          Query$GetAccessControllers$accessControllers$pageInfo>
-      get copyWith =>
-          CopyWith$Query$GetAccessControllers$accessControllers$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers$pageInfo
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessControllers$accessControllers$pageInfo(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessControllers$accessControllers$pageInfo(
     Query$GetAccessControllers$accessControllers$pageInfo instance,
     TRes Function(Query$GetAccessControllers$accessControllers$pageInfo) then,
   ) = _CopyWithImpl$Query$GetAccessControllers$accessControllers$pageInfo;
 
   factory CopyWith$Query$GetAccessControllers$accessControllers$pageInfo.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$pageInfo;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$pageInfo;
 
   TRes call({
     bool? hasNextPage,
@@ -1068,7 +1088,7 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$pageInfo<TRes>
   final Query$GetAccessControllers$accessControllers$pageInfo _instance;
 
   final TRes Function(Query$GetAccessControllers$accessControllers$pageInfo)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1078,33 +1098,35 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$pageInfo<TRes>
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessControllers$accessControllers$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$pageInfo<TRes> {
   _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$pageInfo(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1114,8 +1136,7 @@ class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$pageInfo<
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessControllers$accessControllers$nodes {
@@ -1135,7 +1156,8 @@ class Query$GetAccessControllers$accessControllers$nodes {
   });
 
   factory Query$GetAccessControllers$accessControllers$nodes.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$site = json['site'];
@@ -1154,18 +1176,25 @@ class Query$GetAccessControllers$accessControllers$nodes {
       site: (l$site as String),
       location:
           Query$GetAccessControllers$accessControllers$nodes$location.fromJson(
-              (l$location as Map<String, dynamic>)),
+            (l$location as Map<String, dynamic>),
+          ),
       uri: (l$uri as String),
       username: (l$username as String),
       schedules: (l$schedules as List<dynamic>?)
-          ?.map((e) =>
-              Query$GetAccessControllers$accessControllers$nodes$schedules
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Query$GetAccessControllers$accessControllers$nodes$schedules.fromJson(
+                  (e as Map<String, dynamic>),
+                ),
+          )
           .toList(),
       accessPoints: (l$accessPoints as List<dynamic>?)
-          ?.map((e) =>
-              Query$GetAccessControllers$accessControllers$nodes$accessPoints
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Query$GetAccessControllers$accessControllers$nodes$accessPoints.fromJson(
+                  (e as Map<String, dynamic>),
+                ),
+          )
           .toList(),
       active: (l$active as bool),
       externalId: (l$externalId as String),
@@ -1187,10 +1216,10 @@ class Query$GetAccessControllers$accessControllers$nodes {
   final String username;
 
   final List<Query$GetAccessControllers$accessControllers$nodes$schedules>?
-      schedules;
+  schedules;
 
   final List<Query$GetAccessControllers$accessControllers$nodes$accessPoints>?
-      accessPoints;
+  accessPoints;
 
   final bool active;
 
@@ -1217,8 +1246,9 @@ class Query$GetAccessControllers$accessControllers$nodes {
     final l$schedules = schedules;
     _resultData['schedules'] = l$schedules?.map((e) => e.toJson()).toList();
     final l$accessPoints = accessPoints;
-    _resultData['accessPoints'] =
-        l$accessPoints?.map((e) => e.toJson()).toList();
+    _resultData['accessPoints'] = l$accessPoints
+        ?.map((e) => e.toJson())
+        .toList();
     final l$active = active;
     _resultData['active'] = l$active;
     final l$externalId = externalId;
@@ -1360,24 +1390,25 @@ class Query$GetAccessControllers$accessControllers$nodes {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers$nodes
     on Query$GetAccessControllers$accessControllers$nodes {
   CopyWith$Query$GetAccessControllers$accessControllers$nodes<
-          Query$GetAccessControllers$accessControllers$nodes>
-      get copyWith =>
-          CopyWith$Query$GetAccessControllers$accessControllers$nodes(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers$nodes
+  >
+  get copyWith => CopyWith$Query$GetAccessControllers$accessControllers$nodes(
+    this,
+    (i) => i,
+  );
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes(
     Query$GetAccessControllers$accessControllers$nodes instance,
     TRes Function(Query$GetAccessControllers$accessControllers$nodes) then,
   ) = _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes;
 
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes;
 
   TRes call({
     String? id,
@@ -1387,28 +1418,38 @@ abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes<
     String? uri,
     String? username,
     List<Query$GetAccessControllers$accessControllers$nodes$schedules>?
-        schedules,
+    schedules,
     List<Query$GetAccessControllers$accessControllers$nodes$accessPoints>?
-        accessPoints,
+    accessPoints,
     bool? active,
     String? externalId,
     String? externalName,
     String? $__typename,
   });
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<TRes>
-      get location;
+  get location;
   TRes schedules(
-      Iterable<Query$GetAccessControllers$accessControllers$nodes$schedules>? Function(
-              Iterable<
-                  CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-                      Query$GetAccessControllers$accessControllers$nodes$schedules>>?)
-          _fn);
+    Iterable<Query$GetAccessControllers$accessControllers$nodes$schedules>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
+          Query$GetAccessControllers$accessControllers$nodes$schedules
+        >
+      >?,
+    )
+    _fn,
+  );
   TRes accessPoints(
-      Iterable<Query$GetAccessControllers$accessControllers$nodes$accessPoints>? Function(
-              Iterable<
-                  CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-                      Query$GetAccessControllers$accessControllers$nodes$accessPoints>>?)
-          _fn);
+    Iterable<Query$GetAccessControllers$accessControllers$nodes$accessPoints>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
+          Query$GetAccessControllers$accessControllers$nodes$accessPoints
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes<TRes>
@@ -1438,84 +1479,110 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes<TRes>
     Object? externalId = _undefined,
     Object? externalName = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers$nodes(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        site: site == _undefined || site == null
-            ? _instance.site
-            : (site as String),
-        location: location == _undefined || location == null
-            ? _instance.location
-            : (location
+  }) => _then(
+    Query$GetAccessControllers$accessControllers$nodes(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      site: site == _undefined || site == null
+          ? _instance.site
+          : (site as String),
+      location: location == _undefined || location == null
+          ? _instance.location
+          : (location
                 as Query$GetAccessControllers$accessControllers$nodes$location),
-        uri: uri == _undefined || uri == null ? _instance.uri : (uri as String),
-        username: username == _undefined || username == null
-            ? _instance.username
-            : (username as String),
-        schedules: schedules == _undefined
-            ? _instance.schedules
-            : (schedules as List<
-                Query$GetAccessControllers$accessControllers$nodes$schedules>?),
-        accessPoints: accessPoints == _undefined
-            ? _instance.accessPoints
-            : (accessPoints as List<
-                Query$GetAccessControllers$accessControllers$nodes$accessPoints>?),
-        active: active == _undefined || active == null
-            ? _instance.active
-            : (active as bool),
-        externalId: externalId == _undefined || externalId == null
-            ? _instance.externalId
-            : (externalId as String),
-        externalName: externalName == _undefined || externalName == null
-            ? _instance.externalName
-            : (externalName as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      uri: uri == _undefined || uri == null ? _instance.uri : (uri as String),
+      username: username == _undefined || username == null
+          ? _instance.username
+          : (username as String),
+      schedules: schedules == _undefined
+          ? _instance.schedules
+          : (schedules
+                as List<
+                  Query$GetAccessControllers$accessControllers$nodes$schedules
+                >?),
+      accessPoints: accessPoints == _undefined
+          ? _instance.accessPoints
+          : (accessPoints
+                as List<
+                  Query$GetAccessControllers$accessControllers$nodes$accessPoints
+                >?),
+      active: active == _undefined || active == null
+          ? _instance.active
+          : (active as bool),
+      externalId: externalId == _undefined || externalId == null
+          ? _instance.externalId
+          : (externalId as String),
+      externalName: externalName == _undefined || externalName == null
+          ? _instance.externalName
+          : (externalName as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<TRes>
-      get location {
+  get location {
     final local$location = _instance.location;
     return CopyWith$Query$GetAccessControllers$accessControllers$nodes$location(
-        local$location, (e) => call(location: e));
+      local$location,
+      (e) => call(location: e),
+    );
   }
 
   TRes schedules(
-          Iterable<Query$GetAccessControllers$accessControllers$nodes$schedules>? Function(
-                  Iterable<
-                      CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-                          Query$GetAccessControllers$accessControllers$nodes$schedules>>?)
-              _fn) =>
-      call(
-          schedules: _fn(_instance.schedules?.map((e) =>
-              CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Query$GetAccessControllers$accessControllers$nodes$schedules>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
+          Query$GetAccessControllers$accessControllers$nodes$schedules
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    schedules: _fn(
+      _instance.schedules?.map(
+        (e) =>
+            CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules(
+              e,
+              (i) => i,
+            ),
+      ),
+    )?.toList(),
+  );
 
   TRes accessPoints(
-          Iterable<Query$GetAccessControllers$accessControllers$nodes$accessPoints>? Function(
-                  Iterable<
-                      CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-                          Query$GetAccessControllers$accessControllers$nodes$accessPoints>>?)
-              _fn) =>
-      call(
-          accessPoints: _fn(_instance.accessPoints?.map((e) =>
-              CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Query$GetAccessControllers$accessControllers$nodes$accessPoints>?
+    Function(
+      Iterable<
+        CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
+          Query$GetAccessControllers$accessControllers$nodes$accessPoints
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    accessPoints: _fn(
+      _instance.accessPoints?.map(
+        (e) =>
+            CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
+              e,
+              (i) => i,
+            ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes<TRes>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes<TRes> {
   _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1527,20 +1594,20 @@ class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes<TRes>
     String? uri,
     String? username,
     List<Query$GetAccessControllers$accessControllers$nodes$schedules>?
-        schedules,
+    schedules,
     List<Query$GetAccessControllers$accessControllers$nodes$accessPoints>?
-        accessPoints,
+    accessPoints,
     bool? active,
     String? externalId,
     String? externalName,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<TRes>
-      get location =>
-          CopyWith$Query$GetAccessControllers$accessControllers$nodes$location
-              .stub(_res);
+  get location =>
+      CopyWith$Query$GetAccessControllers$accessControllers$nodes$location.stub(
+        _res,
+      );
 
   schedules(_fn) => _res;
 
@@ -1555,7 +1622,8 @@ class Query$GetAccessControllers$accessControllers$nodes$location {
   });
 
   factory Query$GetAccessControllers$accessControllers$nodes$location.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$latitude = json['latitude'];
     final l$longitude = json['longitude'];
     final l$$__typename = json['__typename'];
@@ -1588,11 +1656,7 @@ class Query$GetAccessControllers$accessControllers$nodes$location {
     final l$latitude = latitude;
     final l$longitude = longitude;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$latitude,
-      l$longitude,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$latitude, l$longitude, l$$__typename]);
   }
 
   @override
@@ -1626,38 +1690,38 @@ class Query$GetAccessControllers$accessControllers$nodes$location {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers$nodes$location
     on Query$GetAccessControllers$accessControllers$nodes$location {
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<
-          Query$GetAccessControllers$accessControllers$nodes$location>
-      get copyWith =>
-          CopyWith$Query$GetAccessControllers$accessControllers$nodes$location(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers$nodes$location
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessControllers$accessControllers$nodes$location(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$location(
     Query$GetAccessControllers$accessControllers$nodes$location instance,
     TRes Function(Query$GetAccessControllers$accessControllers$nodes$location)
-        then,
+    then,
   ) = _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$location;
 
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$location.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$location;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$location;
 
-  TRes call({
-    double? latitude,
-    double? longitude,
-    String? $__typename,
-  });
+  TRes call({double? latitude, double? longitude, String? $__typename});
 }
 
 class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$location<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$location(
     this._instance,
     this._then,
@@ -1666,7 +1730,9 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$location<
   final Query$GetAccessControllers$accessControllers$nodes$location _instance;
 
   final TRes Function(
-      Query$GetAccessControllers$accessControllers$nodes$location) _then;
+    Query$GetAccessControllers$accessControllers$nodes$location,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1674,36 +1740,35 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$location<
     Object? latitude = _undefined,
     Object? longitude = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers$nodes$location(
-        latitude: latitude == _undefined || latitude == null
-            ? _instance.latitude
-            : (latitude as double),
-        longitude: longitude == _undefined || longitude == null
-            ? _instance.longitude
-            : (longitude as double),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessControllers$accessControllers$nodes$location(
+      latitude: latitude == _undefined || latitude == null
+          ? _instance.latitude
+          : (latitude as double),
+      longitude: longitude == _undefined || longitude == null
+          ? _instance.longitude
+          : (longitude as double),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$location<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$location<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$location(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    double? latitude,
-    double? longitude,
-    String? $__typename,
-  }) =>
-      _res;
+  call({double? latitude, double? longitude, String? $__typename}) => _res;
 }
 
 class Query$GetAccessControllers$accessControllers$nodes$schedules {
@@ -1715,7 +1780,8 @@ class Query$GetAccessControllers$accessControllers$nodes$schedules {
   });
 
   factory Query$GetAccessControllers$accessControllers$nodes$schedules.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$token = json['token'];
     final l$name = json['name'];
     final l$description = json['description'];
@@ -1755,12 +1821,7 @@ class Query$GetAccessControllers$accessControllers$nodes$schedules {
     final l$name = name;
     final l$description = description;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$token,
-      l$name,
-      l$description,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$token, l$name, l$description, l$$__typename]);
   }
 
   @override
@@ -1800,25 +1861,27 @@ class Query$GetAccessControllers$accessControllers$nodes$schedules {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers$nodes$schedules
     on Query$GetAccessControllers$accessControllers$nodes$schedules {
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-          Query$GetAccessControllers$accessControllers$nodes$schedules>
-      get copyWith =>
-          CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers$nodes$schedules
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules(
     Query$GetAccessControllers$accessControllers$nodes$schedules instance,
     TRes Function(Query$GetAccessControllers$accessControllers$nodes$schedules)
-        then,
+    then,
   ) = _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$schedules;
 
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$schedules;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$schedules;
 
   TRes call({
     String? token,
@@ -1829,10 +1892,12 @@ abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes$sched
 }
 
 class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$schedules<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$schedules(
     this._instance,
     this._then,
@@ -1841,7 +1906,9 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$schedules
   final Query$GetAccessControllers$accessControllers$nodes$schedules _instance;
 
   final TRes Function(
-      Query$GetAccessControllers$accessControllers$nodes$schedules) _then;
+    Query$GetAccessControllers$accessControllers$nodes$schedules,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1850,30 +1917,34 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$schedules
     Object? name = _undefined,
     Object? description = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers$nodes$schedules(
-        token: token == _undefined || token == null
-            ? _instance.token
-            : (token as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        description: description == _undefined || description == null
-            ? _instance.description
-            : (description as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessControllers$accessControllers$nodes$schedules(
+      token: token == _undefined || token == null
+          ? _instance.token
+          : (token as String),
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      description: description == _undefined || description == null
+          ? _instance.description
+          : (description as String),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$schedules<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$schedules<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$schedules(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1882,8 +1953,7 @@ class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$sched
     String? name,
     String? description,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$GetAccessControllers$accessControllers$nodes$accessPoints {
@@ -1897,7 +1967,8 @@ class Query$GetAccessControllers$accessControllers$nodes$accessPoints {
   });
 
   factory Query$GetAccessControllers$accessControllers$nodes$accessPoints.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$id = json['id'];
     final l$externalId = json['externalId'];
@@ -2008,26 +2079,29 @@ class Query$GetAccessControllers$accessControllers$nodes$accessPoints {
 extension UtilityExtension$Query$GetAccessControllers$accessControllers$nodes$accessPoints
     on Query$GetAccessControllers$accessControllers$nodes$accessPoints {
   CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-          Query$GetAccessControllers$accessControllers$nodes$accessPoints>
-      get copyWith =>
-          CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
-            this,
-            (i) => i,
-          );
+    Query$GetAccessControllers$accessControllers$nodes$accessPoints
+  >
+  get copyWith =>
+      CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
     Query$GetAccessControllers$accessControllers$nodes$accessPoints instance,
     TRes Function(
-            Query$GetAccessControllers$accessControllers$nodes$accessPoints)
-        then,
+      Query$GetAccessControllers$accessControllers$nodes$accessPoints,
+    )
+    then,
   ) = _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints;
 
   factory CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints;
 
   TRes call({
     String? name,
@@ -2040,20 +2114,24 @@ abstract class CopyWith$Query$GetAccessControllers$accessControllers$nodes$acces
 }
 
 class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
     this._instance,
     this._then,
   );
 
   final Query$GetAccessControllers$accessControllers$nodes$accessPoints
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$GetAccessControllers$accessControllers$nodes$accessPoints) _then;
+    Query$GetAccessControllers$accessControllers$nodes$accessPoints,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -2064,34 +2142,38 @@ class _CopyWithImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoi
     Object? entity = _undefined,
     Object? restricted = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$GetAccessControllers$accessControllers$nodes$accessPoints(
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        externalId: externalId == _undefined || externalId == null
-            ? _instance.externalId
-            : (externalId as String),
-        entity: entity == _undefined || entity == null
-            ? _instance.entity
-            : (entity as String),
-        restricted: restricted == _undefined || restricted == null
-            ? _instance.restricted
-            : (restricted as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$GetAccessControllers$accessControllers$nodes$accessPoints(
+      name: name == _undefined || name == null
+          ? _instance.name
+          : (name as String),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      externalId: externalId == _undefined || externalId == null
+          ? _instance.externalId
+          : (externalId as String),
+      entity: entity == _undefined || entity == null
+          ? _instance.entity
+          : (entity as String),
+      restricted: restricted == _undefined || restricted == null
+          ? _instance.restricted
+          : (restricted as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$GetAccessControllers$accessControllers$nodes$accessPoints<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$accessPoints(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2102,6 +2184,5 @@ class _CopyWithStubImpl$Query$GetAccessControllers$accessControllers$nodes$acces
     String? entity,
     bool? restricted,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

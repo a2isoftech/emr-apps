@@ -1,16 +1,17 @@
 import 'package:gql/ast.dart';
 
 class Variables$Mutation$RestrictAccessPoint {
-  factory Variables$Mutation$RestrictAccessPoint(
-          {required String accessPointId}) =>
-      Variables$Mutation$RestrictAccessPoint._({
-        r'accessPointId': accessPointId,
-      });
+  factory Variables$Mutation$RestrictAccessPoint({
+    required String accessPointId,
+  }) => Variables$Mutation$RestrictAccessPoint._({
+    r'accessPointId': accessPointId,
+  });
 
   Variables$Mutation$RestrictAccessPoint._(this._$data);
 
   factory Variables$Mutation$RestrictAccessPoint.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$accessPointId = data['accessPointId'];
     result$data['accessPointId'] = (l$accessPointId as String);
@@ -29,11 +30,10 @@ class Variables$Mutation$RestrictAccessPoint {
   }
 
   CopyWith$Variables$Mutation$RestrictAccessPoint<
-          Variables$Mutation$RestrictAccessPoint>
-      get copyWith => CopyWith$Variables$Mutation$RestrictAccessPoint(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$RestrictAccessPoint
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$RestrictAccessPoint(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -84,12 +84,13 @@ class _CopyWithImpl$Variables$Mutation$RestrictAccessPoint<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? accessPointId = _undefined}) =>
-      _then(Variables$Mutation$RestrictAccessPoint._({
-        ..._instance._$data,
-        if (accessPointId != _undefined && accessPointId != null)
-          'accessPointId': (accessPointId as String),
-      }));
+  TRes call({Object? accessPointId = _undefined}) => _then(
+    Variables$Mutation$RestrictAccessPoint._({
+      ..._instance._$data,
+      if (accessPointId != _undefined && accessPointId != null)
+        'accessPointId': (accessPointId as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$RestrictAccessPoint<TRes>
@@ -133,10 +134,7 @@ class Mutation$RestrictAccessPoint {
   int get hashCode {
     final l$restrictAccessPoint = restrictAccessPoint;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$restrictAccessPoint,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$restrictAccessPoint, l$$__typename]);
   }
 
   @override
@@ -165,10 +163,7 @@ class Mutation$RestrictAccessPoint {
 extension UtilityExtension$Mutation$RestrictAccessPoint
     on Mutation$RestrictAccessPoint {
   CopyWith$Mutation$RestrictAccessPoint<Mutation$RestrictAccessPoint>
-      get copyWith => CopyWith$Mutation$RestrictAccessPoint(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$RestrictAccessPoint(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$RestrictAccessPoint<TRes> {
@@ -180,18 +175,12 @@ abstract class CopyWith$Mutation$RestrictAccessPoint<TRes> {
   factory CopyWith$Mutation$RestrictAccessPoint.stub(TRes res) =
       _CopyWithStubImpl$Mutation$RestrictAccessPoint;
 
-  TRes call({
-    bool? restrictAccessPoint,
-    String? $__typename,
-  });
+  TRes call({bool? restrictAccessPoint, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$RestrictAccessPoint<TRes>
     implements CopyWith$Mutation$RestrictAccessPoint<TRes> {
-  _CopyWithImpl$Mutation$RestrictAccessPoint(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$RestrictAccessPoint(this._instance, this._then);
 
   final Mutation$RestrictAccessPoint _instance;
 
@@ -202,16 +191,17 @@ class _CopyWithImpl$Mutation$RestrictAccessPoint<TRes>
   TRes call({
     Object? restrictAccessPoint = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$RestrictAccessPoint(
-        restrictAccessPoint:
-            restrictAccessPoint == _undefined || restrictAccessPoint == null
-                ? _instance.restrictAccessPoint
-                : (restrictAccessPoint as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$RestrictAccessPoint(
+      restrictAccessPoint:
+          restrictAccessPoint == _undefined || restrictAccessPoint == null
+          ? _instance.restrictAccessPoint
+          : (restrictAccessPoint as bool),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$RestrictAccessPoint<TRes>
@@ -220,49 +210,46 @@ class _CopyWithStubImpl$Mutation$RestrictAccessPoint<TRes>
 
   TRes _res;
 
-  call({
-    bool? restrictAccessPoint,
-    String? $__typename,
-  }) =>
-      _res;
+  call({bool? restrictAccessPoint, String? $__typename}) => _res;
 }
 
-const documentNodeMutationRestrictAccessPoint = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'RestrictAccessPoint'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'accessPointId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeMutationRestrictAccessPoint = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'RestrictAccessPoint'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'accessPointId')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'restrictAccessPoint'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'accessPointId'),
-            value: VariableNode(name: NameNode(value: 'accessPointId')),
-          )
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
+          FieldNode(
+            name: NameNode(value: 'restrictAccessPoint'),
+            alias: null,
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'accessPointId'),
+                value: VariableNode(name: NameNode(value: 'accessPointId')),
+              ),
+            ],
+            directives: [],
+            selectionSet: null,
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
         ],
-        directives: [],
-        selectionSet: null,
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);

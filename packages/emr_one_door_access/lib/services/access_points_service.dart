@@ -43,6 +43,18 @@ class AccessPointsService {
             groups: [],
             externalId: u.externalId,
             entity: u.entity,
+            camera: u.camera == null
+                ? null
+                : Camera(
+                    cameraName: u.camera!.cameraName,
+                    ipAddress: u.camera!.ipAddress,
+                    snapshotUrl: u.camera!.snapshotUrl,
+                    rtspUrl: u.camera!.rtspUrl,
+                    username: u.camera!.username ?? '',
+                    password: '',
+                    createdUtc: u.camera!.createdUtc,
+                    streamPath: u.camera!.streamPath,
+                  ),
           ),
         )
         .toList();
@@ -88,6 +100,7 @@ class AccessPointsService {
                     username: u.camera!.username ?? '',
                     password: '',
                     createdUtc: u.camera!.createdUtc,
+                    streamPath: u.camera!.streamPath,
                   ),
             groupScheduleLinks: (u.groups ?? []).map((g) {
               final schedules = g.accessPoints
@@ -183,6 +196,7 @@ class AccessPointsService {
                     username: u.camera!.username ?? '',
                     password: '',
                     createdUtc: u.camera!.createdUtc,
+                    streamPath: u.camera!.streamPath,
                   ),
           ),
         )
@@ -246,6 +260,42 @@ class AccessPointsService {
     StaticData.ignoreCache = true;
 
     return response.data?.permitAccessPoint ?? false;
+  }
+
+  Future<Mutation$StartCameraStream$startCameraStream> startCameraStream(
+    String accessPointId, {
+    int durationMinutes = 5,
+  }) async {
+    final response = await documentNodeMutationStartCameraStream.execute(
+      httpClient,
+      Mutation$StartCameraStream.fromJson,
+      variables: Variables$Mutation$StartCameraStream(
+        accessPointId: accessPointId,
+        durationMinutes: durationMinutes,
+      ),
+    );
+    if (response.hasErrors()) {
+      throw Exception(response.errors);
+    }
+
+    return response.data!.startCameraStream;
+  }
+
+  Future<Mutation$StopCameraStream$stopCameraStream> stopCameraStream(
+    String accessPointId,
+  ) async {
+    final response = await documentNodeMutationStopCameraStream.execute(
+      httpClient,
+      Mutation$StopCameraStream.fromJson,
+      variables: Variables$Mutation$StopCameraStream(
+        accessPointId: accessPointId,
+      ),
+    );
+    if (response.hasErrors()) {
+      throw Exception(response.errors);
+    }
+
+    return response.data!.stopCameraStream;
   }
 
   Future<bool> addCameraToAccessPoint({

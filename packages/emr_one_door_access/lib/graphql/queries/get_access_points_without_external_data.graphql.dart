@@ -539,6 +539,13 @@ const documentNodeQueryGetAccessPointsWithoutExternalData = DocumentNode(
                         selectionSet: null,
                       ),
                       FieldNode(
+                        name: NameNode(value: 'streamPath'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
                         name: NameNode(value: 'createdUtc'),
                         alias: null,
                         arguments: [],
@@ -1119,6 +1126,7 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
     required this.rtspUrl,
     required this.snapshotUrl,
     this.username,
+    this.streamPath,
     required this.createdUtc,
     this.$__typename = 'AccessPointCamera',
   });
@@ -1131,6 +1139,7 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
     final l$rtspUrl = json['rtspUrl'];
     final l$snapshotUrl = json['snapshotUrl'];
     final l$username = json['username'];
+    final l$streamPath = json['streamPath'];
     final l$createdUtc = json['createdUtc'];
     final l$$__typename = json['__typename'];
     return Query$GetAccessPointsWithoutExternalData$accessPoints$camera(
@@ -1139,6 +1148,7 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
       rtspUrl: (l$rtspUrl as String),
       snapshotUrl: (l$snapshotUrl as String),
       username: (l$username as String?),
+      streamPath: (l$streamPath as String?),
       createdUtc: DateTime.parse((l$createdUtc as String)),
       $__typename: (l$$__typename as String),
     );
@@ -1153,6 +1163,8 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
   final String snapshotUrl;
 
   final String? username;
+
+  final String? streamPath;
 
   final DateTime createdUtc;
 
@@ -1170,6 +1182,8 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
     _resultData['snapshotUrl'] = l$snapshotUrl;
     final l$username = username;
     _resultData['username'] = l$username;
+    final l$streamPath = streamPath;
+    _resultData['streamPath'] = l$streamPath;
     final l$createdUtc = createdUtc;
     _resultData['createdUtc'] = l$createdUtc.toIso8601String();
     final l$$__typename = $__typename;
@@ -1184,6 +1198,7 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
     final l$rtspUrl = rtspUrl;
     final l$snapshotUrl = snapshotUrl;
     final l$username = username;
+    final l$streamPath = streamPath;
     final l$createdUtc = createdUtc;
     final l$$__typename = $__typename;
     return Object.hashAll([
@@ -1192,6 +1207,7 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
       l$rtspUrl,
       l$snapshotUrl,
       l$username,
+      l$streamPath,
       l$createdUtc,
       l$$__typename,
     ]);
@@ -1230,6 +1246,11 @@ class Query$GetAccessPointsWithoutExternalData$accessPoints$camera {
     final l$username = username;
     final lOther$username = other.username;
     if (l$username != lOther$username) {
+      return false;
+    }
+    final l$streamPath = streamPath;
+    final lOther$streamPath = other.streamPath;
+    if (l$streamPath != lOther$streamPath) {
       return false;
     }
     final l$createdUtc = createdUtc;
@@ -1277,6 +1298,7 @@ abstract class CopyWith$Query$GetAccessPointsWithoutExternalData$accessPoints$ca
     String? rtspUrl,
     String? snapshotUrl,
     String? username,
+    String? streamPath,
     DateTime? createdUtc,
     String? $__typename,
   });
@@ -1309,6 +1331,7 @@ class _CopyWithImpl$Query$GetAccessPointsWithoutExternalData$accessPoints$camera
     Object? rtspUrl = _undefined,
     Object? snapshotUrl = _undefined,
     Object? username = _undefined,
+    Object? streamPath = _undefined,
     Object? createdUtc = _undefined,
     Object? $__typename = _undefined,
   }) => _then(
@@ -1328,6 +1351,9 @@ class _CopyWithImpl$Query$GetAccessPointsWithoutExternalData$accessPoints$camera
       username: username == _undefined
           ? _instance.username
           : (username as String?),
+      streamPath: streamPath == _undefined
+          ? _instance.streamPath
+          : (streamPath as String?),
       createdUtc: createdUtc == _undefined || createdUtc == null
           ? _instance.createdUtc
           : (createdUtc as DateTime),
@@ -1357,6 +1383,7 @@ class _CopyWithStubImpl$Query$GetAccessPointsWithoutExternalData$accessPoints$ca
     String? rtspUrl,
     String? snapshotUrl,
     String? username,
+    String? streamPath,
     DateTime? createdUtc,
     String? $__typename,
   }) => _res;

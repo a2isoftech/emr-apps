@@ -8,19 +8,19 @@ class Variables$Query$SearchScheduleUpdates {
     int? first,
     int? last,
     required Input$SearchScheduleUpdateInput input,
-  }) =>
-      Variables$Query$SearchScheduleUpdates._({
-        if (after != null) r'after': after,
-        if (before != null) r'before': before,
-        if (first != null) r'first': first,
-        if (last != null) r'last': last,
-        r'input': input,
-      });
+  }) => Variables$Query$SearchScheduleUpdates._({
+    if (after != null) r'after': after,
+    if (before != null) r'before': before,
+    if (first != null) r'first': first,
+    if (last != null) r'last': last,
+    r'input': input,
+  });
 
   Variables$Query$SearchScheduleUpdates._(this._$data);
 
   factory Variables$Query$SearchScheduleUpdates.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     if (data.containsKey('after')) {
       final l$after = data['after'];
@@ -40,7 +40,8 @@ class Variables$Query$SearchScheduleUpdates {
     }
     final l$input = data['input'];
     result$data['input'] = Input$SearchScheduleUpdateInput.fromJson(
-        (l$input as Map<String, dynamic>));
+      (l$input as Map<String, dynamic>),
+    );
     return Variables$Query$SearchScheduleUpdates._(result$data);
   }
 
@@ -81,11 +82,10 @@ class Variables$Query$SearchScheduleUpdates {
   }
 
   CopyWith$Variables$Query$SearchScheduleUpdates<
-          Variables$Query$SearchScheduleUpdates>
-      get copyWith => CopyWith$Variables$Query$SearchScheduleUpdates(
-            this,
-            (i) => i,
-          );
+    Variables$Query$SearchScheduleUpdates
+  >
+  get copyWith =>
+      CopyWith$Variables$Query$SearchScheduleUpdates(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -190,16 +190,17 @@ class _CopyWithImpl$Variables$Query$SearchScheduleUpdates<TRes>
     Object? first = _undefined,
     Object? last = _undefined,
     Object? input = _undefined,
-  }) =>
-      _then(Variables$Query$SearchScheduleUpdates._({
-        ..._instance._$data,
-        if (after != _undefined) 'after': (after as String?),
-        if (before != _undefined) 'before': (before as String?),
-        if (first != _undefined) 'first': (first as int?),
-        if (last != _undefined) 'last': (last as int?),
-        if (input != _undefined && input != null)
-          'input': (input as Input$SearchScheduleUpdateInput),
-      }));
+  }) => _then(
+    Variables$Query$SearchScheduleUpdates._({
+      ..._instance._$data,
+      if (after != _undefined) 'after': (after as String?),
+      if (before != _undefined) 'before': (before as String?),
+      if (first != _undefined) 'first': (first as int?),
+      if (last != _undefined) 'last': (last as int?),
+      if (input != _undefined && input != null)
+        'input': (input as Input$SearchScheduleUpdateInput),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$SearchScheduleUpdates<TRes>
@@ -214,8 +215,7 @@ class _CopyWithStubImpl$Variables$Query$SearchScheduleUpdates<TRes>
     int? first,
     int? last,
     Input$SearchScheduleUpdateInput? input,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$SearchScheduleUpdates {
@@ -231,13 +231,14 @@ class Query$SearchScheduleUpdates {
       searchScheduleUpdates: l$searchScheduleUpdates == null
           ? null
           : Query$SearchScheduleUpdates$searchScheduleUpdates.fromJson(
-              (l$searchScheduleUpdates as Map<String, dynamic>)),
+              (l$searchScheduleUpdates as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
 
   final Query$SearchScheduleUpdates$searchScheduleUpdates?
-      searchScheduleUpdates;
+  searchScheduleUpdates;
 
   final String $__typename;
 
@@ -254,10 +255,7 @@ class Query$SearchScheduleUpdates {
   int get hashCode {
     final l$searchScheduleUpdates = searchScheduleUpdates;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$searchScheduleUpdates,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$searchScheduleUpdates, l$$__typename]);
   }
 
   @override
@@ -286,10 +284,7 @@ class Query$SearchScheduleUpdates {
 extension UtilityExtension$Query$SearchScheduleUpdates
     on Query$SearchScheduleUpdates {
   CopyWith$Query$SearchScheduleUpdates<Query$SearchScheduleUpdates>
-      get copyWith => CopyWith$Query$SearchScheduleUpdates(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$SearchScheduleUpdates(this, (i) => i);
 }
 
 abstract class CopyWith$Query$SearchScheduleUpdates<TRes> {
@@ -306,15 +301,12 @@ abstract class CopyWith$Query$SearchScheduleUpdates<TRes> {
     String? $__typename,
   });
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
-      get searchScheduleUpdates;
+  get searchScheduleUpdates;
 }
 
 class _CopyWithImpl$Query$SearchScheduleUpdates<TRes>
     implements CopyWith$Query$SearchScheduleUpdates<TRes> {
-  _CopyWithImpl$Query$SearchScheduleUpdates(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$SearchScheduleUpdates(this._instance, this._then);
 
   final Query$SearchScheduleUpdates _instance;
 
@@ -325,25 +317,29 @@ class _CopyWithImpl$Query$SearchScheduleUpdates<TRes>
   TRes call({
     Object? searchScheduleUpdates = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchScheduleUpdates(
-        searchScheduleUpdates: searchScheduleUpdates == _undefined
-            ? _instance.searchScheduleUpdates
-            : (searchScheduleUpdates
+  }) => _then(
+    Query$SearchScheduleUpdates(
+      searchScheduleUpdates: searchScheduleUpdates == _undefined
+          ? _instance.searchScheduleUpdates
+          : (searchScheduleUpdates
                 as Query$SearchScheduleUpdates$searchScheduleUpdates?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
-      get searchScheduleUpdates {
+  get searchScheduleUpdates {
     final local$searchScheduleUpdates = _instance.searchScheduleUpdates;
     return local$searchScheduleUpdates == null
         ? CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates(
-            local$searchScheduleUpdates, (e) => call(searchScheduleUpdates: e));
+            local$searchScheduleUpdates,
+            (e) => call(searchScheduleUpdates: e),
+          );
   }
 }
 
@@ -356,214 +352,224 @@ class _CopyWithStubImpl$Query$SearchScheduleUpdates<TRes>
   call({
     Query$SearchScheduleUpdates$searchScheduleUpdates? searchScheduleUpdates,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
-      get searchScheduleUpdates =>
-          CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates.stub(_res);
+  get searchScheduleUpdates =>
+      CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates.stub(_res);
 }
 
-const documentNodeQuerySearchScheduleUpdates = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'SearchScheduleUpdates'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'after')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'before')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'last')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'input')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'SearchScheduleUpdateInput'),
-          isNonNull: true,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'searchScheduleUpdates'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'after'),
-            value: VariableNode(name: NameNode(value: 'after')),
+const documentNodeQuerySearchScheduleUpdates = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'SearchScheduleUpdates'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'after')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'before'),
-            value: VariableNode(name: NameNode(value: 'before')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'before')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'last')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'input')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'SearchScheduleUpdateInput'),
+            isNonNull: true,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'last'),
-            value: VariableNode(name: NameNode(value: 'last')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: VariableNode(name: NameNode(value: 'input')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'totalCount'),
+            name: NameNode(value: 'searchScheduleUpdates'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'after'),
+                value: VariableNode(name: NameNode(value: 'after')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'before'),
+                value: VariableNode(name: NameNode(value: 'before')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'last'),
+                value: VariableNode(name: NameNode(value: 'last')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: VariableNode(name: NameNode(value: 'input')),
+              ),
+            ],
             directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'pageInfo'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'hasNextPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'hasPreviousPage'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'startCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'endCursor'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'nodes'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'rowId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessControllerId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'utcTime'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'topic2'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'siteId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'siteName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accessControllerName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'scheduleToken'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'totalCount'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'pageInfo'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'hasNextPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'hasPreviousPage'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'startCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'endCursor'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'nodes'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'rowId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessControllerId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'utcTime'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'topic2'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'siteId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'siteName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accessControllerName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'scheduleToken'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -572,18 +578,11 @@ const documentNodeQuerySearchScheduleUpdates = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 
 class Query$SearchScheduleUpdates$searchScheduleUpdates {
   Query$SearchScheduleUpdates$searchScheduleUpdates({
@@ -594,7 +593,8 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates {
   });
 
   factory Query$SearchScheduleUpdates$searchScheduleUpdates.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$totalCount = json['totalCount'];
     final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
@@ -603,11 +603,15 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates {
       totalCount: (l$totalCount as int),
       pageInfo:
           Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo.fromJson(
-              (l$pageInfo as Map<String, dynamic>)),
+            (l$pageInfo as Map<String, dynamic>),
+          ),
       nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) =>
-              Query$SearchScheduleUpdates$searchScheduleUpdates$nodes.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) =>
+                Query$SearchScheduleUpdates$searchScheduleUpdates$nodes.fromJson(
+                  (e as Map<String, dynamic>),
+                ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -695,24 +699,25 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates {
 extension UtilityExtension$Query$SearchScheduleUpdates$searchScheduleUpdates
     on Query$SearchScheduleUpdates$searchScheduleUpdates {
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<
-          Query$SearchScheduleUpdates$searchScheduleUpdates>
-      get copyWith =>
-          CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates(
-            this,
-            (i) => i,
-          );
+    Query$SearchScheduleUpdates$searchScheduleUpdates
+  >
+  get copyWith => CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates(
+    this,
+    (i) => i,
+  );
 }
 
 abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates(
     Query$SearchScheduleUpdates$searchScheduleUpdates instance,
     TRes Function(Query$SearchScheduleUpdates$searchScheduleUpdates) then,
   ) = _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates;
 
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates;
 
   TRes call({
     int? totalCount,
@@ -721,13 +726,17 @@ abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<
     String? $__typename,
   });
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<TRes>
-      get pageInfo;
+  get pageInfo;
   TRes nodes(
-      Iterable<Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>? Function(
-              Iterable<
-                  CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-                      Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>>?)
-          _fn);
+    Iterable<Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>? Function(
+      Iterable<
+        CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
+          Query$SearchScheduleUpdates$searchScheduleUpdates$nodes
+        >
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
@@ -749,50 +758,63 @@ class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchScheduleUpdates$searchScheduleUpdates(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo
+  }) => _then(
+    Query$SearchScheduleUpdates$searchScheduleUpdates(
+      totalCount: totalCount == _undefined || totalCount == null
+          ? _instance.totalCount
+          : (totalCount as int),
+      pageInfo: pageInfo == _undefined || pageInfo == null
+          ? _instance.pageInfo
+          : (pageInfo
                 as Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes as List<
-                Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      nodes: nodes == _undefined
+          ? _instance.nodes
+          : (nodes
+                as List<
+                  Query$SearchScheduleUpdates$searchScheduleUpdates$nodes
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<TRes>
-      get pageInfo {
+  get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>? Function(
-                  Iterable<
-                      CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-                          Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes?.map((e) =>
-              CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
-                e,
-                (i) => i,
-              )))?.toList());
+    Iterable<Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>? Function(
+      Iterable<
+        CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
+          Query$SearchScheduleUpdates$searchScheduleUpdates$nodes
+        >
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes: _fn(
+      _instance.nodes?.map(
+        (e) => CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
+          e,
+          (i) => i,
+        ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
     implements
         CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes> {
   _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -801,13 +823,13 @@ class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates<TRes>
     Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo? pageInfo,
     List<Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<TRes>
-      get pageInfo =>
-          CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo
-              .stub(_res);
+  get pageInfo =>
+      CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo.stub(
+        _res,
+      );
 
   nodes(_fn) => _res;
 }
@@ -822,7 +844,8 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo {
   });
 
   factory Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$hasNextPage = json['hasNextPage'];
     final l$hasPreviousPage = json['hasPreviousPage'];
     final l$startCursor = json['startCursor'];
@@ -919,25 +942,27 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo {
 extension UtilityExtension$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo
     on Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo {
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-          Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo>
-      get copyWith =>
-          CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo
+  >
+  get copyWith =>
+      CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
     Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo instance,
     TRes Function(Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo)
-        then,
+    then,
   ) = _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo;
 
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo;
 
   TRes call({
     bool? hasNextPage,
@@ -949,10 +974,12 @@ abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageIn
 }
 
 class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
     this._instance,
     this._then,
@@ -961,7 +988,9 @@ class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
   final Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo _instance;
 
   final TRes Function(
-      Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo) _then;
+    Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -971,34 +1000,37 @@ class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
     Object? startCursor = _undefined,
     Object? endCursor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        hasPreviousPage:
-            hasPreviousPage == _undefined || hasPreviousPage == null
-                ? _instance.hasPreviousPage
-                : (hasPreviousPage as bool),
-        startCursor: startCursor == _undefined
-            ? _instance.startCursor
-            : (startCursor as String?),
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
+      hasNextPage: hasNextPage == _undefined || hasNextPage == null
+          ? _instance.hasNextPage
+          : (hasNextPage as bool),
+      hasPreviousPage: hasPreviousPage == _undefined || hasPreviousPage == null
+          ? _instance.hasPreviousPage
+          : (hasPreviousPage as bool),
+      startCursor: startCursor == _undefined
+          ? _instance.startCursor
+          : (startCursor as String?),
+      endCursor: endCursor == _undefined
+          ? _instance.endCursor
+          : (endCursor as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageInfo(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1008,8 +1040,7 @@ class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$pageIn
     String? startCursor,
     String? endCursor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$SearchScheduleUpdates$searchScheduleUpdates$nodes {
@@ -1026,7 +1057,8 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates$nodes {
   });
 
   factory Query$SearchScheduleUpdates$searchScheduleUpdates$nodes.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$rowId = json['rowId'];
     final l$accessControllerId = json['accessControllerId'];
     final l$utcTime = json['utcTime'];
@@ -1175,24 +1207,26 @@ class Query$SearchScheduleUpdates$searchScheduleUpdates$nodes {
 extension UtilityExtension$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes
     on Query$SearchScheduleUpdates$searchScheduleUpdates$nodes {
   CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-          Query$SearchScheduleUpdates$searchScheduleUpdates$nodes>
-      get copyWith =>
-          CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
-            this,
-            (i) => i,
-          );
+    Query$SearchScheduleUpdates$searchScheduleUpdates$nodes
+  >
+  get copyWith =>
+      CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
     Query$SearchScheduleUpdates$searchScheduleUpdates$nodes instance,
     TRes Function(Query$SearchScheduleUpdates$searchScheduleUpdates$nodes) then,
   ) = _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes;
 
   factory CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes;
 
   TRes call({
     int? rowId,
@@ -1208,7 +1242,8 @@ abstract class CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
 }
 
 class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<TRes> {
   _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
@@ -1219,7 +1254,7 @@ class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
   final Query$SearchScheduleUpdates$searchScheduleUpdates$nodes _instance;
 
   final TRes Function(Query$SearchScheduleUpdates$searchScheduleUpdates$nodes)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1233,40 +1268,44 @@ class _CopyWithImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
     Object? accessControllerName = _undefined,
     Object? scheduleToken = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
-        rowId: rowId == _undefined || rowId == null
-            ? _instance.rowId
-            : (rowId as int),
-        accessControllerId:
-            accessControllerId == _undefined || accessControllerId == null
-                ? _instance.accessControllerId
-                : (accessControllerId as String),
-        utcTime: utcTime == _undefined || utcTime == null
-            ? _instance.utcTime
-            : (utcTime as DateTime),
-        topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
-        siteId: siteId == _undefined ? _instance.siteId : (siteId as String?),
-        siteName:
-            siteName == _undefined ? _instance.siteName : (siteName as String?),
-        accessControllerName: accessControllerName == _undefined
-            ? _instance.accessControllerName
-            : (accessControllerName as String?),
-        scheduleToken: scheduleToken == _undefined
-            ? _instance.scheduleToken
-            : (scheduleToken as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
+      rowId: rowId == _undefined || rowId == null
+          ? _instance.rowId
+          : (rowId as int),
+      accessControllerId:
+          accessControllerId == _undefined || accessControllerId == null
+          ? _instance.accessControllerId
+          : (accessControllerId as String),
+      utcTime: utcTime == _undefined || utcTime == null
+          ? _instance.utcTime
+          : (utcTime as DateTime),
+      topic2: topic2 == _undefined ? _instance.topic2 : (topic2 as String?),
+      siteId: siteId == _undefined ? _instance.siteId : (siteId as String?),
+      siteName: siteName == _undefined
+          ? _instance.siteName
+          : (siteName as String?),
+      accessControllerName: accessControllerName == _undefined
+          ? _instance.accessControllerName
+          : (accessControllerName as String?),
+      scheduleToken: scheduleToken == _undefined
+          ? _instance.scheduleToken
+          : (scheduleToken as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<TRes> {
   _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1280,6 +1319,5 @@ class _CopyWithStubImpl$Query$SearchScheduleUpdates$searchScheduleUpdates$nodes<
     String? accessControllerName,
     String? scheduleToken,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

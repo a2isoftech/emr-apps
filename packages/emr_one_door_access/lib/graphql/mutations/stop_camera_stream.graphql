@@ -1,0 +1,11 @@
+mutation StopCameraStream($accessPointId: String!) {
+  stopCameraStream(
+    accessPointId: $accessPointId    
+  ) {
+    accessPointId
+    isRunning
+    durationMinutes
+    timeRemaining
+    message
+  }
+}
