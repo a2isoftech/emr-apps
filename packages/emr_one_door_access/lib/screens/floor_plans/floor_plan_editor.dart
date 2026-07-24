@@ -32,6 +32,11 @@ class FloorPlanEditor extends StatefulWidget {
   final int pollingSeconds;
   bool get pollForAlerts => floorPlan != null && !isInEditMode;
 
+  String get title {
+    if (floorPlan == null) return 'Add New Floor Plan';
+    return isInEditMode ? 'Edit Floor Plan' : 'View Floor Plan';
+  }
+
   @override
   State<FloorPlanEditor> createState() => _FloorPlanEditorState();
 }
@@ -40,6 +45,7 @@ class _FloorPlanEditorState extends State<FloorPlanEditor> {
   late int _pollingSeconds;
   Timer? _timer;
   Future<FloorPlan?>? _initialLoad;
+  bool _isSaving = false;
 
   @override
   void initState() {
@@ -94,6 +100,46 @@ class _FloorPlanEditorState extends State<FloorPlanEditor> {
     super.dispose();
   }
 
+  Future<void> _handleCancel() async {
+    context.pop();
+  }
+
+  Future<void> _handleSave() async {
+    if (widget.formKey.currentState?.validate() ?? true) {
+      widget.formKey.currentState!.save();
+
+      if ((widget.controller.name.value ?? '').isEmpty) {
+        await EmrModal.showMessageBar(
+          context,
+          'Please enter a name for floor plan.',
+          messageType: MessageBarTypes.error,
+        );
+        return;
+      }
+
+      setState(() => _isSaving = true);
+      final (success, error) = await widget.controller.update();
+
+      if (!mounted) return;
+      setState(() => _isSaving = false);
+
+      if (!success) {
+        await EmrModal.showMessageBar(
+          context,
+          'Floor plan could not be saved: $error',
+          messageType: MessageBarTypes.error,
+        );
+        return;
+      }
+
+      if (mounted) {
+        context.pop(true);
+      }
+    } else {
+      debugPrint('form is invalid');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -112,6 +158,11 @@ class _FloorPlanEditorState extends State<FloorPlanEditor> {
                   pollingSeconds: _pollingSeconds,
                   updatePolling: _updatePolling,
                   pollForAlerts: widget.pollForAlerts,
+                  title: widget.title,
+                  isInEditMode: widget.isInEditMode,
+                  isSaving: _isSaving,
+                  onSave: _handleSave,
+                  onCancel: _handleCancel,
                 );
               },
             ),
@@ -132,6 +183,11 @@ class _EditorView extends StatelessWidget {
     required this.pollingSeconds,
     required this.updatePolling,
     required this.pollForAlerts,
+    required this.title,
+    required this.isInEditMode,
+    required this.isSaving,
+    required this.onSave,
+    required this.onCancel,
   });
 
   final FloorPlanController controller;
@@ -141,104 +197,157 @@ class _EditorView extends StatelessWidget {
   final int pollingSeconds;
   final bool pollForAlerts;
   final void Function(int seconds) updatePolling;
+  final String title;
+  final bool isInEditMode;
+  final bool isSaving;
+  final Future<void> Function() onSave;
+  final Future<void> Function() onCancel;
 
   @override
   Widget build(BuildContext context) {
     return BasePage(
       signalRService: DoorAccessRealtime.instance.service,
-      child: controller.isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : controller.imageUrl == null && controller.imageBytes == null
-          ? Center(
-              child: Wrap(
-                children: [
-                  const Text('Upload floor plan'),
-                  IconButton(
-                    icon: const Icon(Icons.upload),
-                    onPressed: () => controller.pickImage(siteId),
-                  ),
-                ],
-              ),
-            )
-          : Row(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(Insets.gutter),
+            child: Row(
               children: [
-                /// LEFT SIDE → NAME + HOTSPOT LIST
-                Container(
-                  width: 320,
-                  padding: const EdgeInsets.all(Insets.gutter / 2),
-                  decoration: BoxDecoration(
-                    border: Border(
-                      right: BorderSide(color: Colors.grey.shade300),
+                Text(title, style: Theme.of(context).textTheme.headlineSmall),
+              ],
+            ),
+          ),
+          Expanded(
+            child: controller.isLoading
+                ? const Center(child: CircularProgressIndicator())
+                : controller.imageUrl == null && controller.imageBytes == null
+                ? Center(
+                    child: Wrap(
+                      children: [
+                        const Text('Upload floor plan'),
+                        IconButton(
+                          icon: const Icon(Icons.upload),
+                          onPressed: () => controller.pickImage(siteId),
+                        ),
+                      ],
                     ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  )
+                : Row(
                     children: [
-                      /// NAME FIELD
-                      EmrTextFormField(
-                        labelText: 'Name',
-                        binding: controller.name,
-                        validator: Validators.required,
+                      /// LEFT SIDE → NAME + HOTSPOT LIST
+                      Container(
+                        width: 320,
+                        padding: const EdgeInsets.all(Insets.gutter / 2),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            right: BorderSide(color: Colors.grey.shade300),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            /// NAME FIELD
+                            EmrTextFormField(
+                              labelText: 'Name',
+                              binding: controller.name,
+                              validator: Validators.required,
+                            ),
+
+                            const SizedBox(height: 12),
+
+                            /// HOTSPOT LIST
+                            HotspotList(controller: controller),
+                          ],
+                        ),
                       ),
 
-                      const SizedBox(height: 12),
+                      /// NEW ALERT PANEL
+                      AlertPanel(
+                        controller: controller,
+                        pollForAlerts: pollForAlerts,
+                        pollingSeconds: pollingSeconds,
+                        updatePolling: updatePolling,
+                      ),
 
-                      /// HOTSPOT LIST
-                      HotspotList(controller: controller),
-                    ],
-                  ),
-                ),
+                      Expanded(
+                        child: Form(
+                          key: formKey,
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              return GestureDetector(
+                                onTapDown: (details) {
+                                  if (controller.isInEditMode) {
+                                    final x =
+                                        details.localPosition.dx /
+                                        constraints.maxWidth;
+                                    final y =
+                                        details.localPosition.dy /
+                                        constraints.maxHeight;
 
-                /// NEW ALERT PANEL
-                AlertPanel(
-                  controller: controller,
-                  pollForAlerts: pollForAlerts,
-                  pollingSeconds: pollingSeconds,
-                  updatePolling: updatePolling,
-                ),
-
-                Expanded(
-                  child: Form(
-                    key: formKey,
-                    child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        return GestureDetector(
-                          onTapDown: (details) {
-                            if (controller.isInEditMode) {
-                              final x =
-                                  details.localPosition.dx /
-                                  constraints.maxWidth;
-                              final y =
-                                  details.localPosition.dy /
-                                  constraints.maxHeight;
-
-                              controller.addHotspot(x, y);
-                            }
-                          },
-                          child: FloorPlanView(
-                            controller: controller,
-                            source: controller.imageUrl ?? '',
-                            imageBytes: controller.imageBytes,
-                            isSvg: controller.isSvg,
-                            isAsset: false,
-                            //constraints: constraints,
-                            hotspots: controller.hotspots,
-                            onHotspotTap: (h) {
-                              _handleHotspotTap(
-                                context,
-                                controller,
-                                h,
-                                constraints,
+                                    controller.addHotspot(x, y);
+                                  }
+                                },
+                                child: FloorPlanView(
+                                  controller: controller,
+                                  source: controller.imageUrl ?? '',
+                                  imageBytes: controller.imageBytes,
+                                  isSvg: controller.isSvg,
+                                  isAsset: false,
+                                  //constraints: constraints,
+                                  hotspots: controller.hotspots,
+                                  onHotspotTap: (h) {
+                                    _handleHotspotTap(
+                                      context,
+                                      controller,
+                                      h,
+                                      constraints,
+                                    );
+                                  },
+                                ),
                               );
                             },
                           ),
-                        );
-                      },
+                        ),
+                      ),
+                    ],
+                  ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.grey.shade300)),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(Insets.gutter),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: isSaving ? null : onCancel,
+                    child: Text(
+                      isInEditMode ? context.l10n.cancel : context.l10n.ok,
                     ),
                   ),
-                ),
-              ],
+                  if (isInEditMode) ...[
+                    const SizedBox(width: Insets.gutter),
+                    FilledButton(
+                      onPressed: isSaving ? null : onSave,
+                      child: isSaving
+                          ? const SizedBox(
+                              height: 18,
+                              width: 18,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                              ),
+                            )
+                          : Text(context.l10n.save),
+                    ),
+                  ],
+                ],
+              ),
             ),
+          ),
+        ],
+      ),
     );
   }
 

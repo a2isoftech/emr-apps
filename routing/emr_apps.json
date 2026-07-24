@@ -1404,7 +1404,16 @@
                       "displayNameKey": "daFloorPlans",
                       "name": "da-floor-plans",
                       "widgetBuilderKey": "da-floor-plans",
-                      "permission": "permissions/door-access/floor-plan/view"
+                      "permission": "permissions/door-access/floor-plan/view",
+                      "children": [
+                            {
+                              "path": "floor-plan-editor",
+                              "displayNameKey": "daFloorPlanEditor",
+                              "widgetBuilderKey": "da-floor-plan-editor",
+                              "name": "da-floor-plan-editor",
+                              "permission": "permissions/door-access/floor-plan/write"
+                            }
+                          ]
                     }
                   ]
                 }

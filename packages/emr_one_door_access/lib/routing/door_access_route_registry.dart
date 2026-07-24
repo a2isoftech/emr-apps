@@ -26,6 +26,7 @@ class DoorAccessRouteRegistry {
   static const String routeAccessPointDetails = 'da-access-point-details';
   static const String routeDoorControllers = 'da-door-controllers';
   static const String routeFloorPlans = 'da-floor-plans';
+  static const String routeFloorPlanEditor = 'da-floor-plan-editor';
   static const String routeDoorControllerDetail = 'da-door-controller-detail';
   static const String routeLinkGroupAccessPoint = 'da-link-group-access-point';
   static const String routeDoorSchedules = 'da-door-schedules';
@@ -240,6 +241,22 @@ class DoorAccessRouteRegistry {
         ),
         siteId: state.params['siteId'] ?? '',
       ).withMultiProvider(providers);
+    },
+    routeFloorPlanEditor: (context, state) {
+      final appConfig = Provider.of<AppConfig>(context, listen: false);
+      final formKey = GlobalKey<FormState>();
+
+      return openUpdateFloorPlan(
+        FloorPlanController(
+          doorAccessService: _getDoorAccessService(context),
+          appConfig: appConfig,
+        ),
+        formKey,
+        appConfig,
+        state.params['siteId'] ?? '',
+        state.extra as FloorPlan?,
+        isInEditMode: state.queryParams['mode'] != 'view',
+      );
     },
     routeDoorControllerDetail: (context, state) {
       return DoorControllerDetailScreen(
@@ -764,6 +781,20 @@ class DoorAccessRouteRegistry {
                     widgetBuilder: widgetBuilders[routeFloorPlans]!,
                     isAllowed: (context, route) =>
                         _isAllowed(context, route, Permissions.viewFloorPlans),
+                    children: [
+                      EORoute(
+                        Icons.account_box,
+                        (context) => 'Floor Plan Editor',
+                        path: routeFloorPlanEditor,
+                        name: routeFloorPlanEditor,
+                        widgetBuilder: widgetBuilders[routeFloorPlanEditor]!,
+                        isAllowed: (context, route) => _isAllowed(
+                          context,
+                          route,
+                          Permissions.viewFloorPlans,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

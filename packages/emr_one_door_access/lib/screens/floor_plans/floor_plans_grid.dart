@@ -99,8 +99,6 @@ class _FloorPlansGridState extends State<FloorPlansGrid> {
                   onPressed: () => AddNewFloorPlanAction.openModal(
                     controller,
                     context,
-                    'Edit Floor Plan',
-                    'Floor plan could not be saved',
                     widget.siteId,
                     _onSave,
                     floorPlan: ac,
@@ -126,8 +124,6 @@ class _FloorPlansGridState extends State<FloorPlansGrid> {
       onItemTapped: (ac) => AddNewFloorPlanAction.openModal(
         controller,
         context,
-        'View Floor Plan',
-        'Floor plan could not be saved',
         widget.siteId,
         _onSave,
         floorPlan: ac,
