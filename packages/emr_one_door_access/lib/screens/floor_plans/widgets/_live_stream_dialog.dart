@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:emr_one_core/config/app_config.dart';
 import 'package:emr_one_core/utilities/emr_modal.dart';
 import 'package:emr_one_door_access/emr_one_door_access.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +9,11 @@ class LiveStreamDialog extends StatefulWidget {
   const LiveStreamDialog({
     required this.controller,
     required this.hotspot,
-    required this.appConfig,
     super.key,
   });
 
   final FloorPlanController controller;
   final Hotspot hotspot;
-  final AppConfig appConfig;
 
   @override
   State<LiveStreamDialog> createState() => _LiveStreamDialogState();
@@ -38,11 +35,6 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
     _start();
   }
 
-  Uri _whepUrl(String streamPath) {
-    final base = widget.appConfig.endpoint('cameraStreamBaseUrl');
-    return Uri.parse('$base/$streamPath/whep');
-  }
-
   Future<void> _start() async {
     setState(() {
       _connecting = true;
@@ -51,7 +43,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
 
     await _renderer.initialize();
 
-    final (success, error, _) = await widget.controller.startLiveStream(
+    final (success, error, result) = await widget.controller.startLiveStream(
       widget.hotspot,
     );
 
@@ -61,6 +53,15 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
       setState(() {
         _connecting = false;
         _error = error;
+      });
+      return;
+    }
+
+    final base = result?.streamUrl;
+    if ((base ?? '').isEmpty) {
+      setState(() {
+        _connecting = false;
+        _error = 'Camera stream did not return a playback URL';
       });
       return;
     }
@@ -75,7 +76,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
     }
 
     try {
-      final session = await _connectWithRetry(streamPath!);
+      final session = await _connectWithRetry(base!, streamPath!);
 
       if (!mounted) {
         await session.close();
@@ -102,6 +103,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
   /// after that — an immediate WHEP negotiation can 404. Retry a few times
   /// before surfacing an error.
   Future<WhepSession> _connectWithRetry(
+    String base,
     String streamPath, {
     int maxAttempts = 5,
     Duration retryDelay = const Duration(seconds: 1),
@@ -109,7 +111,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
     for (var attempt = 1; ; attempt++) {
       try {
         return await WhepClient.connect(
-          whepUrl: _whepUrl(streamPath),
+          whepUrl: Uri.parse('$base/$streamPath/whep'),
           onTrack: (stream) {
             _renderer.srcObject = stream;
           },

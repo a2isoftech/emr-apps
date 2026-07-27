@@ -433,7 +433,6 @@ class _EditorView extends StatelessWidget {
           builder: (_) => LiveStreamDialog(
             controller: controller,
             hotspot: hotspot,
-            appConfig: appConfig,
           ),
         );
       }

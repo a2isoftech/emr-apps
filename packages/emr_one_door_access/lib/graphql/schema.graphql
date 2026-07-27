@@ -753,6 +753,7 @@ type SitesEdge {
 type StreamStatusResponse {
   accessPointId: String!
   isRunning: Boolean!
+  streamUrl: String
   startedAtUtc: DateTime
   durationMinutes: Int
   timeRemaining: TimeSpan

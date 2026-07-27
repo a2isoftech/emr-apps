@@ -307,6 +307,13 @@ const documentNodeMutationStartCameraStream = DocumentNode(
                   selectionSet: null,
                 ),
                 FieldNode(
+                  name: NameNode(value: 'streamUrl'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
                   name: NameNode(value: 'durationMinutes'),
                   alias: null,
                   arguments: [],
@@ -354,6 +361,7 @@ class Mutation$StartCameraStream$startCameraStream {
   Mutation$StartCameraStream$startCameraStream({
     required this.accessPointId,
     required this.isRunning,
+    this.streamUrl,
     this.durationMinutes,
     this.timeRemaining,
     this.message,
@@ -365,6 +373,7 @@ class Mutation$StartCameraStream$startCameraStream {
   ) {
     final l$accessPointId = json['accessPointId'];
     final l$isRunning = json['isRunning'];
+    final l$streamUrl = json['streamUrl'];
     final l$durationMinutes = json['durationMinutes'];
     final l$timeRemaining = json['timeRemaining'];
     final l$message = json['message'];
@@ -372,6 +381,7 @@ class Mutation$StartCameraStream$startCameraStream {
     return Mutation$StartCameraStream$startCameraStream(
       accessPointId: (l$accessPointId as String),
       isRunning: (l$isRunning as bool),
+      streamUrl: (l$streamUrl as String?),
       durationMinutes: (l$durationMinutes as int?),
       timeRemaining: (l$timeRemaining as String?),
       message: (l$message as String?),
@@ -382,6 +392,8 @@ class Mutation$StartCameraStream$startCameraStream {
   final String accessPointId;
 
   final bool isRunning;
+
+  final String? streamUrl;
 
   final int? durationMinutes;
 
@@ -397,6 +409,8 @@ class Mutation$StartCameraStream$startCameraStream {
     _resultData['accessPointId'] = l$accessPointId;
     final l$isRunning = isRunning;
     _resultData['isRunning'] = l$isRunning;
+    final l$streamUrl = streamUrl;
+    _resultData['streamUrl'] = l$streamUrl;
     final l$durationMinutes = durationMinutes;
     _resultData['durationMinutes'] = l$durationMinutes;
     final l$timeRemaining = timeRemaining;
@@ -412,6 +426,7 @@ class Mutation$StartCameraStream$startCameraStream {
   int get hashCode {
     final l$accessPointId = accessPointId;
     final l$isRunning = isRunning;
+    final l$streamUrl = streamUrl;
     final l$durationMinutes = durationMinutes;
     final l$timeRemaining = timeRemaining;
     final l$message = message;
@@ -419,6 +434,7 @@ class Mutation$StartCameraStream$startCameraStream {
     return Object.hashAll([
       l$accessPointId,
       l$isRunning,
+      l$streamUrl,
       l$durationMinutes,
       l$timeRemaining,
       l$message,
@@ -443,6 +459,11 @@ class Mutation$StartCameraStream$startCameraStream {
     final l$isRunning = isRunning;
     final lOther$isRunning = other.isRunning;
     if (l$isRunning != lOther$isRunning) {
+      return false;
+    }
+    final l$streamUrl = streamUrl;
+    final lOther$streamUrl = other.streamUrl;
+    if (l$streamUrl != lOther$streamUrl) {
       return false;
     }
     final l$durationMinutes = durationMinutes;
@@ -490,6 +511,7 @@ abstract class CopyWith$Mutation$StartCameraStream$startCameraStream<TRes> {
   TRes call({
     String? accessPointId,
     bool? isRunning,
+    String? streamUrl,
     int? durationMinutes,
     String? timeRemaining,
     String? message,
@@ -513,6 +535,7 @@ class _CopyWithImpl$Mutation$StartCameraStream$startCameraStream<TRes>
   TRes call({
     Object? accessPointId = _undefined,
     Object? isRunning = _undefined,
+    Object? streamUrl = _undefined,
     Object? durationMinutes = _undefined,
     Object? timeRemaining = _undefined,
     Object? message = _undefined,
@@ -525,6 +548,9 @@ class _CopyWithImpl$Mutation$StartCameraStream$startCameraStream<TRes>
       isRunning: isRunning == _undefined || isRunning == null
           ? _instance.isRunning
           : (isRunning as bool),
+      streamUrl: streamUrl == _undefined
+          ? _instance.streamUrl
+          : (streamUrl as String?),
       durationMinutes: durationMinutes == _undefined
           ? _instance.durationMinutes
           : (durationMinutes as int?),
@@ -548,6 +574,7 @@ class _CopyWithStubImpl$Mutation$StartCameraStream$startCameraStream<TRes>
   call({
     String? accessPointId,
     bool? isRunning,
+    String? streamUrl,
     int? durationMinutes,
     String? timeRemaining,
     String? message,
