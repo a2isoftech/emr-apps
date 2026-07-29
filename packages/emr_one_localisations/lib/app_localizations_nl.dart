@@ -2819,6 +2819,60 @@ class EmrAppsLocalisationsNl extends EmrAppsLocalisations {
   String get d365 => 'd365';
 
   @override
+  String get daAccessCredentials => 'Access Credentials';
+
+  @override
+  String get daAccessPointDetail => 'Access Point Detail';
+
+  @override
+  String get daAccessPoints => 'Access Points';
+
+  @override
+  String get daAddNewGroup => 'Add New Group';
+
+  @override
+  String get daAddSchedule => 'Add Schedule';
+
+  @override
+  String get daAlerts => 'Alerts';
+
+  @override
+  String get daAlertsDoorAccessAttempts => 'Door Access Attempts';
+
+  @override
+  String get daAlertsScheduleUpdates => 'Schedule Updates';
+
+  @override
+  String get daDoorControllerDetail => 'Door Controller Detail';
+
+  @override
+  String get daDoorControllers => 'Door Controllers';
+
+  @override
+  String get daFloorPlans => 'Floor Plans';
+
+  @override
+  String get daGroups => 'Groups';
+
+  @override
+  String get daLinkAccessPoint => 'Link Access Point';
+
+  @override
+  String get daSchedules => 'Schedules';
+
+  @override
+  String get daSiteDetails => 'Site Details';
+
+  @override
+  String get daSites => 'Sites';
+
+  @override
+  String get daUserDetails => 'User Details';
+
+  @override
+  String get daUsers => 'Users';
+
+  @override
   String get daily => 'Dagelijks';
 
   @override
@@ -3376,6 +3430,9 @@ class EmrAppsLocalisationsNl extends EmrAppsLocalisations {
 
   @override
   String get dontHaveAnAccount => ' Heeft u geen account?';
+
+  @override
+  String get doorAccess => 'Door Access';
 
   @override
   String get doors => 'Doors';

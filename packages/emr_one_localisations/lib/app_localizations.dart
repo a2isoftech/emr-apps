@@ -5467,6 +5467,114 @@ abstract class EmrAppsLocalisations {
   /// **'d365'**
   String get d365;
 
+   /// No description provided for @daAccessCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Access Credentials'**
+  String get daAccessCredentials;
+
+  /// No description provided for @daAccessPointDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Access Point Detail'**
+  String get daAccessPointDetail;
+
+  /// No description provided for @daAccessPoints.
+  ///
+  /// In en, this message translates to:
+  /// **'Access Points'**
+  String get daAccessPoints;
+
+  /// No description provided for @daAddNewGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Group'**
+  String get daAddNewGroup;
+
+  /// No description provided for @daAddSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Schedule'**
+  String get daAddSchedule;
+
+  /// No description provided for @daAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts'**
+  String get daAlerts;
+
+  /// No description provided for @daAlertsDoorAccessAttempts.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Access Attempts'**
+  String get daAlertsDoorAccessAttempts;
+
+  /// No description provided for @daAlertsScheduleUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule Updates'**
+  String get daAlertsScheduleUpdates;
+
+  /// No description provided for @daDoorControllerDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Controller Detail'**
+  String get daDoorControllerDetail;
+
+  /// No description provided for @daDoorControllers.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Controllers'**
+  String get daDoorControllers;
+
+  /// No description provided for @daFloorPlans.
+  ///
+  /// In en, this message translates to:
+  /// **'Floor Plans'**
+  String get daFloorPlans;
+
+  /// No description provided for @daGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'Groups'**
+  String get daGroups;
+
+  /// No description provided for @daLinkAccessPoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Link Access Point'**
+  String get daLinkAccessPoint;
+
+  /// No description provided for @daSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedules'**
+  String get daSchedules;
+
+  /// No description provided for @daSiteDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Site Details'**
+  String get daSiteDetails;
+
+  /// No description provided for @daSites.
+  ///
+  /// In en, this message translates to:
+  /// **'Sites'**
+  String get daSites;
+
+  /// No description provided for @daUserDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'User Details'**
+  String get daUserDetails;
+
+  /// No description provided for @daUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Users'**
+  String get daUsers;
+
   /// No description provided for @daily.
   ///
   /// In en, this message translates to:
@@ -6516,6 +6624,12 @@ abstract class EmrAppsLocalisations {
   /// In en, this message translates to:
   /// **'Don\'t have an account?'**
   String get dontHaveAnAccount;
+
+  /// No description provided for @doorAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Access'**
+  String get doorAccess;
 
   /// No description provided for @doors.
   ///

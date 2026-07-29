@@ -2750,6 +2750,60 @@ class EmrAppsLocalisationsZu extends EmrAppsLocalisations {
   String get d365 => '[d365]';
 
   @override
+  String get daAccessCredentials => '[daAccessCredentials]';
+
+  @override
+  String get daAccessPointDetail => '[daAccessPointDetail]';
+
+  @override
+  String get daAccessPoints => '[daAccessPoints]';
+
+  @override
+  String get daAddNewGroup => '[daAddNewGroup]';
+
+  @override
+  String get daAddSchedule => '[daAddSchedule]';
+
+  @override
+  String get daAlerts => '[daAlerts]';
+
+  @override
+  String get daAlertsDoorAccessAttempts => '[daAlertsDoorAccessAttempts]';
+
+  @override
+  String get daAlertsScheduleUpdates => '[daAlertsScheduleUpdates]';
+
+  @override
+  String get daDoorControllerDetail => '[daDoorControllerDetail]';
+
+  @override
+  String get daDoorControllers => '[daDoorControllers]';
+
+  @override
+  String get daFloorPlans => '[daFloorPlans]';
+
+  @override
+  String get daGroups => '[daGroups]';
+
+  @override
+  String get daLinkAccessPoint => '[daLinkAccessPoint]';
+
+  @override
+  String get daSchedules => '[daSchedules]';
+
+  @override
+  String get daSiteDetails => '[daSiteDetails]';
+
+  @override
+  String get daSites => '[daSites]';
+
+  @override
+  String get daUserDetails => '[daUserDetails]';
+
+  @override
+  String get daUsers => '[daUsers]';
+
+  @override
   String get daily => '[daily]';
 
   @override
@@ -3295,6 +3349,9 @@ class EmrAppsLocalisationsZu extends EmrAppsLocalisations {
 
   @override
   String get dontHaveAnAccount => '[dontHaveAnAccount]';
+
+  @override
+  String get doorAccess => '[doorAccess]';
 
   @override
   String get doors => '[doors]';
