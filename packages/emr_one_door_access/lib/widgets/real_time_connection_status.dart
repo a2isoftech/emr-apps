@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:emr_one_core/eo_constants.dart';
 import 'package:emr_one_door_access/emr_one_door_access.dart';
 import 'package:flutter/material.dart';
@@ -11,53 +13,96 @@ class RealTimeConnectionStatus extends StatefulWidget {
 }
 
 class _RealTimeConnectionStatusState extends State<RealTimeConnectionStatus> {
+  static const _connectedVisibleDuration = Duration(seconds: 5);
+
+  ValueNotifier<RealtimeConnectionState>? _notifier;
+  Timer? _hideConnectedTimer;
+  bool _hideConnectedCard = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _attachListener();
+  }
+
+  void _attachListener() {
+    final notifier = DoorAccessRealtime.instance.service?.connectionState;
+    if (identical(notifier, _notifier)) return;
+
+    _notifier?.removeListener(_onStateChanged);
+    _notifier = notifier;
+    _notifier?.addListener(_onStateChanged);
+
+    // A freshly mounted widget (e.g. after navigating to a new page) attaches
+    // to a notifier that may already be "connected" — sync against its
+    // current value now so the hide timer starts even though no new change
+    // event will fire for it.
+    _syncHideTimer();
+  }
+
+  void _onStateChanged() {
+    setState(_syncHideTimer);
+  }
+
+  void _syncHideTimer() {
+    _hideConnectedTimer?.cancel();
+    _hideConnectedCard = false;
+
+    if (_notifier?.value == RealtimeConnectionState.connected) {
+      _hideConnectedTimer = Timer(_connectedVisibleDuration, () {
+        if (!mounted) return;
+        setState(() => _hideConnectedCard = true);
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _hideConnectedTimer?.cancel();
+    _notifier?.removeListener(_onStateChanged);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _attachListener();
+
+    final state = _notifier?.value ?? RealtimeConnectionState.reconnecting;
+
+    if (state == RealtimeConnectionState.connected && _hideConnectedCard) {
+      return const SizedBox.shrink();
+    }
+
     return Positioned(
       top: 20,
       right: 20,
-      child: ValueListenableBuilder<RealtimeConnectionState>(
-        valueListenable:
-            DoorAccessRealtime.instance.service?.connectionState ??
-            ValueNotifier(RealtimeConnectionState.reconnecting),
-        builder: (context, state, _) {
-          switch (state) {
-            case RealtimeConnectionState.connected:
-              return const _StateCard(
-                connectionState: RealtimeConnectionState.connected,
-              );
-
-            case RealtimeConnectionState.dismissed:
-              return const SizedBox.shrink();
-            case RealtimeConnectionState.connecting:
-              return const _StateCard(
-                connectionState: RealtimeConnectionState.connecting,
-              );
-
-            case RealtimeConnectionState.reconnecting:
-              return const _StateCard(
-                connectionState: RealtimeConnectionState.reconnecting,
-              );
-
-            case RealtimeConnectionState.disconnected:
-              return Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const _StateCard(
-                    connectionState: RealtimeConnectionState.disconnected,
-                  ),
-                  const SizedBox(width: 8),
-                  ElevatedButton(
-                    onPressed: () {
-                      DoorAccessRealtime.instance.service?.reconnect();
-                    },
-                    child: const Text('Reconnect'),
-                  ),
-                ],
-              );
-          }
-        },
-      ),
+      child: switch (state) {
+        RealtimeConnectionState.connected => const _StateCard(
+          connectionState: RealtimeConnectionState.connected,
+        ),
+        RealtimeConnectionState.dismissed => const SizedBox.shrink(),
+        RealtimeConnectionState.connecting => const _StateCard(
+          connectionState: RealtimeConnectionState.connecting,
+        ),
+        RealtimeConnectionState.reconnecting => const _StateCard(
+          connectionState: RealtimeConnectionState.reconnecting,
+        ),
+        RealtimeConnectionState.disconnected => Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const _StateCard(
+              connectionState: RealtimeConnectionState.disconnected,
+            ),
+            const SizedBox(width: 8),
+            ElevatedButton(
+              onPressed: () {
+                DoorAccessRealtime.instance.service?.reconnect();
+              },
+              child: const Text('Reconnect'),
+            ),
+          ],
+        ),
+      },
     );
   }
 }

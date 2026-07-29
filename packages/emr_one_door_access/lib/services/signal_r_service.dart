@@ -11,6 +11,13 @@ class SignalRService {
   final DoorAccessService doorAccessService;
   final AppConfig appConfig;
   HubConnection? _hubConnection;
+  Timer? _reconnectTimer;
+  int _reconnectAttempts = 0;
+  bool _suppressAutoReconnect = false;
+  bool _disposed = false;
+
+  static const int _maxReconnectAttempts = 3;
+  static const Duration _reconnectDelay = Duration(seconds: 3);
 
   final StreamController<NotificationEvent> _controller =
       StreamController<NotificationEvent>.broadcast();
@@ -26,9 +33,11 @@ class SignalRService {
       return;
     }
 
-    connectionState.value = RealtimeConnectionState.connecting;
+    connectionState.value = _reconnectAttempts > 0
+        ? RealtimeConnectionState.reconnecting
+        : RealtimeConnectionState.connecting;
 
-    _hubConnection = HubConnectionBuilder()
+    final hubConnection = HubConnectionBuilder()
         .withUrl(
           '${appConfig.endpoint('doorAccessUrl').replaceAll('/graphql', '')}/notificationHub',
           options: HttpConnectionOptions(
@@ -39,24 +48,21 @@ class SignalRService {
             },
           ),
         )
-        .withAutomaticReconnect()
         .build();
 
-    debugPrint('Signal R Connected');
+    _hubConnection = hubConnection;
 
-    _hubConnection!.onclose(({error}) {
-      connectionState.value = RealtimeConnectionState.disconnected;
+    // Compares by identity against the current _hubConnection because by the
+    // time this fires (possibly after a later connect() has replaced it) it
+    // must not stomp on a newer connection's state.
+    hubConnection.onclose(({error}) {
+      if (!identical(hubConnection, _hubConnection)) return;
+      _hubConnection = null;
+      if (_suppressAutoReconnect) return;
+      _scheduleAutoReconnect();
     });
 
-    _hubConnection!.onreconnecting(({error}) {
-      connectionState.value = RealtimeConnectionState.reconnecting;
-    });
-
-    _hubConnection!.onreconnected(({connectionId}) {
-      connectionState.value = RealtimeConnectionState.connected;
-    });
-
-    _hubConnection!.on('ReceiveNotification', (args) {
+    hubConnection.on('ReceiveNotification', (args) {
       if (args == null || args.isEmpty || args.first == null) return;
       final first = args.first;
       if (first is! Map) return;
@@ -82,41 +88,69 @@ class SignalRService {
     });
 
     try {
-      await _hubConnection!.start();
+      await hubConnection.start();
 
+      debugPrint('Signal R Connected');
+      _reconnectAttempts = 0;
       connectionState.value = RealtimeConnectionState.connected;
     } catch (err) {
       debugPrint('Error while starting _hubConnection : $err');
-      connectionState.value = RealtimeConnectionState.disconnected;
-
-      //rethrow;
+      _hubConnection = null;
+      _scheduleAutoReconnect();
     }
   }
 
+  // Retries silently in the background so the user only ever sees a manual
+  // "Reconnect" button once every automatic attempt has failed.
+  void _scheduleAutoReconnect() {
+    if (_disposed) return;
+
+    _reconnectAttempts++;
+
+    if (_reconnectAttempts > _maxReconnectAttempts) {
+      connectionState.value = RealtimeConnectionState.disconnected;
+      return;
+    }
+
+    connectionState.value = RealtimeConnectionState.reconnecting;
+
+    _reconnectTimer?.cancel();
+    _reconnectTimer = Timer(_reconnectDelay, () {
+      unawaited(connect());
+    });
+  }
+
   Future<void> reconnect() async {
+    _reconnectTimer?.cancel();
+    _reconnectAttempts = 0;
+    _suppressAutoReconnect = true;
+
     try {
       connectionState.value = RealtimeConnectionState.connecting;
 
       await _hubConnection?.stop();
-
       _hubConnection = null;
+      _suppressAutoReconnect = false;
 
       await connect();
     } catch (err) {
       debugPrint('Error while starting _hubConnection : $err');
-
+      _suppressAutoReconnect = false;
       connectionState.value = RealtimeConnectionState.disconnected;
-
-      //rethrow;
     }
   }
 
   Future<void> disconnect() async {
+    _suppressAutoReconnect = true;
+    _reconnectTimer?.cancel();
     await _hubConnection?.stop();
     _hubConnection = null;
   }
 
   void dispose() {
+    _disposed = true;
+    _suppressAutoReconnect = true;
+    _reconnectTimer?.cancel();
     unawaited(_hubConnection?.stop());
     _hubConnection = null;
     connectionState.dispose();
