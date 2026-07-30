@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:emr_one_core/config/app_config.dart';
 import 'package:emr_one_core/controllers/controllers.dart';

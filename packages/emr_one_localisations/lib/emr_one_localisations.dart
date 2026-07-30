@@ -92,6 +92,8 @@ extension EmrAppsLocalisationsExtension on EmrAppsLocalisations {
     'document' => document,
     'documents' => documents,
     'doorAccess' => doorAccess,
+    'daDoorSchedules' => daDoorSchedules,
+    'daFloorPlanEditor' => daFloorPlanEditor,
     'edit' => edit,
     'editContainer' => editContainer,
     'editFixedContract' => editFixedContract,

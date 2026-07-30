@@ -2780,6 +2780,12 @@ class EmrAppsLocalisationsZu extends EmrAppsLocalisations {
   String get daDoorControllers => '[daDoorControllers]';
 
   @override
+  String get daDoorSchedules => '[daDoorSchedules]';
+
+  @override
+  String get daFloorPlanEditor => '[daFloorPlanEditor]';
+
+  @override
   String get daFloorPlans => '[daFloorPlans]';
 
   @override
@@ -3351,8 +3357,7 @@ class EmrAppsLocalisationsZu extends EmrAppsLocalisations {
   String get dontHaveAnAccount => '[dontHaveAnAccount]';
 
   @override
-  String get doorAccess => '[doorAccess]';
-
+  String get doorAccess => 'Door Access';
   @override
   String get doors => '[doors]';
 

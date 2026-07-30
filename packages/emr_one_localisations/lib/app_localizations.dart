@@ -5467,7 +5467,7 @@ abstract class EmrAppsLocalisations {
   /// **'d365'**
   String get d365;
 
-   /// No description provided for @daAccessCredentials.
+  /// No description provided for @daAccessCredentials.
   ///
   /// In en, this message translates to:
   /// **'Access Credentials'**
@@ -5526,6 +5526,18 @@ abstract class EmrAppsLocalisations {
   /// In en, this message translates to:
   /// **'Door Controllers'**
   String get daDoorControllers;
+
+  /// No description provided for @daDoorSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Schedules'**
+  String get daDoorSchedules;
+
+  /// No description provided for @daFloorPlanEditor.
+  ///
+  /// In en, this message translates to:
+  /// **'Floor Plan Editor'**
+  String get daFloorPlanEditor;
 
   /// No description provided for @daFloorPlans.
   ///
@@ -6625,12 +6637,8 @@ abstract class EmrAppsLocalisations {
   /// **'Don\'t have an account?'**
   String get dontHaveAnAccount;
 
-  /// No description provided for @doorAccess.
-  ///
-  /// In en, this message translates to:
-  /// **'Door Access'**
-  String get doorAccess;
-
+  @override
+  String get doorAccess => 'Door Access';
   /// No description provided for @doors.
   ///
   /// In en, this message translates to:

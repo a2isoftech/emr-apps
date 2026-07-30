@@ -1050,6 +1050,8 @@
   "daAlertsScheduleUpdates": "Schedule Updates",
   "daDoorControllerDetail": "Door Controller Detail",
   "daDoorControllers": "Door Controllers",
+  "daDoorSchedules": "Door Schedules",
+  "daFloorPlanEditor": "Floor Plan Editor",
   "daFloorPlans": "Floor Plans",
   "daGroups": "Groups",
   "daLinkAccessPoint": "Link Access Point",

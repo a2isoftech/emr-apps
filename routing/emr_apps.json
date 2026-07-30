@@ -1502,7 +1502,7 @@
             {
               "path": "doorSchedules",
               "iconData": "0xe73b,MaterialIcons",
-              "displayNameKey": "da-door-schedules",
+              "displayNameKey": "daDoorSchedules",
               "widgetBuilderKey": "da-door-schedules",
               "name": "da-door-schedules",
               "permission": "permissions/door-access/controller/view"

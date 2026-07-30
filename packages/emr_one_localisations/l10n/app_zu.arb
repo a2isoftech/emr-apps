@@ -892,6 +892,8 @@
   "daAlertsScheduleUpdates": "[daAlertsScheduleUpdates]",
   "daDoorControllerDetail": "[daDoorControllerDetail]",
   "daDoorControllers": "[daDoorControllers]",
+  "daDoorSchedules": "[daDoorSchedules]",
+  "daFloorPlanEditor": "[daFloorPlanEditor]",
   "daFloorPlans": "[daFloorPlans]",
   "daGroups": "[daGroups]",
   "daLinkAccessPoint": "[daLinkAccessPoint]",

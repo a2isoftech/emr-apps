@@ -2849,6 +2849,12 @@ class EmrAppsLocalisationsNl extends EmrAppsLocalisations {
   String get daDoorControllers => 'Door Controllers';
 
   @override
+  String get daDoorSchedules => 'Door Schedules';
+
+  @override
+  String get daFloorPlanEditor => 'Floor Plan Editor';
+
+  @override
   String get daFloorPlans => 'Floor Plans';
 
   @override
@@ -3430,7 +3436,6 @@ class EmrAppsLocalisationsNl extends EmrAppsLocalisations {
 
   @override
   String get dontHaveAnAccount => ' Heeft u geen account?';
-
   @override
   String get doorAccess => 'Door Access';
 
