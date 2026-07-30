@@ -6,6 +6,7 @@ mutation StartCameraStream($accessPointId: String!, $durationMinutes: Int!) {
     accessPointId
     isRunning
     streamUrl
+    streamToken
     durationMinutes
     timeRemaining
     message

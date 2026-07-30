@@ -76,7 +76,11 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
     }
 
     try {
-      final session = await _connectWithRetry(base!, streamPath!);
+      final session = await _connectWithRetry(
+        base!,
+        streamPath!,
+        result?.streamToken,
+      );
 
       if (!mounted) {
         await session.close();
@@ -104,14 +108,24 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
   /// before surfacing an error.
   Future<WhepSession> _connectWithRetry(
     String base,
-    String streamPath, {
+    String streamPath,
+    String? streamToken, {
     int maxAttempts = 5,
     Duration retryDelay = const Duration(seconds: 1),
   }) async {
+    // streamToken is only present once the backend's mediamtx HTTP-auth webhook
+    // is deployed (see StreamingServer's azure-deploy-windows.md); omitting the
+    // query param entirely (rather than sending an empty one) keeps this
+    // working against a mediamtx still on the open `authInternalUsers` default.
+    var whepUrl = Uri.parse('$base/$streamPath/whep');
+    if ((streamToken ?? '').isNotEmpty) {
+      whepUrl = whepUrl.replace(queryParameters: {'token': streamToken});
+    }
+
     for (var attempt = 1; ; attempt++) {
       try {
         return await WhepClient.connect(
-          whepUrl: Uri.parse('$base/$streamPath/whep'),
+          whepUrl: whepUrl,
           onTrack: (stream) {
             _renderer.srcObject = stream;
           },

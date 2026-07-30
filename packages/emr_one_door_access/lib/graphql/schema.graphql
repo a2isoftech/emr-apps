@@ -754,6 +754,7 @@ type StreamStatusResponse {
   accessPointId: String!
   isRunning: Boolean!
   streamUrl: String
+  streamToken: String
   startedAtUtc: DateTime
   durationMinutes: Int
   timeRemaining: TimeSpan

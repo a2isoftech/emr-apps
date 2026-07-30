@@ -314,6 +314,13 @@ const documentNodeMutationStartCameraStream = DocumentNode(
                   selectionSet: null,
                 ),
                 FieldNode(
+                  name: NameNode(value: 'streamToken'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
                   name: NameNode(value: 'durationMinutes'),
                   alias: null,
                   arguments: [],
@@ -362,6 +369,7 @@ class Mutation$StartCameraStream$startCameraStream {
     required this.accessPointId,
     required this.isRunning,
     this.streamUrl,
+    this.streamToken,
     this.durationMinutes,
     this.timeRemaining,
     this.message,
@@ -374,6 +382,7 @@ class Mutation$StartCameraStream$startCameraStream {
     final l$accessPointId = json['accessPointId'];
     final l$isRunning = json['isRunning'];
     final l$streamUrl = json['streamUrl'];
+    final l$streamToken = json['streamToken'];
     final l$durationMinutes = json['durationMinutes'];
     final l$timeRemaining = json['timeRemaining'];
     final l$message = json['message'];
@@ -382,6 +391,7 @@ class Mutation$StartCameraStream$startCameraStream {
       accessPointId: (l$accessPointId as String),
       isRunning: (l$isRunning as bool),
       streamUrl: (l$streamUrl as String?),
+      streamToken: (l$streamToken as String?),
       durationMinutes: (l$durationMinutes as int?),
       timeRemaining: (l$timeRemaining as String?),
       message: (l$message as String?),
@@ -394,6 +404,8 @@ class Mutation$StartCameraStream$startCameraStream {
   final bool isRunning;
 
   final String? streamUrl;
+
+  final String? streamToken;
 
   final int? durationMinutes;
 
@@ -411,6 +423,8 @@ class Mutation$StartCameraStream$startCameraStream {
     _resultData['isRunning'] = l$isRunning;
     final l$streamUrl = streamUrl;
     _resultData['streamUrl'] = l$streamUrl;
+    final l$streamToken = streamToken;
+    _resultData['streamToken'] = l$streamToken;
     final l$durationMinutes = durationMinutes;
     _resultData['durationMinutes'] = l$durationMinutes;
     final l$timeRemaining = timeRemaining;
@@ -427,6 +441,7 @@ class Mutation$StartCameraStream$startCameraStream {
     final l$accessPointId = accessPointId;
     final l$isRunning = isRunning;
     final l$streamUrl = streamUrl;
+    final l$streamToken = streamToken;
     final l$durationMinutes = durationMinutes;
     final l$timeRemaining = timeRemaining;
     final l$message = message;
@@ -435,6 +450,7 @@ class Mutation$StartCameraStream$startCameraStream {
       l$accessPointId,
       l$isRunning,
       l$streamUrl,
+      l$streamToken,
       l$durationMinutes,
       l$timeRemaining,
       l$message,
@@ -464,6 +480,11 @@ class Mutation$StartCameraStream$startCameraStream {
     final l$streamUrl = streamUrl;
     final lOther$streamUrl = other.streamUrl;
     if (l$streamUrl != lOther$streamUrl) {
+      return false;
+    }
+    final l$streamToken = streamToken;
+    final lOther$streamToken = other.streamToken;
+    if (l$streamToken != lOther$streamToken) {
       return false;
     }
     final l$durationMinutes = durationMinutes;
@@ -512,6 +533,7 @@ abstract class CopyWith$Mutation$StartCameraStream$startCameraStream<TRes> {
     String? accessPointId,
     bool? isRunning,
     String? streamUrl,
+    String? streamToken,
     int? durationMinutes,
     String? timeRemaining,
     String? message,
@@ -536,6 +558,7 @@ class _CopyWithImpl$Mutation$StartCameraStream$startCameraStream<TRes>
     Object? accessPointId = _undefined,
     Object? isRunning = _undefined,
     Object? streamUrl = _undefined,
+    Object? streamToken = _undefined,
     Object? durationMinutes = _undefined,
     Object? timeRemaining = _undefined,
     Object? message = _undefined,
@@ -551,6 +574,9 @@ class _CopyWithImpl$Mutation$StartCameraStream$startCameraStream<TRes>
       streamUrl: streamUrl == _undefined
           ? _instance.streamUrl
           : (streamUrl as String?),
+      streamToken: streamToken == _undefined
+          ? _instance.streamToken
+          : (streamToken as String?),
       durationMinutes: durationMinutes == _undefined
           ? _instance.durationMinutes
           : (durationMinutes as int?),
@@ -575,6 +601,7 @@ class _CopyWithStubImpl$Mutation$StartCameraStream$startCameraStream<TRes>
     String? accessPointId,
     bool? isRunning,
     String? streamUrl,
+    String? streamToken,
     int? durationMinutes,
     String? timeRemaining,
     String? message,
