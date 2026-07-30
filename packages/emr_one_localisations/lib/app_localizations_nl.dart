@@ -3436,6 +3436,7 @@ class EmrAppsLocalisationsNl extends EmrAppsLocalisations {
 
   @override
   String get dontHaveAnAccount => ' Heeft u geen account?';
+
   @override
   String get doorAccess => 'Door Access';
 

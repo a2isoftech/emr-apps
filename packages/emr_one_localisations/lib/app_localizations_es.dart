@@ -3438,6 +3438,7 @@ class EmrAppsLocalisationsEs extends EmrAppsLocalisations {
 
   @override
   String get doorAccess => 'Door Access';
+
   @override
   String get doors => 'Doors';
 

@@ -3357,7 +3357,8 @@ class EmrAppsLocalisationsZu extends EmrAppsLocalisations {
   String get dontHaveAnAccount => '[dontHaveAnAccount]';
 
   @override
-  String get doorAccess => 'Door Access';
+  String get doorAccess => '[doorAccess]';
+
   @override
   String get doors => '[doors]';
 

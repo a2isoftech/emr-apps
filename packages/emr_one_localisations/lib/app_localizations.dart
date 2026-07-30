@@ -6637,8 +6637,12 @@ abstract class EmrAppsLocalisations {
   /// **'Don\'t have an account?'**
   String get dontHaveAnAccount;
 
-  @override
-  String get doorAccess => 'Door Access';
+  /// No description provided for @doorAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Door Access'**
+  String get doorAccess;
+
   /// No description provided for @doors.
   ///
   /// In en, this message translates to:
