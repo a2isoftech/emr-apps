@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:emr_one_core/eo_constants.dart';
 import 'package:emr_one_core/utilities/emr_modal.dart';
 import 'package:emr_one_door_access/emr_one_door_access.dart';
 import 'package:flutter/material.dart';
@@ -187,7 +188,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
     if (_error != null) {
       content = Center(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(Insets.gutter),
           child: Text(
             'Failed to start live stream:\n$_error',
             textAlign: TextAlign.center,

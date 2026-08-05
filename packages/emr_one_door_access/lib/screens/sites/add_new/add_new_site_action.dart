@@ -21,7 +21,7 @@ class AddNewSiteAction extends EmrAction<AddNewSiteIntent> {
   }
 
   final ManageSiteController controller;
-  final void Function() onSuccessfulSave;
+  final Future<void> Function() onSuccessfulSave;
 
   @override
   Object? invoke(covariant AddNewSiteIntent intent, [BuildContext? context]) {
@@ -40,7 +40,7 @@ class AddNewSiteAction extends EmrAction<AddNewSiteIntent> {
     BuildContext context,
     String title,
     String errorMessage,
-    void Function() onSuccessfulSave, {
+    Future<void> Function() onSuccessfulSave, {
     Site? site,
   }) {
     final formKey = GlobalKey<FormState>();
@@ -78,7 +78,7 @@ class AddNewSiteAction extends EmrAction<AddNewSiteIntent> {
             );
             return;
           }
-          onSuccessfulSave();
+          await onSuccessfulSave();
           if (context.mounted) {
             context.pop();
           }

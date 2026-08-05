@@ -20,20 +20,20 @@ class ScheduleConfigurationForm extends StatelessWidget {
           binding: controller.externalId,
           validator: Validators.required,
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: Insets.gutter),
 
         EmrTextFormField(
           labelText: 'Name',
           binding: controller.name,
           validator: Validators.required,
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: Insets.gutter),
 
         EmrTextFormField(
           labelText: 'Description',
           binding: controller.description,
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: Insets.gutter),
 
         ValueListenableBuilder<List<DoorScheduleModel>>(
           valueListenable: controller.schedules,
@@ -44,9 +44,9 @@ class ScheduleConfigurationForm extends StatelessWidget {
                   final schedule = schedules[i];
 
                   return Card(
-                    margin: const EdgeInsets.only(bottom: 16),
+                    margin: const EdgeInsets.only(bottom: Insets.gutter),
                     child: Padding(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(Insets.gutter),
                       child: Column(
                         children: [
                           EmrPickerFormField(
@@ -57,7 +57,7 @@ class ScheduleConfigurationForm extends StatelessWidget {
                             validator: Validators.required,
                           ),
 
-                          const SizedBox(height: 10),
+                          const SizedBox(height: Insets.gutter / 2),
 
                           /// Scheduled States
                           ValueListenableBuilder<List<ScheduledStateModel>>(
@@ -69,9 +69,13 @@ class ScheduleConfigurationForm extends StatelessWidget {
                                     final state = states[j];
 
                                     return Card(
-                                      margin: const EdgeInsets.only(bottom: 10),
+                                      margin: const EdgeInsets.only(
+                                        bottom: Insets.gutter / 2,
+                                      ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(
+                                          Insets.gutter / 2,
+                                        ),
                                         child: Column(
                                           children: [
                                             /// Schedule Tokens (Multi Select)
@@ -85,7 +89,9 @@ class ScheduleConfigurationForm extends StatelessWidget {
                                               validator: Validators.required,
                                             ),
 
-                                            const SizedBox(height: 10),
+                                            const SizedBox(
+                                              height: Insets.gutter / 2,
+                                            ),
 
                                             EmrPickerFormField(
                                               labelText: 'Enter Action',

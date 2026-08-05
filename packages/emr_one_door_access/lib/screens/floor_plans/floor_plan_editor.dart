@@ -257,7 +257,7 @@ class _EditorView extends StatelessWidget {
                               validator: Validators.required,
                             ),
 
-                            const SizedBox(height: 12),
+                            const SizedBox(height: Insets.gutter),
 
                             /// HOTSPOT LIST
                             HotspotList(controller: controller),
@@ -339,9 +339,7 @@ class _EditorView extends StatelessWidget {
                           ? const SizedBox(
                               height: 18,
                               width: 18,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                              ),
+                              child: CircularProgressIndicator(strokeWidth: 2),
                             )
                           : Text(context.l10n.save),
                     ),
@@ -415,11 +413,9 @@ class _EditorView extends StatelessWidget {
       overlayRenderBox.size.height - absoluteY,
     );
 
-    showMenu<String>(
-      context: context,
-      position: position,
-      items: items,
-    ).then((value) {
+    showMenu<String>(context: context, position: position, items: items).then((
+      value,
+    ) {
       if (!context.mounted) return;
       if (value == 'unlock') {
         showDialog<void>(
@@ -430,10 +426,8 @@ class _EditorView extends StatelessWidget {
       } else if (value == 'startLiveStream') {
         showDialog<void>(
           context: context,
-          builder: (_) => LiveStreamDialog(
-            controller: controller,
-            hotspot: hotspot,
-          ),
+          builder: (_) =>
+              LiveStreamDialog(controller: controller, hotspot: hotspot),
         );
       }
     });

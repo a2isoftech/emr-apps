@@ -52,6 +52,12 @@ class _SitesScreenState extends State<SitesScreen> {
         await queryLayoutController.dataSource.refresh();
       },
     );
+    actions[RefreshIntent] = RefreshAction(
+      onRefresh: () async {
+        StaticData.ignoreCache = true;
+        await queryLayoutController.dataSource.refresh();
+      },
+    );
     final gridDataSource = queryLayoutController.dataSource as SitesDataSource;
     gridDataSource.refresh();
   }

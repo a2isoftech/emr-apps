@@ -21,7 +21,7 @@ class AddNewDoorControllerAction extends EmrAction<AddNewDoorControllerIntent> {
   }
 
   final ManageDoorControllerController controller;
-  final void Function() onSuccessfulSave;
+  final Future<void> Function() onSuccessfulSave;
 
   @override
   Object? invoke(
@@ -44,7 +44,7 @@ class AddNewDoorControllerAction extends EmrAction<AddNewDoorControllerIntent> {
     BuildContext context,
     String title,
     String errorMessage,
-    void Function() onSuccessfulSave, {
+    Future<void> Function() onSuccessfulSave, {
 
     AccessController? accessController,
   }) {
@@ -83,7 +83,7 @@ class AddNewDoorControllerAction extends EmrAction<AddNewDoorControllerIntent> {
             );
             return;
           }
-          onSuccessfulSave();
+          await onSuccessfulSave();
           if (context.mounted) {
             context.pop();
           }

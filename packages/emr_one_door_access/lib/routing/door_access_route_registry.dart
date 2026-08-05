@@ -153,7 +153,7 @@ class DoorAccessRouteRegistry {
           if (ConnectionState.done == snapshot.connectionState) {
             return BasePage(
               signalRService: DoorAccessRealtime.instance.service,
-              child: GenericRouteScreen.fromPathPrefix(kDoorAccessPathPrefix),
+              child: GenericRouteScreen.fromPathPrefix(state.fullpath!),
             );
           }
           return const Center(child: CircularProgressIndicator());
@@ -673,7 +673,7 @@ class DoorAccessRouteRegistry {
         name: routeMain,
         widgetBuilder: widgetBuilders[routeMain]!,
         isAllowed: (context, route) =>
-            _isAllowed(context, route, Permissions.doorAccess),
+            context.userHasPermission(Permissions.doorAccess),
 
         children: [
           EORoute(
@@ -683,7 +683,7 @@ class DoorAccessRouteRegistry {
             name: routeSites,
             widgetBuilder: widgetBuilders[routeSites]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewSites),
+                context.userHasPermission(Permissions.viewSites),
             children: [
               EORoute(
                 Icons.account_box,
@@ -692,7 +692,7 @@ class DoorAccessRouteRegistry {
                 name: routeSiteDetails,
                 widgetBuilder: widgetBuilders[routeSiteDetails]!,
                 isAllowed: (context, route) =>
-                    _isAllowed(context, route, Permissions.viewSiteDetails),
+                    context.userHasPermission(Permissions.viewSiteDetails),
                 children: [
                   EORoute(
                     Icons.account_box,
@@ -700,11 +700,8 @@ class DoorAccessRouteRegistry {
                     path: routeAccessPoints,
                     name: routeAccessPoints,
                     widgetBuilder: widgetBuilders[routeAccessPoints]!,
-                    isAllowed: (context, route) => _isAllowed(
-                      context,
-                      route,
-                      Permissions.viewAccessPoints,
-                    ),
+                    isAllowed: (context, route) =>
+                        context.userHasPermission(Permissions.viewAccessPoints),
                     children: [
                       EORoute(
                         Icons.account_box,
@@ -712,11 +709,10 @@ class DoorAccessRouteRegistry {
                         path: ':accessPointId/detail',
                         name: routeAccessPointDetails,
                         widgetBuilder: widgetBuilders[routeAccessPointDetails]!,
-                        isAllowed: (context, route) => _isAllowed(
-                          context,
-                          route,
-                          Permissions.viewAccessPointDetails,
-                        ),
+                        isAllowed: (context, route) =>
+                            context.userHasPermission(
+                              Permissions.viewAccessPointDetails,
+                            ),
                       ),
                     ],
                   ),
@@ -726,9 +722,7 @@ class DoorAccessRouteRegistry {
                     path: routeDoorControllers,
                     name: routeDoorControllers,
                     widgetBuilder: widgetBuilders[routeDoorControllers]!,
-                    isAllowed: (context, route) => _isAllowed(
-                      context,
-                      route,
+                    isAllowed: (context, route) => context.userHasPermission(
                       Permissions.viewDoorControllers,
                     ),
                     children: [
@@ -739,11 +733,10 @@ class DoorAccessRouteRegistry {
                         name: routeDoorControllerDetail,
                         widgetBuilder:
                             widgetBuilders[routeDoorControllerDetail]!,
-                        isAllowed: (context, route) => _isAllowed(
-                          context,
-                          route,
-                          Permissions.viewDoorControllerDetails,
-                        ),
+                        isAllowed: (context, route) =>
+                            context.userHasPermission(
+                              Permissions.viewDoorControllerDetails,
+                            ),
                       ),
                       EORoute(
                         Icons.account_box,
@@ -751,11 +744,8 @@ class DoorAccessRouteRegistry {
                         path: ':accessControllerId/schedules',
                         name: routeSchedules,
                         widgetBuilder: widgetBuilders[routeSchedules]!,
-                        isAllowed: (context, route) => _isAllowed(
-                          context,
-                          route,
-                          Permissions.viewSchedules,
-                        ),
+                        isAllowed: (context, route) => context
+                            .userHasPermission(Permissions.viewSchedules),
                         children: [
                           EORoute(
                             Icons.account_box,
@@ -763,11 +753,8 @@ class DoorAccessRouteRegistry {
                             path: routeAddSchedule,
                             name: routeAddSchedule,
                             widgetBuilder: widgetBuilders[routeAddSchedule]!,
-                            isAllowed: (context, route) => _isAllowed(
-                              context,
-                              route,
-                              Permissions.manageSchedules,
-                            ),
+                            isAllowed: (context, route) => context
+                                .userHasPermission(Permissions.manageSchedules),
                           ),
                         ],
                       ),
@@ -780,7 +767,7 @@ class DoorAccessRouteRegistry {
                     name: routeFloorPlans,
                     widgetBuilder: widgetBuilders[routeFloorPlans]!,
                     isAllowed: (context, route) =>
-                        _isAllowed(context, route, Permissions.viewFloorPlans),
+                        context.userHasPermission(Permissions.viewFloorPlans),
                     children: [
                       EORoute(
                         Icons.account_box,
@@ -788,11 +775,8 @@ class DoorAccessRouteRegistry {
                         path: routeFloorPlanEditor,
                         name: routeFloorPlanEditor,
                         widgetBuilder: widgetBuilders[routeFloorPlanEditor]!,
-                        isAllowed: (context, route) => _isAllowed(
-                          context,
-                          route,
-                          Permissions.viewFloorPlans,
-                        ),
+                        isAllowed: (context, route) => context
+                            .userHasPermission(Permissions.viewFloorPlans),
                       ),
                     ],
                   ),
@@ -807,7 +791,7 @@ class DoorAccessRouteRegistry {
             name: routeUsers,
             widgetBuilder: widgetBuilders[routeUsers]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewUsers),
+                context.userHasPermission(Permissions.viewUsers),
             children: [
               EORoute(
                 Icons.account_box,
@@ -816,7 +800,7 @@ class DoorAccessRouteRegistry {
                 name: routeUserDetails,
                 widgetBuilder: widgetBuilders[routeUserDetails]!,
                 isAllowed: (context, route) =>
-                    _isAllowed(context, route, Permissions.viewUserDetails),
+                    context.userHasPermission(Permissions.viewUserDetails),
               ),
             ],
           ),
@@ -827,7 +811,7 @@ class DoorAccessRouteRegistry {
             name: routeGroups,
             widgetBuilder: widgetBuilders[routeGroups]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewGroups),
+                context.userHasPermission(Permissions.viewGroups),
             children: [
               EORoute(
                 Icons.account_box,
@@ -836,7 +820,7 @@ class DoorAccessRouteRegistry {
                 name: routeLinkGroupAccessPoint,
                 widgetBuilder: widgetBuilders[routeLinkGroupAccessPoint]!,
                 isAllowed: (context, route) =>
-                    _isAllowed(context, route, Permissions.linkAccessPoint),
+                    context.userHasPermission(Permissions.linkAccessPoint),
               ),
             ],
           ),
@@ -847,7 +831,7 @@ class DoorAccessRouteRegistry {
             name: routeAlerts,
             widgetBuilder: widgetBuilders[routeAlerts]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewAlerts),
+                context.userHasPermission(Permissions.viewAlerts),
             children: [
               EORoute(
                 Icons.account_box,
@@ -855,9 +839,7 @@ class DoorAccessRouteRegistry {
                 path: routeAlertsDoorAccessAttempts,
                 name: routeAlertsDoorAccessAttempts,
                 widgetBuilder: widgetBuilders[routeAlertsDoorAccessAttempts]!,
-                isAllowed: (context, route) => _isAllowed(
-                  context,
-                  route,
+                isAllowed: (context, route) => context.userHasPermission(
                   Permissions.viewDoorAccessAttempts,
                 ),
               ),
@@ -869,9 +851,7 @@ class DoorAccessRouteRegistry {
                 name: routeAlertsDoorAccessAttemptSnapshots,
                 widgetBuilder:
                     widgetBuilders[routeAlertsDoorAccessAttemptSnapshots]!,
-                isAllowed: (context, route) => _isAllowed(
-                  context,
-                  route,
+                isAllowed: (context, route) => context.userHasPermission(
                   Permissions.viewDoorAccessAttempts,
                 ),
               ),
@@ -882,7 +862,7 @@ class DoorAccessRouteRegistry {
                 name: routeAlertsScheduleUpdates,
                 widgetBuilder: widgetBuilders[routeAlertsScheduleUpdates]!,
                 isAllowed: (context, route) =>
-                    _isAllowed(context, route, Permissions.viewScheduleUpdates),
+                    context.userHasPermission(Permissions.viewScheduleUpdates),
               ),
             ],
           ),
@@ -893,7 +873,7 @@ class DoorAccessRouteRegistry {
             name: routeAccessCredentials,
             widgetBuilder: widgetBuilders[routeAccessCredentials]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewAccessCredentials),
+                context.userHasPermission(Permissions.viewAccessCredentials),
           ),
           EORoute(
             Icons.account_box,
@@ -902,21 +882,11 @@ class DoorAccessRouteRegistry {
             name: routeDoorSchedules,
             widgetBuilder: widgetBuilders[routeDoorSchedules]!,
             isAllowed: (context, route) =>
-                _isAllowed(context, route, Permissions.viewDoorControllers),
+                context.userHasPermission(Permissions.viewDoorControllers),
           ),
         ],
       ),
     ]);
     return registry;
-  }
-
-  static bool _isAllowed(
-    BuildContext context,
-    EORoute route,
-    String permissionName,
-  ) {
-    final result = Permissions.check(context, permissionName);
-
-    return result;
   }
 }

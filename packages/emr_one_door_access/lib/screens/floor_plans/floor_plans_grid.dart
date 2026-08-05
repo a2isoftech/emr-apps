@@ -43,6 +43,7 @@ class _FloorPlansGridState extends State<FloorPlansGrid> {
       onSuccessfulSave: _onSave,
     );
     actions[AddNewFloorPlanIntent] = addNewFloorPlanAction;
+    actions[RefreshIntent] = RefreshAction(onRefresh: _onSave);
     _dataSource.sortBy('name');
     _queryLayoutController = EmrQueryLayoutController<FloorPlan>(
       dataSource: _dataSource,

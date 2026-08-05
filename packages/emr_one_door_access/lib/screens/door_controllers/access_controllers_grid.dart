@@ -62,6 +62,13 @@ class _AccessControllersGridState extends State<AccessControllersGrid> {
         widget.onRefresh.call();
       },
     );
+    actions[RefreshIntent] = RefreshAction(
+      onRefresh: () async {
+        StaticData.ignoreCache = true;
+        await _queryLayoutController.dataSource.refresh();
+        widget.onRefresh.call();
+      },
+    );
     _dataSource.sortBy('name');
     _queryLayoutController = EmrQueryLayoutController<AccessController>(
       dataSource: _dataSource,

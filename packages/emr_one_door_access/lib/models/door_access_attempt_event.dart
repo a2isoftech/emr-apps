@@ -125,8 +125,8 @@ class DoorAccessAttemptEvent {
       siteName: siteName ?? this.siteName,
       accessPointRestricted:
           accessPointRestricted ?? this.accessPointRestricted,
-          snapshotUrl: snapshotUrl ?? this.snapshotUrl,
-          snapshotReason: snapshotReason ?? this.snapshotReason,
+      snapshotUrl: snapshotUrl ?? this.snapshotUrl,
+      snapshotReason: snapshotReason ?? this.snapshotReason,
     );
   }
 }

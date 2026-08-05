@@ -80,9 +80,7 @@ class WhepClient {
     return WhepSession(pc, resourceUrl);
   }
 
-  static Future<void> _waitForIceGatheringComplete(
-    RTCPeerConnection pc,
-  ) async {
+  static Future<void> _waitForIceGatheringComplete(RTCPeerConnection pc) async {
     if (pc.iceGatheringState ==
         RTCIceGatheringState.RTCIceGatheringStateComplete) {
       return;

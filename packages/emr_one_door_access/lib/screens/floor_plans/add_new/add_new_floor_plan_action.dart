@@ -21,7 +21,7 @@ class AddNewFloorPlanAction extends EmrAction<AddNewFloorPlanIntent> {
   }
 
   final FloorPlanController controller;
-  final void Function() onSuccessfulSave;
+  final Future<void> Function() onSuccessfulSave;
   final String siteId;
 
   @override
@@ -43,7 +43,7 @@ class AddNewFloorPlanAction extends EmrAction<AddNewFloorPlanIntent> {
     FloorPlanController controller,
     BuildContext context,
     String siteId,
-    void Function() onSuccessfulSave, {
+    Future<void> Function() onSuccessfulSave, {
     required bool isInEditMode,
     FloorPlan? floorPlan,
   }) async {
@@ -82,7 +82,7 @@ class AddNewFloorPlanAction extends EmrAction<AddNewFloorPlanIntent> {
       );
 
       if (saved ?? false) {
-        onSuccessfulSave();
+        await onSuccessfulSave();
       }
     }
   }

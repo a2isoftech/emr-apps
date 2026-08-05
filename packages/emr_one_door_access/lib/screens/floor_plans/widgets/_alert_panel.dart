@@ -35,13 +35,13 @@ class AlertPanel extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: Insets.gutter / 2),
 
                 /// POLLING INTERVAL FIELD
                 Row(
                   children: [
                     const Text('Poll (sec):'),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: Insets.gutter / 2),
                     SizedBox(
                       width: 80,
                       child: TextFormField(
@@ -77,7 +77,7 @@ class AlertPanel extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: Insets.gutter / 2),
 
                 /// ALERT LIST
                 Expanded(

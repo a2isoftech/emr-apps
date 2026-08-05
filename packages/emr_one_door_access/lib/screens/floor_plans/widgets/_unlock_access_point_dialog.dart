@@ -1,3 +1,4 @@
+import 'package:emr_one_core/eo_constants.dart';
 import 'package:emr_one_core/utilities/emr_modal.dart';
 import 'package:emr_one_door_access/emr_one_door_access.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class _UnlockAccessPointDialogState extends State<UnlockAccessPointDialog> {
                 maxLines: 3,
               ),
               if (isSubmitting) ...[
-                const SizedBox(height: 16),
+                const SizedBox(height: Insets.gutter),
                 const Center(child: CircularProgressIndicator()),
               ],
             ],

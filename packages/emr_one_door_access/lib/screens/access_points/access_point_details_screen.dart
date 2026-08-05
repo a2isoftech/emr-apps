@@ -149,7 +149,7 @@ class _AccessPointDetailsScreenState extends State<AccessPointDetailsScreen> {
                                             (item) => Padding(
                                               padding:
                                                   const EdgeInsets.symmetric(
-                                                    vertical: 2,
+                                                    vertical: Insets.gutter / 8,
                                                   ),
                                               child: Row(
                                                 crossAxisAlignment:

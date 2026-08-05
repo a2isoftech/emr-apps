@@ -93,7 +93,7 @@ class _RealTimeConnectionStatusState extends State<RealTimeConnectionStatus> {
             const _StateCard(
               connectionState: RealtimeConnectionState.disconnected,
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: Insets.gutter / 2),
             ElevatedButton(
               onPressed: () {
                 DoorAccessRealtime.instance.service?.reconnect();
@@ -148,12 +148,15 @@ class _StateCard extends StatelessWidget {
       color: Colors.white,
       child: Container(
         constraints: const BoxConstraints(minWidth: 180, maxWidth: 260),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Insets.gutter,
+          vertical: Insets.gutter / 2,
+        ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(icon, color: color),
-            const SizedBox(width: 10),
+            const SizedBox(width: Insets.gutter / 2),
 
             Expanded(
               child: Text(
@@ -163,7 +166,7 @@ class _StateCard extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(width: 4),
+            const SizedBox(width: Insets.gutter / 4),
 
             IconButton(
               visualDensity: VisualDensity.compact,

@@ -43,7 +43,7 @@ class _AccessPointCameraFormState extends State<AccessPointCameraForm> {
                 validator: Validators.required,
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: Insets.gutter),
 
               EmrTextFormField(
                 labelText: 'IP Address',
@@ -51,7 +51,7 @@ class _AccessPointCameraFormState extends State<AccessPointCameraForm> {
                 validator: Validators.required,
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: Insets.gutter),
 
               EmrTextFormField(
                 labelText: 'Snapshot URL',
@@ -61,7 +61,7 @@ class _AccessPointCameraFormState extends State<AccessPointCameraForm> {
                 validator: Validators.required,
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: Insets.gutter),
 
               EmrTextFormField(
                 labelText: 'Username',
@@ -69,7 +69,7 @@ class _AccessPointCameraFormState extends State<AccessPointCameraForm> {
                 validator: Validators.required,
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: Insets.gutter),
 
               EmrTextFormField(
                 labelText: 'Password',

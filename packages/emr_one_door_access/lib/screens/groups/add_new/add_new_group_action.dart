@@ -21,7 +21,7 @@ class AddNewGroupAction extends EmrAction<AddNewGroupIntent> {
   }
 
   final ManageGroupController controller;
-  final void Function() onSuccessfulSave;
+  final Future<void> Function() onSuccessfulSave;
 
   @override
   Object? invoke(covariant AddNewGroupIntent intent, [BuildContext? context]) {
@@ -70,7 +70,7 @@ class AddNewGroupAction extends EmrAction<AddNewGroupIntent> {
             );
             return;
           }
-          onSuccessfulSave();
+          await onSuccessfulSave();
           if (context.mounted) {
             context.pop();
           }

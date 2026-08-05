@@ -16,14 +16,14 @@ class PriorityConfigurationForm extends StatelessWidget {
           binding: controller.externalId,
           validator: Validators.required,
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: Insets.gutter),
 
         EmrTextFormField(
           labelText: 'Name',
           binding: controller.name,
           validator: Validators.required,
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: Insets.gutter),
 
         EmrPickerFormField(
           labelText: 'Default Priority',
@@ -33,7 +33,7 @@ class PriorityConfigurationForm extends StatelessWidget {
           validator: Validators.required,
         ),
 
-        const SizedBox(height: 20),
+        const SizedBox(height: Insets.gutter),
 
         /// Dynamic list
         ValueListenableBuilder<List<DoorPriorityActionModel>>(
@@ -45,9 +45,9 @@ class PriorityConfigurationForm extends StatelessWidget {
                   final item = actions[index];
 
                   return Card(
-                    margin: const EdgeInsets.only(bottom: 12),
+                    margin: const EdgeInsets.only(bottom: Insets.gutter),
                     child: Padding(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(Insets.gutter),
                       child: Row(
                         children: [
                           Expanded(
@@ -59,7 +59,7 @@ class PriorityConfigurationForm extends StatelessWidget {
                               validator: Validators.required,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: Insets.gutter / 2),
 
                           Expanded(
                             child: EmrPickerFormField(
@@ -71,7 +71,7 @@ class PriorityConfigurationForm extends StatelessWidget {
                             ),
                           ),
 
-                          const SizedBox(width: 10),
+                          const SizedBox(width: Insets.gutter / 2),
 
                           if (actions.length > 1)
                             IconButton(

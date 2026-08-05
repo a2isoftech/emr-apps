@@ -35,6 +35,12 @@ class _GroupsScreenState extends State<GroupsScreen> {
         await queryLayoutController.dataSource.refresh();
       },
     );
+    actions[RefreshIntent] = RefreshAction(
+      onRefresh: () async {
+        StaticData.ignoreCache = true;
+        await queryLayoutController.dataSource.refresh();
+      },
+    );
     final gridDataSource = queryLayoutController.dataSource as GroupsDataSource;
     gridDataSource.refresh();
   }

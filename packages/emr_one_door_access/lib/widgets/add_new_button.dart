@@ -2,10 +2,7 @@ import 'package:emr_one_core/eo_constants.dart';
 import 'package:flutter/material.dart';
 
 class AddNewButton extends StatelessWidget {
-  const AddNewButton({
-    required this.onTap,
-    super.key,
-  });
+  const AddNewButton({required this.onTap, super.key});
 
   final void Function() onTap;
 
@@ -17,10 +14,7 @@ class AddNewButton extends StatelessWidget {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: onTap,
-          child: const Icon(
-            Icons.add,
-            size: 32,
-          ),
+          child: const Icon(Icons.add, size: 32),
         ),
       ),
     );

@@ -36,6 +36,12 @@ class _SchedulesScreenState extends State<SchedulesScreen> {
       accessControllerId: widget.accessControllerId,
       createIntent: (context) => AddNewScheduleIntent(context: context),
     );
+    actions[RefreshIntent] = RefreshAction(
+      onRefresh: () async {
+        StaticData.ignoreCache = true;
+        await queryLayoutController.dataSource.refresh();
+      },
+    );
 
     final gridDataSource =
         queryLayoutController.dataSource as SchedulesDataSource;

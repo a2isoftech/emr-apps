@@ -68,7 +68,9 @@ class DoorStateWidget extends StatelessWidget {
                     ...state.priorityStates.map(
                       (priority) => Card(
                         elevation: 1,
-                        margin: const EdgeInsets.symmetric(vertical: 6),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: Insets.gutter / 2,
+                        ),
                         child: ListTile(
                           leading: const Icon(Icons.priority_high),
                           title: Text(priority.priorityLevel),
