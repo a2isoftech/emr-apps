@@ -29,14 +29,13 @@ class AddNewFloorPlanAction extends EmrAction<AddNewFloorPlanIntent> {
     covariant AddNewFloorPlanIntent intent, [
     BuildContext? context,
   ]) {
-    openModal(
+    return openModal(
       controller,
       intent.context,
       siteId,
       onSuccessfulSave,
       isInEditMode: true,
     );
-    return null;
   }
 
   static Future<void> openModal(

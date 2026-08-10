@@ -28,6 +28,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
   Timer? _countdownTimer;
   Duration _remaining = _streamDuration;
   bool _connecting = true;
+  bool _streamActive = false;
   String? _error;
 
   @override
@@ -57,6 +58,8 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
       });
       return;
     }
+
+    _streamActive = true;
 
     final base = result?.streamUrl;
     if ((base ?? '').isEmpty) {
@@ -145,10 +148,19 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
       if (_remaining.inSeconds <= 1) {
         timer.cancel();
         setState(() => _remaining = Duration.zero);
+        _stopStream();
         return;
       }
       setState(() => _remaining -= const Duration(seconds: 1));
     });
+  }
+
+  /// Tells the backend to stop publishing so the WHEP session doesn't linger
+  /// until the server-side TTL expires on its own.
+  void _stopStream() {
+    if (!_streamActive) return;
+    _streamActive = false;
+    unawaited(widget.controller.stopLiveStream(widget.hotspot));
   }
 
   Future<void> _resetDuration() async {
@@ -171,7 +183,17 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
   }
 
   Future<void> _stop() async {
+    _streamActive = false;
     await widget.controller.stopLiveStream(widget.hotspot);
+    if (!mounted) return;
+    Navigator.pop(context);
+  }
+
+  Future<void> _close() async {
+    if (_streamActive) {
+      _streamActive = false;
+      await widget.controller.stopLiveStream(widget.hotspot);
+    }
     if (!mounted) return;
     Navigator.pop(context);
   }
@@ -215,7 +237,7 @@ class _LiveStreamDialogState extends State<LiveStreamDialog> {
       content: SizedBox(width: 480, height: 360, child: content),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: _close,
           child: const Text('Close'),
         ),
         if (_error == null) ...[
