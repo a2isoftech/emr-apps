@@ -32,6 +32,13 @@ class _UnlockAccessPointDialogState extends State<UnlockAccessPointDialog> {
   }
 
   @override
+  void dispose() {
+    reasonController.dispose();
+    isReasonEmpty.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var isSubmitting = false;
     return StatefulBuilder(

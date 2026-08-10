@@ -20,7 +20,7 @@ class FloorPlanEditor extends StatefulWidget {
     required this.siteId,
     required this.formKey,
     required this.isInEditMode,
-    this.pollingSeconds = 3000,
+    this.pollingSeconds = 300,
     super.key,
   });
 

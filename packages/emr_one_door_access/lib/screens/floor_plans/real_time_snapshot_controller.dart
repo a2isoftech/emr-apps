@@ -23,14 +23,11 @@ class RealTimeSnapshotController extends ChangeNotifier {
   }
 
   void _handleNotification(NotificationEvent event) {
-    debugPrint('coming here');
     if (event.messageType == 'AccessPointSnapshot') {
       final hotspot = hotspots.firstWhereOrNull(
         (h) => h.accessPointId == event.message,
       );
-      debugPrint(event.message);
       if (hotspot != null) {
-        debugPrint('hot spot found');
         final snapshot = SnapshotOverlay(
           hotspotX: hotspot.x,
           hotspotY: hotspot.y,

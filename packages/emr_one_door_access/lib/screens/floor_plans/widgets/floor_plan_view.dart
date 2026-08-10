@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-class FloorPlanView extends StatelessWidget {
+class FloorPlanView extends StatefulWidget {
   const FloorPlanView({
     required this.source,
     required this.isSvg,
@@ -25,24 +25,57 @@ class FloorPlanView extends StatelessWidget {
   final FloorPlanController controller;
   final void Function(Hotspot)? onHotspotTap;
 
+  @override
+  State<FloorPlanView> createState() => _FloorPlanViewState();
+}
+
+class _FloorPlanViewState extends State<FloorPlanView> {
+  late final RealTimeSnapshotController _realTimeSnapshotController;
+
+  @override
+  void initState() {
+    super.initState();
+    _realTimeSnapshotController = Provider.of<RealTimeSnapshotController>(
+      context,
+      listen: false,
+    );
+    _realTimeSnapshotController.startRealtime(widget.hotspots);
+  }
+
+  @override
+  void didUpdateWidget(covariant FloorPlanView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!identical(oldWidget.hotspots, widget.hotspots)) {
+      _realTimeSnapshotController.startRealtime(widget.hotspots);
+    }
+  }
+
+  @override
+  void dispose() {
+    _realTimeSnapshotController.stopRealtime();
+    super.dispose();
+  }
+
   ///Handles all combinations (asset/network + svg/image)
   Widget _buildImage() {
-    if (!isAsset && source.isEmpty && imageBytes == null) {
+    if (!widget.isAsset && widget.source.isEmpty && widget.imageBytes == null) {
       return const Center(child: Text('No image'));
     }
-    if (isSvg) {
-      return isAsset ? SvgPicture.asset(source) : SvgPicture.network(source);
+    if (widget.isSvg) {
+      return widget.isAsset
+          ? SvgPicture.asset(widget.source)
+          : SvgPicture.network(widget.source);
     } else {
-      return isAsset
+      return widget.isAsset
           ? Image.asset(
-              source,
+              widget.source,
               package: 'emr_one_door_access',
               fit: BoxFit.contain,
             )
-          : imageBytes != null
-          ? Image.memory(imageBytes!, fit: BoxFit.contain)
+          : widget.imageBytes != null
+          ? Image.memory(widget.imageBytes!, fit: BoxFit.contain)
           : Image.network(
-              source,
+              widget.source,
               fit: BoxFit.contain,
               errorBuilder: (_, __, st) {
                 return const Center(child: Icon(Icons.error));
@@ -53,13 +86,8 @@ class FloorPlanView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final realTimeSnapshotController = Provider.of<RealTimeSnapshotController>(
-      context,
-      listen: false,
-    );
-    realTimeSnapshotController.startRealtime(hotspots);
     return ChangeNotifierProvider.value(
-      value: realTimeSnapshotController,
+      value: _realTimeSnapshotController,
       child: Consumer<RealTimeSnapshotController>(
         builder: (context, realTimeSnapshotController, child) {
           return InteractiveViewer(
@@ -78,7 +106,7 @@ class FloorPlanView extends StatelessWidget {
                     Positioned.fill(child: _buildImage()),
 
                     ///Hotspots
-                    ...hotspots.map((h) {
+                    ...widget.hotspots.map((h) {
                       return Positioned(
                         left: (h.x * width) - (hotspotSize / 2),
                         top: (h.y * height) - (hotspotSize / 2),
@@ -86,11 +114,11 @@ class FloorPlanView extends StatelessWidget {
                           width: hotspotSize,
                           height: hotspotSize,
                           child: AnimatedHotspot(
-                            isInEditMode: controller.isInEditMode,
+                            isInEditMode: widget.controller.isInEditMode,
                             color: h.color,
                             label: h.orderIndex.toString(),
                             onTap: () {
-                              onHotspotTap?.call(h);
+                              widget.onHotspotTap?.call(h);
                             },
                           ),
                         ),
