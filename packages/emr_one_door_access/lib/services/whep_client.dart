@@ -75,9 +75,24 @@ class WhepClient {
     );
 
     final location = response.headers['location'];
-    final resourceUrl = location == null ? null : whepUrl.resolve(location);
+    final resourceUrl = location == null
+        ? null
+        : _resolveResourceUrl(whepUrl, location);
 
     return WhepSession(pc, resourceUrl);
+  }
+
+  /// Per RFC 3986 URI resolution, if [location] has its own path (the usual
+  /// case for a WHEP `Location` header), the resolved URI's query comes from
+  /// [location] alone — any query on [base] (e.g. our `?token=` auth param)
+  /// is dropped rather than carried over. Re-attach it so the DELETE in
+  /// [WhepSession.close] stays authenticated.
+  static Uri _resolveResourceUrl(Uri base, String location) {
+    final resolved = base.resolve(location);
+    if (base.queryParameters.isEmpty) return resolved;
+    return resolved.replace(
+      queryParameters: {...base.queryParameters, ...resolved.queryParameters},
+    );
   }
 
   static Future<void> _waitForIceGatheringComplete(RTCPeerConnection pc) async {

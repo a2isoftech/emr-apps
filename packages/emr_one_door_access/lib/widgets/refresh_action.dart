@@ -19,7 +19,6 @@ class RefreshAction extends EmrAction<RefreshIntent> {
 
   @override
   Object? invoke(covariant RefreshIntent intent, [BuildContext? context]) {
-    onRefresh();
-    return null;
+    return onRefresh();
   }
 }

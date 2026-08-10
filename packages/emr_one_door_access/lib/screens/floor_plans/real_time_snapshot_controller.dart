@@ -11,6 +11,8 @@ class RealTimeSnapshotController extends ChangeNotifier {
   List<Hotspot> hotspots = [];
 
   final List<SnapshotOverlay> snapshots = [];
+  bool _disposed = false;
+
   void startRealtime(List<Hotspot> hs) {
     hotspots = hs;
     DoorAccessRealtime.instance.bridge?.actions.addAll({
@@ -42,6 +44,7 @@ class RealTimeSnapshotController extends ChangeNotifier {
         notifyListeners();
 
         Future.delayed(const Duration(seconds: 5), () {
+          if (_disposed) return;
           snapshots.remove(snapshot);
 
           notifyListeners();
@@ -52,5 +55,11 @@ class RealTimeSnapshotController extends ChangeNotifier {
 
   Future<Uint8List?> getImage(String url) async {
     return mediaService.getImage(url);
+  }
+
+  @override
+  void dispose() {
+    _disposed = true;
+    super.dispose();
   }
 }

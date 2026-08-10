@@ -12,8 +12,6 @@ class MediaService {
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
-        debugPrint(response.statusCode.toString());
-        debugPrint(response.bodyBytes.length.toString());
         return response.bodyBytes;
       }
     } catch (err) {

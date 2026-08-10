@@ -16,7 +16,7 @@ class SignalRNotificationBridge {
   final cn.EmrOneNotificationController notificationController;
 
   StreamSubscription<NotificationEvent>? _subscription;
-  Map<String, ActionHandler> actions = {};
+  final Map<String, ActionHandler> actions = {};
 
   void start() {
     _subscription ??= signalRStream.listen(_onNotificationReceived);
@@ -60,8 +60,8 @@ class SignalRNotificationBridge {
       }
     }
 
-    for (final a in actions.entries) {
-      a.value(event);
+    for (final handler in actions.values.toList()) {
+      handler(event);
     }
   }
 }
