@@ -1,5 +1,5 @@
 import 'package:emr_one_door_access/emr_one_door_access.dart';
-import 'package:emr_one_door_access/screens/floor_plans/widgets/_hotspot_list.dart';
+import 'package:emr_one_door_access/screens/floor_plans/widgets/hotspot_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

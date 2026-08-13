@@ -1,6 +1,6 @@
 import 'package:emr_one_door_access/emr_one_door_access.dart';
-import 'package:emr_one_door_access/screens/floor_plans/widgets/_assign_access_point_dialog.dart';
-import 'package:emr_one_door_access/screens/floor_plans/widgets/_unlock_access_point_dialog.dart';
+import 'package:emr_one_door_access/screens/floor_plans/widgets/assign_access_point_dialog.dart';
+import 'package:emr_one_door_access/screens/floor_plans/widgets/unlock_access_point_dialog.dart';
 import 'package:flutter/material.dart';
 
 class HotspotList extends StatelessWidget {
